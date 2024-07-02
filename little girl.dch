@@ -1,0 +1,119 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "serious",
+"description": "",
+"display_name": "Little Girl",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(30, 0),
+"portraits": {
+"Little Girl Portrait": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"happy": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait_2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"not impressed": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait_12.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"not impressed again": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait_5.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"scared": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait_7.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"serious": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait_10.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"shock": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait_6.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"smile": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait_4.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"upset": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait_8.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"upset again": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait_9.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"v happy": {
+"export_overrides": {
+"image": "\"res://assets/characters/little girl/faces/Little Girl Portrait_11.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 0.5
+}
