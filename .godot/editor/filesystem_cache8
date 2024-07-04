@@ -1,0 +1,37 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1720112166
+icon.svg::CompressedTexture2D::1280879423826446536::1720112098::1720112167::1::::<><>::
+::res://assets/::1720112098
+::res://assets/characters/::1720112098
+walk_front_motion.png::CompressedTexture2D::2673450549335175738::1720112098::1720112167::1::::<><>::
+::res://assets/characters/little girl/::1720112098
+::res://assets/characters/little girl/faces/::1720112098
+Little Girl Portrait.png::CompressedTexture2D::8806143065401960793::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_1.png::CompressedTexture2D::79892569187679408::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_2.png::CompressedTexture2D::5861571849901810036::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_3.png::CompressedTexture2D::2985482845478075178::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_4.png::CompressedTexture2D::2226740083158583828::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_5.png::CompressedTexture2D::1470149059794973975::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_6.png::CompressedTexture2D::3322845024835488184::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_7.png::CompressedTexture2D::8078948761759655731::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_8.png::CompressedTexture2D::797952280550893084::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_9.png::CompressedTexture2D::5018096763959660259::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_10.png::CompressedTexture2D::4422197237012060436::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_11.png::CompressedTexture2D::8704565261993386160::1720112098::1720112167::1::::<><>::
+Little Girl Portrait_12.png::CompressedTexture2D::8187094625802700230::1720112098::1720112167::1::::<><>::
+::res://assets/main menu/::1720112098
+back.png::CompressedTexture2D::2453163493643499027::1720112098::1720112167::1::::<><>::
+front.png::CompressedTexture2D::1340228803065559949::1720112098::1720112167::1::::<><>::
+middle.png::CompressedTexture2D::1112489865723870981::1720112098::1720112167::1::::<><>::
+::res://assets/tilesets/::1720112098
+dungeon_1_tileset.png::CompressedTexture2D::8589019020911068609::1720112098::1720112167::1::::<><>::
+dungeon_2_tileset.png::CompressedTexture2D::878092053418035467::1720112098::1720112167::1::::<><>::
+switch.png::CompressedTexture2D::7650923109140470332::1720112098::1720112167::1::::<><>::
+::res://scenes/::1720112098
+::res://scenes/main menu/::1720112098
+main_menu.gd::GDScript::-1::1720112098::0::1::::<>Node<>::
+main_menu.tscn::PackedScene::7367900284711590182::1720112098::0::1::::<><>::res://scenes/main menu/main_menu.gd<>uid://ba7likpdfguit::::res://assets/main menu/back.png<>res://scenes/main menu/ParallaxBackground.gd<>uid://p35sswmlm31r::::res://assets/main menu/middle.png<>uid://tdhmwx0skdm0::::res://assets/main menu/front.png
+ParallaxBackground.gd::GDScript::-1::1720112098::0::1::::<>ParallaxBackground<>::
+::res://scenes/starting_area/::1720112098
+start.gd::GDScript::-1::1720112098::0::1::::<>Node2D<>::
+start.tscn::PackedScene::3350671579625802119::1720112098::0::1::::<><>::uid://dumt5g81678y4::::res://assets/tilesets/dungeon_1_tileset.png<>res://scenes/starting_area/start.gd<>uid://mrmbvj4sgp2j::::res://assets/tilesets/dungeon_2_tileset.png<>uid://dhaft6gbgt4my::::res://assets/tilesets/switch.png<>uid://bedbls8pqhib7::::res://assets/characters/walk_front_motion.png
