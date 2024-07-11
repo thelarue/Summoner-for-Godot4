@@ -55,11 +55,11 @@ animations/leave_default="Slide Out Left"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/size/resizable=false
-window/stretch/mode="viewport"
-window/stretch/aspect="keep_width"
+window/size/viewport_width=240
+window/size/viewport_height=135
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

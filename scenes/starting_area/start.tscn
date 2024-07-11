@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dhaft6gbgt4my" path="res://assets/tilesets and props/dungeon/switch.png" id="3_yuhe1"]
 [ext_resource type="Texture2D" uid="uid://bedbls8pqhib7" path="res://assets/characters/walk_front_motion.png" id="4_udhto"]
 [ext_resource type="Texture2D" uid="uid://bmemwxawonslj" path="res://assets/tilesets and props/props/house.png" id="5_ue7ta"]
-[ext_resource type="PackedScene" uid="uid://bc0cntx4av5o" path="res://scenes/player.tscn" id="6_w2ii0"]
+[ext_resource type="PackedScene" uid="uid://d7sw2a8ax5y2" path="res://player.tscn" id="6_qhr0m"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_thq3x"]
 
@@ -995,8 +995,8 @@ layer_0/tile_data = PackedInt32Array(0, 524288, 13, 65536, 524288, 14, 1, 589824
 layer_1/name = "Foreground"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="player" parent="." instance=ExtResource("6_w2ii0")]
-position = Vector2(113, 68)
+[node name="player" parent="." instance=ExtResource("6_qhr0m")]
+position = Vector2(127, 89)
 
 [node name="WalkFrontMotion" type="Sprite2D" parent="."]
 position = Vector2(90, 66)
