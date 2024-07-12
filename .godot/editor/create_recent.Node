@@ -1,5 +1,5 @@
+AnimationPlayer
 CollisionShape2D
 Camera2D
 Sprite2D
 CharacterBody2D
-AnimationPlayer

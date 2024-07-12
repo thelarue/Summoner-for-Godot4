@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d7sw2a8ax5y2"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_swdcq"]
-[ext_resource type="Texture2D" uid="uid://bedbls8pqhib7" path="res://assets/characters/walk_front_motion.png" id="2_axojk"]
+[ext_resource type="Texture2D" uid="uid://bs15ik080lny0" path="res://assets/characters/little girl/itsagirl.png" id="2_p81ju"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tqqgk"]
 radius = 8.0
@@ -10,9 +10,10 @@ radius = 8.0
 script = ExtResource("1_swdcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_axojk")
-hframes = 4
+texture = ExtResource("2_p81ju")
+hframes = 3
+vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 10)
+position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_tqqgk")
