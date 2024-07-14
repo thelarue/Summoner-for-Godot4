@@ -1,2 +1,6 @@
 res://player.tscn
+res://player.gd
 res://scenes/starting_area/start.tscn
+res://scenes/main menu/main_menu.tscn
+res://scenes/main menu/ParallaxBackground.gd
+res://scenes/starting_area/start.gd

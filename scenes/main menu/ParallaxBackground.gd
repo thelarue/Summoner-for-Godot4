@@ -18,8 +18,8 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		var mouse_x = event.position.x
 		var mouse_y = event.position.y
-		relative_x = -.5 * (mouse_x - (viewport_size.x/2)) / (viewport_size.x/2)
-		relative_y = -.5 * (mouse_y - (viewport_size.y/2)) / (viewport_size.y/2)
+		relative_x = -2 * (mouse_x - (viewport_size.x/2)) / (viewport_size.x/2)
+		relative_y = -2 * (mouse_y - (viewport_size.y/2)) / (viewport_size.y/2)
 		# print("relative_y: " + str(relative_y))
 		# print("relative_x: " + str(relative_x))
 		var count = 3
