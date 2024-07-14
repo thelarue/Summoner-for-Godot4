@@ -25,3 +25,7 @@ func _physics_process(delta):
 	player_movement()
 	move_and_slide()
 	update_anim()
+	pass
+
+func _process(delta):
+	pass
