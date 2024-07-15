@@ -30,8 +30,8 @@ directories/dtl_directory={
 "intro": "res://intro.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://summoner_dialog.tres"]
+layout/default_style="res://summoner_dialog.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -57,8 +57,8 @@ animations/leave_default="Slide Out Left"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
+window/size/viewport_width=480
+window/size/viewport_height=270
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"

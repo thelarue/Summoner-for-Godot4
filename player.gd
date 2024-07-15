@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var speed = 60
+var speed = 40
 @onready var anim = $AnimationPlayer
 
 
