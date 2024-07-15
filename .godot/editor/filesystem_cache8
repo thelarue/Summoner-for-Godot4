@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1721009859
+::res://::1721013086
 icon.svg::CompressedTexture2D::1280879423826446536::1720971847::1720971847::1::::<><>::
 intro.dtl::Resource::-1::1720971847::0::1::::<><>::
 little girl.dch::Resource::-1::1720971847::0::1::::<><>::
-player.gd::GDScript::-1::1720990236::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::277760232010476443::1721009859::0::1::::<><>::res://player.gd<>uid://bs15ik080lny0::::res://assets/characters/little girl/itsagirl.png
+player.gd::GDScript::-1::1721013026::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::277760232010476443::1721013026::0::1::::<><>::res://player.gd<>uid://bs15ik080lny0::::res://assets/characters/little girl/itsagirl.png
 ::res://addons/::1720971847
 ::res://addons/dialogic/::1720971847
 plugin.cfg::TextFile::-1::1720971847::0::1::::<><>::
@@ -603,13 +603,13 @@ event.gd::GDScript::-1::1720971847::0::1::::DialogicEvent<>Resource<>::
 timeline.gd::GDScript::-1::1720971847::0::1::::DialogicTimeline<>Resource<>::
 TimelineResourceLoader.gd::GDScript::-1::1720971847::0::1::::DialogicTimelineFormatLoader<>ResourceFormatLoader<>::
 TimelineResourceSaver.gd::GDScript::-1::1720971847::0::1::::DialogicTimelineFormatSaver<>ResourceFormatSaver<>::
-::res://assets/::1720992932
-::res://assets/characters/::1720973982
-bones2-g280002586_640.png::CompressedTexture2D::799810156957210168::1720973982::1720973982::1::::<><>::
-LEAFY.png::CompressedTexture2D::7803450286825420109::1720973842::1720973843::1::::<><>::
+::res://assets/::1721013026
+::res://assets/characters/::1721013026
+bones2-g280002586_640.png::CompressedTexture2D::799810156957210168::1721013026::1721013026::1::::<><>::
+LEAFY.png::CompressedTexture2D::7803450286825420109::1721013026::1721013026::1::::<><>::
 walk_front_motion.png::CompressedTexture2D::2673450549335175738::1720971847::1720971847::1::::<><>::
-::res://assets/characters/little girl/::1720971847
-itsagirl.png::CompressedTexture2D::3705330052304308677::1720971847::1720971847::1::::<><>::
+::res://assets/characters/little girl/::1721013026
+itsagirl.png::CompressedTexture2D::3705330052304308677::1721013026::1721013026::1::::<><>::
 ::res://assets/characters/little girl/faces/::1720971847
 Little Girl Portrait.png::CompressedTexture2D::8806143065401960793::1720971847::1720971847::1::::<><>::
 Little Girl Portrait_1.png::CompressedTexture2D::79892569187679408::1720971847::1720971847::1::::<><>::
@@ -628,23 +628,23 @@ Little Girl Portrait_12.png::CompressedTexture2D::8187094625802700230::172097184
 back.png::CompressedTexture2D::2453163493643499027::1720971847::1720971847::1::::<><>::
 front.png::CompressedTexture2D::1340228803065559949::1720971847::1720971847::1::::<><>::
 middle.png::CompressedTexture2D::1112489865723870981::1720971847::1720971847::1::::<><>::
-::res://assets/music and sound/::1721010252
-dungeon_wip_2.mp3::AudioStreamMP3::3904212817925550871::1721010252::1721010252::1::::<><>::
-great_beholder_preview_wip.mp3::AudioStreamMP3::3893913208471521269::1721010244::1721010245::1::::<><>::
-::res://assets/music and sound/sound fx/::1720992948
-lever pull.ogg::AudioStreamOggVorbis::5969251953086196519::1720992948::1720992948::1::::<><>::
+::res://assets/music and sound/::1721013026
+dungeon_wip_2.mp3::AudioStreamMP3::3904212817925550871::1721013026::1721013026::1::::<><>::
+great_beholder_preview_wip.mp3::AudioStreamMP3::3893913208471521269::1721013026::1721013026::1::::<><>::
+::res://assets/music and sound/sound fx/::1721013026
+lever pull.ogg::AudioStreamOggVorbis::5969251953086196519::1721013026::1721013026::1::::<><>::
 ::res://assets/tilesets and props/::1720971847
 ::res://assets/tilesets and props/collectables/::1720971847
 coin.png::CompressedTexture2D::2508109315499502825::1720971847::1720971847::1::::<><>::
 heart.png::CompressedTexture2D::1779616698858740146::1720971847::1720971847::1::::<><>::
 key.png::CompressedTexture2D::1153079023161125253::1720971847::1720971847::1::::<><>::
 orbs.png::CompressedTexture2D::6246994048021518398::1720971847::1720971847::1::::<><>::
-::res://assets/tilesets and props/dungeon/::1721009943
+::res://assets/tilesets and props/dungeon/::1721013026
 dungeon-crawler-objects-transparent.png::CompressedTexture2D::7926595578734669349::1720971847::1720971847::1::::<><>::
 dungeon_1_tileset.png::CompressedTexture2D::8589019020911068609::1720971847::1720971847::1::::<><>::
 dungeon_2_tileset.png::CompressedTexture2D::878092053418035467::1720971847::1720971847::1::::<><>::
 objects.png::CompressedTexture2D::4439635390422252285::1720971847::1720971847::1::::<><>::
-southernDoor.png::CompressedTexture2D::5405252277314542377::1721000730::1721000735::1::::<><>::
+southernDoor.png::CompressedTexture2D::5405252277314542377::1721013026::1721013026::1::::<><>::
 switch.png::CompressedTexture2D::7650923109140470332::1720971847::1720971847::1::::<><>::
 ::res://assets/tilesets and props/forest/::1720971847
 tileset_forest.png::CompressedTexture2D::820136011360999264::1720971847::1720971847::1::::<><>::
@@ -661,19 +661,21 @@ vase.png::CompressedTexture2D::968109132137286714::1720971847::1720971847::1::::
 tileset_forest_2.png::CompressedTexture2D::456099013976778432::1720971847::1720971847::1::::<><>::
 tileset_grotto.png::CompressedTexture2D::81718173023044091::1720971847::1720971847::1::::<><>::
 tileset_village.png::CompressedTexture2D::1763653256680064808::1720971847::1720971847::1::::<><>::
-::res://interactions/::1721009819
-interaction_area.gd::GDScript::-1::1720992347::0::1::::InteractionArea<>Area2D<>::
-interaction_area.tscn::PackedScene::2482950970123857936::1721009819::0::1::::<><>::res://interactions/interaction_area.gd
-interaction_manager.gd::GDScript::-1::1720995567::0::1::::<>Node2D<>::
-interaction_manager.tscn::PackedScene::1925504265288427309::1721009819::0::1::::<><>::res://interactions/interaction_manager.gd
-interactive_tilemap.tscn::PackedScene::6921322739470918936::1721009819::0::1::::<><>::
-southern_door.tscn::PackedScene::2530562007177603455::1721009819::0::1::::<><>::uid://cjalyk407k0l6::::res://assets/tilesets and props/dungeon/southernDoor.png
+::res://interactions/::1721013026
+interaction_area.gd::GDScript::-1::1721013026::0::1::::InteractionArea<>Area2D<>::
+interaction_area.tscn::PackedScene::2482950970123857936::1721013026::0::1::::<><>::res://interactions/interaction_area.gd
+interaction_manager.gd::GDScript::-1::1721013026::0::1::::<>Node2D<>::
+interaction_manager.tscn::PackedScene::1925504265288427309::1721013026::0::1::::<><>::res://interactions/interaction_manager.gd
+interactive_tilemap.tscn::PackedScene::6921322739470918936::1721013026::0::1::::<><>::
+southern_door.tscn::PackedScene::2530562007177603455::1721013026::0::1::::<><>::uid://cjalyk407k0l6::::res://assets/tilesets and props/dungeon/southernDoor.png
 ::res://scenes/::1720971847
-::res://scenes/main menu/::1721009819
+::res://scenes/main menu/::1721013026
 main_menu.gd::GDScript::-1::1720971847::0::1::::<>Node<>::
-main_menu.tscn::PackedScene::7367900284711590182::1721009819::0::1::::<><>::res://scenes/main menu/main_menu.gd<>uid://ba7likpdfguit::::res://assets/main menu/back.png<>res://scenes/main menu/ParallaxBackground.gd<>uid://p35sswmlm31r::::res://assets/main menu/middle.png<>uid://tdhmwx0skdm0::::res://assets/main menu/front.png
-ParallaxBackground.gd::GDScript::-1::1720973450::0::1::::<>ParallaxBackground<>::
-::res://scenes/starting_area/::1721009834
-start.gd::GDScript::-1::1721009834::0::1::::<>Node2D<>::
-start.tscn::PackedScene::3350671579625802119::1721009834::0::1::::<><>::uid://dumt5g81678y4::::res://assets/tilesets and props/dungeon/dungeon_1_tileset.png<>res://scenes/starting_area/start.gd<>uid://mrmbvj4sgp2j::::res://assets/tilesets and props/dungeon/dungeon_2_tileset.png<>uid://dhaft6gbgt4my::::res://assets/tilesets and props/dungeon/switch.png<>uid://bedbls8pqhib7::::res://assets/characters/walk_front_motion.png<>uid://bmemwxawonslj::::res://assets/tilesets and props/props/house.png<>uid://bcb28so55cwo2::::res://interactions/southern_door.tscn<>uid://bbm03syent82o::::res://interactions/interaction_area.tscn<>res://scenes/starting_area/test_switch.gd<>uid://d7sw2a8ax5y2::::res://player.tscn<>uid://djgbxlfqoiu58::::res://assets/characters/LEAFY.png<>uid://lno0yo1prvfc::::res://assets/characters/bones2-g280002586_640.png<>uid://bs15ik080lny0::::res://assets/characters/little girl/itsagirl.png<>uid://crbsyb6q2nvdv::::res://assets/music and sound/sound fx/lever pull.ogg
-test_switch.gd::GDScript::-1::1720994733::0::1::::<>Sprite2D<>::
+main_menu.tscn::PackedScene::7367900284711590182::1721013026::0::1::::<><>::res://scenes/main menu/main_menu.gd<>uid://ba7likpdfguit::::res://assets/main menu/back.png<>res://scenes/main menu/ParallaxBackground.gd<>uid://p35sswmlm31r::::res://assets/main menu/middle.png<>uid://tdhmwx0skdm0::::res://assets/main menu/front.png
+ParallaxBackground.gd::GDScript::-1::1721013026::0::1::::<>ParallaxBackground<>::
+::res://scenes/starting_area/::1721013026
+second_area.gd::GDScript::-1::1721013026::0::1::::<>Node2D<>::
+second_area.tscn::PackedScene::8065327713178936906::1721013026::0::1::::<><>::res://scenes/starting_area/second_area.gd<>uid://dumt5g81678y4::::res://assets/tilesets and props/dungeon/dungeon_1_tileset.png<>uid://mrmbvj4sgp2j::::res://assets/tilesets and props/dungeon/dungeon_2_tileset.png<>uid://b4iue8b4wkfkf::::res://assets/tilesets and props/dungeon/objects.png<>uid://d7sw2a8ax5y2::::res://player.tscn<>uid://bbm03syent82o::::res://interactions/interaction_area.tscn
+start.gd::GDScript::-1::1721013026::0::1::::<>Node2D<>::
+start.tscn::PackedScene::3350671579625802119::1721013026::0::1::::<><>::uid://dumt5g81678y4::::res://assets/tilesets and props/dungeon/dungeon_1_tileset.png<>res://scenes/starting_area/start.gd<>uid://mrmbvj4sgp2j::::res://assets/tilesets and props/dungeon/dungeon_2_tileset.png<>uid://dhaft6gbgt4my::::res://assets/tilesets and props/dungeon/switch.png<>uid://bedbls8pqhib7::::res://assets/characters/walk_front_motion.png<>uid://bmemwxawonslj::::res://assets/tilesets and props/props/house.png<>uid://bcb28so55cwo2::::res://interactions/southern_door.tscn<>uid://bbm03syent82o::::res://interactions/interaction_area.tscn<>res://scenes/starting_area/test_switch.gd<>uid://d7sw2a8ax5y2::::res://player.tscn<>uid://djgbxlfqoiu58::::res://assets/characters/LEAFY.png<>uid://lno0yo1prvfc::::res://assets/characters/bones2-g280002586_640.png<>uid://bs15ik080lny0::::res://assets/characters/little girl/itsagirl.png<>uid://crbsyb6q2nvdv::::res://assets/music and sound/sound fx/lever pull.ogg
+test_switch.gd::GDScript::-1::1721013026::0::1::::<>Sprite2D<>::

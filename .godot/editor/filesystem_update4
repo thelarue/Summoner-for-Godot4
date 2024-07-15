@@ -1,21 +1,5 @@
-res://player.tscn
-res://player.gd
 res://scenes/starting_area/start.tscn
-res://scenes/main menu/main_menu.tscn
-res://scenes/main menu/ParallaxBackground.gd
-res://scenes/starting_area/start.gd
-res://scenes/starting_area/testcommonBattle.gd
-res://scenes/starting_area/test_switch.gd
-res://interaction_area.tscn
-res://interaction_area.gd
-res://interaction_manager.tscn
-res://interactions/interaction_manager.tscn
-res://interactions/interaction_manager.gd
-res://interactions/interaction_area.gd
-res://interactions/interaction_area.tscn
-res://interactions/interactiveTilemap.gd
-res://interactions/open_southern_door.tscn
-res://interactions/southern_door.tscn
-res://interactions/interactive_tilemap.tscn
 res://scenes/starting_area/second_area.tscn
-res://scenes/starting_area/second_area.gd
+res://audio_player.gd
+res://audio_player.tscn
+res://scenes/starting_area/start.gd
