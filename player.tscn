@@ -186,7 +186,8 @@ _data = {
 "walk_up": SubResource("Animation_u6bm3")
 }
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 3
 script = ExtResource("1_swdcq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

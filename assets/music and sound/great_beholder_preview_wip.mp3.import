@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvqigf8akok5b"
+path="res://.godot/imported/great_beholder_preview_wip.mp3-021434c3104af992d5f8bbf2e3d00b3b.mp3str"
+
+[deps]
+
+source_file="res://assets/music and sound/great_beholder_preview_wip.mp3"
+dest_files=["res://.godot/imported/great_beholder_preview_wip.mp3-021434c3104af992d5f8bbf2e3d00b3b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5u0f6qy67dxo"]
+
+[sub_resource type="GDScript" id="GDScript_18wy2"]
+script/source = "extends TileMap
+class_name InteractiveTilemap
+
+@export var TILE_SCENES : Dictionary = {
+	Vector2(3,0): preload(\"res://interactions/open_southern_door.tscn\"),
+}
+
+@onready var half_cell_size := tile_set.tile_size * 0.5
+
+var search_layer := 0
+
+func _ready():
+	await get_tree().process_frame
+	_replace_tiles_with_scene()
+	
+func _replace_tiles_with_scene(scene_dictionary: Dictionary = TILE_SCENES):
+	for key in scene_dictionary.keys():
+		for tile_pos in get_used_cells_by_id(search_layer, 0, key):
+			var obj_scene = scene_dictionary[key]
+			_replace_tile_with_object(tile_pos, obj_scene)
+
+func _replace_tile_with_object(tile_pos: Vector2, obj_scene: PackedScene, parent: Node = get_tree().current_scene):
+	if get_cell_source_id(search_layer, tile_pos) != -1:
+		set_cell(search_layer, tile_pos, -1)
+	
+	if obj_scene:
+		var obj = obj_scene.instantiate() as StaticBody2D
+		var ob_pos = map_to_local(tile_pos) - half_cell_size
+		parent.add_child(obj)
+		obj.global_position = to_global(ob_pos)
+"
+
+[node name="interactiveTilemap" type="TileMap"]
+format = 2
+script = SubResource("GDScript_18wy2")

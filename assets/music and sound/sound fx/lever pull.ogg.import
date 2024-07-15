@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crbsyb6q2nvdv"
+path="res://.godot/imported/lever pull.ogg-942056f3fbd694975e476ec41292886b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music and sound/sound fx/lever pull.ogg"
+dest_files=["res://.godot/imported/lever pull.ogg-942056f3fbd694975e476ec41292886b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
