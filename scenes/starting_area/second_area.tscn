@@ -3008,7 +3008,6 @@ sources/2 = SubResource("TileSetAtlasSource_br0j2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kngd"]
 
 [node name="second_area" type="Node2D"]
-scale = Vector2(4, 4)
 script = ExtResource("1_3m68l")
 
 [node name="TileMap" type="TileMap" parent="."]

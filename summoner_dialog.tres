@@ -31,7 +31,8 @@ script = ExtResource("2_cu36l")
 scene = ExtResource("5_cvd44")
 overrides = {
 "box_margin_bottom": "5.0",
-"box_size": "Vector2(275, 75)",
+"box_panel": "\"vn_textbox_default_panel.tres\"",
+"box_size": "Vector2(300, 75)",
 "normal_font": "\"res://assets/AmiNo8bitFont.ttf\"",
 "text_size": "3.0",
 "text_use_global_font": "false"

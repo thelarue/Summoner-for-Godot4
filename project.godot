@@ -24,15 +24,21 @@ AudioPlayer="*res://audio_player.tscn"
 [dialogic]
 
 directories/dch_directory={
+"cultist": "res://dialogues/debug room/cultist.dch",
 "little girl": "res://little girl.dch"
 }
 directories/dtl_directory={
-"intro": "res://intro.dtl"
+"commonBattleConvo": "res://dialogues/debug room/commonBattleConvo.dtl",
+"intro": "res://dialogues/debug room/intro.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://summoner_dialog.tres"]
 layout/default_style="res://summoner_dialog.tres"
-variables={}
+variables={
+"debug room": {
+"cBattle": false
+}
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -108,6 +114,14 @@ menu={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="hazards"
+2d_physics/layer_3="environment"
+2d_physics/layer_4="enemies"
+2d_physics/layer_5="interactive"
 
 [physics]
 

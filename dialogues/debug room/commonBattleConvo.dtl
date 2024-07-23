@@ -1,0 +1,6 @@
+join  center
+cultist: Would you like to have a 'common' battle?
+- Yes
+	set {debug room.cBattle} = true
+- No
+	[end_timeline]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bn0dcorn6ak12"]
+[gd_scene load_steps=33 format=3 uid="uid://bn0dcorn6ak12"]
 
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="1_kw7wn"]
 [ext_resource type="Script" path="res://scenes/starting_area/start.gd" id="1_w8yj5"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://djgbxlfqoiu58" path="res://assets/characters/LEAFY.png" id="7_x0wkm"]
 [ext_resource type="Texture2D" uid="uid://lno0yo1prvfc" path="res://assets/characters/bones2-g280002586_640.png" id="8_mdt7j"]
 [ext_resource type="Texture2D" uid="uid://bs15ik080lny0" path="res://assets/characters/little girl/itsagirl.png" id="9_bdkbn"]
+[ext_resource type="Script" path="res://scenes/starting_area/commonBattle.gd" id="10_nhabd"]
 [ext_resource type="AudioStream" uid="uid://crbsyb6q2nvdv" path="res://assets/music and sound/sound fx/lever pull.ogg" id="13_i1q81"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_thq3x"]
@@ -2984,7 +2985,8 @@ size = Vector2(23, 9.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jd6ey"]
 radius = 9.05539
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hasii"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2gaoi"]
+radius = 13.9284
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4o5jl"]
 
@@ -3055,18 +3057,23 @@ shape = SubResource("CircleShape2D_p3be7")
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_jd6ey")
 
-[node name="commonBattle2" type="Sprite2D" parent="interactives"]
+[node name="commonBattle" type="Sprite2D" parent="interactives"]
 position = Vector2(47, 25)
 texture = ExtResource("4_udhto")
 hframes = 4
+script = ExtResource("10_nhabd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/commonBattle2"]
-position = Vector2(1, 7)
-shape = SubResource("CircleShape2D_hasii")
+[node name="interactionArea" parent="interactives/commonBattle" instance=ExtResource("6_cur6a")]
+collision_layer = 1
+action_name = "battle"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="interactives/commonBattle2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/commonBattle/interactionArea"]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_2gaoi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/commonBattle2/StaticBody2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="interactives/commonBattle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/commonBattle/StaticBody2D"]
 position = Vector2(1, 7)
 shape = SubResource("CircleShape2D_4o5jl")
 

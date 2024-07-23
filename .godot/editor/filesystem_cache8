@@ -1,14 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1721016338
+::res://::1721696671
 audio_player.gd::GDScript::-1::1721013429::0::1::::<>AudioStreamPlayer<>::
-audio_player.tscn::PackedScene::5919067326123941257::1721016314::0::1::::<><>::res://audio_player.gd
+audio_player.tscn::PackedScene::5919067326123941257::1721594152::0::1::::<><>::res://audio_player.gd
 icon.svg::CompressedTexture2D::1280879423826446536::1720971847::1720971847::1::::<><>::
-intro.dtl::Resource::-1::1721015984::0::1::::<><>::
 little girl.dch::Resource::-1::1720971847::0::1::::<><>::
-player.gd::GDScript::-1::1721013026::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::277760232010476443::1721013026::0::1::::<><>::res://player.gd<>uid://bs15ik080lny0::::res://assets/characters/little girl/itsagirl.png
-summoner_dialog.tres::Resource/DialogicStyle::3950319981154826978::1721016338::0::1::::<><>::uid://c1k5m0w3r40xf::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn<>res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://cy1y14inwkplb::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://bquja8jyk8kbr::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn<>uid://dsbwnp5hegnu3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn<>uid://dhk6j6eb6e3q::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn<>uid://cvgf4c6gg0tsy::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn<>uid://lx24i8fl6uo::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn<>res://addons/dialogic/Resources/dialogic_style.gd
-::res://addons/::1720971847
+player.gd::GDScript::-1::1721016946::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::277760232010476443::1721597123::0::1::::<><>::res://player.gd<>uid://bs15ik080lny0::::res://assets/characters/little girl/itsagirl.png
+summoner_dialog.tres::Resource/DialogicStyle::3950319981154826978::1721594080::0::1::::<><>::uid://c1k5m0w3r40xf::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn<>res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://cy1y14inwkplb::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://bquja8jyk8kbr::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn<>uid://dsbwnp5hegnu3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn<>uid://dhk6j6eb6e3q::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn<>uid://cvgf4c6gg0tsy::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn<>uid://lx24i8fl6uo::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn<>res://addons/dialogic/Resources/dialogic_style.gd
+::res://addons/::1721594426
 ::res://addons/dialogic/::1720971847
 plugin.cfg::TextFile::-1::1720971847::0::1::::<><>::
 plugin.gd::GDScript::-1::1720971847::0::1::::<>EditorPlugin<>::
@@ -18,11 +17,11 @@ DialogicResourceUtil.gd::GDScript::-1::1720971847::0::1::::DialogicResourceUtil<
 DialogicUtil.gd::GDScript::-1::1720971847::0::1::::DialogicUtil<>RefCounted<>::
 Dialogic_Subsystem.gd::GDScript::-1::1720971847::0::1::::DialogicSubsystem<>Node<>::
 index_class.gd::GDScript::-1::1720971847::0::1::::DialogicIndexer<>RefCounted<>::
-::res://addons/dialogic/Editor/::1721016314
+::res://addons/dialogic/Editor/::1721594152
 dialogic_editor.gd::GDScript::-1::1720971847::0::1::::DialogicEditor<>Control<>::
 editors_manager.gd::GDScript::-1::1720971847::0::1::::<>Control<>::
 editor_main.gd::GDScript::-1::1720971847::0::1::::<>Control<>::
-editor_main.tscn::PackedScene::7505484045520919990::1721016314::0::1::::<><>::res://addons/dialogic/Editor/editor_main.gd<>res://addons/dialogic/Editor/editors_manager.gd<>uid://dybg3l5pwetne::::res://addons/dialogic/Editor/Images/plugin-icon.svg<>uid://cwe3r2tbh2og1::::res://addons/dialogic/Editor/Common/side_bar.tscn<>res://addons/dialogic/Editor/Common/toolbar.gd<>uid://bbea0efx0ybu7::::res://addons/dialogic/Editor/Images/Resources/character.svg<>uid://b5xwnxdb7064n::::res://addons/dialogic/Modules/Glossary/icon.svg<>uid://1mccycya6eua::::res://addons/dialogic/Modules/StyleEditor/styles_icon.svg<>uid://ckilxvwc34s84::::res://addons/dialogic/Modules/Variable/variable.svg<>uid://c7lmt5cp7bxcm::::res://addons/dialogic/Editor/Common/reference_manager.tscn<>res://addons/dialogic/Editor/Common/reference_manager_window.gd<>res://addons/dialogic/Editor/TimelineEditor/TextEditor/CodeCompletionHelper.gd<>res://addons/dialogic/Editor/Common/update_manager.gd<>uid://vv3m5m68fwg7::::res://addons/dialogic/Editor/Common/update_install_window.tscn
+editor_main.tscn::PackedScene::7505484045520919990::1721594152::0::1::::<><>::res://addons/dialogic/Editor/editor_main.gd<>res://addons/dialogic/Editor/editors_manager.gd<>uid://dybg3l5pwetne::::res://addons/dialogic/Editor/Images/plugin-icon.svg<>uid://cwe3r2tbh2og1::::res://addons/dialogic/Editor/Common/side_bar.tscn<>res://addons/dialogic/Editor/Common/toolbar.gd<>uid://bbea0efx0ybu7::::res://addons/dialogic/Editor/Images/Resources/character.svg<>uid://b5xwnxdb7064n::::res://addons/dialogic/Modules/Glossary/icon.svg<>uid://1mccycya6eua::::res://addons/dialogic/Modules/StyleEditor/styles_icon.svg<>uid://ckilxvwc34s84::::res://addons/dialogic/Modules/Variable/variable.svg<>uid://c7lmt5cp7bxcm::::res://addons/dialogic/Editor/Common/reference_manager.tscn<>res://addons/dialogic/Editor/Common/reference_manager_window.gd<>res://addons/dialogic/Editor/TimelineEditor/TextEditor/CodeCompletionHelper.gd<>res://addons/dialogic/Editor/Common/update_manager.gd<>uid://vv3m5m68fwg7::::res://addons/dialogic/Editor/Common/update_install_window.tscn
 ::res://addons/dialogic/Editor/CharacterEditor/::1720971847
 character_editor.gd::GDScript::-1::1720971847::0::1::::<>DialogicEditor<>::
 character_editor.tscn::PackedScene::7969110390860207197::1720971847::0::1::::<><>::res://addons/dialogic/Editor/CharacterEditor/character_editor.gd<>uid://dbpkta2tjsqim::::res://addons/dialogic/Editor/Common/hint_tooltip_icon.tscn<>res://addons/dialogic/Editor/CharacterEditor/character_editor_portrait_tree.gd<>uid://babwe22dqjta::::res://addons/dialogic/Editor/Images/Pieces/add-folder.svg
@@ -66,9 +65,9 @@ update_manager.gd::GDScript::-1::1720971847::0::1::::<>Node<>::
 BranchEnd.gd::GDScript::-1::1720971847::0::1::::<>Control<>::
 BranchEnd.tscn::PackedScene::7495400415936998277::1720971847::0::1::::<><>::res://addons/dialogic/Editor/Events/BranchEnd.gd
 event_field.gd::GDScript::-1::1720971847::0::1::::DialogicVisualEditorField<>Control<>::
-::res://addons/dialogic/Editor/Events/EventBlock/::1721016314
+::res://addons/dialogic/Editor/Events/EventBlock/::1721594152
 event_block.gd::GDScript::-1::1720971847::0::1::::<>MarginContainer<>::
-event_block.tscn::PackedScene::3931989193750211311::1721016314::0::1::::<><>::res://addons/dialogic/Editor/Events/EventBlock/event_block.gd<>uid://cl75ikyq2is7c::::res://addons/dialogic/Editor/Events/styles/unselected_stylebox.tres<>uid://dybg3l5pwetne::::res://addons/dialogic/Editor/Images/plugin-icon.svg
+event_block.tscn::PackedScene::3931989193750211311::1721594152::0::1::::<><>::res://addons/dialogic/Editor/Events/EventBlock/event_block.gd<>uid://cl75ikyq2is7c::::res://addons/dialogic/Editor/Events/styles/unselected_stylebox.tres<>uid://dybg3l5pwetne::::res://addons/dialogic/Editor/Images/plugin-icon.svg
 event_right_click_menu.gd::GDScript::-1::1720971847::0::1::::<>PopupMenu<>::
 ::res://addons/dialogic/Editor/Events/Fields/::1720971847
 array_part.gd::GDScript::-1::1720971847::0::1::::<>PanelContainer<>::
@@ -665,11 +664,16 @@ vase.png::CompressedTexture2D::968109132137286714::1720971847::1720971847::1::::
 tileset_forest_2.png::CompressedTexture2D::456099013976778432::1720971847::1720971847::1::::<><>::
 tileset_grotto.png::CompressedTexture2D::81718173023044091::1720971847::1720971847::1::::<><>::
 tileset_village.png::CompressedTexture2D::1763653256680064808::1720971847::1720971847::1::::<><>::
-::res://interactions/::1721013026
-interaction_area.gd::GDScript::-1::1721013026::0::1::::InteractionArea<>Area2D<>::
+::res://dialogues/::1721594471
+::res://dialogues/debug room/::1721594948
+commonBattleConvo.dtl::Resource::-1::1721594948::0::1::::<><>::
+cultist.dch::Resource::-1::1721594523::0::1::::<><>::
+intro.dtl::Resource::-1::1721015984::0::1::::<><>::
+::res://interactions/::1721597123
+interaction_area.gd::GDScript::-1::1721595180::0::1::::InteractionArea<>Area2D<>::
 interaction_area.tscn::PackedScene::2482950970123857936::1721013026::0::1::::<><>::res://interactions/interaction_area.gd
 interaction_manager.gd::GDScript::-1::1721013026::0::1::::<>Node2D<>::
-interaction_manager.tscn::PackedScene::1925504265288427309::1721013026::0::1::::<><>::res://interactions/interaction_manager.gd
+interaction_manager.tscn::PackedScene::1925504265288427309::1721597123::0::1::::<><>::res://interactions/interaction_manager.gd
 interactive_tilemap.tscn::PackedScene::6921322739470918936::1721013026::0::1::::<><>::
 southern_door.tscn::PackedScene::2530562007177603455::1721013026::0::1::::<><>::uid://cjalyk407k0l6::::res://assets/tilesets and props/dungeon/southernDoor.png
 ::res://scenes/::1720971847
@@ -677,9 +681,10 @@ southern_door.tscn::PackedScene::2530562007177603455::1721013026::0::1::::<><>::
 main_menu.gd::GDScript::-1::1720971847::0::1::::<>Node<>::
 main_menu.tscn::PackedScene::7367900284711590182::1721013026::0::1::::<><>::res://scenes/main menu/main_menu.gd<>uid://ba7likpdfguit::::res://assets/main menu/back.png<>res://scenes/main menu/ParallaxBackground.gd<>uid://p35sswmlm31r::::res://assets/main menu/middle.png<>uid://tdhmwx0skdm0::::res://assets/main menu/front.png
 ParallaxBackground.gd::GDScript::-1::1721013026::0::1::::<>ParallaxBackground<>::
-::res://scenes/starting_area/::1721016324
+::res://scenes/starting_area/::1721597252
+commonBattle.gd::GDScript::-1::1721595060::0::1::::<>Sprite2D<>::
 second_area.gd::GDScript::-1::1721013026::0::1::::<>Node2D<>::
-second_area.tscn::PackedScene::8065327713178936906::1721016314::0::1::::<><>::res://scenes/starting_area/second_area.gd<>uid://dumt5g81678y4::::res://assets/tilesets and props/dungeon/dungeon_1_tileset.png<>uid://mrmbvj4sgp2j::::res://assets/tilesets and props/dungeon/dungeon_2_tileset.png<>uid://b4iue8b4wkfkf::::res://assets/tilesets and props/dungeon/objects.png<>uid://d7sw2a8ax5y2::::res://player.tscn<>uid://bbm03syent82o::::res://interactions/interaction_area.tscn
-start.gd::GDScript::-1::1721016160::0::1::::<>Node2D<>::
-start.tscn::PackedScene::3350671579625802119::1721016324::0::1::::<><>::uid://dumt5g81678y4::::res://assets/tilesets and props/dungeon/dungeon_1_tileset.png<>res://scenes/starting_area/start.gd<>uid://mrmbvj4sgp2j::::res://assets/tilesets and props/dungeon/dungeon_2_tileset.png<>uid://dhaft6gbgt4my::::res://assets/tilesets and props/dungeon/switch.png<>uid://bedbls8pqhib7::::res://assets/characters/walk_front_motion.png<>uid://bmemwxawonslj::::res://assets/tilesets and props/props/house.png<>uid://bcb28so55cwo2::::res://interactions/southern_door.tscn<>uid://bbm03syent82o::::res://interactions/interaction_area.tscn<>res://scenes/starting_area/test_switch.gd<>uid://d7sw2a8ax5y2::::res://player.tscn<>uid://djgbxlfqoiu58::::res://assets/characters/LEAFY.png<>uid://lno0yo1prvfc::::res://assets/characters/bones2-g280002586_640.png<>uid://bs15ik080lny0::::res://assets/characters/little girl/itsagirl.png<>uid://crbsyb6q2nvdv::::res://assets/music and sound/sound fx/lever pull.ogg
+second_area.tscn::PackedScene::8065327713178936906::1721594162::0::1::::<><>::res://scenes/starting_area/second_area.gd<>uid://dumt5g81678y4::::res://assets/tilesets and props/dungeon/dungeon_1_tileset.png<>uid://mrmbvj4sgp2j::::res://assets/tilesets and props/dungeon/dungeon_2_tileset.png<>uid://b4iue8b4wkfkf::::res://assets/tilesets and props/dungeon/objects.png<>uid://d7sw2a8ax5y2::::res://player.tscn<>uid://bbm03syent82o::::res://interactions/interaction_area.tscn
+start.gd::GDScript::-1::1721594933::0::1::::<>Node2D<>::
+start.tscn::PackedScene::3350671579625802119::1721597252::0::1::::<><>::uid://dumt5g81678y4::::res://assets/tilesets and props/dungeon/dungeon_1_tileset.png<>res://scenes/starting_area/start.gd<>uid://mrmbvj4sgp2j::::res://assets/tilesets and props/dungeon/dungeon_2_tileset.png<>uid://dhaft6gbgt4my::::res://assets/tilesets and props/dungeon/switch.png<>uid://bedbls8pqhib7::::res://assets/characters/walk_front_motion.png<>uid://bmemwxawonslj::::res://assets/tilesets and props/props/house.png<>uid://bcb28so55cwo2::::res://interactions/southern_door.tscn<>uid://bbm03syent82o::::res://interactions/interaction_area.tscn<>res://scenes/starting_area/test_switch.gd<>uid://d7sw2a8ax5y2::::res://player.tscn<>uid://djgbxlfqoiu58::::res://assets/characters/LEAFY.png<>uid://lno0yo1prvfc::::res://assets/characters/bones2-g280002586_640.png<>uid://bs15ik080lny0::::res://assets/characters/little girl/itsagirl.png<>res://scenes/starting_area/commonBattle.gd<>uid://crbsyb6q2nvdv::::res://assets/music and sound/sound fx/lever pull.ogg
 test_switch.gd::GDScript::-1::1721013026::0::1::::<>Sprite2D<>::

@@ -1,9 +1,6 @@
-res://summoner_dialog.tres
-res://addons/dialogic/Editor/editor_main.tscn
-res://intro.dtl
-res://scenes/starting_area/start.tscn
-res://scenes/starting_area/start.gd
-res://scenes/starting_area/second_area.tscn
 res://audio_player.tscn
-res://addons/dialogic/Editor/Events/EventBlock/event_block.tscn
-res://player.gd
+res://summoner_dialog.tres
+res://audio_player.gd
+res://scenes/starting_area/start.tscn
+res://interactions/interaction_manager.tscn
+res://player.tscn

@@ -3,7 +3,7 @@ extends AudioStreamPlayer
 
 const level_music = preload("res://assets/music and sound/great_beholder_preview_wip.mp3")
 
-func _play_music(music: AudioStream, volume = -10.0):
+func _play_music(music: AudioStream, volume = -20.0):
 	if stream == music:
 		return
 	stream = music
