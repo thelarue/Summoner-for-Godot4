@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bn0dcorn6ak12"]
+[gd_scene load_steps=34 format=3 uid="uid://bn0dcorn6ak12"]
 
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="1_kw7wn"]
 [ext_resource type="Script" path="res://scenes/starting_area/start.gd" id="1_w8yj5"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://lno0yo1prvfc" path="res://assets/characters/bones2-g280002586_640.png" id="8_mdt7j"]
 [ext_resource type="Texture2D" uid="uid://bs15ik080lny0" path="res://assets/characters/little girl/itsagirl.png" id="9_bdkbn"]
 [ext_resource type="Script" path="res://scenes/starting_area/commonBattle.gd" id="10_nhabd"]
+[ext_resource type="PackedScene" uid="uid://bdy3a13syefe2" path="res://scenes/utils/actionable.tscn" id="11_vy6bg"]
 [ext_resource type="AudioStream" uid="uid://crbsyb6q2nvdv" path="res://assets/music and sound/sound fx/lever pull.ogg" id="13_i1q81"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_thq3x"]
@@ -2985,10 +2986,10 @@ size = Vector2(23, 9.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jd6ey"]
 radius = 9.05539
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4o5jl"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_2gaoi"]
 radius = 13.9284
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4o5jl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l2qri"]
 
@@ -3063,19 +3064,17 @@ texture = ExtResource("4_udhto")
 hframes = 4
 script = ExtResource("10_nhabd")
 
-[node name="interactionArea" parent="interactives/commonBattle" instance=ExtResource("6_cur6a")]
-collision_layer = 1
-action_name = "battle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/commonBattle/interactionArea"]
-position = Vector2(0, 11)
-shape = SubResource("CircleShape2D_2gaoi")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="interactives/commonBattle"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/commonBattle/StaticBody2D"]
 position = Vector2(1, 7)
 shape = SubResource("CircleShape2D_4o5jl")
+
+[node name="Actionable" parent="interactives/commonBattle" instance=ExtResource("11_vy6bg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/commonBattle/Actionable"]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_2gaoi")
 
 [node name="summonBattle2" type="Sprite2D" parent="interactives"]
 position = Vector2(111, 32)
@@ -3130,11 +3129,8 @@ shape = SubResource("CircleShape2D_bbpys")
 [node name="player" parent="." instance=ExtResource("6_qhr0m")]
 position = Vector2(127, 89)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-process_callback = 0
-limit_smoothed = true
-
 [node name="soundFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_i1q81")
 
 [connection signal="body_entered" from="bg/southernDoor/interactionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="actioned" from="interactives/commonBattle/Actionable" to="interactives/commonBattle" method="_on_actionable_actioned"]
