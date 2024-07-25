@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Interactable
 	
 func _on_interact():
 	Dialogic.start("res://dialogues/debug room/commonBattleConvo.dtl")

@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Interactable
 
 @onready var interaction_area: InteractionArea = $interactionArea
 @onready var sprite = $"."
@@ -7,6 +7,18 @@ extends Sprite2D
 
 var pressed = 0
 
+
+func save():
+	var save_dict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x,
+		"pos_y" : position.y,
+		"current_frame" : frame 
+	}
+	
+	return save_dict
+	
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	
