@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dm551fb2gpj6q"]
+[gd_scene load_steps=13 format=3 uid="uid://dm551fb2gpj6q"]
 
 [ext_resource type="Script" path="res://scenes/starting_area/second_area.gd" id="1_3m68l"]
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="1_7v17c"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4iue8b4wkfkf" path="res://assets/tilesets and props/dungeon/objects.png" id="3_or7g6"]
 [ext_resource type="PackedScene" uid="uid://d7sw2a8ax5y2" path="res://player.tscn" id="4_53gj1"]
 [ext_resource type="PackedScene" uid="uid://bbm03syent82o" path="res://interactions/interaction_area.tscn" id="5_42how"]
+[ext_resource type="PackedScene" uid="uid://cuvuj3nf5kxfb" path="res://scenes/common_cultist.tscn" id="6_xdy5h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rikuf"]
 texture = ExtResource("1_7v17c")
@@ -3025,8 +3026,13 @@ position = Vector2(24, 9)
 
 [node name="interactionArea" parent="." instance=ExtResource("5_42how")]
 position = Vector2(24, -10)
+collision_layer = 4
+collision_mask = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactionArea"]
 shape = SubResource("RectangleShape2D_1kngd")
+
+[node name="CommonCultist" parent="." instance=ExtResource("6_xdy5h")]
+position = Vector2(221, 520)
 
 [connection signal="body_entered" from="interactionArea" to="." method="_on_interaction_area_body_entered"]

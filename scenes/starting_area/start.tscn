@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bn0dcorn6ak12"]
+[gd_scene load_steps=41 format=3 uid="uid://bn0dcorn6ak12"]
 
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="1_kw7wn"]
 [ext_resource type="Script" path="res://scenes/starting_area/start.gd" id="1_w8yj5"]
@@ -21,6 +21,8 @@
 [ext_resource type="Script" path="res://scripts/savePoint.gd" id="17_5xa6n"]
 [ext_resource type="Script" path="res://scripts/SaverLoader.gd" id="20_yce4u"]
 [ext_resource type="PackedScene" uid="uid://cla2eukdm3fdn" path="res://scenes/spikes.tscn" id="21_pcbiu"]
+[ext_resource type="PackedScene" uid="uid://ohvlxa5r2wto" path="res://scenes/inventory_item.tscn" id="22_t2elx"]
+[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/[32]-Iconset-Starter_Pack_01.png" id="23_1vocu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_thq3x"]
 
@@ -2977,7 +2979,7 @@ texture = ExtResource("5_ue7ta")
 9:6/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_ulomy"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_m4ifi")
 sources/1 = SubResource("TileSetAtlasSource_vme7j")
 sources/2 = SubResource("TileSetAtlasSource_tjauk")
@@ -3022,6 +3024,7 @@ scale = Vector2(717, 550)
 texture = SubResource("CanvasTexture_thq3x")
 
 [node name="TileMap" type="TileMap" parent="bg"]
+scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_ulomy")
 format = 2
 layer_0/name = "Ground"
@@ -3031,9 +3034,14 @@ layer_1/tile_data = PackedInt32Array()
 layer_2/tile_data = PackedInt32Array(458763, 393219, 1342177280, 524299, 458755, 1342177280, 65540, 393219, 2, 131076, 393219, 3, 65541, 458755, 2, 131077, 458755, 3, 131081, 589827, 0, 327682, 262147, 4, 393218, 262147, 5, 458754, 262147, 6, 327683, 327683, 4, 393219, 327683, 5, 458755, 327683, 6)
 
 [node name="southernDoor" parent="bg" instance=ExtResource("6_7hblb")]
-position = Vector2(120, 224)
+position = Vector2(240, 449)
+scale = Vector2(2, 2)
+collision_layer = 4
 
 [node name="interactionArea" parent="bg/southernDoor" instance=ExtResource("6_cur6a")]
+collision_layer = 4
+collision_mask = 1
+script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bg/southernDoor/interactionArea"]
 position = Vector2(0.5, -11.25)
@@ -3044,15 +3052,17 @@ shape = SubResource("RectangleShape2D_11kis")
 [node name="Switch" type="Sprite2D" parent="interactives" groups=["Persist"]]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(96, 198)
+position = Vector2(193, 401)
+scale = Vector2(2, 2)
 texture = ExtResource("3_yuhe1")
 hframes = 3
 frame = 1
 script = ExtResource("6_nmi4d")
 
 [node name="interactionArea" parent="interactives/Switch" instance=ExtResource("6_cur6a")]
-collision_layer = 1
-action_name = "switch"
+collision_layer = 4
+collision_mask = 1
+script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/Switch/interactionArea"]
 shape = SubResource("CircleShape2D_p3be7")
@@ -3064,7 +3074,8 @@ position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_jd6ey")
 
 [node name="commonBattle" type="Sprite2D" parent="interactives" groups=["Persist"]]
-position = Vector2(47, 25)
+position = Vector2(89, 66)
+scale = Vector2(2, 2)
 texture = ExtResource("4_udhto")
 hframes = 4
 script = ExtResource("10_nhabd")
@@ -3082,8 +3093,8 @@ position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_2gaoi")
 
 [node name="summonBattle2" type="Sprite2D" parent="interactives" groups=["Persist"]]
-position = Vector2(111, 32)
-scale = Vector2(0.166667, 0.166667)
+position = Vector2(350, 75)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_x0wkm")
 script = ExtResource("13_e6ugy")
 
@@ -3098,8 +3109,8 @@ shape = SubResource("CircleShape2D_l2qri")
 shape = SubResource("CircleShape2D_1qtkc")
 
 [node name="bossBattle2" type="Sprite2D" parent="interactives" groups=["Persist"]]
-position = Vector2(177, 28)
-scale = Vector2(0.0448276, 0.0448276)
+position = Vector2(234, 72)
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("8_mdt7j")
 script = ExtResource("15_osuy3")
 
@@ -3115,7 +3126,8 @@ shape = SubResource("CircleShape2D_lsmfx")
 
 [node name="savePoint" type="Sprite2D" parent="interactives" groups=["Persist"]]
 self_modulate = Color(0.690196, 0.415686, 1, 1)
-position = Vector2(177, 191)
+position = Vector2(364, 386)
+scale = Vector2(2, 2)
 texture = ExtResource("9_bdkbn")
 hframes = 3
 vframes = 3
@@ -3135,16 +3147,34 @@ position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_bbpys")
 
 [node name="Spikes" parent="." instance=ExtResource("21_pcbiu")]
-position = Vector2(96.1113, 134.285)
+position = Vector2(188, 216)
+scale = Vector2(2, 2)
 
 [node name="player" parent="." instance=ExtResource("6_qhr0m")]
 position = Vector2(127, 89)
 
 [node name="soundFX" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("13_i1q81")
 
 [node name="SaverLoader" type="Node" parent="."]
 script = ExtResource("20_yce4u")
 
+[node name="InventoryItem" parent="." instance=ExtResource("22_t2elx")]
+position = Vector2(252, 139)
+item_type = "Potion"
+item_name = "Health Potion"
+item_texture = ExtResource("23_1vocu")
+item_effect = "+ 1 Hearth"
+
+[node name="InventoryItem2" parent="." instance=ExtResource("22_t2elx")]
+position = Vector2(297, 160)
+item_type = "Potion"
+item_name = "Health Potion"
+item_texture = ExtResource("23_1vocu")
+item_effect = "+ 1 Hearth"
+
 [connection signal="body_entered" from="bg/southernDoor/interactionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_entered" from="interactives/Switch/interactionArea" to="interactives/Switch" method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="interactives/Switch/interactionArea" to="interactives/Switch" method="_on_interaction_area_body_exited"]
 [connection signal="actioned" from="interactives/commonBattle/Actionable" to="interactives/commonBattle" method="_on_actionable_actioned"]
