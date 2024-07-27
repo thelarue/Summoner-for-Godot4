@@ -1,10 +1,7 @@
-extends Sprite2D
-
-@onready var interaction_area = $interactionArea
-
-func _on_ready():
-	interaction_area.interact = Callable(self, "_on_interact")
+extends Interactable
 	
 func _on_interact():
 	Dialogic.start("res://dialogues/debug room/commonBattleConvo.dtl")
 	
+func _on_actionable_actioned():
+	_on_interact()

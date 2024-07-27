@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://cla2eukdm3fdn"]
+
+[ext_resource type="Texture2D" uid="uid://dc2p3sl32xb6t" path="res://assets/tilesets and props/pocketwitch_dungeons1.png" id="1_cihe5"]
+[ext_resource type="Script" path="res://scripts/spikes.gd" id="1_fv4nq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6ulu"]
+atlas = ExtResource("1_cihe5")
+region = Rect2(304, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a22j3"]
+atlas = ExtResource("1_cihe5")
+region = Rect2(320, 224, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1hiy2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6ulu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a22j3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_row3l"]
+size = Vector2(2, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urs74"]
+size = Vector2(16, 16)
+
+[node name="Spikes" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_fv4nq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1hiy2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_row3l")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_urs74")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

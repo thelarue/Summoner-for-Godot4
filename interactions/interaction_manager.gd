@@ -19,9 +19,10 @@ func _process(delta):
 		active_areas.sort_custom(_sort_by_distance_to_player)
 
 func _sort_by_distance_to_player(area1, area2):
-	var area1_player = player.global_position.distance_to(area1.global_position)
-	var area2_player = player.global_position.distance_to(area2.global_position)
-	return area1_player < area2_player
+	if player != null:
+		var area1_player = player.global_position.distance_to(area1.global_position)
+		var area2_player = player.global_position.distance_to(area2.global_position)
+		return area1_player < area2_player
 		
 func _input(event):
 	if event.is_action_pressed("interact") && can_interact:

@@ -10,7 +10,8 @@ func _ready():
 func _process(delta):
 	pass
 
-
-
 func _on_interaction_area_body_entered(body):
+	call_deferred("change_room")
+
+func change_room():
 	get_tree().change_scene_to_file("res://scenes/starting_area/start.tscn")
