@@ -3150,9 +3150,6 @@ shape = SubResource("CircleShape2D_bbpys")
 position = Vector2(188, 216)
 scale = Vector2(2, 2)
 
-[node name="player" parent="." instance=ExtResource("6_qhr0m")]
-position = Vector2(127, 89)
-
 [node name="soundFX" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("13_i1q81")
@@ -3163,16 +3160,23 @@ script = ExtResource("20_yce4u")
 [node name="InventoryItem" parent="." instance=ExtResource("22_t2elx")]
 position = Vector2(252, 139)
 item_type = "Potion"
+item_method = "health_potion"
 item_name = "Health Potion"
 item_texture = ExtResource("23_1vocu")
 item_effect = "+ 1 Hearth"
+effect_value = 1
 
 [node name="InventoryItem2" parent="." instance=ExtResource("22_t2elx")]
 position = Vector2(297, 160)
 item_type = "Potion"
+item_method = "health_potion"
 item_name = "Health Potion"
 item_texture = ExtResource("23_1vocu")
 item_effect = "+ 1 Hearth"
+effect_value = 1
+
+[node name="player" parent="." instance=ExtResource("6_qhr0m")]
+position = Vector2(127, 89)
 
 [connection signal="body_entered" from="bg/southernDoor/interactionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_entered" from="interactives/Switch/interactionArea" to="interactives/Switch" method="_on_interaction_area_body_entered"]

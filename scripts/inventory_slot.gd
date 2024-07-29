@@ -1,7 +1,7 @@
 extends Control
 
-@onready var item_icon = $InnerBorder/ItemIcon
-@onready var item_quantity = $InnerBorder/ItemQuantity
+@onready var item_icon = $SlotIcon/ItemIcon
+@onready var item_quantity = $SlotIcon/ItemQuantity
 @onready var details_panel = $DetailsPanel
 @onready var item_name = $DetailsPanel/ItemName
 @onready var item_type = $DetailsPanel/ItemType
@@ -44,5 +44,12 @@ func _on_drop_button_pressed():
 		var drop_offset = Vector2(0, 30)
 		drop_offset = drop_offset.rotated(InventoryManager.player_node.get_node("Marker2D").rotation)
 		InventoryManager.drop_item(item, drop_position + drop_offset)
+		InventoryManager.remove_item(item["type"], item["effect"])
+		usage_panel.visible = false
+
+
+func _on_use_button_pressed():
+	if item != null and EffectManager.has_method(item["method"]):
+		EffectManager.call(item["method"], item["value"])
 		InventoryManager.remove_item(item["type"], item["effect"])
 		usage_panel.visible = false

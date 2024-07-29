@@ -1,10 +1,14 @@
 @tool
 extends Node2D
 
+class_name Item
+
 @export var item_type : String = ""
+@export var item_method : String = ""
 @export var item_name : String = ""
 @export var item_texture : Texture
 @export var item_effect : String = ""
+@export var effect_value : int = 0
 
 var scene_path : String = "res://scenes/inventory_item.tscn"
 
@@ -29,7 +33,9 @@ func pickup_item():
 		"name" : item_name,
 		"texture" : item_texture,
 		"effect" : item_effect,
-		"scene_path" : scene_path
+		"method" : item_method,
+		"value" : effect_value,
+ 		"scene_path" : scene_path
 	}
 	if InventoryManager.player_node:
 		InventoryManager.add_item(item)
@@ -49,3 +55,6 @@ func set_item_data(data):
 	item_name = data["name"]
 	item_effect = data["effect"]
 	item_texture = data["texture"]
+
+
+	

@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://d7sw2a8ax5y2"]
+[gd_scene load_steps=37 format=3 uid="uid://d7sw2a8ax5y2"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_swdcq"]
 [ext_resource type="Shader" path="res://moody_shader.gdshader" id="2_etysu"]
 [ext_resource type="Texture2D" uid="uid://t0vovc75nl3b" path="res://assets/characters/little girl/little_girl.png" id="3_4g1a0"]
+[ext_resource type="Texture2D" uid="uid://cy4pgbh4hsmy3" path="res://assets/characters/hearts.png" id="3_rrfx6"]
 [ext_resource type="PackedScene" uid="uid://50rdw1dt63h6" path="res://scenes/inventory_ui.tscn" id="4_gvsyx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tqqgk"]
@@ -17,6 +18,111 @@ shader_parameter/outer_radius = 1.0
 shader_parameter/vignette_strength = 2.0
 shader_parameter/dither_strength = 0.03
 shader_parameter/vignette_color = null
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaure"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grnng"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pivm"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy6cf"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45wrx"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s63fn"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asees"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o30o"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx8c8"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xua4w"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs8ev"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(576, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew66b"]
+atlas = ExtResource("3_rrfx6")
+region = Rect2(608, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_77jiv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaure")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grnng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pivm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy6cf")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45wrx")
+}],
+"loop": true,
+"name": &"full_health",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s63fn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asees")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o30o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lx8c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xua4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs8ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew66b")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"lose_heart",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrvrn"]
 size = Vector2(20, 11)
@@ -173,6 +279,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="PlayerHealth" type="Node2D" parent="CollisionShape2D/Camera2D/CanvasLayer"]
+
+[node name="Heart" type="AnimatedSprite2D" parent="CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth"]
+position = Vector2(25, 20)
+sprite_frames = SubResource("SpriteFrames_77jiv")
+animation = &"full_health"
+autoplay = "full_health"
+
+[node name="Heart2" type="AnimatedSprite2D" parent="CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth"]
+position = Vector2(75, 20)
+sprite_frames = SubResource("SpriteFrames_77jiv")
+animation = &"full_health"
+autoplay = "full_health"
+
+[node name="Heart3" type="AnimatedSprite2D" parent="CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth"]
+position = Vector2(125, 20)
+sprite_frames = SubResource("SpriteFrames_77jiv")
+animation = &"full_health"
+autoplay = "full_health"
+frame_progress = 1.0
+
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Marker2D"]
@@ -195,16 +322,15 @@ wait_time = 0.1
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="InventoryUI" parent="InventoryUI" instance=ExtResource("4_gvsyx")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 265.0
+offset_top = 41.0
+offset_right = 265.0
+offset_bottom = 41.0
 grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.439216, 0.439216, 0.439216, 0)
-
-[node name="InventoryUI" parent="InventoryUI/ColorRect" instance=ExtResource("4_gvsyx")]
-layout_mode = 1
 
 [connection signal="area_entered" from="Marker2D/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Marker2D/Area2D" to="." method="_on_area_2d_area_exited"]

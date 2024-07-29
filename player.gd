@@ -4,11 +4,18 @@ extends CharacterBody2D
 @export var speed = 100
 var current_speed = speed
 var sprint_speed = 150
-@export var health = 3
+@export var health = 6
 @onready var anim = $AnimatedSprite2D
 var vulnerable = true
 var blinking = false
 var can_move = true
+
+@onready var heart_sprites = [
+	$CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth/Heart,
+	$CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth/Heart2,
+	$CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth/Heart3
+]
+
 @onready var inventory_ui = $InventoryUI
 
 
@@ -19,6 +26,7 @@ var nearest_interactable: Actionable = null
 
 func _ready():
 	InventoryManager.set_player_reference(self)
+	EffectManager.set_player_reference(self)
 	
 func player_movement():
 	var move = Input.get_vector("left", "right", "up", "down")
@@ -86,11 +94,24 @@ func hit(dmg):
 		health -= dmg
 		vulnerable = false
 		blinking = true
+		play_hit_animation(dmg)
 		$HitDelay.start()
 		$Blinking.start()
 		if health <= 0:
 			die()
 
+func play_hit_animation(dmg):
+	var heart_index = floor(health / 2)
+	if heart_index >= 0 and heart_index < heart_sprites.size():
+		var heart_sprite = heart_sprites[heart_index]
+		if dmg == 1 and health % 2 != 0:
+			heart_sprite.play("damage")
+		else:
+			heart_sprite.play("damage")
+			await(get_tree().create_timer(0.5))
+			heart_sprite.play("lose_heart")
+
+	
 func die():
 	queue_free()
 	get_tree().change_scene_to_file("res://scenes/main menu/main_menu.tscn")
@@ -105,5 +126,9 @@ func _on_blinking_timeout():
 	if blinking:
 		anim.visible = !anim.visible
 
+func add_health(health_amount):
+	health += health_amount
+	print(health)
+	
 func apply_item_effect(item):
 	pass
