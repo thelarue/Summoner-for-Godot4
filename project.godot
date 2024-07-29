@@ -22,6 +22,7 @@ InteractionManager="*res://interactions/interaction_manager.tscn"
 AudioPlayer="*res://audio_player.tscn"
 InventoryManager="*res://scripts/InventoryManager.gd"
 EffectManager="*res://scripts/EffectManager.gd"
+Recipes="*res://scripts/Recipes.gd"
 
 [dialogic]
 

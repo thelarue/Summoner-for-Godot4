@@ -1,7 +1,7 @@
 extends Control
 
-@onready var item_icon = $SlotIcon/ItemIcon
-@onready var item_quantity = $SlotIcon/ItemQuantity
+@onready var item_icon = $ItemIcon
+@onready var item_quantity = $ItemIcon/ItemQuantity
 @onready var details_panel = $DetailsPanel
 @onready var item_name = $DetailsPanel/ItemName
 @onready var item_type = $DetailsPanel/ItemType
@@ -50,6 +50,6 @@ func _on_drop_button_pressed():
 
 func _on_use_button_pressed():
 	if item != null and EffectManager.has_method(item["method"]):
-		EffectManager.call(item["method"], item["value"])
+		EffectManager.call(item["method"], item)
 		InventoryManager.remove_item(item["type"], item["effect"])
 		usage_panel.visible = false

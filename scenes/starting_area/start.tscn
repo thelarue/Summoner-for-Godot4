@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bn0dcorn6ak12"]
+[gd_scene load_steps=42 format=3 uid="uid://bn0dcorn6ak12"]
 
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="1_kw7wn"]
 [ext_resource type="Script" path="res://scenes/starting_area/start.gd" id="1_w8yj5"]
@@ -22,7 +22,8 @@
 [ext_resource type="Script" path="res://scripts/SaverLoader.gd" id="20_yce4u"]
 [ext_resource type="PackedScene" uid="uid://cla2eukdm3fdn" path="res://scenes/spikes.tscn" id="21_pcbiu"]
 [ext_resource type="PackedScene" uid="uid://ohvlxa5r2wto" path="res://scenes/inventory_item.tscn" id="22_t2elx"]
-[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/[32]-Iconset-Starter_Pack_01.png" id="23_1vocu"]
+[ext_resource type="Texture2D" uid="uid://d1puyhk74h6v1" path="res://assets/[32]-Iconset-Starter_Pack_171.png" id="23_hrndp"]
+[ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/[32]-Iconset-Starter_Pack_172.png" id="24_qrlja"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_thq3x"]
 
@@ -2990,8 +2991,8 @@ size = Vector2(23, 9.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p3be7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jd6ey"]
-radius = 9.05539
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4v5vb"]
+size = Vector2(18.5, 17)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4o5jl"]
 
@@ -3068,10 +3069,11 @@ script = null
 shape = SubResource("CircleShape2D_p3be7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="interactives/Switch"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/Switch/StaticBody2D"]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_jd6ey")
+position = Vector2(-0.75, -0.5)
+shape = SubResource("RectangleShape2D_4v5vb")
 
 [node name="commonBattle" type="Sprite2D" parent="interactives" groups=["Persist"]]
 position = Vector2(89, 66)
@@ -3158,22 +3160,20 @@ stream = ExtResource("13_i1q81")
 script = ExtResource("20_yce4u")
 
 [node name="InventoryItem" parent="." instance=ExtResource("22_t2elx")]
-position = Vector2(252, 139)
-item_type = "Potion"
-item_method = "health_potion"
-item_name = "Health Potion"
-item_texture = ExtResource("23_1vocu")
-item_effect = "+ 1 Hearth"
-effect_value = 1
+position = Vector2(231.181, 159.818)
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Fungi"
+item_texture = ExtResource("23_hrndp")
+item_effect = "A fungi"
 
 [node name="InventoryItem2" parent="." instance=ExtResource("22_t2elx")]
-position = Vector2(297, 160)
-item_type = "Potion"
-item_method = "health_potion"
-item_name = "Health Potion"
-item_texture = ExtResource("23_1vocu")
-item_effect = "+ 1 Hearth"
-effect_value = 1
+position = Vector2(275, 158)
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Horn"
+item_texture = ExtResource("24_qrlja")
+item_effect = "A horn"
 
 [node name="player" parent="." instance=ExtResource("6_qhr0m")]
 position = Vector2(127, 89)

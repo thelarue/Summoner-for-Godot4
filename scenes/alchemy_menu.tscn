@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6pbaaxq8k1jr"]
+
+[ext_resource type="Script" path="res://scripts/AlchemyMenu.gd" id="1_okqqy"]
+[ext_resource type="Texture2D" uid="uid://cxu3b8casdwtq" path="res://assets/alchem.png" id="2_3hd2i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxt5k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0070"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8i5b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ouav4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_07t5n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8y4xh"]
+
+[node name="AlchemyMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_okqqy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_3hd2i")
+
+[node name="BrewButton" type="Button" parent="Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = -232.5
+offset_right = -190.0
+offset_bottom = -172.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dxt5k")
+
+[node name="FirstIngredient" type="ColorRect" parent="."]
+layout_mode = 1
+offset_left = -45.0
+offset_top = -33.0
+offset_right = -13.0
+offset_bottom = -1.0
+color = Color(1, 1, 1, 0)
+
+[node name="FirstIngredientImage" type="Sprite2D" parent="FirstIngredient"]
+position = Vector2(16, 16)
+
+[node name="SecondIngredient" type="ColorRect" parent="."]
+layout_mode = 1
+offset_left = 11.0
+offset_top = -33.0
+offset_right = 43.0
+offset_bottom = -1.0
+color = Color(1, 1, 1, 0)
+
+[node name="SecondIngredientImage" type="Sprite2D" parent="SecondIngredient"]
+position = Vector2(16, 16)
+
+[node name="Result" type="ColorRect" parent="."]
+layout_mode = 1
+offset_left = -17.0
+offset_top = 2.0
+offset_right = 15.0
+offset_bottom = 34.0
+color = Color(1, 1, 1, 0)
+
+[node name="ResultImage" type="Sprite2D" parent="Result"]
+position = Vector2(16, 16)
+
+[node name="ResultButton" type="Button" parent="Result"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t0070")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n8i5b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ouav4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_07t5n")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8y4xh")
+
+[connection signal="pressed" from="Sprite2D/BrewButton" to="." method="_on_brew_button_pressed"]
+[connection signal="pressed" from="Result/ResultButton" to="." method="_on_result_button_pressed"]

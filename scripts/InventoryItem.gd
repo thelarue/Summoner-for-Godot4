@@ -10,6 +10,8 @@ class_name Item
 @export var item_effect : String = ""
 @export var effect_value : int = 0
 
+@export var recipe : Array[Item] = []
+
 var scene_path : String = "res://scenes/inventory_item.tscn"
 
 @onready var icon_sprite = $Sprite2D
@@ -55,6 +57,8 @@ func set_item_data(data):
 	item_name = data["name"]
 	item_effect = data["effect"]
 	item_texture = data["texture"]
+	effect_value = data["value"]
+	item_method = data["method"]
 
 
 	

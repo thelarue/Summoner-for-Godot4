@@ -1,10 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://d7sw2a8ax5y2"]
+[gd_scene load_steps=38 format=3 uid="uid://d7sw2a8ax5y2"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_swdcq"]
 [ext_resource type="Shader" path="res://moody_shader.gdshader" id="2_etysu"]
 [ext_resource type="Texture2D" uid="uid://t0vovc75nl3b" path="res://assets/characters/little girl/little_girl.png" id="3_4g1a0"]
 [ext_resource type="Texture2D" uid="uid://cy4pgbh4hsmy3" path="res://assets/characters/hearts.png" id="3_rrfx6"]
 [ext_resource type="PackedScene" uid="uid://50rdw1dt63h6" path="res://scenes/inventory_ui.tscn" id="4_gvsyx"]
+[ext_resource type="PackedScene" uid="uid://c6pbaaxq8k1jr" path="res://scenes/alchemy_menu.tscn" id="5_jei75"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tqqgk"]
 radius = 7.07107
@@ -256,6 +257,7 @@ animations = [{
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 process_mode = 3
+z_index = 1
 collision_mask = 6
 script = ExtResource("1_swdcq")
 
@@ -322,15 +324,26 @@ wait_time = 0.1
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 visible = false
 
+[node name="AlchemyMenu" parent="InventoryUI" instance=ExtResource("5_jei75")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 90.0
+offset_top = -70.0
+offset_right = 90.0
+offset_bottom = -70.0
+grow_horizontal = 1
+grow_vertical = 0
+
 [node name="InventoryUI" parent="InventoryUI" instance=ExtResource("4_gvsyx")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 265.0
-offset_top = 41.0
-offset_right = 265.0
-offset_bottom = 41.0
-grow_horizontal = 2
+anchors_preset = 1
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -100.0
+offset_top = 200.0
+offset_right = -100.0
+offset_bottom = 200.0
+grow_vertical = 1
 
 [connection signal="area_entered" from="Marker2D/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Marker2D/Area2D" to="." method="_on_area_2d_area_exited"]
