@@ -8,7 +8,7 @@ var player_node : Node = null
 
 var max_item_quantity = 3
 
-@onready var inventory_slot = preload("res://inventory_slot_test.tscn")
+@onready var inventory_slot = preload("res://scenes/Inventory/inventory_slot.tscn")
 
 func _ready():
 	inventory.resize(6)

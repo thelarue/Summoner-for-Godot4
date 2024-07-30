@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cla2eukdm3fdn"]
 
 [ext_resource type="Texture2D" uid="uid://dc2p3sl32xb6t" path="res://assets/tilesets and props/pocketwitch_dungeons1.png" id="1_cihe5"]
-[ext_resource type="Script" path="res://scripts/spikes.gd" id="1_fv4nq"]
+[ext_resource type="Script" path="res://scripts/Elements/spikes.gd" id="1_fv4nq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6ulu"]
 atlas = ExtResource("1_cihe5")

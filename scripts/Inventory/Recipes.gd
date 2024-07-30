@@ -1,6 +1,6 @@
 extends Node
 
-var item_scene_path = "res://scenes/inventory_item.tscn"
+var item_scene_path = "res://scenes/Inventory/inventory_item.tscn"
 
 var recipes = {
 	["Fungi", "Horn"]: {

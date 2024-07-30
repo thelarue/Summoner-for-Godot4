@@ -12,7 +12,7 @@ class_name Item
 
 @export var recipe : Array[Item] = []
 
-var scene_path : String = "res://scenes/inventory_item.tscn"
+var scene_path : String = "res://scenes/Inventory/inventory_item.tscn"
 
 @onready var icon_sprite = $Sprite2D
 

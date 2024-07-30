@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c6pbaaxq8k1jr"]
 
-[ext_resource type="Script" path="res://scripts/AlchemyMenu.gd" id="1_okqqy"]
+[ext_resource type="Script" path="res://scripts/Inventory/AlchemyMenu.gd" id="1_o4jam"]
 [ext_resource type="Texture2D" uid="uid://cxu3b8casdwtq" path="res://assets/alchem.png" id="2_3hd2i"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxt5k"]
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_okqqy")
+script = ExtResource("1_o4jam")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)

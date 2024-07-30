@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://50rdw1dt63h6"]
 
-[ext_resource type="Script" path="res://scripts/inventory_ui.gd" id="1_qpy4t"]
+[ext_resource type="Script" path="res://scripts/Inventory/inventory_ui.gd" id="1_qpy4t"]
 [ext_resource type="Texture2D" uid="uid://b8t5t8vvnsjm3" path="res://assets/inventory.png" id="2_x22cw"]
 
 [node name="InventoryUI" type="Control"]
