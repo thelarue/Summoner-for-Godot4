@@ -24,6 +24,7 @@ Recipes="*res://scripts/Inventory/Recipes.gd"
 EffectManager="*res://scripts/Utils/EffectManager.gd"
 SummonRecipes="*res://scripts/Summons/SummonRecipes.gd"
 InventoryManager="*res://scripts/Inventory/InventoryManager.gd"
+SummonInventory="*res://scripts/Summons/SummonInventory.gd"
 
 [dialogic]
 

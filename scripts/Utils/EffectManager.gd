@@ -18,9 +18,13 @@ func set_player_reference(player):
 	
 func health_potion(item):
 	player_node.add_health(item["value"])
+	return true
 	
 func use_ingredient(item):
 	alchemy_menu.add_ingredient(item)
+	return true
 
 func use_summon_ingredient(item):
-	summoning_menu.add_summon_ingredient(item)
+	if player_node != null and summoning_menu.visible == true:
+		summoning_menu.add_summon_ingredient(item)
+		return true

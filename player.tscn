@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dga7wbow6g13l"]
+[gd_scene load_steps=40 format=3 uid="uid://dga7wbow6g13l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_swdcq"]
 [ext_resource type="Shader" path="res://moody_shader.gdshader" id="2_etysu"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cy4pgbh4hsmy3" path="res://assets/characters/hearts.png" id="3_rrfx6"]
 [ext_resource type="PackedScene" uid="uid://50rdw1dt63h6" path="res://scenes/Inventory/inventory_ui.tscn" id="4_gvsyx"]
 [ext_resource type="PackedScene" uid="uid://c6pbaaxq8k1jr" path="res://scenes/Inventory/alchemy_menu.tscn" id="5_jei75"]
-[ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/summoning_circle.tscn" id="7_h8pb3"]
+[ext_resource type="PackedScene" uid="uid://c1ebrg8kocewe" path="res://scenes/Summons/summon_team.tscn" id="8_nq6vc"]
+[ext_resource type="PackedScene" uid="uid://fb656fvmu33t" path="res://scenes/Summons/summoning_circle_ui.tscn" id="8_r1ttc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8aur7"]
 atlas = ExtResource("3_4g1a0")
@@ -347,10 +348,16 @@ offset_right = -100.0
 offset_bottom = 200.0
 grow_vertical = 1
 
-[node name="SummoningCircle" parent="InventoryUI" instance=ExtResource("7_h8pb3")]
-process_mode = 4
+[node name="SummonTeam" parent="InventoryUI" instance=ExtResource("8_nq6vc")]
+offset_left = 285.0
+offset_right = -195.0
+
+[node name="SummoningCircleUI" parent="InventoryUI" instance=ExtResource("8_r1ttc")]
 visible = false
-position = Vector2(97, 168)
+offset_left = 91.0
+offset_top = 179.0
+offset_right = -389.0
+offset_bottom = -91.0
 scale = Vector2(2, 2)
 
 [connection signal="area_entered" from="Marker2D/Area2D" to="." method="_on_area_2d_area_entered"]

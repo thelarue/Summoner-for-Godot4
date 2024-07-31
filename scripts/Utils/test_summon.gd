@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var stats : Resource
 
+
 func _ready():
 	if stats:
 		stats.name = "Test"

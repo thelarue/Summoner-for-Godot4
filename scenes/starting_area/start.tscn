@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bn0dcorn6ak12"]
+[gd_scene load_steps=43 format=3 uid="uid://bn0dcorn6ak12"]
 
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="1_kw7wn"]
 [ext_resource type="Script" path="res://scenes/starting_area/start.gd" id="1_w8yj5"]
@@ -23,7 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/[32]-Iconset-Starter_Pack_172.png" id="22_28o6j"]
 [ext_resource type="PackedScene" uid="uid://ohvlxa5r2wto" path="res://scenes/Inventory/inventory_item.tscn" id="22_t2elx"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="24_7o4xp"]
-[ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/summoning_circle.tscn" id="24_hyapk"]
+[ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="24_hyapk"]
+[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/[32]-Iconset-Starter_Pack_01.png" id="25_w6kcu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_thq3x"]
 
@@ -3177,6 +3178,14 @@ position = Vector2(150, 132)
 
 [node name="SummoningCircle" parent="." instance=ExtResource("24_hyapk")]
 position = Vector2(254, 320)
+
+[node name="InventoryItem3" parent="." instance=ExtResource("22_t2elx")]
+position = Vector2(271, 229)
+item_type = "Potion"
+item_method = "use_summon_ingredient"
+item_name = "Health Potion"
+item_texture = ExtResource("25_w6kcu")
+item_effect = "+ 1 Heart"
 
 [connection signal="body_entered" from="bg/southernDoor/interactionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_entered" from="interactives/Switch/interactionArea" to="interactives/Switch" method="_on_interaction_area_body_entered"]

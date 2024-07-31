@@ -9,17 +9,11 @@ func _init(p_name = "", p_type = "", p_health = 0):
 	type = p_type
 	health = p_health
 
-func first_ability():
-	pass
+func get_creature_name():
+	return name
 
-func second_ability():
-	pass
+func _get_creature_type():
+	return type
 
-func third_ability():
-	pass
-
-func fourth_ability():
-	pass
-
-func overworld_ability():
-	pass
+func _get_creature_health():
+	return health
