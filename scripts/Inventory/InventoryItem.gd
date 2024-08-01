@@ -3,6 +3,8 @@ extends Node2D
 
 class_name Item
 
+@export var item_id = ""
+
 @export var item_type : String = ""
 @export var item_method : String = ""
 @export var item_name : String = ""
@@ -40,8 +42,11 @@ func pickup_item():
  		"scene_path" : scene_path
 	}
 	if InventoryManager.player_node:
-		InventoryManager.add_item(item)
-		queue_free()
+		if InventoryManager.add_item(item):
+			Global.add_picked_up_item(item_id)
+			queue_free()
+		else:
+			print(InventoryManager.current_inventory_size())
 
 
 func _on_area_2d_body_entered(body):
@@ -59,6 +64,7 @@ func set_item_data(data):
 	item_texture = data["texture"]
 	effect_value = data["value"]
 	item_method = data["method"]
+
 
 
 	

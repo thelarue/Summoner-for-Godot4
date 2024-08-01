@@ -25,6 +25,9 @@ EffectManager="*res://scripts/Utils/EffectManager.gd"
 SummonRecipes="*res://scripts/Summons/SummonRecipes.gd"
 InventoryManager="*res://scripts/Inventory/InventoryManager.gd"
 SummonInventory="*res://scripts/Summons/SummonInventory.gd"
+NavigationManager="*res://scripts/Utils/NavigationManager.gd"
+Global="*res://scripts/Utils/Global.gd"
+SaverLoader="*res://scripts/Utils/SaverLoader.gd"
 
 [dialogic]
 

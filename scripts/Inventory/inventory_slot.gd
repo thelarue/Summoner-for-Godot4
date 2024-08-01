@@ -43,7 +43,6 @@ func _on_drop_button_pressed():
 		var drop_position = InventoryManager.player_node.global_position
 		var drop_offset = Vector2(0, 30)
 		drop_offset = drop_offset.rotated(InventoryManager.player_node.get_node("Marker2D").rotation)
-		InventoryManager.drop_item(item, drop_position + drop_offset)
 		InventoryManager.remove_item(item["type"], item["effect"])
 		usage_panel.visible = false
 

@@ -132,7 +132,7 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_mc444")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_p4fuo")
-text = "Drop"
+text = "Discard"
 
 [connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
 [connection signal="mouse_exited" from="ItemButton" to="." method="_on_item_button_mouse_exited"]

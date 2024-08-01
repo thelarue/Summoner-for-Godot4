@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcb28so55cwo2"]
+
+[ext_resource type="Texture2D" uid="uid://cjalyk407k0l6" path="res://assets/tilesets and props/dungeon/southernDoor.png" id="1_45u7j"]
+[ext_resource type="Script" path="res://scripts/Elements/door.gd" id="1_r48ot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gd7av"]
+size = Vector2(48, 9.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sfvd"]
+size = Vector2(48, 32)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_r48ot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_45u7j")
+flip_v = true
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 21)
+shape = SubResource("RectangleShape2D_gd7av")
+
+[node name="Spawn" type="Marker2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_3sfvd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -71,3 +71,4 @@ theme_override_font_sizes/font_size = 8
 text = "Exit"
 
 [connection signal="pressed" from="menu_options/HBoxContainer/new game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="menu_options/HBoxContainer/load" to="." method="_on_load_pressed"]

@@ -17,14 +17,20 @@ func set_player_reference(player):
 	player_node = player
 	
 func health_potion(item):
-	player_node.add_health(item["value"])
-	return true
+	if Global.player_health < player_node.max_health:
+		player_node.add_health(item["value"])
+		return true
+	return false
 	
 func use_ingredient(item):
-	alchemy_menu.add_ingredient(item)
-	return true
+	if player_node:
+		if (player_node.get_node("InventoryUI/AlchemyMenu").visible == true 
+			and  player_node.get_node("InventoryUI/SummoningCircleUI").visible == false):	
+			alchemy_menu.add_ingredient(item)
+			return true
+		elif (player_node.get_node("InventoryUI/AlchemyMenu").visible == false 
+			and  player_node.get_node("InventoryUI/SummoningCircleUI").visible == true):
+			summoning_menu.add_summon_ingredient(item)
+			return true
+	return false
 
-func use_summon_ingredient(item):
-	if player_node != null and summoning_menu.visible == true:
-		summoning_menu.add_summon_ingredient(item)
-		return true

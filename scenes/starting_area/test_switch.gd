@@ -7,6 +7,10 @@ extends Interactable
 var pressed = 0
 var player_in_range = false
 
+func _ready():
+	if Global.start_room_switch_frame:
+		sprite.frame = Global.start_room_switch_frame
+	
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		_on_interact()
@@ -23,6 +27,7 @@ func _on_interact():
 	elif pressed == 4:
 		sprite.frame = 1
 		pressed = 0
+	Global.start_room_switch_frame = sprite.frame
 	
 func _on_interaction_area_body_entered(body):
 	if body.is_in_group("player"):

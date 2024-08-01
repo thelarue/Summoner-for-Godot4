@@ -4,13 +4,13 @@ extends CharacterBody2D
 @export var speed = 100
 var current_speed = speed
 var sprint_speed = 150
-@export var health = 6
 @onready var anim = $AnimatedSprite2D
 var vulnerable = true
 var blinking = false
 var can_move = true
 var can_open_inventory = true
 
+@export var max_health = 6
 
 @onready var heart_sprites = [
 	$CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth/Heart,
@@ -29,27 +29,52 @@ var nearest_interactable: Actionable = null
 func _ready():
 	InventoryManager.set_player_reference(self)
 	EffectManager.set_player_reference(self)
+	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
+	player_health_visual(Global.player_health)
+	if Global.player_save_position:
+		global_position = Global.player_save_position
+
+
+func player_health_visual(health : int):
+	for i in range(heart_sprites.size()):
+		var heart_sprite = heart_sprites[i] as AnimatedSprite2D
+		if health >= (i + 1) * 2:
+			# Full heart
+			heart_sprite.animation = "full_health"
+		elif health == (i * 2) + 1:
+			# Half heart
+			heart_sprite.animation = "damage"
+			heart_sprite.frame = 3
+		else:
+			# Empty heart
+			heart_sprite.visible = false
+	
+func _on_spawn(position : Vector2, direction : String):
+	global_position = position
+	anim.play("walk_" + direction)
 	
 func player_movement():
-	var move = Input.get_vector("left", "right", "up", "down")
+	var move = Input.get_vector("left", "right", "up", "down") as Vector2
+	if move.x < 0: 
+		anim.flip_h = true
+		anim.play("walk_right")
+	elif move.x > 0: 
+		anim.flip_h = false
+		anim.play("walk_right")
+	elif move.y < 0:
+		anim.play("walk_up")
+	elif move.y > 0:
+		anim.play("walk_down")
+		# Set the Marker2D rotation based on the velocity vector's angle
+	if move != Vector2.ZERO:
+		$Marker2D.rotation = move.angle()
 	velocity = move * current_speed
 
 func update_anim():
 	if velocity.length() == 0:
 		if anim.is_playing():
 			anim.stop()
-	else:
-		var dir = "down"
-		$Marker2D.rotation = velocity.angle() - PI/2
-		if velocity.x < 0: 
-			dir = "right"
-			anim.flip_h = true
-		elif velocity.x> 0: 
-			dir = "right"
-			anim.flip_h = false
-		elif velocity.y < 0: dir = "up"
-		
-		anim.play("walk_" + dir)
+	
 
 func _physics_process(delta):
 	if Input.is_action_pressed("run"):
@@ -76,9 +101,12 @@ func _input(event):
 		can_interact = false
 		nearest_interactable.emit_signal("actioned")
 	if event.is_action_pressed("inventory") and can_open_inventory:
+		anim.stop()
 		get_tree().paused = !get_tree().paused
 		can_move = !can_move
 		inventory_ui.visible = !inventory_ui.visible
+		if inventory_ui.visible == false:
+			$InventoryUI/AlchemyMenu.clear_slots()
 		
 
 func _on_area_2d_area_entered(area):
@@ -93,20 +121,20 @@ func _on_area_2d_area_exited(area):
 
 func hit(dmg):
 	if vulnerable:
-		health -= dmg
+		Global.player_health -= dmg
 		vulnerable = false
 		blinking = true
 		play_hit_animation(dmg)
 		$HitDelay.start()
 		$Blinking.start()
-		if health <= 0:
+		if Global.player_health <= 0:
 			die()
 
 func play_hit_animation(dmg):
-	var heart_index = floor(health / 2)
+	var heart_index = floor(Global.player_health / 2)
 	if heart_index >= 0 and heart_index < heart_sprites.size():
 		var heart_sprite = heart_sprites[heart_index]
-		if dmg == 1 and health % 2 != 0:
+		if dmg == 1 and Global.player_health % 2 != 0:
 			heart_sprite.play("damage")
 		else:
 			heart_sprite.play("damage")
@@ -129,8 +157,12 @@ func _on_blinking_timeout():
 		anim.visible = !anim.visible
 
 func add_health(health_amount):
-	health += health_amount
-	print(health)
+	Global.player_health += health_amount
+	for heart in heart_sprites:
+		if heart.visible == false:
+			heart.visible = true
+			break
+
 	
 func apply_item_effect(item):
 	pass

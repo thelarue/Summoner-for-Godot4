@@ -22,12 +22,14 @@ func add_item(item):
 				continue
 			inventory[i]["quantity"] += item["quantity"]
 			inventory_updated.emit()
-			print("item added")
+			print("new item")
 			return true
 		elif inventory[i] == null:
+			if item["quantity"] == 0:
+				item["quantity"] = 1
 			inventory[i] = item
 			inventory_updated.emit()
-			print("item added")
+			print("added item")
 			return true
 	return false
 
@@ -43,6 +45,14 @@ func remove_item(item_type, item_effect):
 			return true
 	return false
 
+func current_inventory_size():
+	var r = 0
+	for i in range(inventory.size()):
+		if inventory[i]:
+			r += 1
+	print(inventory.size())
+	return r
+	
 func increase_inventory_size():
 	inventory_updated.emit()
 

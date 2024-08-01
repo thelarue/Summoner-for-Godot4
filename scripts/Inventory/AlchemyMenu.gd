@@ -30,8 +30,6 @@ func _on_brew_button_pressed():
 		var brewed_item_data = Recipes.get_recipe_result(first_item["name"], second_item["name"])
 		if brewed_item_data:
 			brewed_item = create_brewed_item(brewed_item_data)
-			#if InventoryManager.add_item(brewed_item):
-				#clear_ingredients()
 			clear_ingredients()
 			result_image.texture = brewed_item["texture"]
 		else:
@@ -52,7 +50,7 @@ func create_brewed_item(data):
 		"scene_path" : data["scene_path"],
 		"effect": data["effect"],
 		"value": data["value"],
-		"method": data["method"]  # Assuming method is part of the data dictionary
+		"method": data["method"]  
 	}
 	return new_item
 
@@ -60,4 +58,15 @@ func _on_result_button_pressed():
 	if InventoryManager.add_item(brewed_item):
 		result_image.texture = null
 		brewed_item = null
+
+func clear_slots():
+	if first_item:
+		InventoryManager.add_item(first_item)
+	if second_item:
+		InventoryManager.add_item(second_item)
+	if brewed_item:
+		InventoryManager.add_item(brewed_item)
+	clear_ingredients()
+	result_image.texture = null
+	brewed_item = null
 	
