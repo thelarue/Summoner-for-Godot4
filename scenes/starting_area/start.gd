@@ -18,7 +18,7 @@ func _ready():
 	for item in $Items.get_children():
 		
 		if Global.is_item_picked_up(item.item_id):
-			item.queue_free()
+			item.set_opened(true)
 	
 	if true:
 		pass

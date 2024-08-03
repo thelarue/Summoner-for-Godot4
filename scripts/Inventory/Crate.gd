@@ -1,7 +1,4 @@
-@tool
 extends Node2D
-
-class_name Item
 
 @export var item_id = ""
 
@@ -16,19 +13,13 @@ class_name Item
 
 var scene_path : String = "res://scenes/Inventory/inventory_item.tscn"
 
+@onready var pickup_sound = $PickupSound
+
 @onready var icon_sprite = $Sprite2D
+@onready var label_timer = $LabelTimer
 
-var player_in_range = false
-
-func _ready():
-	if not Engine.is_editor_hint():
-		icon_sprite.texture = item_texture
-
-func _process(delta):
-	if Engine.is_editor_hint():
-		icon_sprite.texture = item_texture
-	if player_in_range and Input.is_action_just_pressed("interact"):
-		pickup_item()
+@onready var player_node = get_tree().get_first_node_in_group("player")
+var opened = false
 
 func pickup_item():
 	var item = {
@@ -43,19 +34,21 @@ func pickup_item():
 	}
 	if InventoryManager.player_node:
 		if InventoryManager.add_item(item):
+			if pickup_sound.playing == false:
+				pickup_sound.play()
+			if player_node:
+				var label = player_node.get_node("Camera2D/CanvasLayer/ItemsLabel")
+				if label.visible:
+					var text_value = label.text
+					label.text = "You got " + item["name"] + "\n" + text_value
+				else:
+					label.text = "You got " + item["name"]
+				label.visible = true 
+				label_timer.start()
 			Global.add_picked_up_item(item_id)
-			queue_free()
+			opened = true
 		else:
 			print(InventoryManager.current_inventory_size())
-
-
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("player"):
-		player_in_range = true
-
-func _on_area_2d_body_exited(body):
-	if body.is_in_group("player"):
-		player_in_range = false
 
 func set_item_data(data):
 	item_type = data["type"]
@@ -64,3 +57,16 @@ func set_item_data(data):
 	item_texture = data["texture"]
 	effect_value = data["value"]
 	item_method = data["method"]
+
+func _on_actionable_actioned():
+	if not opened: 
+		pickup_item()
+
+func set_opened(b):
+	opened = b
+
+func _on_label_timer_timeout():
+	if player_node:
+		var label = player_node.get_node("Camera2D/CanvasLayer/ItemsLabel")
+		label.text = ""
+		label.visible = false

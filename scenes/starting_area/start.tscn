@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bn0dcorn6ak12"]
+[gd_scene load_steps=36 format=3 uid="uid://bn0dcorn6ak12"]
 
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="1_kw7wn"]
 [ext_resource type="Script" path="res://scenes/starting_area/start.gd" id="1_w8yj5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="6_7hblb"]
 [ext_resource type="PackedScene" uid="uid://bbm03syent82o" path="res://interactions/interaction_area.tscn" id="6_cur6a"]
 [ext_resource type="Script" path="res://scenes/starting_area/test_switch.gd" id="6_nmi4d"]
+[ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="6_yob3l"]
 [ext_resource type="Texture2D" uid="uid://djgbxlfqoiu58" path="res://assets/characters/LEAFY.png" id="7_x0wkm"]
 [ext_resource type="Texture2D" uid="uid://lno0yo1prvfc" path="res://assets/characters/bones2-g280002586_640.png" id="8_mdt7j"]
 [ext_resource type="Script" path="res://scenes/starting_area/commonBattle.gd" id="10_nhabd"]
@@ -17,9 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://bdy3a13syefe2" path="res://assets/tilesets and props/forest/actionable.tscn" id="15_n44bl"]
 [ext_resource type="Script" path="res://scripts/Elements/bossBattle2.gd" id="15_osuy3"]
 [ext_resource type="PackedScene" uid="uid://3bybbw7pbqh0" path="res://scenes/utils/save_point.tscn" id="20_7hpue"]
-[ext_resource type="Texture2D" uid="uid://d1puyhk74h6v1" path="res://assets/[32]-Iconset-Starter_Pack_171.png" id="21_b0ti4"]
-[ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/[32]-Iconset-Starter_Pack_172.png" id="22_28o6j"]
-[ext_resource type="PackedScene" uid="uid://ohvlxa5r2wto" path="res://scenes/Inventory/inventory_item.tscn" id="22_t2elx"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="24_7o4xp"]
 [ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="24_hyapk"]
 [ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/[32]-Iconset-Starter_Pack_01.png" id="25_w6kcu"]
@@ -3024,42 +3022,23 @@ position = Vector2(-0.499897, 41)
 
 [node name="Items" type="Node" parent="."]
 
-[node name="InventoryItem2" parent="Items" instance=ExtResource("22_t2elx")]
-position = Vector2(216, 153)
+[node name="Crate" parent="Items" instance=ExtResource("6_yob3l")]
+position = Vector2(214, 147)
 item_id = "0000"
 item_type = "Potion"
 item_method = "health_potion"
 item_name = "Health Potion"
 item_texture = ExtResource("25_w6kcu")
-item_effect = "+ 1 Heart"
-effect_value = 2
+item_effect = "health_potion"
 
-[node name="InventoryItem" parent="Items" instance=ExtResource("22_t2elx")]
-position = Vector2(291, 171)
-item_id = "0001"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Fungi"
-item_texture = ExtResource("21_b0ti4")
-item_effect = "A fungi"
-
-[node name="InventoryItem3" parent="Items" instance=ExtResource("22_t2elx")]
-position = Vector2(282, 215)
-item_id = "0002"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Horn"
-item_texture = ExtResource("22_28o6j")
-item_effect = "A horn"
-
-[node name="InventoryItem4" parent="Items" instance=ExtResource("22_t2elx")]
-position = Vector2(271, 127)
-item_id = "0004"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Horn"
-item_texture = ExtResource("22_28o6j")
-item_effect = "A horn"
+[node name="Crate2" parent="Items" instance=ExtResource("6_yob3l")]
+position = Vector2(276, 164)
+item_id = "0000"
+item_type = "Potion"
+item_method = "health_potion"
+item_name = "Mana Potion"
+item_texture = ExtResource("25_w6kcu")
+item_effect = "health_potion"
 
 [node name="bg" type="Node2D" parent="."]
 

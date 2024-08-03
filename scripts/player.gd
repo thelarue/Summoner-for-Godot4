@@ -13,15 +13,15 @@ var can_open_inventory = true
 @export var max_health = 6
 
 @onready var heart_sprites = [
-	$CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth/Heart,
-	$CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth/Heart2,
-	$CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth/Heart3
+	$Camera2D/CanvasLayer/PlayerHealth/Heart,
+	$Camera2D/CanvasLayer/PlayerHealth/Heart2,
+	$Camera2D/CanvasLayer/PlayerHealth/Heart3
 ]
 
 @onready var inventory_ui = $InventoryUI
 
 
-@onready var color_rect = $CollisionShape2D/Camera2D/CanvasLayer/ColorRect
+@onready var color_rect = $Camera2D/CanvasLayer/ColorRect
 
 var can_interact = false
 var nearest_interactable: Actionable = null
@@ -79,13 +79,13 @@ func update_anim():
 func _physics_process(delta):
 	if Input.is_action_pressed("run"):
 		current_speed = sprint_speed
-		$CollisionShape2D/Camera2D.zoom = Vector2(1.3, 1.3)
+		$Camera2D.zoom = Vector2(1.3, 1.3)
 		var material = color_rect.material as ShaderMaterial
 		material.set_shader_parameter("vignette_strength", 3.0)
 		$AnimatedSprite2D.speed_scale = 2
 	else:
 		current_speed = speed
-		$CollisionShape2D/Camera2D.zoom = Vector2(1, 1)
+		$Camera2D.zoom = Vector2(1, 1)
 		var material = color_rect.material as ShaderMaterial
 		material.set_shader_parameter("vignette_strength", 2.0)
 		$AnimatedSprite2D.speed_scale = 1

@@ -16,7 +16,7 @@ func set_alchemy_menu(menu):
 func set_player_reference(player):
 	player_node = player
 	
-func health_potion(item):
+func heal(item):
 	if Global.player_health < player_node.max_health:
 		player_node.add_health(item["value"])
 		return true
@@ -34,3 +34,7 @@ func use_ingredient(item):
 			return true
 	return false
 
+func ritual_knife(item):
+	if player_node:
+		player_node.hit(item["value"])
+	

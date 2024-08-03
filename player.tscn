@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dga7wbow6g13l"]
+[gd_scene load_steps=41 format=3 uid="uid://dga7wbow6g13l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_swdcq"]
 [ext_resource type="Shader" path="res://moody_shader.gdshader" id="2_etysu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cy4pgbh4hsmy3" path="res://assets/characters/hearts.png" id="3_rrfx6"]
 [ext_resource type="PackedScene" uid="uid://50rdw1dt63h6" path="res://scenes/Inventory/inventory_ui.tscn" id="4_gvsyx"]
 [ext_resource type="PackedScene" uid="uid://c6pbaaxq8k1jr" path="res://scenes/Inventory/alchemy_menu.tscn" id="5_jei75"]
+[ext_resource type="FontFile" uid="uid://dq2uewwmiw1sf" path="res://assets/AmiNo8bitFont.ttf" id="5_rfw7n"]
 [ext_resource type="PackedScene" uid="uid://c1ebrg8kocewe" path="res://scenes/Summons/summon_team.tscn" id="8_nq6vc"]
 [ext_resource type="PackedScene" uid="uid://fb656fvmu33t" path="res://scenes/Summons/summoning_circle_ui.tscn" id="8_r1ttc"]
 
@@ -130,9 +131,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0l5v"]
-height = 42.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dmurp"]
 shader = ExtResource("2_etysu")
 shader_parameter/grain_amount = 0.05
@@ -248,6 +246,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0l5v"]
+height = 42.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrvrn"]
 size = Vector2(20, 26)
 
@@ -262,19 +263,15 @@ sprite_frames = SubResource("SpriteFrames_70ewb")
 animation = &"die"
 frame_progress = 0.943727
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_g0l5v")
-
-[node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
-position = Vector2(0, -5)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 3)
 zoom = Vector2(0.8, 0.8)
 process_callback = 0
 limit_smoothed = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="CollisionShape2D/Camera2D"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D/Camera2D/CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer"]
 material = SubResource("ShaderMaterial_dmurp")
 anchors_preset = 15
 anchor_right = 1.0
@@ -282,25 +279,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayerHealth" type="Node2D" parent="CollisionShape2D/Camera2D/CanvasLayer"]
+[node name="PlayerHealth" type="Node2D" parent="Camera2D/CanvasLayer"]
 
-[node name="Heart" type="AnimatedSprite2D" parent="CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth"]
+[node name="Heart" type="AnimatedSprite2D" parent="Camera2D/CanvasLayer/PlayerHealth"]
 position = Vector2(25, 20)
 sprite_frames = SubResource("SpriteFrames_77jiv")
 animation = &"full_health"
 autoplay = "full_health"
 
-[node name="Heart2" type="AnimatedSprite2D" parent="CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth"]
+[node name="Heart2" type="AnimatedSprite2D" parent="Camera2D/CanvasLayer/PlayerHealth"]
 position = Vector2(75, 20)
 sprite_frames = SubResource("SpriteFrames_77jiv")
 animation = &"full_health"
 autoplay = "full_health"
 
-[node name="Heart3" type="AnimatedSprite2D" parent="CollisionShape2D/Camera2D/CanvasLayer/PlayerHealth"]
+[node name="Heart3" type="AnimatedSprite2D" parent="Camera2D/CanvasLayer/PlayerHealth"]
 position = Vector2(125, 20)
 sprite_frames = SubResource("SpriteFrames_77jiv")
 animation = &"damage"
 autoplay = "full_health"
+
+[node name="ItemsLabel" type="Label" parent="Camera2D/CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("5_rfw7n")
+theme_override_font_sizes/font_size = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_g0l5v")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, 29)
@@ -349,10 +361,10 @@ offset_right = -195.0
 
 [node name="SummoningCircleUI" parent="InventoryUI" instance=ExtResource("8_r1ttc")]
 visible = false
-offset_left = 91.0
-offset_top = 179.0
-offset_right = -389.0
-offset_bottom = -91.0
+offset_left = 108.0
+offset_top = 161.0
+offset_right = 108.0
+offset_bottom = 161.0
 scale = Vector2(2, 2)
 
 [connection signal="area_entered" from="Marker2D/Area2D" to="." method="_on_area_2d_area_entered"]
