@@ -16,6 +16,7 @@ func set_alchemy_menu(menu):
 func set_player_reference(player):
 	player_node = player
 	
+	
 func heal(item):
 	if Global.player_health < player_node.max_health:
 		player_node.add_health(item["value"])

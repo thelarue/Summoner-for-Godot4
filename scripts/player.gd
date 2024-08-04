@@ -12,10 +12,10 @@ var can_open_inventory = true
 
 @export var max_health = 6
 
-@onready var heart_sprites = [
-	$Camera2D/CanvasLayer/PlayerHealth/Heart,
-	$Camera2D/CanvasLayer/PlayerHealth/Heart2,
-	$Camera2D/CanvasLayer/PlayerHealth/Heart3
+@onready var hearts = [
+	$Camera2D/CanvasLayer/PlayerHealth/PlayerHeart,
+	$Camera2D/CanvasLayer/PlayerHealth/PlayerHeart2,
+	$Camera2D/CanvasLayer/PlayerHealth/PlayerHeart3,
 ]
 
 @onready var inventory_ui = $InventoryUI
@@ -35,19 +35,18 @@ func _ready():
 		global_position = Global.player_save_position
 
 
-func player_health_visual(health : int):
-	for i in range(heart_sprites.size()):
-		var heart_sprite = heart_sprites[i] as AnimatedSprite2D
-		if health >= (i + 1) * 2:
-			# Full heart
-			heart_sprite.animation = "full_health"
-		elif health == (i * 2) + 1:
-			# Half heart
-			heart_sprite.animation = "damage"
-			heart_sprite.frame = 3
+func player_health_visual(health: int):
+	var health_remaining = health
+	for i in range(hearts.size()):
+		if health_remaining >= 2: 
+			hearts[i].set_state(0, false) #Full heart
+			health_remaining -= 2
+		elif health_remaining == 1: 
+			hearts[i].set_state(1, false) #Half heart
+			health_remaining -= 1
 		else:
-			# Empty heart
-			heart_sprite.visible = false
+			hearts[i].set_state(2, false) #Empty heart
+
 	
 func _on_spawn(position : Vector2, direction : String):
 	global_position = position
@@ -121,27 +120,38 @@ func _on_area_2d_area_exited(area):
 
 func hit(dmg):
 	if vulnerable:
-		Global.player_health -= dmg
 		vulnerable = false
 		blinking = true
+		Global.player_health -= dmg
 		play_hit_animation(dmg)
 		$HitDelay.start()
 		$Blinking.start()
 		if Global.player_health <= 0:
 			die()
 
-func play_hit_animation(dmg):
-	var heart_index = floor(Global.player_health / 2)
-	if heart_index >= 0 and heart_index < heart_sprites.size():
-		var heart_sprite = heart_sprites[heart_index]
-		if dmg == 1 and Global.player_health % 2 != 0:
-			heart_sprite.play("damage")
-		else:
-			heart_sprite.play("damage")
-			await(get_tree().create_timer(0.5))
-			heart_sprite.play("lose_heart")
 
+func play_hit_animation(dmg):
+	var damage_to_apply = dmg
+	for i in range(hearts.size()):
+		var current_heart = hearts[hearts.size() - 1 - i]
+		match current_heart.get_state():
+			0:
+				if damage_to_apply >= 2:
+					current_heart.set_state(2, true)
+					damage_to_apply -= 2
+				elif damage_to_apply == 1:
+					current_heart.set_state(1, true)
+					damage_to_apply -= 1
+			1:
+				if damage_to_apply >= 1:
+					current_heart.set_state(2, true)
+					damage_to_apply -= 1
+			2:
+				pass
+		if damage_to_apply <= 0:
+			break
 	
+				
 func die():
 	queue_free()
 	get_tree().change_scene_to_file("res://scenes/main menu/main_menu.tscn")
@@ -158,12 +168,12 @@ func _on_blinking_timeout():
 
 func add_health(health_amount):
 	Global.player_health += health_amount
-	for heart in heart_sprites:
-		if heart.visible == false:
-			heart.visible = true
-			break
+	if Global.player_health > max_health:
+		Global.player_health = max_health
+	print(Global.player_health)
+	player_health_visual(Global.player_health)
 
-	
+
 func apply_item_effect(item):
 	pass
 
