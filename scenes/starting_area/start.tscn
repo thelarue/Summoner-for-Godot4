@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bn0dcorn6ak12"]
+[gd_scene load_steps=37 format=3 uid="uid://bn0dcorn6ak12"]
 
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="1_kw7wn"]
 [ext_resource type="Script" path="res://scenes/starting_area/start.gd" id="1_w8yj5"]
@@ -6,23 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://dhaft6gbgt4my" path="res://assets/tilesets and props/dungeon/switch.png" id="3_yuhe1"]
 [ext_resource type="Texture2D" uid="uid://bedbls8pqhib7" path="res://assets/characters/walk_front_motion.png" id="4_udhto"]
 [ext_resource type="Texture2D" uid="uid://bmemwxawonslj" path="res://assets/tilesets and props/props/house.png" id="5_ue7ta"]
-[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/southern_door.tscn" id="6_7hblb"]
+[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="6_7hblb"]
 [ext_resource type="PackedScene" uid="uid://bbm03syent82o" path="res://interactions/interaction_area.tscn" id="6_cur6a"]
 [ext_resource type="Script" path="res://scenes/starting_area/test_switch.gd" id="6_nmi4d"]
-[ext_resource type="PackedScene" uid="uid://d7sw2a8ax5y2" path="res://player.tscn" id="6_qhr0m"]
+[ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="6_yob3l"]
 [ext_resource type="Texture2D" uid="uid://djgbxlfqoiu58" path="res://assets/characters/LEAFY.png" id="7_x0wkm"]
 [ext_resource type="Texture2D" uid="uid://lno0yo1prvfc" path="res://assets/characters/bones2-g280002586_640.png" id="8_mdt7j"]
-[ext_resource type="Texture2D" uid="uid://bs15ik080lny0" path="res://assets/characters/little girl/itsagirl.png" id="9_bdkbn"]
 [ext_resource type="Script" path="res://scenes/starting_area/commonBattle.gd" id="10_nhabd"]
-[ext_resource type="PackedScene" uid="uid://bdy3a13syefe2" path="res://scenes/utils/actionable.tscn" id="11_vy6bg"]
-[ext_resource type="Script" path="res://scripts/summonBattle2.gd" id="13_e6ugy"]
+[ext_resource type="Script" path="res://scripts/Elements/summonBattle2.gd" id="13_e6ugy"]
 [ext_resource type="AudioStream" uid="uid://crbsyb6q2nvdv" path="res://assets/music and sound/sound fx/lever pull.ogg" id="13_i1q81"]
-[ext_resource type="Script" path="res://scripts/bossBattle2.gd" id="15_osuy3"]
-[ext_resource type="Script" path="res://scripts/savePoint.gd" id="17_5xa6n"]
-[ext_resource type="Script" path="res://scripts/SaverLoader.gd" id="20_yce4u"]
-[ext_resource type="PackedScene" uid="uid://cla2eukdm3fdn" path="res://scenes/spikes.tscn" id="21_pcbiu"]
-[ext_resource type="PackedScene" uid="uid://ohvlxa5r2wto" path="res://scenes/inventory_item.tscn" id="22_t2elx"]
-[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/[32]-Iconset-Starter_Pack_01.png" id="23_1vocu"]
+[ext_resource type="PackedScene" uid="uid://bdy3a13syefe2" path="res://assets/tilesets and props/forest/actionable.tscn" id="15_n44bl"]
+[ext_resource type="Script" path="res://scripts/Elements/bossBattle2.gd" id="15_osuy3"]
+[ext_resource type="PackedScene" uid="uid://3bybbw7pbqh0" path="res://scenes/utils/save_point.tscn" id="20_7hpue"]
+[ext_resource type="PackedScene" uid="uid://cla2eukdm3fdn" path="res://scenes/Elements/spikes.tscn" id="22_i8j28"]
+[ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="24_7o4xp"]
+[ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="24_hyapk"]
+[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/[32]-Iconset-Starter_Pack_01.png" id="25_w6kcu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_thq3x"]
 
@@ -2985,13 +2984,10 @@ sources/1 = SubResource("TileSetAtlasSource_vme7j")
 sources/2 = SubResource("TileSetAtlasSource_tjauk")
 sources/3 = SubResource("TileSetAtlasSource_sbtrn")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_11kis"]
-size = Vector2(23, 9.5)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_p3be7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jd6ey"]
-radius = 9.05539
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4v5vb"]
+size = Vector2(18.5, 17)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4o5jl"]
 
@@ -3006,14 +3002,46 @@ radius = 13.9284
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lsmfx"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jum06"]
-radius = 8.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_bbpys"]
-radius = 7.0
-
 [node name="Start" type="Node2D"]
 script = ExtResource("1_w8yj5")
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door_S" parent="Doors" instance=ExtResource("6_7hblb")]
+position = Vector2(240, 449)
+rotation = -3.14159
+scale = Vector2(2, 2)
+collision_layer = 4
+destionation_level_tag = "second_area"
+destination_door_tag = "N"
+
+[node name="CollisionShape2D" parent="Doors/Door_S" index="1"]
+position = Vector2(5.20349e-05, 21)
+
+[node name="Spawn" parent="Doors/Door_S" index="2"]
+position = Vector2(-0.499897, 41)
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Crate" parent="Items" instance=ExtResource("6_yob3l")]
+position = Vector2(214, 147)
+item_id = "0000"
+item_type = "Potion"
+item_method = "heal"
+item_name = "Health Potion"
+item_texture = ExtResource("25_w6kcu")
+item_effect = "+ 1 Heart"
+effect_value = 4
+
+[node name="Crate2" parent="Items" instance=ExtResource("6_yob3l")]
+position = Vector2(276, 164)
+item_id = "0001"
+item_type = "Potion"
+item_method = "heal"
+item_name = "Health Potion"
+item_texture = ExtResource("25_w6kcu")
+item_effect = "+ 1 Heart"
+effect_value = 4
 
 [node name="bg" type="Node2D" parent="."]
 
@@ -3033,26 +3061,12 @@ layer_1/name = "Foreground"
 layer_1/tile_data = PackedInt32Array()
 layer_2/tile_data = PackedInt32Array(458763, 393219, 1342177280, 524299, 458755, 1342177280, 65540, 393219, 2, 131076, 393219, 3, 65541, 458755, 2, 131077, 458755, 3, 131081, 589827, 0, 327682, 262147, 4, 393218, 262147, 5, 458754, 262147, 6, 327683, 327683, 4, 393219, 327683, 5, 458755, 327683, 6)
 
-[node name="southernDoor" parent="bg" instance=ExtResource("6_7hblb")]
-position = Vector2(240, 449)
-scale = Vector2(2, 2)
-collision_layer = 4
-
-[node name="interactionArea" parent="bg/southernDoor" instance=ExtResource("6_cur6a")]
-collision_layer = 4
-collision_mask = 1
-script = null
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/southernDoor/interactionArea"]
-position = Vector2(0.5, -11.25)
-shape = SubResource("RectangleShape2D_11kis")
-
 [node name="interactives" type="Node2D" parent="."]
 
 [node name="Switch" type="Sprite2D" parent="interactives" groups=["Persist"]]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(193, 401)
+position = Vector2(161, 401)
 scale = Vector2(2, 2)
 texture = ExtResource("3_yuhe1")
 hframes = 3
@@ -3068,10 +3082,11 @@ script = null
 shape = SubResource("CircleShape2D_p3be7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="interactives/Switch"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/Switch/StaticBody2D"]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_jd6ey")
+position = Vector2(-0.75, -0.5)
+shape = SubResource("RectangleShape2D_4v5vb")
 
 [node name="commonBattle" type="Sprite2D" parent="interactives" groups=["Persist"]]
 position = Vector2(89, 66)
@@ -3081,12 +3096,13 @@ hframes = 4
 script = ExtResource("10_nhabd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="interactives/commonBattle"]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/commonBattle/StaticBody2D"]
 position = Vector2(1, 7)
 shape = SubResource("CircleShape2D_4o5jl")
 
-[node name="Actionable" parent="interactives/commonBattle" instance=ExtResource("11_vy6bg")]
+[node name="Actionable" parent="interactives/commonBattle" instance=ExtResource("15_n44bl")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/commonBattle/Actionable"]
 position = Vector2(0, 11)
@@ -3124,57 +3140,25 @@ shape = SubResource("CircleShape2D_xkryf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/bossBattle2/StaticBody2D"]
 shape = SubResource("CircleShape2D_lsmfx")
 
-[node name="savePoint" type="Sprite2D" parent="interactives" groups=["Persist"]]
-self_modulate = Color(0.690196, 0.415686, 1, 1)
-position = Vector2(364, 386)
+[node name="SavePoint" parent="interactives" instance=ExtResource("20_7hpue")]
+position = Vector2(365, 393)
 scale = Vector2(2, 2)
-texture = ExtResource("9_bdkbn")
-hframes = 3
-vframes = 3
-script = ExtResource("17_5xa6n")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="interactives/savePoint"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/savePoint/StaticBody2D"]
-position = Vector2(0, 7)
-shape = SubResource("CircleShape2D_jum06")
-
-[node name="interactionArea" parent="interactives/savePoint" instance=ExtResource("6_cur6a")]
-action_name = "save"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interactives/savePoint/interactionArea"]
-position = Vector2(0, 5)
-shape = SubResource("CircleShape2D_bbpys")
-
-[node name="Spikes" parent="." instance=ExtResource("21_pcbiu")]
-position = Vector2(188, 216)
-scale = Vector2(2, 2)
-
-[node name="player" parent="." instance=ExtResource("6_qhr0m")]
-position = Vector2(127, 89)
 
 [node name="soundFX" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("13_i1q81")
 
-[node name="SaverLoader" type="Node" parent="."]
-script = ExtResource("20_yce4u")
+[node name="player" parent="." instance=ExtResource("24_7o4xp")]
+position = Vector2(132, 145)
 
-[node name="InventoryItem" parent="." instance=ExtResource("22_t2elx")]
-position = Vector2(252, 139)
-item_type = "Potion"
-item_name = "Health Potion"
-item_texture = ExtResource("23_1vocu")
-item_effect = "+ 1 Hearth"
+[node name="SummoningCircle" parent="." instance=ExtResource("24_hyapk")]
+position = Vector2(204, 248)
 
-[node name="InventoryItem2" parent="." instance=ExtResource("22_t2elx")]
-position = Vector2(297, 160)
-item_type = "Potion"
-item_name = "Health Potion"
-item_texture = ExtResource("23_1vocu")
-item_effect = "+ 1 Hearth"
+[node name="Spikes" parent="." instance=ExtResource("22_i8j28")]
+position = Vector2(240, 191)
 
-[connection signal="body_entered" from="bg/southernDoor/interactionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_entered" from="interactives/Switch/interactionArea" to="interactives/Switch" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="interactives/Switch/interactionArea" to="interactives/Switch" method="_on_interaction_area_body_exited"]
 [connection signal="actioned" from="interactives/commonBattle/Actionable" to="interactives/commonBattle" method="_on_actionable_actioned"]
+
+[editable path="Doors/Door_S"]

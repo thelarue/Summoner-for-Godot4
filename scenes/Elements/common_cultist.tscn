@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cuvuj3nf5kxfb"]
 
-[ext_resource type="Script" path="res://scripts/common_cultist.gd" id="1_amj4w"]
+[ext_resource type="Script" path="res://scripts/Elements/common_cultist.gd" id="1_amj4w"]
 [ext_resource type="Texture2D" uid="uid://d0rys6gafmmoi" path="res://assets/characters/common_cultist.png" id="1_ifgqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w7q23"]

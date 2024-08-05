@@ -1,6 +1,6 @@
 extends Control
 
-@onready var grid_container = $GridContainer
+@onready var grid_container = $Sprite2D/GridContainer
 
 func _ready():
 	InventoryManager.inventory_updated.connect(_on_inventory_updated)

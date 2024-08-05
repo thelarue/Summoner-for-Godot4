@@ -1,12 +1,20 @@
 @tool
 extends Node2D
 
+class_name Item
+
+@export var item_id = ""
+
 @export var item_type : String = ""
+@export var item_method : String = ""
 @export var item_name : String = ""
 @export var item_texture : Texture
 @export var item_effect : String = ""
+@export var effect_value : int = 0
 
-var scene_path : String = "res://scenes/inventory_item.tscn"
+@export var recipe : Array[Item] = []
+
+var scene_path : String = "res://scenes/Inventory/inventory_item.tscn"
 
 @onready var icon_sprite = $Sprite2D
 
@@ -29,11 +37,16 @@ func pickup_item():
 		"name" : item_name,
 		"texture" : item_texture,
 		"effect" : item_effect,
-		"scene_path" : scene_path
+		"method" : item_method,
+		"value" : effect_value,
+ 		"scene_path" : scene_path
 	}
 	if InventoryManager.player_node:
-		InventoryManager.add_item(item)
-		queue_free()
+		if InventoryManager.add_item(item):
+			Global.add_picked_up_item(item_id)
+			queue_free()
+		else:
+			print(InventoryManager.current_inventory_size())
 
 
 func _on_area_2d_body_entered(body):
@@ -49,3 +62,5 @@ func set_item_data(data):
 	item_name = data["name"]
 	item_effect = data["effect"]
 	item_texture = data["texture"]
+	effect_value = data["value"]
+	item_method = data["method"]

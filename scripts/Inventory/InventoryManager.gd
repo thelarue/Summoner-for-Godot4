@@ -6,7 +6,9 @@ signal inventory_updated
 
 var player_node : Node = null
 
-@onready var inventory_slot = preload("res://scenes/inventory_slot.tscn")
+var max_item_quantity = 3
+
+@onready var inventory_slot = preload("res://scenes/Inventory/inventory_slot.tscn")
 
 func _ready():
 	inventory.resize(6)
@@ -16,14 +18,18 @@ func add_item(item):
 		if (inventory[i] != null 
 		and inventory[i]["type"] == item["type"] 
 		and inventory[i]["effect"] == item["effect"]):
+			if inventory[i]["quantity"] == 3:
+				continue
 			inventory[i]["quantity"] += item["quantity"]
 			inventory_updated.emit()
-			print("item added")
+			print("new item")
 			return true
 		elif inventory[i] == null:
+			if item["quantity"] == 0:
+				item["quantity"] = 1
 			inventory[i] = item
 			inventory_updated.emit()
-			print("item added")
+			print("added item")
 			return true
 	return false
 
@@ -39,6 +45,14 @@ func remove_item(item_type, item_effect):
 			return true
 	return false
 
+func current_inventory_size():
+	var r = 0
+	for i in range(inventory.size()):
+		if inventory[i]:
+			r += 1
+	print(inventory.size())
+	return r
+	
 func increase_inventory_size():
 	inventory_updated.emit()
 

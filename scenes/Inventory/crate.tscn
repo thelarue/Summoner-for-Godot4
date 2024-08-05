@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct2ynfxi4ullm"]
+
+[ext_resource type="Script" path="res://scripts/Inventory/Crate.gd" id="1_tdb15"]
+[ext_resource type="Texture2D" uid="uid://cuo42ed86os84" path="res://assets/[32]-Iconset-Starter_Pack_217.png" id="2_pyfx1"]
+[ext_resource type="Script" path="res://scripts/Utils/Actionable.gd" id="3_lwo3u"]
+[ext_resource type="AudioStream" uid="uid://biyl284rl1w3f" path="res://assets/music and sound/pianoJingleTake05.mp3" id="5_ilrab"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pqxwa"]
+radius = 12.0416
+
+[node name="Crate" type="Node2D"]
+script = ExtResource("1_tdb15")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pyfx1")
+
+[node name="Actionable" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("3_lwo3u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_pqxwa")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ilrab")
+
+[node name="LabelTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="actioned" from="Actionable" to="." method="_on_actionable_actioned"]
+[connection signal="timeout" from="LabelTimer" to="." method="_on_label_timer_timeout"]

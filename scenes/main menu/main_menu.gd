@@ -6,4 +6,8 @@ func _ready():
 
 func _on_new_game_pressed():
 	get_tree().change_scene_to_file("res://scenes/starting_area/start.tscn")
-	pass # Replace with function body.
+
+func _on_load_pressed():
+	if FileAccess.file_exists("user://savegame.save"):
+		SaverLoader.load_game()
+		get_tree().change_scene_to_file("res://scenes/starting_area/start.tscn")
