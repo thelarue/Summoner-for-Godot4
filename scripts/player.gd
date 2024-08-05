@@ -126,8 +126,6 @@ func hit(dmg):
 		play_hit_animation(dmg)
 		$HitDelay.start()
 		$Blinking.start()
-		if Global.player_health <= 0:
-			die()
 
 
 func play_hit_animation(dmg):
@@ -151,7 +149,9 @@ func play_hit_animation(dmg):
 		if damage_to_apply <= 0:
 			break
 	
-				
+	if Global.player_health <= 0:
+		die()
+
 func die():
 	queue_free()
 	get_tree().change_scene_to_file("res://scenes/main menu/main_menu.tscn")

@@ -4,4 +4,6 @@ extends Node2D
 
 func _on_actionable_actioned():
 	Global.player_save_position = player.global_position
-	SaverLoader.save_game()
+	
+	if InventoryManager.check_azure_flower():
+		SaverLoader.save_game()

@@ -43,12 +43,13 @@ func _on_drop_button_pressed():
 		var drop_position = InventoryManager.player_node.global_position
 		var drop_offset = Vector2(0, 30)
 		drop_offset = drop_offset.rotated(InventoryManager.player_node.get_node("Marker2D").rotation)
-		InventoryManager.remove_item(item["type"], item["effect"])
+		InventoryManager.remove_item(item["name"])
 		usage_panel.visible = false
 
 
 func _on_use_button_pressed():
 	if item != null and EffectManager.has_method(item["method"]):
 		if EffectManager.call(item["method"], item):
-			InventoryManager.remove_item(item["type"], item["effect"])
+			if item["consumable"]:
+				InventoryManager.remove_item(item["name"])
 		usage_panel.visible = false
