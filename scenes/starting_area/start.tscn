@@ -3043,6 +3043,15 @@ item_texture = ExtResource("25_w6kcu")
 item_effect = "+ 1 Heart"
 effect_value = 4
 
+[node name="Crate3" parent="Items" instance=ExtResource("6_yob3l")]
+position = Vector2(310, 191)
+item_id = "0002"
+item_type = "Utility"
+item_method = "blank"
+item_name = "Azure Flower"
+item_texture = ExtResource("25_w6kcu")
+item_effect = "Save the game"
+
 [node name="bg" type="Node2D" parent="."]
 
 [node name="backdrop" type="Sprite2D" parent="bg"]

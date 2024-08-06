@@ -16,6 +16,8 @@ func _ready():
 func add_item(item):
 	for i in range(inventory.size()):
 		if (inventory[i] != null 
+		and inventory[i]["name"] == item["name"]
+		and inventory[i]["consumable"] == item["consumable"]
 		and inventory[i]["type"] == item["type"] 
 		and inventory[i]["effect"] == item["effect"]):
 			if inventory[i]["quantity"] == 3:
@@ -33,11 +35,10 @@ func add_item(item):
 			return true
 	return false
 
-func remove_item(item_type, item_effect):
+func remove_item(item_name):
 	for i in range(inventory.size()):
 		if (inventory[i] != null 
-		and inventory[i]["type"] == item_type
-		and inventory[i]["effect"] == item_effect):
+		and inventory[i]["name"] == item_name):
 			inventory[i]["quantity"] -= 1
 			if inventory[i]["quantity"] <= 0:
 				inventory[i] = null
@@ -76,4 +77,10 @@ func drop_item(item_data, drop_position):
 	drop_position = adjust_drop_position(drop_position)
 	item_instance.global_position = drop_position
 	get_tree().current_scene.add_child(item_instance)
-	
+
+func check_azure_flower():
+	for item in inventory:
+		if item != null and item["name"] == "Azure Flower":
+			remove_item(item["name"])
+			return true
+	return false
