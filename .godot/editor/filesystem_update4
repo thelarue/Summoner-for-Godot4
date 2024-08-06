@@ -1,6 +1,5 @@
-res://audio_player.tscn
 res://summoner_dialog.tres
-res://audio_player.gd
-res://scenes/starting_area/start.tscn
-res://interactions/interaction_manager.tscn
-res://player.tscn
+res://scenes/level 1/room_1.tscn
+res://scenes/level 1/room_2.tscn
+res://scenes/level 1/hallway_2.tscn
+res://scenes/level 1/storage_room_1.tscn
