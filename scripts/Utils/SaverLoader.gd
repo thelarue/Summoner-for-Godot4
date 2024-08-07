@@ -4,7 +4,6 @@ var player_inventory = []
 var player_creatures : Array[PackedScene]
 var player_health : int
 var picked_up_items : Dictionary
-var start_room_switch_frame : int
 var player_save_position : Vector2
 
 func set_data():
@@ -12,7 +11,6 @@ func set_data():
 	player_creatures = SummonInventory.summons
 	player_health = Global.player_health
 	picked_up_items = Global.picked_up_items
-	start_room_switch_frame = Global.start_room_switch_frame
 	player_save_position = Global.player_save_position
 
 func save():
@@ -41,7 +39,6 @@ func save():
 		"player_creatures" : creature_paths,
 		"player_health" : player_health,
 		"picked_up_items" : picked_up_items,
-		"start_room_switch_frame" : start_room_switch_frame,
 		"player_save_position" : player_save_position,
 	}
 	return data
@@ -65,7 +62,6 @@ func load_game():
 func load_data(data):
 	Global.player_health = data["player_health"]
 	Global.picked_up_items = data["picked_up_items"]
-	Global.start_room_switch_frame = data["start_room_switch_frame"]
 	Global.player_save_position = data["player_save_position"]
 	
 	

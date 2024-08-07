@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://vwh0gq0mfh3r"]
+[gd_scene load_steps=24 format=3 uid="uid://vwh0gq0mfh3r"]
 
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_68omf"]
 [ext_resource type="Script" path="res://scripts/Scenes/starting_room.gd" id="1_omxgt"]
@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d3spw0ngi346b" path="res://assets/tilesets and props/dungeon/bloody tiles/dungeon_1_tileset_blood.png" id="3_b1jcr"]
 [ext_resource type="Texture2D" uid="uid://d17ndncmxuroc" path="res://assets/tilesets and props/dungeon/burn_floor.png" id="4_fy3x5"]
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="5_itfer"]
-[ext_resource type="Texture2D" uid="uid://b4nld8nrk68ao" path="res://assets/tilesets and props/props/summoning circle.png" id="6_brbju"]
 [ext_resource type="Texture2D" uid="uid://d0rys6gafmmoi" path="res://assets/characters/common_cultist.png" id="7_pqbjn"]
 [ext_resource type="PackedScene" uid="uid://j1m8tcycfheg" path="res://scenes/level 1/blood_door_puzzle.tscn" id="7_tvqre"]
+[ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="8_4m1ma"]
 [ext_resource type="Texture2D" uid="uid://d2o2a4vq671vx" path="res://assets/tilesets and props/props/barrel.png" id="8_aaa5a"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="9_0qvy3"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_hy8m1"]
@@ -2364,12 +2364,15 @@ texture = ExtResource("5_itfer")
 24:9/0 = 0
 24:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:9/0/physics_layer_0/angular_velocity = 0.0
+24:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:9/0 = 0
 25:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:9/0/physics_layer_0/angular_velocity = 0.0
+25:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:9/0 = 0
 26:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:9/0/physics_layer_0/angular_velocity = 0.0
+26:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:10/0 = 0
 6:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:10/0/physics_layer_0/angular_velocity = 0.0
@@ -2394,12 +2397,15 @@ texture = ExtResource("5_itfer")
 24:10/0 = 0
 24:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:10/0/physics_layer_0/angular_velocity = 0.0
+24:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:10/0 = 0
 25:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:10/0/physics_layer_0/angular_velocity = 0.0
+25:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:10/0 = 0
 26:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:10/0/physics_layer_0/angular_velocity = 0.0
+26:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:11/0 = 0
 14:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:11/0/physics_layer_0/angular_velocity = 0.0
@@ -2415,15 +2421,19 @@ texture = ExtResource("5_itfer")
 22:11/0 = 0
 22:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 22:11/0/physics_layer_0/angular_velocity = 0.0
+22:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 23:11/0 = 0
 23:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 23:11/0/physics_layer_0/angular_velocity = 0.0
+23:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:11/0 = 0
 27:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:11/0/physics_layer_0/angular_velocity = 0.0
+27:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 28:11/0 = 0
 28:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 28:11/0/physics_layer_0/angular_velocity = 0.0
+28:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:12/0 = 0
 14:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:12/0/physics_layer_0/angular_velocity = 0.0
@@ -2439,15 +2449,19 @@ texture = ExtResource("5_itfer")
 22:12/0 = 0
 22:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 22:12/0/physics_layer_0/angular_velocity = 0.0
+22:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 23:12/0 = 0
 23:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 23:12/0/physics_layer_0/angular_velocity = 0.0
+23:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:12/0 = 0
 27:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:12/0/physics_layer_0/angular_velocity = 0.0
+27:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 28:12/0 = 0
 28:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 28:12/0/physics_layer_0/angular_velocity = 0.0
+28:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:13/0 = 0
 3:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:13/0/physics_layer_0/angular_velocity = 0.0
@@ -2495,15 +2509,19 @@ texture = ExtResource("5_itfer")
 22:13/0 = 0
 22:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 22:13/0/physics_layer_0/angular_velocity = 0.0
+22:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 23:13/0 = 0
 23:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 23:13/0/physics_layer_0/angular_velocity = 0.0
+23:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:13/0 = 0
 27:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:13/0/physics_layer_0/angular_velocity = 0.0
+27:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 28:13/0 = 0
 28:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 28:13/0/physics_layer_0/angular_velocity = 0.0
+28:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:14/0 = 0
 3:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:14/0/physics_layer_0/angular_velocity = 0.0
@@ -2548,12 +2566,15 @@ texture = ExtResource("5_itfer")
 24:14/0 = 0
 24:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:14/0/physics_layer_0/angular_velocity = 0.0
+24:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:14/0 = 0
 25:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:14/0/physics_layer_0/angular_velocity = 0.0
+25:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:14/0 = 0
 26:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:14/0/physics_layer_0/angular_velocity = 0.0
+26:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:15/0 = 0
 3:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:15/0/physics_layer_0/angular_velocity = 0.0
@@ -2594,12 +2615,15 @@ texture = ExtResource("5_itfer")
 24:15/0 = 0
 24:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:15/0/physics_layer_0/angular_velocity = 0.0
+24:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:15/0 = 0
 25:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:15/0/physics_layer_0/angular_velocity = 0.0
+25:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:15/0 = 0
 26:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:15/0/physics_layer_0/angular_velocity = 0.0
+26:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:16/0 = 0
 3:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:16/0/physics_layer_0/angular_velocity = 0.0
@@ -3274,159 +3298,6 @@ sources/2 = SubResource("TileSetAtlasSource_chxs7")
 sources/3 = SubResource("TileSetAtlasSource_rcom5")
 sources/4 = SubResource("TileSetAtlasSource_24i21")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_quuks"]
-atlas = ExtResource("6_brbju")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l2l0s"]
-atlas = ExtResource("6_brbju")
-region = Rect2(3000, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eotxe"]
-atlas = ExtResource("6_brbju")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nc1le"]
-atlas = ExtResource("6_brbju")
-region = Rect2(200, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vs2rg"]
-atlas = ExtResource("6_brbju")
-region = Rect2(400, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1tord"]
-atlas = ExtResource("6_brbju")
-region = Rect2(600, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5n75w"]
-atlas = ExtResource("6_brbju")
-region = Rect2(800, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yaqa5"]
-atlas = ExtResource("6_brbju")
-region = Rect2(1000, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wy6xl"]
-atlas = ExtResource("6_brbju")
-region = Rect2(1200, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fcmp2"]
-atlas = ExtResource("6_brbju")
-region = Rect2(1400, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eto34"]
-atlas = ExtResource("6_brbju")
-region = Rect2(1600, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4q32g"]
-atlas = ExtResource("6_brbju")
-region = Rect2(1800, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_46x1g"]
-atlas = ExtResource("6_brbju")
-region = Rect2(2000, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sbh5d"]
-atlas = ExtResource("6_brbju")
-region = Rect2(2200, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_blajh"]
-atlas = ExtResource("6_brbju")
-region = Rect2(2400, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ens3o"]
-atlas = ExtResource("6_brbju")
-region = Rect2(2600, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbmtt"]
-atlas = ExtResource("6_brbju")
-region = Rect2(2800, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8cmj4"]
-atlas = ExtResource("6_brbju")
-region = Rect2(3000, 0, 200, 200)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0tlhy"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_quuks")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l2l0s")
-}],
-"loop": true,
-"name": &"summoned",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eotxe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nc1le")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vs2rg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1tord")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5n75w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yaqa5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wy6xl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fcmp2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eto34")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4q32g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_46x1g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sbh5d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_blajh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ens3o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pbmtt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8cmj4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8cmj4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8cmj4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8cmj4")
-}],
-"loop": true,
-"name": &"summoning",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vyhm"]
 atlas = ExtResource("7_pqbjn")
 region = Rect2(0, 0, 64, 64)
@@ -3498,19 +3369,28 @@ position = Vector2(0.5, -7.46875)
 position = Vector2(0, 5)
 
 [node name="Area2D" parent="Doors/BloodDoorPuzzle" index="4"]
-position = Vector2(1, 39)
+position = Vector2(1, 33)
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Crate" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(256, 177)
+item_id = "0000"
+item_type = "Utils"
+item_method = "ritual_knife"
+item_name = "Ritual Knife"
+item_texture = ExtResource("13_jftwp")
+item_effect = "Might hurt"
+effect_value = 1
 
 [node name="bodies" type="Sprite2D" parent="."]
 modulate = Color(0.593134, 0.593134, 0.593134, 1)
 position = Vector2(180, 442)
 texture = ExtResource("2_u3c1x")
 
-[node name="summoning circle" type="Sprite2D" parent="."]
+[node name="SummoningCircle" parent="." instance=ExtResource("8_4m1ma")]
 position = Vector2(320, 287)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="summoning circle"]
-sprite_frames = SubResource("SpriteFrames_0tlhy")
-frame_progress = 0.119857
+scale = Vector2(1.5, 1.5)
 
 [node name="commoncultist" type="Sprite2D" parent="."]
 position = Vector2(446, 276)
@@ -3539,16 +3419,6 @@ hframes = 4
 
 [node name="player" parent="." instance=ExtResource("9_0qvy3")]
 position = Vector2(323, 260)
-
-[node name="Crate" parent="." instance=ExtResource("12_hy8m1")]
-position = Vector2(256, 177)
-item_id = "0000"
-item_type = "Utils"
-item_method = "ritual_knife"
-item_name = "Ritual Knife"
-item_texture = ExtResource("13_jftwp")
-item_effect = "Might hurt"
-effect_value = 1
 
 [editable path="Doors/BloodDoorPuzzle"]
 [editable path="Doors/BloodDoorPuzzle/Door"]
