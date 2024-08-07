@@ -7,6 +7,9 @@ var alchemy_menu : Control = null
 
 var summoning_menu : Node = null
 
+var blood_door_puzzle : Node = null
+
+
 func set_summoning_menu(menu):
 	summoning_menu = menu
 
@@ -15,7 +18,9 @@ func set_alchemy_menu(menu):
 	
 func set_player_reference(player):
 	player_node = player
-	
+
+func set_blood_door_puzzle(door):
+	blood_door_puzzle = door
 	
 func heal(item):
 	if Global.player_health < player_node.max_health:
@@ -38,4 +43,7 @@ func use_ingredient(item):
 func ritual_knife(item):
 	if player_node:
 		player_node.hit(item["value"])
+		if blood_door_puzzle:
+			if blood_door_puzzle.is_player_in_range():
+				blood_door_puzzle.set_can_pass()
 	

@@ -3,6 +3,7 @@ extends Control
 @onready var first_item_sprite = $FirstItem/FirstItemSprite
 @onready var second_item_sprite = $SecondItem/SecondItemSprite
 @onready var third_item_sprite = $ThirdItem/ThirdItemSprite
+@onready var circle_animated_sprite = $CircleAnimatedSprite
 
 var first_item = null
 var second_item = null
@@ -38,6 +39,7 @@ func _on_summon_button_pressed():
 			var instance = creature.instantiate()
 			if SummonInventory.add_summon(creature):
 				clear_slots()
+				circle_animated_sprite.play("summon_animation")
 			else:
 				print("Team is full")
 		else:

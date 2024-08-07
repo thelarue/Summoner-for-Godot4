@@ -3011,14 +3011,13 @@ script = ExtResource("1_w8yj5")
 position = Vector2(240, 449)
 rotation = -3.14159
 scale = Vector2(2, 2)
-collision_layer = 4
 destionation_level_tag = "second_area"
 destination_door_tag = "N"
 
-[node name="CollisionShape2D" parent="Doors/Door_S" index="1"]
+[node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
 position = Vector2(5.20349e-05, 21)
 
-[node name="Spawn" parent="Doors/Door_S" index="2"]
+[node name="Spawn" parent="Doors/Door_S" index="1"]
 position = Vector2(-0.499897, 41)
 
 [node name="Items" type="Node" parent="."]
@@ -3158,7 +3157,7 @@ process_mode = 3
 stream = ExtResource("13_i1q81")
 
 [node name="player" parent="." instance=ExtResource("24_7o4xp")]
-position = Vector2(132, 145)
+position = Vector2(156, 161)
 
 [node name="SummoningCircle" parent="." instance=ExtResource("24_hyapk")]
 position = Vector2(204, 248)

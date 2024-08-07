@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://cp232m8qgnd5x"]
+[gd_scene load_steps=15 format=3 uid="uid://cp232m8qgnd5x"]
 
+[ext_resource type="Script" path="res://scripts/Scenes/hallway_1.gd" id="1_5hfeh"]
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_f5r4q"]
 [ext_resource type="Texture2D" uid="uid://d3spw0ngi346b" path="res://assets/tilesets and props/dungeon/bloody tiles/dungeon_1_tileset_blood.png" id="2_iqjy2"]
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="3_lksm3"]
 [ext_resource type="Texture2D" uid="uid://mrmbvj4sgp2j" path="res://assets/tilesets and props/dungeon/dungeon_2_tileset.png" id="4_kgsiw"]
 [ext_resource type="Texture2D" uid="uid://dc2p3sl32xb6t" path="res://assets/tilesets and props/pocketwitch_dungeons1.png" id="5_giu02"]
+[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="6_f610k"]
+[ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="7_2im51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s35s5"]
 texture = ExtResource("1_f5r4q")
@@ -2410,11 +2413,43 @@ sources/4 = SubResource("TileSetAtlasSource_2afc2")
 sources/5 = SubResource("TileSetAtlasSource_fj53x")
 
 [node name="hallway 1" type="Node2D"]
+script = ExtResource("1_5hfeh")
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_6lrkr")
 format = 2
 layer_0/name = "0"
 layer_0/tile_data = PackedInt32Array(196621, 1048578, 6, 262157, 1048578, 7, 196622, 1114114, 6, 262158, 1114114, 7, 196623, 1179650, 6, 262159, 1179650, 7, 196620, 655362, 16, 262156, 655362, 17, 196624, 655362, 16, 262160, 655362, 17, 196625, 720898, 16, 262161, 720898, 17, 196626, 786434, 16, 262162, 786434, 17, -589810, 65538, 31, -524274, 65538, 31, -458738, 65538, 31, -393202, 65538, 31, -327666, 65538, 31, -262130, 65538, 31, -196594, 65538, 31, -131058, 65538, 31, -65522, 65538, 31, 14, 65538, 31, 65550, 65538, 31, 131086, 65538, 31, -589809, 65538, 31, -524273, 65538, 31, -458737, 65538, 31, -393201, 65538, 31, -327665, 65538, 31, -262129, 65538, 31, -196593, 65538, 31, -131057, 65538, 31, -65521, 65538, 31, 15, 65538, 31, 65551, 65538, 31, 131087, 65538, 31, -589808, 65538, 31, -524272, 65538, 31, -458736, 65538, 31, -393200, 65538, 31, -327664, 65538, 31, -262128, 65538, 31, -196592, 65538, 31, -131056, 65538, 31, -65520, 65538, 31, 16, 65538, 31, 65552, 65538, 31, 131088, 65538, 31, 131089, 720898, 15, 131090, 786434, 15, 65553, 720898, 15, 65554, 786434, 15, 17, 720898, 15, 18, 786434, 15, -65519, 720898, 15, -65518, 786434, 15, -131055, 720898, 15, -131054, 786434, 15, -196591, 720898, 15, -196590, 786434, 15, -262127, 720898, 15, -262126, 786434, 15, -327663, 720898, 15, -327662, 786434, 15, -393199, 720898, 15, -393198, 786434, 15, -458735, 720898, 15, -458734, 786434, 15, -524271, 720898, 15, -524270, 786434, 15, -589807, 720898, 15, -589806, 786434, 15, -720882, 1703937, 14, -655346, 1703937, 15, -720881, 655361, 13, -655345, 655361, 14, -720879, 720898, 13, -655343, 720898, 14, -720878, 786434, 13, -655342, 786434, 14, -720880, 655361, 13, -655344, 655361, 14, -720886, 589826, 13, -655350, 589826, 14, -589814, 589826, 15, -524278, 589826, 15, -458742, 589826, 15, -393206, 589826, 15, -327670, 589826, 15, -262134, 589826, 15, -196598, 589826, 15, -131062, 589826, 15, -65526, 589826, 15, 10, 589826, 15, 65546, 589826, 15, 131082, 589826, 15, -720885, 655361, 13, -655349, 655361, 14, -589813, 65538, 31, -524277, 65538, 31, -458741, 65538, 31, -393205, 65538, 31, -327669, 65538, 31, -262133, 65538, 31, -196597, 65538, 31, -131061, 65538, 31, -65525, 65538, 31, 11, 65538, 31, 65547, 65538, 31, 131083, 65538, 31, -720884, 1572865, 14, -655348, 1572865, 15, -589812, 65538, 31, -524276, 65538, 31, -458740, 65538, 31, -393204, 65538, 31, -327668, 65538, 31, -262132, 65538, 31, -196596, 65538, 31, -131060, 65538, 31, -65524, 65538, 31, 12, 65538, 31, 65548, 65538, 31, 131084, 65538, 31, -720887, 524290, 13, -655351, 524290, 14, -589815, 524290, 15, -524279, 524290, 15, -458743, 524290, 15, -393207, 524290, 15, -327671, 524290, 15, -262135, 524290, 15, -196599, 524290, 15, -131063, 524290, 15, -65527, 524290, 15, 9, 524290, 15, 65545, 524290, 15, 131081, 524290, 15, -720883, 1638401, 14, -655347, 1638401, 15, -589811, 65538, 31, -524275, 65538, 31, -458739, 65538, 31, -393203, 65538, 31, -327667, 65538, 31, -262131, 65538, 31, -196595, 65538, 31, -131059, 65538, 31, -65523, 65538, 31, 13, 65538, 31, 65549, 65538, 31, 131085, 65538, 31, 196618, 589826, 16, 262154, 589826, 17, 196617, 524290, 16, 262153, 524290, 17, 196619, 655362, 16, 262155, 655362, 17)
 layer_1/name = "1"
 layer_1/tile_data = PackedInt32Array(-131059, 1245189, 14, -393201, 1310725, 14, -262128, 1310725, 14, 65548, 1310725, 14)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door_N" parent="Doors" instance=ExtResource("6_f610k")]
+position = Vector2(218, -142)
+destionation_level_tag = "hallway_2"
+destination_door_tag = "S"
+
+[node name="CollisionShape2D" parent="Doors/Door_N" index="0"]
+position = Vector2(215, -142)
+
+[node name="Spawn" parent="Doors/Door_N" index="1"]
+position = Vector2(213, -102)
+
+[node name="Door_S" parent="Doors" instance=ExtResource("6_f610k")]
+position = Vector2(453, 101)
+destionation_level_tag = "starting_room"
+destination_door_tag = "N"
+
+[node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
+position = Vector2(12, -5)
+
+[node name="Spawn" parent="Doors/Door_S" index="1"]
+position = Vector2(9, -48)
+
+[node name="player" parent="." instance=ExtResource("7_2im51")]
+position = Vector2(2, -6)
+
+[editable path="Doors/Door_N"]
+[editable path="Doors/Door_S"]

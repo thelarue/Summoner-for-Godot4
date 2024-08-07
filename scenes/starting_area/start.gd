@@ -37,9 +37,10 @@ func _process(delta):
 func _door_puzzle():
 	if switch != null:
 		if switch.frame == 1:
-			door.get_node("Sprite2D").frame = 0
+			#door.get_node("Sprite2D").frame = 0
+			pass
 		if switch.frame == 2:
-			door.get_node("Sprite2D").frame = 1
+			#door.get_node("Sprite2D").frame = 1
 			door.set_can_change_scene(true)
 	
 

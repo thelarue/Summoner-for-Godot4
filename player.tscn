@@ -254,7 +254,6 @@ offset_left = 108.0
 offset_top = 161.0
 offset_right = 108.0
 offset_bottom = 161.0
-scale = Vector2(2, 2)
 
 [connection signal="area_entered" from="Marker2D/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Marker2D/Area2D" to="." method="_on_area_2d_area_exited"]
