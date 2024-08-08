@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccg207vsooy1q"]
+[gd_scene load_steps=13 format=3 uid="uid://ccg207vsooy1q"]
 
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_2ffj5"]
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_jacqo"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="3_ng2ri"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="5_tuokk"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="6_fk82s"]
+[ext_resource type="PackedScene" uid="uid://cuvuj3nf5kxfb" path="res://scenes/Elements/common_cultist.tscn" id="7_e5k0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ayr8"]
 texture = ExtResource("1_2ffj5")
@@ -1501,6 +1502,13 @@ texture = ExtResource("2_4l7c4")
 4:35/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:35/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tsrp8"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dcu7w"]
 texture = ExtResource("3_ng2ri")
 6:1/0 = 0
@@ -2732,15 +2740,19 @@ texture = ExtResource("3_ng2ri")
 1:31/0 = 0
 1:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:31/0/physics_layer_0/angular_velocity = 0.0
+1:31/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 2:31/0 = 0
 2:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:31/0/physics_layer_0/angular_velocity = 0.0
+2:31/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 3:31/0 = 0
 3:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:31/0/physics_layer_0/angular_velocity = 0.0
+3:31/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 4:31/0 = 0
 4:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:31/0/physics_layer_0/angular_velocity = 0.0
+4:31/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 12:31/0 = 0
 12:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:31/0/physics_layer_0/angular_velocity = 0.0
@@ -2756,18 +2768,23 @@ texture = ExtResource("3_ng2ri")
 1:32/0 = 0
 1:32/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:32/0/physics_layer_0/angular_velocity = 0.0
+1:32/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 2:32/0 = 0
 2:32/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:32/0/physics_layer_0/angular_velocity = 0.0
+2:32/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 3:32/0 = 0
 3:32/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:32/0/physics_layer_0/angular_velocity = 0.0
+3:32/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 4:32/0 = 0
 4:32/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:32/0/physics_layer_0/angular_velocity = 0.0
+4:32/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 5:32/0 = 0
 5:32/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:32/0/physics_layer_0/angular_velocity = 0.0
+5:32/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 14:32/0 = 0
 14:32/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:32/0/physics_layer_0/angular_velocity = 0.0
@@ -2777,18 +2794,23 @@ texture = ExtResource("3_ng2ri")
 1:33/0 = 0
 1:33/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:33/0/physics_layer_0/angular_velocity = 0.0
+1:33/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 2:33/0 = 0
 2:33/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:33/0/physics_layer_0/angular_velocity = 0.0
+2:33/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 3:33/0 = 0
 3:33/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:33/0/physics_layer_0/angular_velocity = 0.0
+3:33/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 4:33/0 = 0
 4:33/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:33/0/physics_layer_0/angular_velocity = 0.0
+4:33/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 5:33/0 = 0
 5:33/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:33/0/physics_layer_0/angular_velocity = 0.0
+5:33/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tsrp8")
 8:33/0 = 0
 8:33/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:33/0/physics_layer_0/angular_velocity = 0.0
@@ -2862,6 +2884,7 @@ texture = ExtResource("3_ng2ri")
 [sub_resource type="TileSet" id="TileSet_51gdc"]
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 0
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_8ayr8")
 sources/1 = SubResource("TileSetAtlasSource_1caap")
 sources/2 = SubResource("TileSetAtlasSource_dcu7w")
@@ -2887,5 +2910,10 @@ spawn_direction = "down"
 position = Vector2(-2, -36)
 
 [node name="player" parent="." instance=ExtResource("6_fk82s")]
+position = Vector2(149, 289)
+
+[node name="CommonCultist" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_e5k0p")]
+position = Vector2(698, 196)
+target = NodePath("../player")
 
 [editable path="Doors/Door_S"]
