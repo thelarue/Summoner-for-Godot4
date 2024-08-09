@@ -6,6 +6,7 @@
 
 [node name="InventoryItem" type="Node2D" groups=["Items"]]
 script = ExtResource("1_nrqn0")
+consumable = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

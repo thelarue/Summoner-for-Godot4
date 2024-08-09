@@ -11,6 +11,7 @@ class_name Item
 @export var item_texture : Texture
 @export var item_effect : String = ""
 @export var effect_value : int = 0
+@export var consumable : bool = true
 
 @export var recipe : Array[Item] = []
 
@@ -39,7 +40,8 @@ func pickup_item():
 		"effect" : item_effect,
 		"method" : item_method,
 		"value" : effect_value,
- 		"scene_path" : scene_path
+ 		"scene_path" : scene_path,
+		"consumable" : consumable
 	}
 	if InventoryManager.player_node:
 		if InventoryManager.add_item(item):
@@ -64,3 +66,4 @@ func set_item_data(data):
 	item_texture = data["texture"]
 	effect_value = data["value"]
 	item_method = data["method"]
+	consumable = data["consumable"]

@@ -74,7 +74,6 @@ func drop_item(item_data, drop_position):
 	var item_scene = load(item_data["scene_path"])
 	var item_instance = item_scene.instantiate()
 	item_instance.set_item_data(item_data)
-	drop_position = adjust_drop_position(drop_position)
 	item_instance.global_position = drop_position
 	get_tree().current_scene.add_child(item_instance)
 

@@ -47,3 +47,6 @@ func ritual_knife(item):
 			if blood_door_puzzle.is_player_in_range():
 				blood_door_puzzle.set_can_pass()
 	
+func severed_hand(item):
+	if player_node:
+		InventoryManager.drop_item(item, player_node.global_position)

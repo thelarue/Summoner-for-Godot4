@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="8_4m1ma"]
 [ext_resource type="Texture2D" uid="uid://d2o2a4vq671vx" path="res://assets/tilesets and props/props/barrel.png" id="8_aaa5a"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="9_0qvy3"]
+[ext_resource type="Texture2D" uid="uid://ccp53885lhsmf" path="res://assets/dagger.png" id="9_5w0sq"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_hy8m1"]
-[ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/[32]-Iconset-Starter_Pack_172.png" id="13_jftwp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1hqg"]
 texture = ExtResource("1_68omf")
@@ -3363,13 +3363,16 @@ destination_door_tag = "S"
 spawn_direction = "down"
 
 [node name="CollisionShape2D" parent="Doors/BloodDoorPuzzle/Door" index="0"]
-position = Vector2(0.5, -7.46875)
+position = Vector2(0.5, -9.98438)
 
 [node name="Spawn" parent="Doors/BloodDoorPuzzle/Door" index="1"]
 position = Vector2(0, 5)
 
 [node name="Area2D" parent="Doors/BloodDoorPuzzle" index="4"]
-position = Vector2(1, 33)
+position = Vector2(1.5, 30)
+
+[node name="CollisionShape2D" parent="Doors/BloodDoorPuzzle/Area2D" index="0"]
+position = Vector2(-0.5, 2.5)
 
 [node name="Items" type="Node" parent="."]
 
@@ -3379,7 +3382,7 @@ item_id = "0000"
 item_type = "Utils"
 item_method = "ritual_knife"
 item_name = "Ritual Knife"
-item_texture = ExtResource("13_jftwp")
+item_texture = ExtResource("9_5w0sq")
 item_effect = "Might hurt"
 effect_value = 1
 

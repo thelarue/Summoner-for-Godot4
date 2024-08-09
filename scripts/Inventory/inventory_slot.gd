@@ -50,6 +50,8 @@ func _on_drop_button_pressed():
 func _on_use_button_pressed():
 	if item != null and EffectManager.has_method(item["method"]):
 		if EffectManager.call(item["method"], item):
+			print(item["consumable"])
 			if item["consumable"]:
+				print("Removing " + item["name"])
 				InventoryManager.remove_item(item["name"])
 		usage_panel.visible = false
