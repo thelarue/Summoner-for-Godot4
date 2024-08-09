@@ -76,6 +76,7 @@ func drop_item(item_data, drop_position):
 	item_instance.set_item_data(item_data)
 	item_instance.global_position = drop_position
 	get_tree().current_scene.add_child(item_instance)
+	return item_instance
 
 func check_azure_flower():
 	for item in inventory:
