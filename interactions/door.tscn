@@ -12,7 +12,3 @@ script = ExtResource("1_r48ot")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5625)
 shape = SubResource("RectangleShape2D_gd7av")
-
-[node name="Spawn" type="Marker2D" parent="."]
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -55,3 +55,4 @@ func _on_use_button_pressed():
 				print("Removing " + item["name"])
 				InventoryManager.remove_item(item["name"])
 		usage_panel.visible = false
+	InventoryManager.inventory_item_used( item )

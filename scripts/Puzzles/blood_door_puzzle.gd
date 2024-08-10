@@ -7,22 +7,36 @@ extends Node2D
 var player_in_range : bool = false
 
 func _ready():
-	EffectManager.set_blood_door_puzzle(self)
-	door.set_can_change_scene(false)
+	InventoryManager.item_used.connect( item_used )
+	if PuzzleCompletionList.puzzles["blood_door"]:
+		set_can_pass()
+	else:
+		door.can_change_scene = false
+
+
+func _process(_delta):
+	player_in_range = false
+	var bodies = %PlayerProximityArea.get_overlapping_bodies()
+	
+	for body in bodies:
+		if body.is_in_group("player"):
+			player_in_range = true
+	
+	%Puzzle.visible = player_in_range and not door.can_change_scene
+
+
 
 func is_player_in_range() -> bool:
 	return player_in_range
 
+
 func set_can_pass():
-	door.set_can_change_scene(true)
+	door.can_change_scene = true
 	closed_door.visible = false
 	open_door.visible = true
 
 
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("player"):
-		player_in_range = true
-
-func _on_area_2d_body_exited(body):
-	if body.is_in_group("player"):
-		player_in_range = false
+func item_used( item ):
+	if not player_in_range : return
+	PuzzleCompletionList.puzzles["blood_door"] = true
+	set_can_pass()
