@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://vwh0gq0mfh3r"]
+[gd_scene load_steps=26 format=3 uid="uid://vwh0gq0mfh3r"]
 
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_68omf"]
 [ext_resource type="Script" path="res://scripts/Scenes/starting_room.gd" id="1_omxgt"]
@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://d2o2a4vq671vx" path="res://assets/tilesets and props/props/barrel.png" id="8_aaa5a"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="9_0qvy3"]
 [ext_resource type="Texture2D" uid="uid://ccp53885lhsmf" path="res://assets/dagger.png" id="9_5w0sq"]
+[ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/[32]-Iconset-Starter_Pack_172.png" id="10_sldby"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_hy8m1"]
+[ext_resource type="PackedScene" uid="uid://usxchysdcnrl" path="res://scenes/utils/barrel.tscn" id="15_4sm0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1hqg"]
 texture = ExtResource("1_68omf")
@@ -3386,6 +3388,33 @@ item_texture = ExtResource("9_5w0sq")
 item_effect = "Might hurt"
 effect_value = 1
 
+[node name="Crate2" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(250, 397)
+item_id = "0002"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Horn"
+item_texture = ExtResource("10_sldby")
+item_effect = "A horn"
+
+[node name="Crate3" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(315, 393)
+item_id = "0002"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Fungi"
+item_texture = ExtResource("10_sldby")
+item_effect = "A horn"
+
+[node name="Crate4" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(391, 378)
+item_id = "0002"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Potion"
+item_texture = ExtResource("10_sldby")
+item_effect = "A horn"
+
 [node name="bodies" type="Sprite2D" parent="."]
 modulate = Color(0.593134, 0.593134, 0.593134, 1)
 position = Vector2(180, 442)
@@ -3422,6 +3451,10 @@ hframes = 4
 
 [node name="player" parent="." instance=ExtResource("9_0qvy3")]
 position = Vector2(323, 260)
+
+[node name="Barrel4" parent="." instance=ExtResource("15_4sm0u")]
+position = Vector2(296, 456)
+scale = Vector2(2, 2)
 
 [editable path="Doors/BloodDoorPuzzle"]
 [editable path="Doors/BloodDoorPuzzle/Door"]

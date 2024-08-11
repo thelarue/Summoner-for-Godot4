@@ -23,6 +23,7 @@ script = ExtResource("3_lwo3u")
 shape = SubResource("CircleShape2D_pqxwa")
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("5_ilrab")
 
 [node name="LabelTimer" type="Timer" parent="."]

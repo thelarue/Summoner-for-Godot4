@@ -8,6 +8,7 @@ extends Control
 var first_item = null
 var second_item = null
 var third_item = null
+var creature = null
 
 func _ready():
 	EffectManager.set_summoning_menu(self)
@@ -34,14 +35,10 @@ func clear_slots():
 
 func _on_summon_button_pressed():
 	if first_item and second_item and third_item:
-		var creature = SummonRecipes.get_recipe_result(first_item["name"], second_item["name"], third_item["name"])
+		creature = SummonRecipes.get_recipe_result(first_item["name"], second_item["name"], third_item["name"])
 		if creature:
 			var instance = creature.instantiate()
-			if SummonInventory.add_summon(creature):
-				clear_slots()
-				circle_animated_sprite.play("summon_animation")
-			else:
-				print("Team is full")
+			circle_animated_sprite.play("summon_animation")
 		else:
 			print("Creature recipe not found")
 			
@@ -54,4 +51,11 @@ func get_items_back():
 	if third_item:
 		InventoryManager.add_item(third_item)
 
+
+func _on_circle_animated_sprite_animation_finished():
+	if circle_animated_sprite.animation == "summon_animation":
+		if SummonInventory.add_summon(creature):
+			creature = null
+			clear_slots()
+			circle_animated_sprite.play("idle")
 

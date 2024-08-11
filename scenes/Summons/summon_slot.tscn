@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://df3dxmwjh2cbk"]
+[gd_scene load_steps=11 format=3 uid="uid://df3dxmwjh2cbk"]
 
 [ext_resource type="Script" path="res://scripts/Summons/summon_slot.gd" id="1_1drtn"]
 [ext_resource type="Texture2D" uid="uid://d0rys6gafmmoi" path="res://assets/characters/common_cultist.png" id="1_ks6ql"]
+[ext_resource type="FontFile" uid="uid://dq2uewwmiw1sf" path="res://assets/AmiNo8bitFont.ttf" id="3_xn7wh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gg4nb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qb88"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u73wi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1as4g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evcji"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ae1ju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l5wfy"]
 
 [node name="SummonSlot" type="Control"]
 custom_minimum_size = Vector2(40, 40)
@@ -21,3 +36,64 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_ks6ql")
 region_enabled = true
 region_rect = Rect2(0, 0, 62, 62)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gg4nb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6qb88")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u73wi")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1as4g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_evcji")
+
+[node name="UsagePanel" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 101.0
+offset_bottom = 45.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.623529)
+
+[node name="UseButton" type="Button" parent="UsagePanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 15.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_xn7wh")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ae1ju")
+text = "Select
+"
+
+[node name="DropButton" type="Button" parent="UsagePanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -15.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_xn7wh")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l5wfy")
+text = "Discard"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="UsagePanel/UseButton" to="." method="_on_use_button_pressed"]

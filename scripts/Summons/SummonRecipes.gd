@@ -2,7 +2,7 @@ extends Node
 
 
 var recipes = {
-	["Fungi", "Horn", "Horn"] : load("res://scenes/utils/test_summon.tscn")
+	["Fungi", "Horn", "Potion"] : load("res://scenes/Summons/fire_summon.tscn")
 }
 
 func get_recipe_result(item1_name, item2_name, item3_name):
