@@ -95,5 +95,54 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_l5wfy")
 text = "Discard"
 
+[node name="DetailsPanel" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 100.0
+offset_bottom = 45.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.623529)
+
+[node name="ItemName" type="Label" parent="DetailsPanel"]
+layout_mode = 1
+offset_right = 10.0
+offset_bottom = 6.0
+theme_override_fonts/font = ExtResource("3_xn7wh")
+theme_override_font_sizes/font_size = 16
+text = "Name"
+
+[node name="ItemType" type="Label" parent="DetailsPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -3.0
+offset_right = 10.0
+offset_bottom = 3.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65834, 0.65834, 0.65834, 1)
+theme_override_fonts/font = ExtResource("3_xn7wh")
+theme_override_font_sizes/font_size = 16
+text = "Type"
+
+[node name="ItemEffect" type="Label" parent="DetailsPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_right = 15.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.52114, 0.521141, 0.52114, 1)
+theme_override_fonts/font = ExtResource("3_xn7wh")
+theme_override_font_sizes/font_size = 16
+text = "Effect"
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="UsagePanel/UseButton" to="." method="_on_use_button_pressed"]

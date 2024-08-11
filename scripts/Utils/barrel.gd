@@ -9,3 +9,4 @@ func destroy() -> void:
 	if destroyed == false:
 		animated_sprite_2d.play("destroy")
 		destroyed = true
+		set_collision_layer_value(3, false)

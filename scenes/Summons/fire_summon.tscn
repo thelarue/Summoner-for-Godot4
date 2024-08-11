@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvtjsbfb7lauc"]
+[gd_scene load_steps=7 format=3 uid="uid://bvtjsbfb7lauc"]
 
 [ext_resource type="Script" path="res://scripts/Summons/fire_summon.gd" id="1_mwx33"]
 [ext_resource type="Texture2D" uid="uid://f3cknuv4fw1o" path="res://assets/characters/gooberbaby.png" id="1_v5d78"]
-[ext_resource type="Script" path="res://scripts/Summons/SummonResource.gd" id="2_o7014"]
 [ext_resource type="PackedScene" uid="uid://cy0806qw3wel1" path="res://scenes/fire_ball.tscn" id="3_6yc8a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8e2hf"]
@@ -25,7 +24,6 @@ radius = 28.0713
 
 [node name="FireSummon" type="CharacterBody2D"]
 script = ExtResource("1_mwx33")
-stats = ExtResource("2_o7014")
 fireball_scene = ExtResource("3_6yc8a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

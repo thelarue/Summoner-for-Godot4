@@ -1,15 +1,14 @@
 extends CharacterBody2D
 
-@export var stats : Resource
+class_name FireSummon
+
+var summon_name : String = "Cal"
+var type : String  = "Fire"
+var health : int = 10
 
 @export var fireball_scene : PackedScene = null
 var active_fireball : Area2D = null
 
-func _ready():
-	if stats:
-		stats.name = "Cal"
-		stats.type = "Fire"
-		stats.health = 10
 
 func overworld_ability():
 	if active_fireball == null:
@@ -24,6 +23,14 @@ func overworld_ability():
 		Global.get_player_node().add_child(fireball)
 		active_fireball = fireball
 
+func get_creature_name() -> String:
+	return summon_name
 
+func get_creature_type() -> String:
+	return type
+
+func get_creature_health() -> int:
+	return health
+	
 func _on_fireball_removed():
 	active_fireball = null
