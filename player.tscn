@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://dga7wbow6g13l"]
+[gd_scene load_steps=29 format=3 uid="uid://dga7wbow6g13l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_swdcq"]
 [ext_resource type="Shader" path="res://moody_shader.gdshader" id="2_etysu"]
 [ext_resource type="Texture2D" uid="uid://t0vovc75nl3b" path="res://assets/characters/little girl/little_girl.png" id="3_4g1a0"]
 [ext_resource type="PackedScene" uid="uid://50rdw1dt63h6" path="res://scenes/Inventory/inventory_ui.tscn" id="4_gvsyx"]
 [ext_resource type="PackedScene" uid="uid://d0v5clmb0mcsj" path="res://scenes/utils/player_heart.tscn" id="4_ml7rw"]
+[ext_resource type="PackedScene" uid="uid://n3x7pf5rcnno" path="res://scenes/utils/player_mana.tscn" id="5_180e4"]
 [ext_resource type="PackedScene" uid="uid://c6pbaaxq8k1jr" path="res://scenes/Inventory/alchemy_menu.tscn" id="5_jei75"]
 [ext_resource type="FontFile" uid="uid://dq2uewwmiw1sf" path="res://assets/AmiNo8bitFont.ttf" id="5_rfw7n"]
 [ext_resource type="PackedScene" uid="uid://c1ebrg8kocewe" path="res://scenes/Summons/summon_team.tscn" id="8_nq6vc"]
@@ -187,6 +188,11 @@ animation = &"idle"
 [node name="PlayerHeart3" parent="Camera2D/CanvasLayer/PlayerHealth" instance=ExtResource("4_ml7rw")]
 position = Vector2(120, 20)
 animation = &"idle"
+
+[node name="PlayerMana" parent="Camera2D/CanvasLayer" instance=ExtResource("5_180e4")]
+offset_top = 39.0
+offset_right = -332.0
+offset_bottom = -227.0
 
 [node name="ItemsLabel" type="Label" parent="Camera2D/CanvasLayer"]
 visible = false

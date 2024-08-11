@@ -3,6 +3,7 @@ extends Node
 var player_inventory = []
 var player_creatures : Array[PackedScene]
 var player_health : int
+var player_mana : int
 var picked_up_items : Dictionary
 var player_save_position : Vector2
 
@@ -12,6 +13,7 @@ func set_data():
 	player_health = Global.player_health
 	picked_up_items = Global.picked_up_items
 	player_save_position = Global.player_save_position
+	player_mana = Global.player_mana
 
 func save():
 	set_data()
@@ -31,13 +33,15 @@ func save():
 				"effect" : item["effect"],
 				"method" : item["method"],
 				"value" : item["value"],
-				"scene_path" : item["scene_path"]
+				"scene_path" : item["scene_path"],
+				"consumable" : item["consumable"]
 			})
 	
 	var data = {
 		"player_inventory" : inventory_data,
 		"player_creatures" : creature_paths,
 		"player_health" : player_health,
+		"player_mana" : player_mana,
 		"picked_up_items" : picked_up_items,
 		"player_save_position" : player_save_position,
 	}
@@ -61,6 +65,7 @@ func load_game():
 
 func load_data(data):
 	Global.player_health = data["player_health"]
+	Global.player_mana = data["player_mana"]
 	Global.picked_up_items = data["picked_up_items"]
 	Global.player_save_position = data["player_save_position"]
 	

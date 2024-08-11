@@ -56,3 +56,9 @@ func severed_hand(item):
 		enemy_dog.change_target(item_instance)
 		return true
 	return false
+
+func mana_potion(item):
+	if Global.player_mana < player_node.max_mana:
+		player_node.add_mana(item["value"])
+		return true
+	return false

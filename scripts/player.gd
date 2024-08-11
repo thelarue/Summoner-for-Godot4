@@ -10,8 +10,11 @@ var blinking = false
 var can_move = true
 var can_open_inventory = true
 var last_direction = Vector2.RIGHT
+@onready var player_mana : ProgressBar = $Camera2D/CanvasLayer/PlayerMana
 
 @export var max_health = 6
+@export var max_mana = 3
+
 
 @onready var hearts = [
 	$Camera2D/CanvasLayer/PlayerHealth/PlayerHeart,
@@ -113,7 +116,7 @@ func _input(event):
 		var active_summon = SummonInventory.get_active_summon()
 		if active_summon:
 			active_summon.overworld_ability()
-		
+			player_mana.value = Global.player_mana
 
 func _on_area_2d_area_entered(area):
 	if area is Actionable:
@@ -180,6 +183,12 @@ func add_health(health_amount):
 	print(Global.player_health)
 	player_health_visual(Global.player_health)
 
+func add_mana(mana_amount : int):
+	Global.player_mana += mana_amount
+	if Global.player_mana > max_mana:
+		Global.player_mana = max_mana
+	player_mana.value = Global.player_mana
+	
 
 func apply_item_effect(item):
 	pass

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://n3x7pf5rcnno"]
+
+[ext_resource type="Script" path="res://scenes/utils/player_mana.gd" id="1_gtxut"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8wdy"]
+bg_color = Color(0.170052, 0.566015, 0.948172, 1)
+
+[node name="PlayerMana" type="ProgressBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -317.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_y8wdy")
+max_value = 3.0
+step = 1.0
+value = 3.0
+show_percentage = false
+script = ExtResource("1_gtxut")

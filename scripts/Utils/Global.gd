@@ -1,6 +1,7 @@
 extends Node
 
 var player_health : int = 6
+var player_mana : int = 3
 
 var player_node : Node = null
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://vwh0gq0mfh3r"]
+[gd_scene load_steps=27 format=3 uid="uid://vwh0gq0mfh3r"]
 
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_68omf"]
 [ext_resource type="Script" path="res://scripts/Scenes/starting_room.gd" id="1_omxgt"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="9_0qvy3"]
 [ext_resource type="Texture2D" uid="uid://ccp53885lhsmf" path="res://assets/dagger.png" id="9_5w0sq"]
 [ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/[32]-Iconset-Starter_Pack_172.png" id="10_sldby"]
+[ext_resource type="Texture2D" uid="uid://c3binqa1uv5fq" path="res://assets/[32]-Iconset-Starter_Pack_07.png" id="11_pru3o"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_hy8m1"]
 [ext_resource type="PackedScene" uid="uid://usxchysdcnrl" path="res://scenes/utils/barrel.tscn" id="15_4sm0u"]
 
@@ -3414,6 +3415,16 @@ item_method = "use_ingredient"
 item_name = "Potion"
 item_texture = ExtResource("10_sldby")
 item_effect = "A horn"
+
+[node name="Crate5" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(407, 455)
+item_id = "0006"
+item_type = "Potion"
+item_method = "mana_potion"
+item_name = "Mana Potion"
+item_texture = ExtResource("11_pru3o")
+item_effect = "+ 1 Mana"
+effect_value = 1
 
 [node name="bodies" type="Sprite2D" parent="."]
 modulate = Color(0.593134, 0.593134, 0.593134, 1)
