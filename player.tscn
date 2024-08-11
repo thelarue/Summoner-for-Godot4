@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_swdcq"]
 [ext_resource type="Shader" path="res://moody_shader.gdshader" id="2_etysu"]
-[ext_resource type="Texture2D" uid="uid://t0vovc75nl3b" path="res://assets/characters/little girl/little_girl.png" id="3_4g1a0"]
+[ext_resource type="Texture2D" uid="uid://codt0jaflak33" path="res://assets/characters/little girl/little_girl.png" id="3_4g1a0"]
 [ext_resource type="PackedScene" uid="uid://50rdw1dt63h6" path="res://scenes/Inventory/inventory_ui.tscn" id="4_gvsyx"]
 [ext_resource type="PackedScene" uid="uid://d0v5clmb0mcsj" path="res://scenes/utils/player_heart.tscn" id="4_ml7rw"]
-[ext_resource type="PackedScene" uid="uid://n3x7pf5rcnno" path="res://scenes/utils/player_mana.tscn" id="5_180e4"]
+[ext_resource type="PackedScene" path="res://scenes/utils/player_mana.tscn" id="5_180e4"]
 [ext_resource type="PackedScene" uid="uid://c6pbaaxq8k1jr" path="res://scenes/Inventory/alchemy_menu.tscn" id="5_jei75"]
-[ext_resource type="FontFile" uid="uid://dq2uewwmiw1sf" path="res://assets/AmiNo8bitFont.ttf" id="5_rfw7n"]
+[ext_resource type="FontFile" uid="uid://bvejq551x3nnp" path="res://assets/AmiNo8bitFont.ttf" id="5_rfw7n"]
 [ext_resource type="PackedScene" uid="uid://c1ebrg8kocewe" path="res://scenes/Summons/summon_team.tscn" id="8_nq6vc"]
 [ext_resource type="PackedScene" uid="uid://fb656fvmu33t" path="res://scenes/Summons/summoning_circle_ui.tscn" id="8_r1ttc"]
 

@@ -1,7 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://cuvuj3nf5kxfb"]
+[gd_scene load_steps=19 format=3 uid="uid://cuvuj3nf5kxfb"]
 
 [ext_resource type="Script" path="res://scripts/Elements/common_cultist.gd" id="1_amj4w"]
-[ext_resource type="Texture2D" uid="uid://d0rys6gafmmoi" path="res://assets/characters/common_cultist.png" id="1_ifgqv"]
+[ext_resource type="Texture2D" uid="uid://bskf3lhw7lseu" path="res://assets/characters/common_cultist.png" id="1_ifgqv"]
+[ext_resource type="Script" path="res://scenes/Battle/BattleStats.gd" id="2_2yqnt"]
+
+[sub_resource type="Resource" id="Resource_kcs12"]
+script = ExtResource("2_2yqnt")
+atk = 2
+def = 1
+hp = 5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w7q23"]
 atlas = ExtResource("1_ifgqv")
@@ -116,6 +123,7 @@ size = Vector2(28, 54)
 [node name="CommonCultist" type="CharacterBody2D"]
 collision_layer = 8
 script = ExtResource("1_amj4w")
+battle_stats = SubResource("Resource_kcs12")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_82inc")

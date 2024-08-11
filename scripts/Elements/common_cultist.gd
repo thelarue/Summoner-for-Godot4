@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
+const BATTLE_SCENE = preload("res://scenes/Battle/BattleScene.tscn")
+
 @export var target : Node2D = null
 
 @export var SPEED : float = 100.0
 @export var dmg : int  = 2
+@export var battle_stats : BattleStats
+
 @onready var anim = $AnimatedSprite2D
 
 @onready var navigation_agent_2d = $NavigationAgent2D
@@ -32,7 +36,9 @@ func _physics_process(_delta):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		if collider.is_in_group("player"):
-			collider.hit(dmg)
+			var battle   = BATTLE_SCENE.instantiate()
+			battle.enemy = self
+			get_tree().current_scene.add_child( battle )
 	handle_animations()
 	move_and_slide()
 

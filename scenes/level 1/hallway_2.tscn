@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://ccg207vsooy1q"]
 
-[ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_2ffj5"]
+[ext_resource type="Texture2D" uid="uid://02psrgr2p0qa" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_2ffj5"]
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_jacqo"]
-[ext_resource type="Texture2D" uid="uid://d3spw0ngi346b" path="res://assets/tilesets and props/dungeon/bloody tiles/dungeon_1_tileset_blood.png" id="2_4l7c4"]
-[ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="3_ng2ri"]
+[ext_resource type="Texture2D" uid="uid://bs8p16tyniyvs" path="res://assets/tilesets and props/dungeon/bloody tiles/dungeon_1_tileset_blood.png" id="2_4l7c4"]
+[ext_resource type="Texture2D" uid="uid://cxqesqjdi51ko" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="3_ng2ri"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="5_tuokk"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="6_fk82s"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="6_mjunp"]
-[ext_resource type="Texture2D" uid="uid://d1puyhk74h6v1" path="res://assets/[32]-Iconset-Starter_Pack_171.png" id="7_b6iu1"]
+[ext_resource type="Texture2D" uid="uid://bii84pmtathd0" path="res://assets/[32]-Iconset-Starter_Pack_171.png" id="7_b6iu1"]
 [ext_resource type="PackedScene" uid="uid://cuvuj3nf5kxfb" path="res://scenes/Elements/common_cultist.tscn" id="7_e5k0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ayr8"]
