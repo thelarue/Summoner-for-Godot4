@@ -4,12 +4,12 @@
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_qou0w"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="6_pganh"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="6_tfogr"]
-[ext_resource type="Texture2D" uid="uid://bj75arbvrvhj" path="res://assets/tilesets and props/props/coffer.png" id="6_y83i7"]
+[ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="6_y83i7"]
 [ext_resource type="Script" path="res://scenes/level 1/Coffer.gd" id="7_1egja"]
 [ext_resource type="Script" path="res://scripts/Utils/Actionable.gd" id="7_05x2n"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="7_0534a"]
-[ext_resource type="Texture2D" uid="uid://qotbp026ti66" path="res://assets/tilesets and props/collectables/key.png" id="8_ggam0"]
-[ext_resource type="AudioStream" uid="uid://biyl284rl1w3f" path="res://assets/music and sound/pianoJingleTake05.mp3" id="9_5i1ej"]
+[ext_resource type="Texture2D" uid="uid://dn4qn4iivrkkh" path="res://assets/tilesets and props/collectables/key.png" id="8_ggam0"]
+[ext_resource type="AudioStream" uid="uid://mr824pt07gw8" path="res://assets/music and sound/pianoJingleTake05.mp3" id="9_5i1ej"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6k6cb"]
 atlas = ExtResource("6_y83i7")
@@ -49,7 +49,7 @@ position = Vector2(7.00002, 3.56238)
 position = Vector2(-176, 62)
 texture = SubResource("AtlasTexture_6k6cb")
 script = ExtResource("7_1egja")
-item_id = "0000"
+item_id = "0037"
 item_type = "Utils"
 item_method = "bronze_key"
 item_name = "Bronze Key"

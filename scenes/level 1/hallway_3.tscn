@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5kq3unqqy304"]
+
+[ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_mwd7a"]
+[ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_tnvj5"]
+[ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="4_mx7j0"]
+[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="6_yx02a"]
+[ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="9_xey1f"]
+
+[node name="hallway 2" type="Node2D"]
+script = ExtResource("1_mwd7a")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = ExtResource("2_tnvj5")
+format = 2
+layer_0/tile_data = PackedInt32Array(786460, 196611, 4, 786459, 327683, 4, 786457, 196611, 4, 786458, 262147, 4, 786461, 262147, 4, 786462, 327683, 4, 393241, 196611, 3, 458777, 196611, 4, 393242, 262147, 3, 458778, 262147, 4, 393243, 327683, 3, 458779, 327683, 4, 524313, 196611, 0, 589849, 196611, 1, 655385, 196611, 2, 720921, 196611, 3, 524314, 262147, 0, 589850, 262147, 1, 655386, 262147, 2, 720922, 262147, 3, 524315, 327683, 0, 589851, 327683, 1, 655387, 327683, 2, 720923, 327683, 3, 393244, 196611, 3, 458780, 196611, 4, 393245, 262147, 3, 458781, 262147, 4, 393246, 327683, 3, 458782, 327683, 4, 524316, 196611, 0, 589852, 196611, 1, 655388, 196611, 2, 720924, 196611, 3, 524317, 262147, 0, 589853, 262147, 1, 655389, 262147, 2, 720925, 262147, 3, 524318, 327683, 0, 589854, 327683, 1, 655390, 327683, 2, 720926, 327683, 3, 851993, 196611, 0, 851994, 262147, 0, 851995, 327683, 0, 851996, 196611, 0, 851997, 262147, 0, 851998, 327683, 0, 917531, 196612, 24, 983067, 196612, 25, 917532, 262148, 24, 983068, 262148, 25, 917530, 655364, 19, 983066, 655364, 20, 917529, 655364, 19, 983065, 655364, 20, 917533, 655364, 19, 983069, 655364, 20, 917534, 655364, 19, 983070, 655364, 20, 917535, 196612, 19, 983071, 196612, 20, 917536, 262148, 19, 983072, 262148, 20, 917527, 327684, 19, 983063, 327684, 20, 917528, 393220, 19, 983064, 393220, 20, 851999, 524292, 21, 852000, 589828, 21, 786463, 524292, 21, 786464, 589828, 21, 720927, 524292, 21, 720928, 589828, 21, 655391, 524292, 21, 655392, 589828, 21, 589855, 1245188, 5, 589856, 1310724, 5, 524319, 1245188, 4, 524320, 1310724, 4, 458783, 1245188, 3, 458784, 1310724, 3, 393247, 524292, 21, 393248, 589828, 21, 851991, 720900, 21, 851992, 786436, 21, 786455, 720900, 21, 786456, 786436, 21, 720919, 720900, 21, 720920, 786436, 21, 655383, 720900, 21, 655384, 786436, 21, 589847, 917508, 5, 589848, 983044, 5, 524311, 917508, 4, 524312, 983044, 4, 458775, 917508, 3, 458776, 983044, 3, 393239, 720900, 21, 393240, 786436, 21, 131095, 327684, 22, 196631, 720900, 21, 262167, 720900, 21, 131096, 393220, 22, 196632, 786436, 21, 262168, 786436, 21, 131097, 655364, 23, 196633, 196611, 0, 262169, 196611, 2, 131098, 655364, 23, 196634, 262147, 0, 262170, 262147, 2, 131099, 655364, 23, 196635, 327683, 0, 262171, 327683, 2, 131100, 655364, 23, 196636, 196611, 0, 262172, 196611, 2, 131101, 655364, 23, 196637, 262147, 0, 262173, 262147, 2, 131102, 655364, 23, 196638, 327683, 0, 262174, 327683, 2, 131103, 196612, 22, 196639, 524292, 21, 262175, 524292, 21, 131104, 262148, 22, 196640, 589828, 21, 262176, 589828, 21, 65559, 327684, 21, 65560, 393220, 21, 65561, 655364, 22, 65562, 655364, 22, 65563, 655364, 22, 65564, 655364, 22, 65565, 655364, 22, 65566, 655364, 22, 65567, 196612, 21, 65568, 262148, 21, 327703, 720900, 21, 327704, 786436, 21, 327705, 196611, 3, 327706, 262147, 3, 327707, 327683, 3, 327708, 196611, 3, 327709, 262147, 3, 327710, 327683, 3, 327711, 524292, 21, 327712, 589828, 21)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="DropFromSouthernHallway2" parent="Doors" instance=ExtResource("4_mx7j0")]
+position = Vector2(899, 399)
+door_tag = "from_southern_hallway"
+
+[node name="DropFromLivestockRoom" parent="Doors" instance=ExtResource("4_mx7j0")]
+position = Vector2(830, 276)
+door_tag = "from_livestock_room"
+spawn_direction = "right"
+
+[node name="DropFromMessHall" parent="Doors" instance=ExtResource("4_mx7j0")]
+position = Vector2(955, 277)
+door_tag = "from_mess_hall"
+spawn_direction = "right"
+
+[node name="DoorToLivestockRoom" parent="Doors" instance=ExtResource("6_yx02a")]
+position = Vector2(795, 272)
+rotation = -1.5708
+destination_level_tag = "livestock_room"
+destination_door_tag = "from_hallway3"
+
+[node name="DoorToMessHall" parent="Doors" instance=ExtResource("6_yx02a")]
+position = Vector2(982, 274)
+rotation = -1.5708
+destination_level_tag = "mess_hall"
+destination_door_tag = "from_hallway3"
+
+[node name="DoorToSHallway" parent="Doors" instance=ExtResource("6_yx02a")]
+position = Vector2(901, 436)
+destination_level_tag = "southern_hallway"
+destination_door_tag = "from_hallway_3"
+
+[node name="CollisionShape2D" parent="Doors/DoorToSHallway" index="0"]
+position = Vector2(-2.5, 4.5)
+
+[node name="Items" type="Node" parent="."]
+
+[node name="player" parent="." instance=ExtResource("9_xey1f")]
+
+[editable path="Doors/DoorToSHallway"]
