@@ -62,3 +62,17 @@ func mana_potion(item):
 		player_node.add_mana(item["value"])
 		return true
 	return false
+
+func white_phosphorus(item):
+	if player_node:
+		if (player_node.get_node("InventoryUI/AlchemyMenu").visible == true 
+			and  player_node.get_node("InventoryUI/SummoningCircleUI").visible == false):
+				alchemy_menu.add_ingredient(item)
+				return true
+		else:
+			player_node.hit(item["value"])
+			return true
+	return false
+
+func sleeping_powder():
+	pass

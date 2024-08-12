@@ -25,6 +25,10 @@ radius = 28.0713
 [node name="FireSummon" type="CharacterBody2D"]
 script = ExtResource("1_mwx33")
 fireball_scene = ExtResource("3_6yc8a")
+summon_name = "Cal"
+type = "Fire"
+health = 10
+mana_cost = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yad1w")

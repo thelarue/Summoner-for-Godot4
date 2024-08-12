@@ -10,7 +10,7 @@ var current_summon : Node = null
 @onready var summon_health = $DetailsPanel/ItemEffect
 
 func set_summon(summon : PackedScene):
-	current_summon = summon.instantiate() as FireSummon
+	current_summon = summon.instantiate() as Summon
 	summon_icon.texture = (current_summon.get_node("AnimatedSprite2D") as AnimatedSprite2D).sprite_frames.get_frame_texture("default", 0)
 	summon_name.text = current_summon.get_creature_name()
 	summon_type.text = current_summon.get_creature_type()
