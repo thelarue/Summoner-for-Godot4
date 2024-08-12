@@ -1,49 +1,135 @@
-[gd_scene load_steps=16 format=3 uid="uid://bktrnqn74ivy6"]
+[gd_scene load_steps=26 format=3 uid="uid://bktrnqn74ivy6"]
 
 [ext_resource type="Script" path="res://scenes/Battle/BattleScene.gd" id="1_13yon"]
-[ext_resource type="Texture2D" uid="uid://cwuvc7ibh653i" path="res://assets/characters/little girl/little_girl_battle.png" id="2_ab385"]
+[ext_resource type="Texture2D" uid="uid://tyqqhxexgir5" path="res://assets/characters/cultist_battle.png" id="2_54gm7"]
 [ext_resource type="PackedScene" uid="uid://b4ujejr1mllwk" path="res://scenes/Battle/HealthBar.tscn" id="2_u3t3p"]
+[ext_resource type="Texture2D" uid="uid://cwuvc7ibh653i" path="res://assets/characters/little girl/little_girl_battle.png" id="3_piuoq"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n6els"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilcj6"]
+atlas = ExtResource("2_54gm7")
+region = Rect2(100, 0, 50, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gwktv"]
-atlas = ExtResource("2_ab385")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3xkq"]
+atlas = ExtResource("2_54gm7")
+region = Rect2(150, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kamfg"]
+atlas = ExtResource("2_54gm7")
+region = Rect2(200, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsata"]
+atlas = ExtResource("2_54gm7")
+region = Rect2(250, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qkh5"]
+atlas = ExtResource("2_54gm7")
+region = Rect2(300, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3ngr"]
+atlas = ExtResource("2_54gm7")
+region = Rect2(350, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v3xo"]
+atlas = ExtResource("2_54gm7")
+region = Rect2(400, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnd8t"]
+atlas = ExtResource("2_54gm7")
+region = Rect2(0, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3np6c"]
+atlas = ExtResource("2_54gm7")
+region = Rect2(50, 0, 50, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x8p4w"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilcj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3xkq")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kamfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsata")
+}],
+"loop": false,
+"name": &"Damaged",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qkh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3ngr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v3xo")
+}],
+"loop": false,
+"name": &"Defeated",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnd8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3np6c")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76esq"]
+atlas = ExtResource("3_piuoq")
 region = Rect2(180, 0, 90, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7e2wf"]
-atlas = ExtResource("2_ab385")
+[sub_resource type="AtlasTexture" id="AtlasTexture_krb0m"]
+atlas = ExtResource("3_piuoq")
 region = Rect2(270, 0, 90, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ta36d"]
-atlas = ExtResource("2_ab385")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vaoy"]
+atlas = ExtResource("3_piuoq")
 region = Rect2(360, 0, 90, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4wsqa"]
-atlas = ExtResource("2_ab385")
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3r20"]
+atlas = ExtResource("3_piuoq")
 region = Rect2(450, 0, 90, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ne1dj"]
-atlas = ExtResource("2_ab385")
+[sub_resource type="AtlasTexture" id="AtlasTexture_psr6j"]
+atlas = ExtResource("3_piuoq")
 region = Rect2(540, 0, 90, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_327jb"]
-atlas = ExtResource("2_ab385")
+[sub_resource type="AtlasTexture" id="AtlasTexture_s033s"]
+atlas = ExtResource("3_piuoq")
 region = Rect2(630, 0, 90, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ur1ny"]
-atlas = ExtResource("2_ab385")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeiq2"]
+atlas = ExtResource("3_piuoq")
 region = Rect2(0, 0, 90, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i1vdp"]
-atlas = ExtResource("2_ab385")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lkpe"]
+atlas = ExtResource("3_piuoq")
 region = Rect2(90, 0, 90, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2g0sd"]
-atlas = ExtResource("2_ab385")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j35of"]
+atlas = ExtResource("3_piuoq")
 region = Rect2(720, 0, 90, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jjj86"]
-atlas = ExtResource("2_ab385")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oa45"]
+atlas = ExtResource("3_piuoq")
 region = Rect2(810, 0, 90, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jq56i"]
@@ -51,38 +137,38 @@ resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gwktv")
+"texture": SubResource("AtlasTexture_76esq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7e2wf")
+"texture": SubResource("AtlasTexture_krb0m")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ta36d")
+"texture": SubResource("AtlasTexture_6vaoy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4wsqa")
+"texture": SubResource("AtlasTexture_y3r20")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ne1dj")
+"texture": SubResource("AtlasTexture_psr6j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_327jb")
+"texture": SubResource("AtlasTexture_s033s")
 }],
-"loop": true,
+"loop": false,
 "name": &"Damaged",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ur1ny")
+"texture": SubResource("AtlasTexture_jeiq2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i1vdp")
+"texture": SubResource("AtlasTexture_1lkpe")
 }],
 "loop": true,
 "name": &"Idle",
@@ -90,14 +176,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2g0sd")
+"texture": SubResource("AtlasTexture_j35of")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jjj86")
+"texture": SubResource("AtlasTexture_3oa45")
 }],
-"loop": true,
+"loop": false,
 "name": &"Use",
-"speed": 1.0
+"speed": 2.0
 }]
 
 [node name="BattleScene" type="Node2D"]
@@ -115,21 +201,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.152941, 0.152941, 0.152941, 1)
 
-[node name="EnemyRect" type="TextureRect" parent="CanvasLayer"]
+[node name="EnemyRect" type="AnimatedSprite2D" parent="CanvasLayer"]
 unique_name_in_owner = true
 modulate = Color(0, 0, 1, 1)
-offset_left = -226.0
-offset_top = 2.0
-offset_right = -77.0
-offset_bottom = 270.0
-texture = SubResource("PlaceholderTexture2D_n6els")
+position = Vector2(-123, -1)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_x8p4w")
+animation = &"Idle"
+autoplay = "Idle"
+offset = Vector2(25, 40)
 
 [node name="PlayerRect" type="AnimatedSprite2D" parent="CanvasLayer"]
 unique_name_in_owner = true
 position = Vector2(630, 183)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_jq56i")
-animation = &"Attack"
+animation = &"Use"
 autoplay = "Idle"
 
 [node name="FightIntro" type="Control" parent="CanvasLayer"]
@@ -209,6 +296,20 @@ theme_override_font_sizes/font_size = 8
 disabled = true
 text = "Some other attack"
 
+[node name="AttackPanel" type="PanelContainer" parent="CanvasLayer/FightControls"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 148.0
+offset_top = 95.0
+offset_right = 348.0
+offset_bottom = 135.0
+
+[node name="AttackLabel" type="Label" parent="CanvasLayer/FightControls/AttackPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+vertical_alignment = 1
+
 [node name="VictoryPanel" type="PanelContainer" parent="CanvasLayer"]
 unique_name_in_owner = true
 offset_left = 180.0
@@ -237,6 +338,8 @@ layout_mode = 2
 action_mode = 0
 text = "Back to game"
 
+[connection signal="animation_finished" from="CanvasLayer/EnemyRect" to="." method="_on_enemy_rect_animation_finished"]
+[connection signal="animation_looped" from="CanvasLayer/EnemyRect" to="." method="_on_enemy_rect_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/PlayerRect" to="." method="_on_player_rect_animation_finished"]
 [connection signal="animation_looped" from="CanvasLayer/PlayerRect" to="." method="_on_player_rect_animation_finished"]
 [connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/AttackButtonContainer/Button1" to="." method="_on_button_1_pressed"]
