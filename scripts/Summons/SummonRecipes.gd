@@ -3,7 +3,7 @@ extends Node
 
 var recipes = {
 	["Eyeball", "Alchemic Fire", "Beast Fur"] : load("res://scenes/Summons/fire_summon.tscn"),
-	["Eyeball", "Sleeping rabbit", "Rainbow quartz"] : load("res://scenes/Summons/celestial_summon.tscn"),
+	["Eyeball", "Sleeping rabbit", "Rainbow Quartz"] : load("res://scenes/Summons/celestial_summon.tscn"),
 	["Eyeball", "Mandrake Root", "Snake Tangle"] : load("res://scenes/Summons/nature_summon.tscn")
 }
 

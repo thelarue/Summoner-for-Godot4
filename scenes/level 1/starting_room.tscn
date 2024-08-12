@@ -3394,7 +3394,7 @@ position = Vector2(250, 397)
 item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
-item_name = "Horn"
+item_name = "Sleeping rabbit"
 item_texture = ExtResource("10_sldby")
 item_effect = "A horn"
 
@@ -3403,7 +3403,7 @@ position = Vector2(315, 393)
 item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
-item_name = "Fungi"
+item_name = "Rainbow Quartz"
 item_texture = ExtResource("10_sldby")
 item_effect = "A horn"
 
@@ -3412,7 +3412,7 @@ position = Vector2(391, 378)
 item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
-item_name = "Potion"
+item_name = "Eyeball"
 item_texture = ExtResource("10_sldby")
 item_effect = "A horn"
 
