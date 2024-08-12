@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://diwavt0g4u2mc"]
+[gd_scene load_steps=8 format=3 uid="uid://diwavt0g4u2mc"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_dckyh"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_dp2jp"]
+[ext_resource type="PackedScene" uid="uid://ku8kt6ewh6wx" path="res://scenes/level 1/silver_key_door.tscn" id="4_46nrc"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="4_jilvb"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="5_q52sk"]
+[ext_resource type="PackedScene" uid="uid://bcnjomuwlwtrd" path="res://scenes/level 1/gem_door.tscn" id="7_y58gj"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="8_8xi4l"]
 
 [node name="southern_hallway" type="Node2D"]
@@ -32,6 +34,52 @@ door_tag = "from_toilets"
 [node name="GatewayDropPoint4" parent="Doors" instance=ExtResource("4_jilvb")]
 position = Vector2(1042, 488)
 door_tag = "from_hallway_3"
+spawn_direction = "down"
+
+[node name="GatewayDropPoint5" parent="Doors" instance=ExtResource("4_jilvb")]
+position = Vector2(403, 795)
+door_tag = "from_jails"
+
+[node name="GemDoorPuzzle" parent="Doors" instance=ExtResource("7_y58gj")]
+position = Vector2(1280, 589)
+
+[node name="Door" parent="Doors/GemDoorPuzzle" index="1"]
+position = Vector2(-35, 2)
+rotation = 1.57079
+destination_level_tag = "exit_room"
+destination_door_tag = "from_southern_hallway"
+
+[node name="StaticBody2D" parent="Doors/GemDoorPuzzle" index="2"]
+rotation = 1.57079
+
+[node name="CollisionShape2D" parent="Doors/GemDoorPuzzle/StaticBody2D" index="0"]
+position = Vector2(0.999817, -9.5)
+
+[node name="PlayerProximityArea" parent="Doors/GemDoorPuzzle" index="3"]
+position = Vector2(-69, 3)
+rotation = 1.57079
+
+[node name="Puzzle" parent="Doors/GemDoorPuzzle" index="4"]
+offset_left = -132.0
+offset_top = -118.0
+offset_right = 5.0
+offset_bottom = -76.0
+
+[node name="SilverKeyDoorPuzzle" parent="Doors" instance=ExtResource("4_46nrc")]
+position = Vector2(401, 896)
+rotation = -3.14159
+scale = Vector2(2, 2)
+
+[node name="Door" parent="Doors/SilverKeyDoorPuzzle" index="1"]
+destination_level_tag = "jails"
+destination_door_tag = "from_southern_hallway"
+
+[node name="Puzzle" parent="Doors/SilverKeyDoorPuzzle" index="4"]
+offset_left = 70.5002
+offset_top = 53.4997
+offset_right = 207.5
+offset_bottom = 95.4997
+rotation = -3.14159
 
 [node name="DoorToStartingRoom" parent="Doors" instance=ExtResource("5_q52sk")]
 position = Vector2(162, 590)
@@ -58,3 +106,6 @@ destination_door_tag = "from_southern_hallway"
 
 [node name="player" parent="." instance=ExtResource("8_8xi4l")]
 position = Vector2(-15, -1)
+
+[editable path="Doors/GemDoorPuzzle"]
+[editable path="Doors/SilverKeyDoorPuzzle"]

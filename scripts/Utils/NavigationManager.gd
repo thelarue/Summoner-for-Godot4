@@ -10,10 +10,15 @@ const LEVELS : Dictionary = {
 	"storage_room_1"       : preload("res://scenes/level 1/storage_room_1.tscn"),
 	"southern_hallway"     : preload("res://scenes/level 1/southern_hallway.tscn"),
 	"toilets"              : preload("res://scenes/level 1/toilets.tscn"),
-	"livestock_room"       : preload("res://scenes/level 1/livestock_room.tscn")
+	"livestock_room"       : preload("res://scenes/level 1/livestock_room.tscn"),
+	"office"               : preload("res://scenes/level 1/office.tscn"),
+	"ascension_room"       : preload("res://scenes/level 1/ascension_room.tscn"),
+	"barracks"             : preload("res://scenes/level 1/barracks.tscn"),
+	"exit_room"            : preload("res://scenes/level 1/exit_room.tscn"),
+	"jails"                : preload("res://scenes/level 1/jails.tscn"),
+	"mess_hall"            : preload("res://scenes/level 1/mess_hall.tscn"),
+	"kitchen"              : preload("res://scenes/level 1/kitchen.tscn"),
 }
-
-
 
 
 signal on_trigger_player_spawn

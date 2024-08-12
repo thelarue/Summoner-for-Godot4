@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxa7knatocoeo"]
+[gd_scene load_steps=9 format=3 uid="uid://dxa7knatocoeo"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_6u2fk"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_8esey"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="3_27811"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="4_tf8bu"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="5_0juyw"]
+[ext_resource type="PackedScene" uid="uid://4x5kofqnyuns" path="res://scenes/level 1/coffer.tscn" id="6_5wt7t"]
+[ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="7_jjobj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivrsq"]
+resource_local_to_scene = true
+atlas = ExtResource("7_jjobj")
+region = Rect2(0, 0, 16, 16)
 
 [node name="LivestockRoom" type="Node2D"]
 script = ExtResource("1_6u2fk")
@@ -34,5 +41,14 @@ position = Vector2(-2.5, 4.5)
 [node name="Items" type="Node" parent="."]
 
 [node name="player" parent="." instance=ExtResource("5_0juyw")]
+
+[node name="Coffer" parent="." instance=ExtResource("6_5wt7t")]
+position = Vector2(623, 423)
+texture = SubResource("AtlasTexture_ivrsq")
+item_id = "0034"
+item_method = "blue_gem"
+item_name = "Sapphire Ring"
+item_effect = "Can I keep it?"
+consumable = false
 
 [editable path="Doors/DoorToHallway3"]

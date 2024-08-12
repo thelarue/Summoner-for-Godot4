@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6xai884xii4q"]
+[gd_scene load_steps=9 format=3 uid="uid://b6xai884xii4q"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_rufbk"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_3nwgb"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="3_blf5p"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="4_pd6mx"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="5_1plvo"]
+[ext_resource type="PackedScene" uid="uid://4x5kofqnyuns" path="res://scenes/level 1/coffer.tscn" id="6_1amuv"]
+[ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="7_7kpji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd4sn"]
+resource_local_to_scene = true
+atlas = ExtResource("7_7kpji")
+region = Rect2(0, 0, 16, 16)
 
 [node name="MessHall" type="Node2D"]
 script = ExtResource("1_rufbk")
@@ -24,7 +31,7 @@ spawn_direction = "right"
 
 [node name="DropFromKitchen" parent="Doors" instance=ExtResource("3_blf5p")]
 position = Vector2(849, 139)
-door_tag = "from_mess_hall"
+door_tag = "from_kitchen"
 spawn_direction = "down"
 
 [node name="DoorToHallway3" parent="Doors" instance=ExtResource("4_pd6mx")]
@@ -47,6 +54,15 @@ position = Vector2(-2.5, 4.5)
 [node name="Items" type="Node" parent="."]
 
 [node name="player" parent="." instance=ExtResource("5_1plvo")]
+
+[node name="Coffer" parent="." instance=ExtResource("6_1amuv")]
+position = Vector2(1093, 434)
+texture = SubResource("AtlasTexture_fd4sn")
+item_id = "0049"
+item_method = "spoon"
+item_name = "Spoon"
+item_effect = "I'd not eat with this spoon"
+consumable = false
 
 [editable path="Doors/DoorToHallway3"]
 [editable path="Doors/DoorToKitchen"]
