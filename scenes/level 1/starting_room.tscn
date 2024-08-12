@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://vwh0gq0mfh3r"]
+[gd_scene load_steps=28 format=3 uid="uid://vwh0gq0mfh3r"]
 
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_68omf"]
 [ext_resource type="Script" path="res://scripts/Scenes/starting_room.gd" id="1_omxgt"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c3binqa1uv5fq" path="res://assets/[32]-Iconset-Starter_Pack_07.png" id="11_pru3o"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_hy8m1"]
 [ext_resource type="PackedScene" uid="uid://usxchysdcnrl" path="res://scenes/utils/barrel.tscn" id="15_4sm0u"]
+[ext_resource type="PackedScene" uid="uid://c3yjunysryes1" path="res://scenes/grass_area.tscn" id="17_eq0vf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1hqg"]
 texture = ExtResource("1_68omf")
@@ -3394,7 +3395,7 @@ position = Vector2(250, 397)
 item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
-item_name = "Sleeping rabbit"
+item_name = "Mandrake Root"
 item_texture = ExtResource("10_sldby")
 item_effect = "A horn"
 
@@ -3403,7 +3404,7 @@ position = Vector2(315, 393)
 item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
-item_name = "Rainbow Quartz"
+item_name = "Snake Tangle"
 item_texture = ExtResource("10_sldby")
 item_effect = "A horn"
 
@@ -3466,6 +3467,10 @@ position = Vector2(323, 260)
 [node name="Barrel4" parent="." instance=ExtResource("15_4sm0u")]
 position = Vector2(296, 456)
 scale = Vector2(2, 2)
+
+[node name="GrassArea" parent="." instance=ExtResource("17_eq0vf")]
+position = Vector2(176, 285)
+rotation = -1.55504
 
 [editable path="Doors/BloodDoorPuzzle"]
 [editable path="Doors/BloodDoorPuzzle/Door"]

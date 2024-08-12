@@ -29,6 +29,7 @@ var last_direction = Vector2.RIGHT
 
 var can_interact = false
 var nearest_interactable: Actionable = null
+var closest_grass_area : Node2D
 
 func _ready():
 	InventoryManager.set_player_reference(self)
@@ -202,3 +203,8 @@ func get_direction() -> Vector2:
 	else:
 		return last_direction  
 
+func set_closest_grass_area(grass_area : Node2D):
+	closest_grass_area = grass_area
+
+func get_closest_grass_area():
+	return closest_grass_area
