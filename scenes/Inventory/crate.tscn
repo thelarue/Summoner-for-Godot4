@@ -25,6 +25,7 @@ shape = SubResource("CircleShape2D_pqxwa")
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("5_ilrab")
+volume_db = -10.0
 
 [node name="LabelTimer" type="Timer" parent="."]
 wait_time = 3.0
