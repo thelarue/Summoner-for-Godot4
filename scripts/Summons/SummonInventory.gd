@@ -5,7 +5,7 @@ signal team_updated
 var summons : Array[PackedScene] = []
 
 var player_node : Node = null
-var active_summon : Node = null
+var active_summon : Summon = null
 
 @onready var summon_slot = load("res://scenes/Summons/summon_slot.tscn")
 
@@ -22,15 +22,15 @@ func add_summon(summon : PackedScene) -> bool:
 			return true
 	return false
 
-func remove_summon(summon : Node) -> void:
+func remove_summon(summon : Summon) -> void:
 	pass
 
 func set_player_reference(player : Node) -> void:
 	player_node = player
 
-func set_active_summon(summon : Node) -> void:
+func set_active_summon(summon : Summon) -> void:
 	active_summon = summon
 	print(active_summon)
 
-func get_active_summon() -> Node:
+func get_active_summon() -> Summon:
 	return active_summon

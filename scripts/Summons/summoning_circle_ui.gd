@@ -18,12 +18,17 @@ func add_summon_ingredient(item):
 		first_item = item
 		print(first_item["quantity"])
 		first_item_sprite.texture = item["texture"]
+		return true
 	elif second_item == null:
 		second_item = item
 		second_item_sprite.texture = item["texture"]
+		return true
 	elif third_item == null:
 		third_item = item
 		third_item_sprite.texture = item["texture"]
+		return true
+	else:
+		return false
 
 func clear_slots():
 	first_item_sprite.texture = null

@@ -32,12 +32,16 @@ func use_ingredient(item):
 	if player_node:
 		if (player_node.get_node("InventoryUI/AlchemyMenu").visible == true 
 			and  player_node.get_node("InventoryUI/SummoningCircleUI").visible == false):	
-			alchemy_menu.add_ingredient(item)
-			return true
+			if alchemy_menu.add_ingredient(item):
+				return true
+			else: 
+				return false
 		elif (player_node.get_node("InventoryUI/AlchemyMenu").visible == false 
 			and  player_node.get_node("InventoryUI/SummoningCircleUI").visible == true):
-			summoning_menu.add_summon_ingredient(item)
-			return true
+			if summoning_menu.add_summon_ingredient(item):
+				return true
+			else:
+				return false
 	return false
 
 func ritual_knife(item):
