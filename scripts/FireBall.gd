@@ -1,12 +1,14 @@
 extends Area2D
 
 @export var speed: float = 300.0
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 signal fireball_removed
 
 var direction: Vector2
 
 func _process(delta):
+	animated_sprite_2d.rotation = direction.angle()
 	# Move the fireball in the set direction
 	position += direction * speed * delta
 	var overlapping_bodies = get_overlapping_bodies()
@@ -23,6 +25,7 @@ func _on_body_entered(body):
 # Sets the direction of the fireball
 func set_direction(new_direction: Vector2):
 	direction = new_direction.normalized()
+	
 	
 func _on_timer_timeout():
 	fireball_removed.emit()

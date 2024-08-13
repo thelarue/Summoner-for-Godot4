@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv362idk0566e"]
+
+[ext_resource type="Script" path="res://scenes/Credits/Credits.gd" id="1_rf8xm"]
+
+[node name="Credits" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_rf8xm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_children = 2
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Control" type="SubViewportContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="Viewport" type="SubViewport" parent="VBoxContainer/Control"]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(460, 223)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera" type="Camera2D" parent="VBoxContainer/Control/Viewport"]
+unique_name_in_owner = true
+offset = Vector2(910, 0)
+
+[node name="Credits" type="Label" parent="VBoxContainer/Control/Viewport"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+text = "dfhdfhdfh"
+horizontal_alignment = 1
+justification_flags = 0

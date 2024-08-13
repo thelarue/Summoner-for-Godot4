@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://df3dxmwjh2cbk"]
+[gd_scene load_steps=10 format=3 uid="uid://df3dxmwjh2cbk"]
 
 [ext_resource type="Script" path="res://scripts/Summons/summon_slot.gd" id="1_1drtn"]
-[ext_resource type="Texture2D" uid="uid://d0rys6gafmmoi" path="res://assets/characters/common_cultist.png" id="1_ks6ql"]
 [ext_resource type="FontFile" uid="uid://dq2uewwmiw1sf" path="res://assets/AmiNo8bitFont.ttf" id="3_xn7wh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gg4nb"]
@@ -31,10 +30,8 @@ grow_vertical = 2
 script = ExtResource("1_1drtn")
 
 [node name="SummonIcon" type="Sprite2D" parent="."]
-position = Vector2(20, 20)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_ks6ql")
-region_enabled = true
+position = Vector2(18.32, 18.32)
+scale = Vector2(0.143125, 0.143125)
 region_rect = Rect2(0, 0, 62, 62)
 
 [node name="Button" type="Button" parent="."]

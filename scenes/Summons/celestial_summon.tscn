@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwhcdafd5es8d"]
+
+[ext_resource type="Script" path="res://scenes/Summons/celestial_summon.gd" id="1_ap1fq"]
+[ext_resource type="Texture2D" uid="uid://bwctucmi6i0np" path="res://assets/characters/foxbaby.png" id="1_xqhi0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx6p6"]
+atlas = ExtResource("1_xqhi0")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqej8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx6p6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_udrdh"]
+radius = 124.78
+
+[node name="CelestialSummon" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_ap1fq")
+summon_name = "Azha"
+type = "Celestial"
+health = 10
+mana_cost = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vqej8")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_udrdh")

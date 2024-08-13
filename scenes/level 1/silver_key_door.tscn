@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://ku8kt6ewh6wx"]
+
+[ext_resource type="Script" path="res://scripts/Puzzles/silver_key_door.gd" id="1_os6ek"]
+[ext_resource type="Texture2D" uid="uid://bcptmm8hbhft8" path="res://assets/tilesets and props/dungeon/southernDoor.png" id="2_mp3f5"]
+[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="3_2kn6x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltsck"]
+atlas = ExtResource("2_mp3f5")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_387vo"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrtli"]
+size = Vector2(49, 20)
+
+[node name="SilverKeyDoorPuzzle" type="Node2D"]
+script = ExtResource("1_os6ek")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+rotation = -3.14159
+texture = SubResource("AtlasTexture_ltsck")
+region_rect = Rect2(256, 224, 48, 32)
+
+[node name="Door" parent="." instance=ExtResource("3_2kn6x")]
+position = Vector2(0, 15)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_387vo")
+
+[node name="PlayerProximityArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, 38)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerProximityArea"]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_rrtli")
+
+[node name="Puzzle" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+offset_left = -62.0
+offset_top = -28.0
+offset_right = 75.0
+offset_bottom = 14.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Puzzle"]
+layout_mode = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Puzzle/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "You are missing a key thing"

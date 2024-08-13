@@ -1,5 +1,7 @@
 extends CharacterBody2D
+class_name Player
 
+signal damaged
 
 @export var speed = 100
 var current_speed = speed
@@ -29,6 +31,7 @@ var last_direction = Vector2.RIGHT
 
 var can_interact = false
 var nearest_interactable: Actionable = null
+var closest_grass_area : Node2D
 
 func _ready():
 	InventoryManager.set_player_reference(self)
@@ -136,6 +139,7 @@ func hit(dmg):
 		play_hit_animation(dmg)
 		$HitDelay.start()
 		$Blinking.start()
+		damaged.emit()
 		if Global.player_health <= 0:
 			die()
 
@@ -202,3 +206,8 @@ func get_direction() -> Vector2:
 	else:
 		return last_direction  
 
+func set_closest_grass_area(grass_area : Node2D):
+	closest_grass_area = grass_area
+
+func get_closest_grass_area():
+	return closest_grass_area
