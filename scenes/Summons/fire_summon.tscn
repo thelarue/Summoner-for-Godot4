@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://f3cknuv4fw1o" path="res://assets/characters/gooberbaby.png" id="1_v5d78"]
 [ext_resource type="PackedScene" uid="uid://cy0806qw3wel1" path="res://scenes/fire_ball.tscn" id="3_6yc8a"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8e2hf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q42kw"]
 atlas = ExtResource("1_v5d78")
 region = Rect2(0, 0, 64, 64)
 
@@ -12,7 +12,7 @@ region = Rect2(0, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8e2hf")
+"texture": SubResource("AtlasTexture_q42kw")
 }],
 "loop": true,
 "name": &"default",
@@ -20,7 +20,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a03ae"]
-radius = 28.0713
+radius = 32.0156
 
 [node name="FireSummon" type="CharacterBody2D"]
 script = ExtResource("1_mwx33")
@@ -32,6 +32,7 @@ mana_cost = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yad1w")
+frame_progress = 0.012987
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a03ae")

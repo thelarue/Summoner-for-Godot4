@@ -21,9 +21,13 @@ func add_ingredient(item):
 	if first_item == null:
 		first_item = item
 		set_first_ingredient_image_texture(item["texture"])
+		return true
 	elif second_item == null:
 		second_item = item
 		set_seccond_ingredient_image_texture(item["texture"])
+		return true
+	else:
+		return false
 	
 func _on_brew_button_pressed():
 	if first_item and second_item:

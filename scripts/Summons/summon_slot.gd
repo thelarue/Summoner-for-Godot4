@@ -2,12 +2,21 @@ extends Control
 
 @onready var summon_icon = $SummonIcon
 
-var current_summon : Node = null
+var current_summon : Summon = null
 @onready var usage_panel = $UsagePanel
 @onready var details_panel = $DetailsPanel
 @onready var summon_name = $DetailsPanel/ItemName
 @onready var summon_type = $DetailsPanel/ItemType
 @onready var summon_health = $DetailsPanel/ItemEffect
+@onready var selected_panel = $SelectedPanel
+
+func _process(delta):
+	var active_summon : Summon = SummonInventory.get_active_summon()
+	if active_summon != null and current_summon != null and active_summon.get_creature_name() == current_summon.get_creature_name():
+		selected_panel.visible = true
+	else:
+		selected_panel.visible = false
+	
 
 func set_summon(summon : PackedScene):
 	print(summon_icon.texture)

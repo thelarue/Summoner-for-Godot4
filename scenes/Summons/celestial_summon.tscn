@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwhcdafd5es8d"]
 
 [ext_resource type="Script" path="res://scenes/Summons/celestial_summon.gd" id="1_ap1fq"]
-[ext_resource type="Texture2D" uid="uid://bwctucmi6i0np" path="res://assets/characters/foxbaby.png" id="1_xqhi0"]
+[ext_resource type="Texture2D" uid="uid://bj03jvq4tsvs" path="res://assets/characters/fairy.png" id="2_a8thq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nx6p6"]
-atlas = ExtResource("1_xqhi0")
-region = Rect2(0, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_k575r"]
+atlas = ExtResource("2_a8thq")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vqej8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nx6p6")
+"texture": SubResource("AtlasTexture_k575r")
 }],
 "loop": true,
 "name": &"default",
@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_udrdh"]
-radius = 124.78
+radius = 31.6228
 
 [node name="CelestialSummon" type="CharacterBody2D"]
 scale = Vector2(0.2, 0.2)

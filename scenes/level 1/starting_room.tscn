@@ -3419,6 +3419,60 @@ item_name = "Eyeball"
 item_texture = ExtResource("10_sldby")
 item_effect = "A horn"
 
+[node name="Crate6" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(443, 374)
+item_id = "0002"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Eyeball"
+item_texture = ExtResource("10_sldby")
+item_effect = "A horn"
+
+[node name="Crate9" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(203, 527)
+item_id = "0002"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Eyeball"
+item_texture = ExtResource("10_sldby")
+item_effect = "A horn"
+
+[node name="Crate10" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(287, 520)
+item_id = "0002"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Snake Tangle"
+item_texture = ExtResource("10_sldby")
+item_effect = "A horn"
+
+[node name="Crate11" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(366, 528)
+item_id = "0002"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Mandrake Root"
+item_texture = ExtResource("10_sldby")
+item_effect = "A horn"
+
+[node name="Crate7" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(396, 425)
+item_id = "0002"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Alchemic Fire"
+item_texture = ExtResource("10_sldby")
+item_effect = "A horn"
+
+[node name="Crate8" parent="Items" instance=ExtResource("12_hy8m1")]
+position = Vector2(454, 424)
+item_id = "0002"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Beast Fur"
+item_texture = ExtResource("10_sldby")
+item_effect = "A horn"
+
 [node name="Crate5" parent="Items" instance=ExtResource("12_hy8m1")]
 position = Vector2(407, 455)
 item_id = "0006"
