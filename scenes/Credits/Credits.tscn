@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bv362idk0566e"]
 
-[ext_resource type="Script" path="res://UI/Credits.gd" id="1_wahu8"]
+[ext_resource type="Script" path="res://scenes/Credits/Credits.gd" id="1_rf8xm"]
 
 [node name="Credits" type="MarginContainer"]
 anchors_preset = 15
@@ -10,11 +10,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
-script = ExtResource("1_wahu8")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_rf8xm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 clip_children = 2
@@ -24,7 +24,7 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 12
 text = "Credits"
 horizontal_alignment = 1
 
@@ -36,7 +36,7 @@ stretch = true
 [node name="Viewport" type="SubViewport" parent="VBoxContainer/Control"]
 unique_name_in_owner = true
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(460, 223)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
@@ -52,6 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 8
+text = "dfhdfhdfh"
 horizontal_alignment = 1
 justification_flags = 0

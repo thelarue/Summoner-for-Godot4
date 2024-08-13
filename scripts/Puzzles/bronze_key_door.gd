@@ -37,4 +37,5 @@ func item_used( item ):
 	if not player_in_range : return
 	if item["method"] != "bronze_key"  : return
 	PuzzleCompletionList.puzzles["bronze_door"] = true
+	InventoryManager.remove_item( item["name"] )
 	set_can_pass()

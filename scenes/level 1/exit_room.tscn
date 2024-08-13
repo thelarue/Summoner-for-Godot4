@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwqh2jmeagqi7"]
+[gd_scene load_steps=8 format=3 uid="uid://dkkwg6v0jyrql"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_jrd2k"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_gtr0x"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="3_xexnb"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="4_qgq2h"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="5_ofo72"]
+[ext_resource type="Script" path="res://scenes/level 1/EndArea.gd" id="6_e06th"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_621ab"]
+size = Vector2(135, 43)
 
 [node name="ExitRoom" type="Node2D"]
 script = ExtResource("1_jrd2k")
@@ -34,5 +38,13 @@ position = Vector2(-2.5, 4.5)
 [node name="Items" type="Node" parent="."]
 
 [node name="player" parent="." instance=ExtResource("5_ofo72")]
+
+[node name="EndArea" type="Area2D" parent="."]
+position = Vector2(867, 179)
+script = ExtResource("6_e06th")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea"]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_621ab")
 
 [editable path="Doors/DoorToHallway"]

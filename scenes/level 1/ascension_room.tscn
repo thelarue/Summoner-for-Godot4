@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://l2ibjgf4q028"]
+[gd_scene load_steps=6 format=3 uid="uid://bwl8rtaigrpvv"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_ltovv"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_313wf"]
@@ -23,7 +23,7 @@ door_tag = "from_office"
 spawn_direction = "right"
 
 [node name="DropFromHallway" parent="Doors" instance=ExtResource("3_xwvo4")]
-position = Vector2(1039, 410)
+position = Vector2(1040, 399)
 door_tag = "from_hallway_2"
 
 [node name="DropFromBarracks" parent="Doors" instance=ExtResource("3_xwvo4")]
@@ -41,7 +41,7 @@ destination_door_tag = "from_ascension_room"
 position = Vector2(13, 1)
 
 [node name="DoorToHallway" parent="Doors" instance=ExtResource("4_oqfx3")]
-position = Vector2(1053, 442)
+position = Vector2(1053, 450)
 rotation = -3.14159
 destination_level_tag = "hallway_2"
 destination_door_tag = "from_ascension_room"
