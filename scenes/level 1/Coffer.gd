@@ -16,7 +16,6 @@ var scene_path : String = "res://scenes/Inventory/inventory_item.tscn"
 
 @onready var pickup_sound = $PickupSound
 
-@onready var icon_sprite = $Sprite2D
 @onready var label_timer = $LabelTimer
 
 @onready var player_node = get_tree().get_first_node_in_group("player")

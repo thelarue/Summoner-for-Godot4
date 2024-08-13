@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://vwh0gq0mfh3r"]
+[gd_scene load_steps=22 format=3 uid="uid://vwh0gq0mfh3r"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/starting_room.gd" id="1_omxgt"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_nl5yg"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_hy8m1"]
 [ext_resource type="PackedScene" uid="uid://usxchysdcnrl" path="res://scenes/utils/barrel.tscn" id="15_4sm0u"]
 [ext_resource type="PackedScene" uid="uid://c3yjunysryes1" path="res://scenes/grass_area.tscn" id="17_eq0vf"]
+[ext_resource type="PackedScene" uid="uid://cjaqorbbqo3br" path="res://interactions/LoreObject.tscn" id="17_xafvy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vyhm"]
 atlas = ExtResource("7_pqbjn")
@@ -210,6 +211,9 @@ rotation = -1.55504
 
 [node name="GrassArea2" parent="." instance=ExtResource("17_eq0vf")]
 position = Vector2(174, 361)
+
+[node name="LoreObject" parent="." instance=ExtResource("17_xafvy")]
+position = Vector2(451, 106)
 
 [connection signal="damaged" from="player" to="Doors/BloodDoorPuzzle" method="_on_player_damaged"]
 
