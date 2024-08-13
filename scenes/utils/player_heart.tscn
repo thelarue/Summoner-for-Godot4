@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://d0v5clmb0mcsj"]
 
-[ext_resource type="Texture2D" uid="uid://cy4pgbh4hsmy3" path="res://assets/characters/hearts.png" id="1_7q6bl"]
+[ext_resource type="Texture2D" uid="uid://v4lcwydt653u" path="res://assets/characters/hearts.png" id="1_7q6bl"]
 [ext_resource type="Script" path="res://scripts/Utils/PlayerHeart.gd" id="2_tlx84"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1ym3"]

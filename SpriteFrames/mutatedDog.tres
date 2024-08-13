@@ -1,0 +1,38 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://csxbvebttd5v8"]
+
+[ext_resource type="Texture2D" uid="uid://bd52vm102jaoc" path="res://assets/characters/doggo.png" id="1_gcgwy"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gcgwy")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gcgwy")
+}],
+"loop": false,
+"name": &"Damaged",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gcgwy")
+}],
+"loop": false,
+"name": &"Defeated",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gcgwy")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}]
