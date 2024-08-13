@@ -3,6 +3,7 @@ extends Node
 var inventory = []
 
 signal inventory_updated
+signal item_used( item )
 
 var player_node : Node = null
 
@@ -84,3 +85,6 @@ func check_azure_flower():
 			remove_item(item["name"])
 			return true
 	return false
+
+func inventory_item_used( item ):
+	item_used.emit( item )

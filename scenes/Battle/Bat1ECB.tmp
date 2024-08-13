@@ -1,0 +1,217 @@
+[gd_scene load_steps=16 format=3 uid="uid://bktrnqn74ivy6"]
+
+[ext_resource type="Script" path="res://scenes/Battle/BattleScene.gd" id="1_13yon"]
+[ext_resource type="Texture2D" uid="uid://cwuvc7ibh653i" path="res://assets/characters/little girl/little_girl_battle.png" id="2_ab385"]
+[ext_resource type="PackedScene" uid="uid://b4ujejr1mllwk" path="res://scenes/Battle/HealthBar.tscn" id="2_u3t3p"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n6els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwktv"]
+atlas = ExtResource("2_ab385")
+region = Rect2(180, 0, 90, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e2wf"]
+atlas = ExtResource("2_ab385")
+region = Rect2(270, 0, 90, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta36d"]
+atlas = ExtResource("2_ab385")
+region = Rect2(360, 0, 90, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wsqa"]
+atlas = ExtResource("2_ab385")
+region = Rect2(450, 0, 90, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne1dj"]
+atlas = ExtResource("2_ab385")
+region = Rect2(540, 0, 90, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_327jb"]
+atlas = ExtResource("2_ab385")
+region = Rect2(630, 0, 90, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur1ny"]
+atlas = ExtResource("2_ab385")
+region = Rect2(0, 0, 90, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1vdp"]
+atlas = ExtResource("2_ab385")
+region = Rect2(90, 0, 90, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g0sd"]
+atlas = ExtResource("2_ab385")
+region = Rect2(720, 0, 90, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjj86"]
+atlas = ExtResource("2_ab385")
+region = Rect2(810, 0, 90, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jq56i"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwktv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e2wf")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta36d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wsqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne1dj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_327jb")
+}],
+"loop": true,
+"name": &"Damaged",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur1ny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1vdp")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g0sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjj86")
+}],
+"loop": true,
+"name": &"Use",
+"speed": 1.0
+}]
+
+[node name="BattleScene" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_13yon")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="EnemyRect" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 1, 1)
+offset_left = -226.0
+offset_top = 2.0
+offset_right = -77.0
+offset_bottom = 270.0
+texture = SubResource("PlaceholderTexture2D_n6els")
+
+[node name="PlayerRect" type="AnimatedSprite2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+position = Vector2(630, 183)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_jq56i")
+animation = &"Attack"
+autoplay = "Idle"
+
+[node name="FightIntro" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/FightIntro"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 94.0
+offset_right = 389.0
+offset_bottom = 154.0
+text = "Some fight will happen soon!"
+horizontal_alignment = 1
+
+[node name="FightControls" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerHealthBar" parent="CanvasLayer/FightControls" instance=ExtResource("2_u3t3p")]
+unique_name_in_owner = true
+position = Vector2(1, 1)
+
+[node name="EnemyHealthBar" parent="CanvasLayer/FightControls" instance=ExtResource("2_u3t3p")]
+unique_name_in_owner = true
+position = Vector2(336, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/FightControls"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -231.0
+offset_top = -90.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="AttackButtonContainer" type="VBoxContainer" parent="CanvasLayer/FightControls/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="CanvasLayer/FightControls/MarginContainer/AttackButtonContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Button3")
+focus_neighbor_bottom = NodePath("../Button2")
+theme_override_font_sizes/font_size = 8
+disabled = true
+text = "Poke"
+
+[node name="Button2" type="Button" parent="CanvasLayer/FightControls/MarginContainer/AttackButtonContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Button1")
+focus_neighbor_bottom = NodePath("../Button3")
+theme_override_font_sizes/font_size = 8
+disabled = true
+text = "Fireball"
+
+[node name="Button3" type="Button" parent="CanvasLayer/FightControls/MarginContainer/AttackButtonContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Button2")
+focus_neighbor_bottom = NodePath("../Button1")
+theme_override_font_sizes/font_size = 8
+disabled = true
+text = "Some other attack"
+
+[connection signal="animation_finished" from="CanvasLayer/PlayerRect" to="." method="_on_player_rect_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/FightControls/MarginContainer/AttackButtonContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/FightControls/MarginContainer/AttackButtonContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/FightControls/MarginContainer/AttackButtonContainer/Button3" to="." method="_on_button_3_pressed"]

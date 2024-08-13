@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://u0ot260ho1xt"]
+
+[ext_resource type="Script" path="res://scripts/Puzzles/gem_door.gd" id="1_56h3b"]
+[ext_resource type="Texture2D" uid="uid://cynilfnu0jkyj" path="res://assets/tilesets and props/dungeon/gem_door.png" id="2_q12s5"]
+[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="3_4hdxy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nupe3"]
+atlas = ExtResource("2_q12s5")
+region = Rect2(0, 0, 64, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcelu"]
+atlas = ExtResource("2_q12s5")
+region = Rect2(64, 0, 64, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfdr2"]
+atlas = ExtResource("2_q12s5")
+region = Rect2(192, 0, 64, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttuo6"]
+atlas = ExtResource("2_q12s5")
+region = Rect2(128, 0, 64, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_387vo"]
+size = Vector2(84.0001, 45.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrtli"]
+size = Vector2(49, 31)
+
+[node name="GemDoorPuzzle" type="Node2D"]
+script = ExtResource("1_56h3b")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_nupe3")
+region_rect = Rect2(256, 224, 48, 32)
+
+[node name="RedGemOverlay" type="Sprite2D" parent="Sprite"]
+unique_name_in_owner = true
+texture = SubResource("AtlasTexture_mcelu")
+
+[node name="BlueGemOverlay" type="Sprite2D" parent="Sprite"]
+unique_name_in_owner = true
+texture = SubResource("AtlasTexture_hfdr2")
+
+[node name="PurpleGemOverlay" type="Sprite2D" parent="Sprite"]
+unique_name_in_owner = true
+texture = SubResource("AtlasTexture_ttuo6")
+
+[node name="Door" parent="." instance=ExtResource("3_4hdxy")]
+position = Vector2(0, 15)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_387vo")
+
+[node name="PlayerProximityArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, 38)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerProximityArea"]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_rrtli")
+
+[node name="Puzzle" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+offset_left = -62.0
+offset_top = -28.0
+offset_right = 75.0
+offset_bottom = 14.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Puzzle"]
+layout_mode = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Puzzle/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "You are missing a key thing"
