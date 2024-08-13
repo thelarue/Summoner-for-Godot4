@@ -89,6 +89,10 @@ project/assembly_name="Summoner"
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://assets/AmiNo8bitFont.ttf"
+
 [input]
 
 ui_left={

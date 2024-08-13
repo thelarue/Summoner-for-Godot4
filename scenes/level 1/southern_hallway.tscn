@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="4_jilvb"]
 [ext_resource type="PackedScene" uid="uid://u0ot260ho1xt" path="res://scenes/level 1/gem_door.tscn" id="5_5w5ac"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="5_q52sk"]
-[ext_resource type="PackedScene" path="res://scenes/level 1/silver_key_door.tscn" id="6_u6nut"]
+[ext_resource type="PackedScene" uid="uid://ku8kt6ewh6wx" path="res://scenes/level 1/silver_key_door.tscn" id="6_u6nut"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="8_8xi4l"]
 
 [node name="southern_hallway" type="Node2D"]
@@ -40,8 +40,9 @@ position = Vector2(1042, 488)
 door_tag = "from_hallway_3"
 
 [node name="GatewayDropPoint5" parent="Doors" instance=ExtResource("4_jilvb")]
-position = Vector2(1042, 488)
-door_tag = "from_hallway_3"
+position = Vector2(1189, 588)
+door_tag = "from_exit_room"
+spawn_direction = "right"
 
 [node name="DoorToStartingRoom" parent="Doors" instance=ExtResource("5_q52sk")]
 position = Vector2(161, 589)

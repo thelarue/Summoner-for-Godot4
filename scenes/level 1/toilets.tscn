@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://djrxba4wvwo0v"]
+[gd_scene load_steps=9 format=3 uid="uid://djrxba4wvwo0v"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_08o2x"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_forh1"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="3_yu5ka"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="4_dnvt1"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="5_j1pug"]
+[ext_resource type="Texture2D" uid="uid://ks20sb06y74b" path="res://assets/tilesets and props/toilets.png" id="6_fskis"]
+[ext_resource type="Texture2D" uid="uid://dxgc5qxefwpfs" path="res://assets/tilesets and props/water_basin.png" id="7_kn7cq"]
+[ext_resource type="Texture2D" uid="uid://bhed6ahmffyeg" path="res://assets/tilesets and props/Sink.png" id="8_0ysni"]
 
 [node name="toilets" type="Node2D"]
 script = ExtResource("1_08o2x")
@@ -30,4 +33,36 @@ destination_door_tag = "from_toilets"
 [node name="Items" type="Node" parent="."]
 
 [node name="player" parent="." instance=ExtResource("5_j1pug")]
-position = Vector2(-15, -1)
+position = Vector2(-18, -62)
+
+[node name="Toilets" type="Sprite2D" parent="."]
+position = Vector2(272, 379)
+scale = Vector2(2, 2)
+texture = ExtResource("6_fskis")
+
+[node name="Toilets2" type="Sprite2D" parent="."]
+position = Vector2(272, 510)
+scale = Vector2(2, 2)
+texture = ExtResource("6_fskis")
+
+[node name="WaterBasin" type="Sprite2D" parent="."]
+position = Vector2(566, 528)
+rotation = 1.57079
+scale = Vector2(2, 2)
+texture = ExtResource("7_kn7cq")
+
+[node name="WaterBasin2" type="Sprite2D" parent="."]
+position = Vector2(569, 442)
+rotation = 1.57079
+scale = Vector2(2, 2)
+texture = ExtResource("7_kn7cq")
+
+[node name="WaterBasin3" type="Sprite2D" parent="."]
+position = Vector2(570, 368)
+rotation = 1.57079
+scale = Vector2(2, 2)
+texture = ExtResource("7_kn7cq")
+
+[node name="Sink" type="Sprite2D" parent="."]
+position = Vector2(425, 473)
+texture = ExtResource("8_0ysni")

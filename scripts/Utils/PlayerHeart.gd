@@ -1,5 +1,5 @@
 extends AnimatedSprite2D
-class_name HealthHeart
+class_name  HealthHeart
 
 enum HeartState { FULL, HALF, EMPTY }
 

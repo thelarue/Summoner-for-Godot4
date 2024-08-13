@@ -12,7 +12,7 @@ atlas = ExtResource("1_77yey")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ya5ym"]
-radius = 14.0
+radius = 11.0
 
 [node name="Coffer" type="Sprite2D"]
 texture = SubResource("AtlasTexture_6k6cb")
