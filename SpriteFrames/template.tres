@@ -1,0 +1,90 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://c6j4ql61uwv82"]
+
+[ext_resource type="Texture2D" uid="uid://tyqqhxexgir5" path="res://assets/characters/cultist_battle.png" id="1_i1oi7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilcj6"]
+atlas = ExtResource("1_i1oi7")
+region = Rect2(100, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3xkq"]
+atlas = ExtResource("1_i1oi7")
+region = Rect2(150, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kamfg"]
+atlas = ExtResource("1_i1oi7")
+region = Rect2(200, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsata"]
+atlas = ExtResource("1_i1oi7")
+region = Rect2(250, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qkh5"]
+atlas = ExtResource("1_i1oi7")
+region = Rect2(300, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3ngr"]
+atlas = ExtResource("1_i1oi7")
+region = Rect2(350, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v3xo"]
+atlas = ExtResource("1_i1oi7")
+region = Rect2(400, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnd8t"]
+atlas = ExtResource("1_i1oi7")
+region = Rect2(0, 0, 50, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3np6c"]
+atlas = ExtResource("1_i1oi7")
+region = Rect2(50, 0, 50, 80)
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilcj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3xkq")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kamfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsata")
+}],
+"loop": false,
+"name": &"Damaged",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qkh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3ngr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v3xo")
+}],
+"loop": false,
+"name": &"Defeated",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnd8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3np6c")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}]

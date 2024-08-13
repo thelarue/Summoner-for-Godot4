@@ -7,6 +7,7 @@ const BATTLE_SCENE = preload("res://scenes/Battle/BattleScene.tscn")
 @export var SPEED : float = 100.0
 @export var dmg : int  = 2
 @export var battle_stats : BattleStats
+@export var battle_sprite : SpriteFrames
 
 @onready var anim = $AnimatedSprite2D
 
@@ -16,6 +17,22 @@ func _ready():
 	call_deferred("seeker_setup")
 
 func _physics_process(_delta):
+	
+	var bodies = %AttackArea.get_overlapping_bodies()
+	
+	for body in bodies:
+		if body.is_in_group( "player" ):
+			var battle   = BATTLE_SCENE.instantiate()
+			battle.enemy = self
+			get_tree().current_scene.add_child( battle )
+
+	bodies = %AggroArea.get_overlapping_bodies()
+	
+	for body in bodies:
+		if body.is_in_group( "player" ):
+			change_target( body )
+	
+	
 	if target:
 		navigation_agent_2d.target_position = target.global_position
 		
@@ -31,14 +48,6 @@ func _physics_process(_delta):
 	else:
 		velocity = new_velocity
 	
-	var collisions = get_slide_collision_count()
-	for i in collisions:
-		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
-		if collider.is_in_group("player"):
-			var battle   = BATTLE_SCENE.instantiate()
-			battle.enemy = self
-			get_tree().current_scene.add_child( battle )
 	handle_animations()
 	move_and_slide()
 

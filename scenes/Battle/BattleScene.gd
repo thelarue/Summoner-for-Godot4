@@ -6,6 +6,8 @@ var enemy
 func _ready():
 	get_tree().paused = true
 	%FightControls.modulate = Color.TRANSPARENT
+	
+	%EnemyRect.sprite_frames = enemy.battle_sprite
 
 	var tween = create_tween()
 	tween.tween_property( %EnemyRect,  "position", Vector2(332, 0), 1 )
@@ -68,7 +70,7 @@ func _on_button_3_pressed():
 func enemy_turn():
 	if enemy == null : return
 	%EnemyRect.play("Attack")
-	%AttackLabel.text = "Enemy stabs you"
+	%AttackLabel.text = "Enemy %s you" % [ enemy.battle_stats.attack_text ]
 	show_attack_panel()
 
 
