@@ -61,7 +61,7 @@ func _on_button_2_pressed():
 
 
 func _on_button_3_pressed():
-	enemy.battle_stats.hp -= max( 0, 1 - enemy.battle_stats.def )
+	enemy.battle_stats.hp -= max( 0, 8 - enemy.battle_stats.def )
 	disable_player()
 	%AttackLabel.text = "You do things to the enemy"
 	show_attack_panel()

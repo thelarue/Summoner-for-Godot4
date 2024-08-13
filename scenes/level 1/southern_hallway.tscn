@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://diwavt0g4u2mc"]
+[gd_scene load_steps=8 format=3 uid="uid://diwavt0g4u2mc"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_dckyh"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_dp2jp"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="4_jilvb"]
 [ext_resource type="PackedScene" uid="uid://u0ot260ho1xt" path="res://scenes/level 1/gem_door.tscn" id="5_5w5ac"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="5_q52sk"]
+[ext_resource type="PackedScene" path="res://scenes/level 1/silver_key_door.tscn" id="6_u6nut"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="8_8xi4l"]
 
 [node name="southern_hallway" type="Node2D"]
@@ -22,12 +23,16 @@ layer_0/tile_data = PackedInt32Array(917515, 327683, 0, 983051, 327683, 1, 10485
 position = Vector2(198, 589)
 door_tag = "from_starting_room"
 
+[node name="GatewayDropPoint6" parent="Doors" instance=ExtResource("4_jilvb")]
+position = Vector2(399, 805)
+door_tag = "from_jails"
+
 [node name="GatewayDropPoint2" parent="Doors" instance=ExtResource("4_jilvb")]
 position = Vector2(403, 367)
 door_tag = "from_hallway_2"
 
 [node name="GatewayDropPoint3" parent="Doors" instance=ExtResource("4_jilvb")]
-position = Vector2(1041, 708)
+position = Vector2(1041, 698)
 door_tag = "from_toilets"
 
 [node name="GatewayDropPoint4" parent="Doors" instance=ExtResource("4_jilvb")]
@@ -50,7 +55,7 @@ destination_level_tag = "hallway_2"
 destination_door_tag = "from_southern_hallway"
 
 [node name="DoorToToilets" parent="Doors" instance=ExtResource("5_q52sk")]
-position = Vector2(1042, 744)
+position = Vector2(1043, 729)
 destination_level_tag = "toilets"
 destination_door_tag = "from_southern_hallway"
 
@@ -85,9 +90,27 @@ offset_top = -71.0
 offset_right = -5.0
 offset_bottom = -29.0
 
+[node name="SilverKeyDoorPuzzle" parent="Doors" instance=ExtResource("6_u6nut")]
+position = Vector2(400, 896)
+rotation = 3.14159
+scale = Vector2(2, 2)
+
+[node name="Door" parent="Doors/SilverKeyDoorPuzzle" index="1"]
+destination_level_tag = "jails"
+destination_door_tag = "from_southern_hallway"
+
+[node name="Puzzle" parent="Doors/SilverKeyDoorPuzzle" index="4"]
+offset_left = 33.0
+offset_top = 65.0
+offset_right = 170.0
+offset_bottom = 107.0
+rotation = -3.14159
+scale = Vector2(0.5, 0.5)
+
 [node name="Items" type="Node" parent="."]
 
 [node name="player" parent="." instance=ExtResource("8_8xi4l")]
-position = Vector2(-15, -1)
+position = Vector2(-14, 7)
 
 [editable path="Doors/GemDoorPuzzle"]
+[editable path="Doors/SilverKeyDoorPuzzle"]

@@ -99,11 +99,8 @@ item_effect = "A hand"
 [node name="CommonCultist" parent="." instance=ExtResource("7_e5k0p")]
 position = Vector2(1013, 161)
 
-[editable path="Doors/Door_S"]
-[editable path="Doors/Door_W"]
 [editable path="Doors/SilverKeyDoorPuzzle"]
 [editable path="Doors/BronzeKeyDoorPuzzle"]
 [editable path="Doors/BronzeKeyDoorPuzzle/Door"]
 [editable path="Doors/DoorToHallway1"]
 [editable path="Doors/DoorToStorage"]
-

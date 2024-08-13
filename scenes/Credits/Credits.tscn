@@ -25,7 +25,8 @@ theme_override_constants/separation = 10
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
-text = "Credits"
+text = "Congratultaions! You win!
+Also some people who did things:"
 horizontal_alignment = 1
 
 [node name="Control" type="SubViewportContainer" parent="VBoxContainer"]
@@ -36,7 +37,7 @@ stretch = true
 [node name="Viewport" type="SubViewport" parent="VBoxContainer/Control"]
 unique_name_in_owner = true
 handle_input_locally = false
-size = Vector2i(460, 223)
+size = Vector2i(460, 203)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 

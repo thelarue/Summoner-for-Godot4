@@ -1,14 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://vwh0gq0mfh3r"]
+[gd_scene load_steps=21 format=3 uid="uid://vwh0gq0mfh3r"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/starting_room.gd" id="1_omxgt"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_nl5yg"]
-[ext_resource type="Texture2D" uid="uid://bgdj5cdkhs7lp" path="res://assets/tilesets and props/dungeon/bloody tiles/pile_of_bodies_a.png" id="2_u3c1x"]
+[ext_resource type="Texture2D" uid="uid://djiejj5kxx7hi" path="res://assets/tilesets and props/dungeon/bloody tiles/pile_of_bodies_a.png" id="2_u3c1x"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="3_jfwwr"]
 [ext_resource type="PackedScene" uid="uid://b4wt2g8rql0il" path="res://scenes/level 1/bronze_key_door.tscn" id="4_0n3nh"]
-[ext_resource type="Texture2D" uid="uid://bskf3lhw7lseu" path="res://assets/characters/common_cultist.png" id="7_pqbjn"]
+[ext_resource type="Texture2D" uid="uid://d0rys6gafmmoi" path="res://assets/characters/common_cultist.png" id="7_pqbjn"]
 [ext_resource type="PackedScene" uid="uid://j1m8tcycfheg" path="res://scenes/level 1/blood_door_puzzle.tscn" id="7_tvqre"]
 [ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="8_4m1ma"]
-[ext_resource type="Texture2D" uid="uid://c2lvawsajnx1q" path="res://assets/tilesets and props/props/barrel.png" id="8_aaa5a"]
+[ext_resource type="Texture2D" uid="uid://d2o2a4vq671vx" path="res://assets/tilesets and props/props/barrel.png" id="8_aaa5a"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="9_0qvy3"]
 [ext_resource type="Texture2D" uid="uid://ccp53885lhsmf" path="res://assets/dagger.png" id="9_5w0sq"]
 [ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/[32]-Iconset-Starter_Pack_172.png" id="10_sldby"]
@@ -90,12 +90,16 @@ scale = Vector2(2, 2)
 destination_level_tag = "southern_hallway"
 destination_door_tag = "from_starting_room"
 
+[node name="CollisionShape2D" parent="Doors/BronzeKeyDoorPuzzle/PlayerProximityArea" index="0"]
+position = Vector2(-0.249954, -7.75)
+
 [node name="Puzzle" parent="Doors/BronzeKeyDoorPuzzle" index="4"]
-offset_left = -95.0
-offset_top = 74.0
-offset_right = 42.0
-offset_bottom = 116.0
+offset_left = -55.9998
+offset_top = 64.5002
+offset_right = 81.0002
+offset_bottom = 106.5
 rotation = -1.57079
+scale = Vector2(0.5, 0.5)
 
 [node name="BloodDoorPuzzle" parent="Doors" instance=ExtResource("7_tvqre")]
 position = Vector2(314, 41)
@@ -196,10 +200,6 @@ hframes = 4
 [node name="player" parent="." instance=ExtResource("9_0qvy3")]
 position = Vector2(323, 260)
 
-[connection signal="damaged" from="player" to="Doors/BloodDoorPuzzle" method="_on_player_damaged"]
-
-[editable path="Doors/BronzeKeyDoorPuzzle"]
-
 [node name="Barrel4" parent="." instance=ExtResource("15_4sm0u")]
 position = Vector2(296, 456)
 scale = Vector2(2, 2)
@@ -211,5 +211,8 @@ rotation = -1.55504
 [node name="GrassArea2" parent="." instance=ExtResource("17_eq0vf")]
 position = Vector2(174, 361)
 
+[connection signal="damaged" from="player" to="Doors/BloodDoorPuzzle" method="_on_player_damaged"]
+
+[editable path="Doors/BronzeKeyDoorPuzzle"]
 [editable path="Doors/BloodDoorPuzzle"]
 [editable path="Doors/BloodDoorPuzzle/Door"]
