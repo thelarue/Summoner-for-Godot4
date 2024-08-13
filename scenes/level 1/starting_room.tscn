@@ -3472,5 +3472,8 @@ scale = Vector2(2, 2)
 position = Vector2(176, 285)
 rotation = -1.55504
 
+[node name="GrassArea2" parent="." instance=ExtResource("17_eq0vf")]
+position = Vector2(174, 361)
+
 [editable path="Doors/BloodDoorPuzzle"]
 [editable path="Doors/BloodDoorPuzzle/Door"]
