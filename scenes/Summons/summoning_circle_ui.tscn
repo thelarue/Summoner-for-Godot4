@@ -133,7 +133,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"summon_animation",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="SummoningCircleUI" type="Control"]
@@ -143,41 +143,43 @@ script = ExtResource("1_0dyfa")
 
 [node name="CircleAnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wu4xm")
-animation = &"idle"
+animation = &"summon_animation"
 autoplay = "idle"
+frame = 15
+frame_progress = 1.0
 
 [node name="FirstItem" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = -83.0
 offset_top = -10.0
-offset_right = -54.0
-offset_bottom = 18.0
+offset_right = -53.0
+offset_bottom = 20.0
 color = Color(1, 1, 1, 0)
 
 [node name="FirstItemSprite" type="Sprite2D" parent="FirstItem"]
-position = Vector2(6.5, 7.5)
+position = Vector2(15, 15)
 
 [node name="SecondItem" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -10.0
-offset_top = -83.0
-offset_right = 17.0
+offset_left = -12.0
+offset_top = -84.0
+offset_right = 18.0
 offset_bottom = -54.0
 color = Color(1, 1, 1, 0)
 
 [node name="SecondItemSprite" type="Sprite2D" parent="SecondItem"]
-position = Vector2(6.5, 7.5)
+position = Vector2(15, 15)
 
 [node name="ThirdItem" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 60.0
 offset_top = -9.0
-offset_right = 88.0
-offset_bottom = 19.0
+offset_right = 90.0
+offset_bottom = 21.0
 color = Color(1, 1, 1, 0)
 
 [node name="ThirdItemSprite" type="Sprite2D" parent="ThirdItem"]
-position = Vector2(6.5, 7.5)
+position = Vector2(15, 15)
 
 [node name="SummonButton" type="Button" parent="."]
 layout_mode = 1
@@ -196,4 +198,5 @@ scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("3_l6ns7")
 text = "Summon"
 
+[connection signal="animation_finished" from="CircleAnimatedSprite" to="." method="_on_circle_animated_sprite_animation_finished"]
 [connection signal="pressed" from="SummonButton" to="." method="_on_summon_button_pressed"]

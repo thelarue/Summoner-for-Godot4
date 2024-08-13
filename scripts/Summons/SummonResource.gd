@@ -12,8 +12,8 @@ func _init(p_name = "", p_type = "", p_health = 0):
 func get_creature_name():
 	return name
 
-func _get_creature_type():
+func get_creature_type():
 	return type
 
-func _get_creature_health():
+func get_creature_health():
 	return health

@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://usxchysdcnrl"]
+
+[ext_resource type="Script" path="res://scripts/Utils/barrel.gd" id="1_vo45f"]
+[ext_resource type="Texture2D" uid="uid://d2o2a4vq671vx" path="res://assets/tilesets and props/props/barrel.png" id="1_wl85r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6wjs"]
+atlas = ExtResource("1_wl85r")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pnlc"]
+atlas = ExtResource("1_wl85r")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6skhv"]
+atlas = ExtResource("1_wl85r")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xwjl"]
+atlas = ExtResource("1_wl85r")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6pv0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6wjs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pnlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6skhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xwjl")
+}],
+"loop": false,
+"name": &"destroy",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_00hfp"]
+
+[node name="Barrel" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_vo45f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c6pv0")
+animation = &"destroy"
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_00hfp")
