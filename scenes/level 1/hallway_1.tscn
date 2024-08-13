@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cp232m8qgnd5x"]
+[gd_scene load_steps=16 format=3 uid="uid://cp232m8qgnd5x"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_1.gd" id="1_5hfeh"]
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_f5r4q"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dc2p3sl32xb6t" path="res://assets/tilesets and props/pocketwitch_dungeons1.png" id="5_giu02"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="6_f610k"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="7_2im51"]
+[ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="9_puw3x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s35s5"]
 texture = ExtResource("1_f5r4q")
@@ -7250,30 +7251,24 @@ layer_1/tile_data = PackedInt32Array(-131059, 1245189, 14, -393201, 1310725, 14,
 
 [node name="Doors" type="Node" parent="."]
 
-[node name="Door_N" parent="Doors" instance=ExtResource("6_f610k")]
-position = Vector2(218, -142)
-destionation_level_tag = "hallway_2"
-destination_door_tag = "S"
+[node name="DropFromHallway2" parent="Doors" instance=ExtResource("9_puw3x")]
+position = Vector2(436, -257)
+door_tag = "from_hallway_2"
+spawn_direction = "down"
 
-[node name="CollisionShape2D" parent="Doors/Door_N" index="0"]
-position = Vector2(215, -142)
+[node name="DropFromStarting" parent="Doors" instance=ExtResource("9_puw3x")]
+position = Vector2(464, 53)
+door_tag = "from_starting_room"
 
-[node name="Spawn" parent="Doors/Door_N" index="1"]
-position = Vector2(213, -102)
+[node name="Door" parent="Doors" instance=ExtResource("6_f610k")]
+visible = false
+position = Vector2(464, 89)
+destination_level_tag = "starting_room"
+destination_door_tag = "from_hallway_1"
 
-[node name="Door_S" parent="Doors" instance=ExtResource("6_f610k")]
-position = Vector2(453, 101)
-destionation_level_tag = "starting_room"
-destination_door_tag = "N"
-
-[node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
-position = Vector2(12, -5)
-
-[node name="Spawn" parent="Doors/Door_S" index="1"]
-position = Vector2(9, -48)
+[node name="Door2" parent="Doors" instance=ExtResource("6_f610k")]
+position = Vector2(434, -302)
+destination_level_tag = "hallway_2"
+destination_door_tag = "from_hallway_1"
 
 [node name="player" parent="." instance=ExtResource("7_2im51")]
-position = Vector2(2, -6)
-
-[editable path="Doors/Door_N"]
-[editable path="Doors/Door_S"]

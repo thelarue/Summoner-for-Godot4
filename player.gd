@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var speed = 100
 var current_speed = speed
-var sprint_speed = 150
+var sprint_speed = 200
 @export var health = 6
 @onready var anim = $AnimatedSprite2D
 var vulnerable = true

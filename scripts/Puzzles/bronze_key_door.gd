@@ -1,14 +1,12 @@
 extends Node2D
 
 @onready var door = $Door
-@onready var open_door = $OpenDoor
-@onready var closed_door = $ClosedDoor
 
 var player_in_range : bool = false
 
 func _ready():
 	InventoryManager.item_used.connect( item_used )
-	if PuzzleCompletionList.puzzles["blood_door"]:
+	if PuzzleCompletionList.puzzles["bronze_door"]:
 		set_can_pass()
 	else:
 		door.can_change_scene = false
@@ -32,12 +30,12 @@ func is_player_in_range() -> bool:
 
 func set_can_pass():
 	door.can_change_scene = true
-	closed_door.visible = false
-	open_door.visible = true
+	$Sprite.texture.region.position.x = $Sprite.texture.region.size.x
 
 
 func item_used( item ):
 	if not player_in_range : return
-	if item["method"] != "ritual_knife"  : return
-	PuzzleCompletionList.puzzles["blood_door"] = true
+	if item["method"] != "bronze_key"  : return
+	PuzzleCompletionList.puzzles["bronze_door"] = true
+	InventoryManager.remove_item( item["name"] )
 	set_can_pass()

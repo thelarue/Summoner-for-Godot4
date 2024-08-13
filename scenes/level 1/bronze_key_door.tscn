@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://j1m8tcycfheg"]
+[gd_scene load_steps=7 format=3 uid="uid://b4wt2g8rql0il"]
 
-[ext_resource type="Script" path="res://scripts/Puzzles/blood_door_puzzle.gd" id="1_dvd0r"]
-[ext_resource type="Texture2D" uid="uid://cxqesqjdi51ko" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="2_knmy6"]
-[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="3_p0q5m"]
+[ext_resource type="Script" path="res://scripts/Puzzles/bronze_key_door.gd" id="1_spqc0"]
+[ext_resource type="Texture2D" uid="uid://bcptmm8hbhft8" path="res://assets/tilesets and props/dungeon/southernDoor.png" id="2_2m0x6"]
+[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="3_ov1jg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltsck"]
+atlas = ExtResource("2_2m0x6")
+region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_387vo"]
 size = Vector2(48, 16)
@@ -10,21 +14,15 @@ size = Vector2(48, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrtli"]
 size = Vector2(49, 20)
 
-[node name="BloodDoorPuzzle" type="Node2D"]
-script = ExtResource("1_dvd0r")
+[node name="BronzeKeyDoorPuzzle" type="Node2D"]
+script = ExtResource("1_spqc0")
 
-[node name="ClosedDoor" type="Sprite2D" parent="."]
-texture = ExtResource("2_knmy6")
-region_enabled = true
+[node name="Sprite" type="Sprite2D" parent="."]
+rotation = -3.14159
+texture = SubResource("AtlasTexture_ltsck")
 region_rect = Rect2(256, 224, 48, 32)
 
-[node name="OpenDoor" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_knmy6")
-region_enabled = true
-region_rect = Rect2(256, 16, 48, 32)
-
-[node name="Door" parent="." instance=ExtResource("3_p0q5m")]
+[node name="Door" parent="." instance=ExtResource("3_ov1jg")]
 position = Vector2(0, 15)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -62,4 +60,4 @@ theme_override_constants/margin_bottom = 10
 [node name="Label" type="Label" parent="Puzzle/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
-text = "Cut your life into pieces."
+text = "You are missing a key thing"

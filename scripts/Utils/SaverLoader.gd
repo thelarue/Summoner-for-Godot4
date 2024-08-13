@@ -44,6 +44,7 @@ func save():
 		"player_mana" : player_mana,
 		"picked_up_items" : picked_up_items,
 		"player_save_position" : player_save_position,
+		"puzzle_completion" : PuzzleCompletionList.puzzles
 	}
 	return data
 
@@ -100,3 +101,5 @@ func load_data(data):
 	SummonInventory.summons.resize(3)
 	InventoryManager.inventory_updated.emit()
 	SummonInventory.team_updated.emit()
+
+	PuzzleCompletionList.puzzles = data["puzzle_completion"]

@@ -1,5 +1,7 @@
 extends CharacterBody2D
+class_name Player
 
+signal damaged
 
 @export var speed = 100
 var current_speed = speed
@@ -137,6 +139,7 @@ func hit(dmg):
 		play_hit_animation(dmg)
 		$HitDelay.start()
 		$Blinking.start()
+		damaged.emit()
 		if Global.player_health <= 0:
 			die()
 

@@ -13,7 +13,9 @@ config_version=5
 config/name="Summoner"
 run/main_scene="res://scenes/main menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://icon.svg"
+run/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 
 [autoload]
 
@@ -28,6 +30,7 @@ SummonInventory="*res://scripts/Summons/SummonInventory.gd"
 NavigationManager="*res://scripts/Utils/NavigationManager.gd"
 Global="*res://scripts/Utils/Global.gd"
 SaverLoader="*res://scripts/Utils/SaverLoader.gd"
+PuzzleCompletionList="*res://scripts/Utils/PuzzleCompletionList.gd"
 
 [dialogic]
 
@@ -77,6 +80,10 @@ window/size/mode=3
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="Summoner"
 
 [editor_plugins]
 

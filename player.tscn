@@ -156,14 +156,29 @@ script = ExtResource("1_swdcq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_70ewb")
-animation = &"die"
-frame_progress = 0.943727
+animation = &"walk_down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 3)
 zoom = Vector2(0.6, 0.6)
 process_callback = 0
 limit_smoothed = true
+
+[node name="FadeMask" type="ColorRect" parent="Camera2D"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(2000, 2000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1000.0
+offset_top = -1000.0
+offset_right = 1000.0
+offset_bottom = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
@@ -174,6 +189,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="PlayerHealth" type="Node2D" parent="Camera2D/CanvasLayer"]
 
