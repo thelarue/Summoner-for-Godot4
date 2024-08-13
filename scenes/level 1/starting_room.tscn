@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://vwh0gq0mfh3r"]
+[gd_scene load_steps=30 format=3 uid="uid://vwh0gq0mfh3r"]
 
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_68omf"]
 [ext_resource type="Script" path="res://scripts/Scenes/starting_room.gd" id="1_omxgt"]
@@ -15,8 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/[32]-Iconset-Starter_Pack_172.png" id="10_sldby"]
 [ext_resource type="Texture2D" uid="uid://c3binqa1uv5fq" path="res://assets/[32]-Iconset-Starter_Pack_07.png" id="11_pru3o"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_hy8m1"]
+[ext_resource type="PackedScene" uid="uid://ce8i52e3rtcqu" path="res://scenes/spirit.tscn" id="12_ln80g"]
 [ext_resource type="PackedScene" uid="uid://usxchysdcnrl" path="res://scenes/utils/barrel.tscn" id="15_4sm0u"]
 [ext_resource type="PackedScene" uid="uid://c3yjunysryes1" path="res://scenes/grass_area.tscn" id="17_eq0vf"]
+[ext_resource type="AudioStream" uid="uid://dcrx6iqk0o183" path="res://assets/music and sound/ruGame ambient spooky piano loop take 1.mp3" id="19_ejwrl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1hqg"]
 texture = ExtResource("1_68omf")
@@ -3395,7 +3397,7 @@ position = Vector2(250, 397)
 item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
-item_name = "Mandrake Root"
+item_name = "Sleeping Rabbit"
 item_texture = ExtResource("10_sldby")
 item_effect = "A horn"
 
@@ -3404,7 +3406,7 @@ position = Vector2(315, 393)
 item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
-item_name = "Snake Tangle"
+item_name = "Rainbow Quartz"
 item_texture = ExtResource("10_sldby")
 item_effect = "A horn"
 
@@ -3426,6 +3428,13 @@ item_name = "Mana Potion"
 item_texture = ExtResource("11_pru3o")
 item_effect = "+ 1 Mana"
 effect_value = 1
+
+[node name="Spirits" type="Node" parent="."]
+
+[node name="Spirit" parent="Spirits" instance=ExtResource("12_ln80g")]
+visible = false
+position = Vector2(361, 493)
+dialogue = "res://dialogues/debug room/commonBattleConvo.dtl"
 
 [node name="bodies" type="Sprite2D" parent="."]
 modulate = Color(0.593134, 0.593134, 0.593134, 1)
@@ -3474,6 +3483,11 @@ rotation = -1.55504
 
 [node name="GrassArea2" parent="." instance=ExtResource("17_eq0vf")]
 position = Vector2(174, 361)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("19_ejwrl")
+autoplay = true
 
 [editable path="Doors/BloodDoorPuzzle"]
 [editable path="Doors/BloodDoorPuzzle/Door"]

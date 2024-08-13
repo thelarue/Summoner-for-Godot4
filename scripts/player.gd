@@ -121,6 +121,7 @@ func _input(event):
 
 func _on_area_2d_area_entered(area):
 	if area is Actionable:
+		print(area)
 		can_interact = true
 		nearest_interactable = area
 		

@@ -40,3 +40,5 @@ func _on_button_mouse_entered():
 
 func _on_button_mouse_exited():
 	details_panel.visible = false
+
+
