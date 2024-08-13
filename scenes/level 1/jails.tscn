@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dywawa6ne7gqa"]
+[gd_scene load_steps=9 format=3 uid="uid://pwgqjdxytkjj"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_qehrs"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_8ocsk"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="3_yqorr"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="4_pbvv7"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="5_cjnrk"]
-[ext_resource type="PackedScene" uid="uid://4x5kofqnyuns" path="res://scenes/level 1/coffer.tscn" id="6_quivt"]
-[ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="6_y5r22"]
+[ext_resource type="PackedScene" path="res://scenes/level 1/coffer.tscn" id="6_quivt"]
+[ext_resource type="Texture2D" uid="uid://bj75arbvrvhj" path="res://assets/tilesets and props/props/coffer.png" id="6_y5r22"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0af6"]
 resource_local_to_scene = true
@@ -40,7 +40,8 @@ destination_door_tag = "from_jails"
 position = Vector2(-15, -1)
 
 [node name="Coffer" parent="." instance=ExtResource("6_quivt")]
-position = Vector2(273, 693)
+position = Vector2(538, 330)
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_a0af6")
 item_id = "0033"
 item_method = "red_gem"
