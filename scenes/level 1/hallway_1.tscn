@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dc2p3sl32xb6t" path="res://assets/tilesets and props/pocketwitch_dungeons1.png" id="5_giu02"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="6_f610k"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="7_2im51"]
+[ext_resource type="PackedScene" uid="uid://ciklrif6g6t7j" path="res://scenes/Elements/mutated_dog.tscn" id="9_n5mp4"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="9_puw3x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s35s5"]
@@ -7272,3 +7273,11 @@ destination_level_tag = "hallway_2"
 destination_door_tag = "from_hallway_1"
 
 [node name="player" parent="." instance=ExtResource("7_2im51")]
+
+position = Vector2(2, -6)
+
+[node name="MutatedDog" parent="." instance=ExtResource("9_n5mp4")]
+position = Vector2(516, -255)
+
+[editable path="Doors/Door_N"]
+[editable path="Doors/Door_S"]

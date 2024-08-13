@@ -1,0 +1,38 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://wkprm05jhuum"]
+
+[ext_resource type="Texture2D" uid="uid://cxanf17u1h6ul" path="res://assets/characters/common_cultist_battle_woo.png" id="1_3vk8p"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3vk8p")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3vk8p")
+}],
+"loop": false,
+"name": &"Damaged",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3vk8p")
+}],
+"loop": false,
+"name": &"Defeated",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3vk8p")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}]
