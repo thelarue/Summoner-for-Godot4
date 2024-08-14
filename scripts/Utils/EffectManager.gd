@@ -57,7 +57,6 @@ func severed_hand(item):
 	if player_node:
 		var item_instance = InventoryManager.drop_item(item, player_node.global_position)
 		var enemy_dog = get_tree().current_scene.get_node("EnemyDog")
-		if enemy_dog == null : return false
 		enemy_dog.change_target(item_instance)
 		return true
 	return false
