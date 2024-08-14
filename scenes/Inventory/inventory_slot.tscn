@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvrxn3y5rg65u"]
+[gd_scene load_steps=8 format=3 uid="uid://bvrxn3y5rg65u"]
 
 [ext_resource type="Script" path="res://scripts/Inventory/inventory_slot.gd" id="1_3u32l"]
-[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/item icons/red potion.png" id="2_7wffe"]
 [ext_resource type="FontFile" uid="uid://dq2uewwmiw1sf" path="res://assets/AmiNo8bitFont.ttf" id="2_mc444"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2nd7n"]
@@ -28,7 +27,6 @@ script = ExtResource("1_3u32l")
 
 [node name="ItemIcon" type="Sprite2D" parent="."]
 position = Vector2(15, 15)
-texture = ExtResource("2_7wffe")
 
 [node name="ItemQuantity" type="Label" parent="ItemIcon"]
 offset_left = -14.0

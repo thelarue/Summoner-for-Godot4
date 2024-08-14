@@ -21,3 +21,9 @@ func clear_grid_container():
 		var child = grid_container.get_child(0)
 		grid_container.remove_child(child)
 		child.queue_free()
+
+
+func _on_visibility_changed():
+	for slot in grid_container.get_children():
+		if slot and slot.has_method("close_usage_panel"):
+			slot.close_usage_panel()

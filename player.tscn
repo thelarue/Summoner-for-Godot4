@@ -217,7 +217,7 @@ mouse_filter = 2
 
 [node name="PlayerHeart" parent="Camera2D/CanvasLayer/PlayerHealth" instance=ExtResource("4_ml7rw")]
 position = Vector2(20, 20)
-animation = &"idle"
+animation = &"damage"
 
 [node name="PlayerHeart2" parent="Camera2D/CanvasLayer/PlayerHealth" instance=ExtResource("4_ml7rw")]
 position = Vector2(70, 20)

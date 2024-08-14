@@ -36,3 +36,5 @@ grow_vertical = 2
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 4
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

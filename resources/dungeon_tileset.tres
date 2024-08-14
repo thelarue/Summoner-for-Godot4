@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=30 format=3 uid="uid://cwawrx7nc1kem"]
+[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://cwawrx7nc1kem"]
 
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_raeat"]
 [ext_resource type="Texture2D" uid="uid://djiejj5kxx7hi" path="res://assets/tilesets and props/dungeon/bloody tiles/pile_of_bodies_a.png" id="2_dgyl5"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://d17ndncmxuroc" path="res://assets/tilesets and props/dungeon/burn_floor.png" id="4_nqenw"]
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="5_l6q8j"]
 [ext_resource type="Texture2D" uid="uid://4xfrpusev5if" path="res://assets/tilesets and props/The dungeon/sarcophagus, lamps & tombs - NEW/Godot_Rocks_floor.png" id="6_esge7"]
-[ext_resource type="Texture2D" uid="uid://dch2oluukxlek" path="res://assets/tilesets and props/chasm_side.png" id="7_dufie"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_fgw47"]
 tile_data = PackedInt32Array(0, 3, 3, 65536, 3, 4, 131072, 3, 5, 1, 65539, 3, 65537, 65539, 4, 131073, 65539, 5, 2, 131075, 3, 65538, 131075, 4, 131074, 131075, 5)
@@ -4687,7 +4686,6 @@ texture = ExtResource("6_esge7")
 8:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dwst"]
-texture = ExtResource("7_dufie")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0

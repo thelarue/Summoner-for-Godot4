@@ -212,3 +212,6 @@ func set_closest_grass_area(grass_area : Node2D):
 
 func get_closest_grass_area():
 	return closest_grass_area
+
+func set_can_move(b):
+	can_move = b

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bn0dcorn6ak12"]
+[gd_scene load_steps=36 format=3 uid="uid://bn0dcorn6ak12"]
 
 [ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="1_kw7wn"]
 [ext_resource type="Script" path="res://scenes/starting_area/start.gd" id="1_w8yj5"]
@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://cla2eukdm3fdn" path="res://scenes/Elements/spikes.tscn" id="22_i8j28"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="24_7o4xp"]
 [ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="24_hyapk"]
-[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/item icons/red potion.png" id="25_w6kcu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_thq3x"]
 
@@ -3011,14 +3010,10 @@ script = ExtResource("1_w8yj5")
 position = Vector2(240, 449)
 rotation = -3.14159
 scale = Vector2(2, 2)
-destionation_level_tag = "second_area"
 destination_door_tag = "N"
 
 [node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
 position = Vector2(5.20349e-05, 21)
-
-[node name="Spawn" parent="Doors/Door_S" index="1"]
-position = Vector2(-0.499897, 41)
 
 [node name="Items" type="Node" parent="."]
 
@@ -3028,7 +3023,6 @@ item_id = "0000"
 item_type = "Potion"
 item_method = "heal"
 item_name = "Health Potion"
-item_texture = ExtResource("25_w6kcu")
 item_effect = "+ 1 Heart"
 effect_value = 4
 
@@ -3038,7 +3032,6 @@ item_id = "0001"
 item_type = "Potion"
 item_method = "heal"
 item_name = "Health Potion"
-item_texture = ExtResource("25_w6kcu")
 item_effect = "+ 1 Heart"
 effect_value = 4
 
@@ -3048,7 +3041,6 @@ item_id = "0002"
 item_type = "Utility"
 item_method = "blank"
 item_name = "Azure Flower"
-item_texture = ExtResource("25_w6kcu")
 item_effect = "Save the game"
 
 [node name="bg" type="Node2D" parent="."]

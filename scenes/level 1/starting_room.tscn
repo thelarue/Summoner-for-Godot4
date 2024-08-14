@@ -1,22 +1,18 @@
-[gd_scene load_steps=24 format=3 uid="uid://vwh0gq0mfh3r"]
+[gd_scene load_steps=20 format=3 uid="uid://vwh0gq0mfh3r"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/starting_room.gd" id="1_omxgt"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_nl5yg"]
 [ext_resource type="Texture2D" uid="uid://djiejj5kxx7hi" path="res://assets/tilesets and props/dungeon/bloody tiles/pile_of_bodies_a.png" id="2_u3c1x"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="3_jfwwr"]
 [ext_resource type="PackedScene" uid="uid://b4wt2g8rql0il" path="res://scenes/level 1/bronze_key_door.tscn" id="4_0n3nh"]
-[ext_resource type="Texture2D" uid="uid://ccp53885lhsmf" path="res://assets/item icons/dagger.png" id="7_1qthy"]
+[ext_resource type="Texture2D" uid="uid://ccp53885lhsmf" path="res://assets/item icons/dagger.png" id="7_4isce"]
 [ext_resource type="Texture2D" uid="uid://d0rys6gafmmoi" path="res://assets/characters/common_cultist.png" id="7_pqbjn"]
 [ext_resource type="PackedScene" uid="uid://j1m8tcycfheg" path="res://scenes/level 1/blood_door_puzzle.tscn" id="7_tvqre"]
 [ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="8_4m1ma"]
 [ext_resource type="Texture2D" uid="uid://d2o2a4vq671vx" path="res://assets/tilesets and props/props/barrel.png" id="8_aaa5a"]
-[ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/item icons/monster horn.png" id="8_yuqgd"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="9_0qvy3"]
-[ext_resource type="Texture2D" uid="uid://c3binqa1uv5fq" path="res://assets/item icons/blue potion.png" id="9_54r6d"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_hy8m1"]
-[ext_resource type="PackedScene" uid="uid://ce8i52e3rtcqu" path="res://scenes/spirit.tscn" id="12_ln80g"]
 [ext_resource type="PackedScene" uid="uid://usxchysdcnrl" path="res://scenes/utils/barrel.tscn" id="15_4sm0u"]
-[ext_resource type="PackedScene" uid="uid://c3yjunysryes1" path="res://scenes/grass_area.tscn" id="17_eq0vf"]
 [ext_resource type="PackedScene" uid="uid://cjaqorbbqo3br" path="res://interactions/LoreObject.tscn" id="17_xafvy"]
 [ext_resource type="AudioStream" uid="uid://dcrx6iqk0o183" path="res://assets/music and sound/ruGame ambient spooky piano loop take 1.mp3" id="19_ejwrl"]
 
@@ -119,113 +115,17 @@ position = Vector2(0, -1.5)
 [node name="Items" type="Node" parent="."]
 
 [node name="Crate" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(256, 177)
+position = Vector2(190, 346)
 item_id = "0000"
-item_type = "Utils"
+item_type = "Overworld, Battle"
 item_method = "ritual_knife"
 item_name = "Ritual Knife"
-item_texture = ExtResource("7_1qthy")
-item_effect = "Might hurt"
+item_texture = ExtResource("7_4isce")
+item_effect = "A knife"
 effect_value = 1
 consumable = false
 
-[node name="Crate2" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(250, 397)
-item_id = "0002"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Sleeping Rabbit"
-item_texture = ExtResource("8_yuqgd")
-item_effect = "A horn"
-
-[node name="Crate3" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(315, 393)
-item_id = "0002"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Rainbow Quartz"
-item_texture = ExtResource("8_yuqgd")
-item_effect = "A horn"
-
-[node name="Crate4" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(391, 378)
-item_id = "0002"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Eyeball"
-item_texture = ExtResource("8_yuqgd")
-item_effect = "A horn"
-
-[node name="Crate6" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(443, 374)
-item_id = "0002"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Eyeball"
-item_texture = ExtResource("8_yuqgd")
-item_effect = "A horn"
-
-[node name="Crate9" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(203, 527)
-item_id = "0002"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Eyeball"
-item_texture = ExtResource("8_yuqgd")
-item_effect = "A horn"
-
-[node name="Crate10" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(287, 520)
-item_id = "0002"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Snake Tangle"
-item_texture = ExtResource("8_yuqgd")
-item_effect = "A horn"
-
-[node name="Crate11" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(366, 528)
-item_id = "0002"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Mandrake Root"
-item_texture = ExtResource("8_yuqgd")
-item_effect = "A horn"
-
-[node name="Crate7" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(396, 425)
-item_id = "0002"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Alchemic Fire"
-item_texture = ExtResource("8_yuqgd")
-item_effect = "A horn"
-
-[node name="Crate8" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(454, 424)
-item_id = "0002"
-item_type = "Ingredient"
-item_method = "use_ingredient"
-item_name = "Beast Fur"
-item_texture = ExtResource("8_yuqgd")
-item_effect = "A horn"
-
-[node name="Crate5" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(407, 455)
-item_id = "0006"
-item_type = "Potion"
-item_method = "mana_potion"
-item_name = "Mana Potion"
-item_texture = ExtResource("9_54r6d")
-item_effect = "+ 1 Mana"
-effect_value = 1
-
 [node name="Spirits" type="Node" parent="."]
-
-[node name="Spirit" parent="Spirits" instance=ExtResource("12_ln80g")]
-visible = false
-position = Vector2(361, 493)
-dialogue = "res://dialogues/debug room/commonBattleConvo.dtl"
 
 [node name="bodies" type="Sprite2D" parent="."]
 modulate = Color(0.593134, 0.593134, 0.593134, 1)
@@ -267,13 +167,6 @@ position = Vector2(323, 260)
 [node name="Barrel4" parent="." instance=ExtResource("15_4sm0u")]
 position = Vector2(296, 456)
 scale = Vector2(2, 2)
-
-[node name="GrassArea" parent="." instance=ExtResource("17_eq0vf")]
-position = Vector2(176, 285)
-rotation = -1.55504
-
-[node name="GrassArea2" parent="." instance=ExtResource("17_eq0vf")]
-position = Vector2(174, 361)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3

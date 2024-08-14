@@ -10,6 +10,15 @@ extends Control
 
 var item = null
 
+
+
+func _input(event):
+	if event is  InputEventMouseButton and event.pressed:
+		var click_position = event.position
+		
+		if usage_panel.visible and not usage_panel.get_global_rect().has_point(click_position):
+			usage_panel.visible = false
+
 func _on_item_button_mouse_entered():
 	if item != null:
 		usage_panel.visible = false
@@ -56,3 +65,8 @@ func _on_use_button_pressed():
 				InventoryManager.remove_item(item["name"])
 		usage_panel.visible = false
 	InventoryManager.inventory_item_used( item )
+
+func close_usage_panel():
+	usage_panel.visible = false
+
+
