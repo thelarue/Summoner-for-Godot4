@@ -10,6 +10,7 @@ func _ready():
 	AudioPlayer.play_music_level()
 	
 	setup_items()
+	Dialogic.start("res://dialogues/debug room/intro.dtl")
 
 func setup_items():
 	for item in items.get_children():

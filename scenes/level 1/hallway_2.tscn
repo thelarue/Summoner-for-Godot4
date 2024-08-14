@@ -55,6 +55,9 @@ scale = Vector2(2, 2)
 destination_level_tag = "ascension_room"
 destination_door_tag = "from_hallway_2"
 
+[node name="Label" parent="Doors/SilverKeyDoorPuzzle/Puzzle/MarginContainer" index="0"]
+text = "Requires a silver key."
+
 [node name="BronzeKeyDoorPuzzle" parent="Doors" instance=ExtResource("5_aaith")]
 position = Vector2(1713, 416)
 rotation = -3.14159
@@ -68,11 +71,14 @@ destination_door_tag = "from_hallway_2"
 position = Vector2(3.41023e-05, -2.5)
 
 [node name="Puzzle" parent="Doors/BronzeKeyDoorPuzzle" index="4"]
-offset_left = 70.0006
-offset_top = 135.0
-offset_right = 207.001
-offset_bottom = 177.0
+offset_left = 68.0003
+offset_top = 103.0
+offset_right = 205.001
+offset_bottom = 145.0
 rotation = 3.14159
+
+[node name="Label" parent="Doors/BronzeKeyDoorPuzzle/Puzzle/MarginContainer" index="0"]
+text = "Requires a bronze key."
 
 [node name="DoorToHallway1" parent="Doors" instance=ExtResource("5_tuokk")]
 position = Vector2(435, 385)

@@ -93,12 +93,15 @@ destination_door_tag = "from_starting_room"
 position = Vector2(-0.249954, -7.75)
 
 [node name="Puzzle" parent="Doors/BronzeKeyDoorPuzzle" index="4"]
-offset_left = -55.9998
-offset_top = 64.5002
-offset_right = 81.0002
-offset_bottom = 106.5
+offset_left = -45.4998
+offset_top = 54.0002
+offset_right = 91.5002
+offset_bottom = 96.0
 rotation = -1.57079
 scale = Vector2(0.5, 0.5)
+
+[node name="Label" parent="Doors/BronzeKeyDoorPuzzle/Puzzle/MarginContainer" index="0"]
+text = "Requires a bronze key."
 
 [node name="BloodDoorPuzzle" parent="Doors" instance=ExtResource("7_tvqre")]
 position = Vector2(314, 41)
@@ -115,7 +118,7 @@ position = Vector2(0, -1.5)
 [node name="Items" type="Node" parent="."]
 
 [node name="Crate" parent="Items" instance=ExtResource("12_hy8m1")]
-position = Vector2(190, 346)
+position = Vector2(219, 290)
 item_id = "0000"
 item_type = "Overworld, Battle"
 item_method = "ritual_knife"
@@ -140,8 +143,20 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(446, 276)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="commoncultist"]
+modulate = Color(1, 0.38, 0.38, 1)
+position = Vector2(-5, 23)
 sprite_frames = SubResource("SpriteFrames_5efoi")
 animation = &"left"
+
+[node name="commoncultist" type="Sprite2D" parent="commoncultist"]
+position = Vector2(-222, 20)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="commoncultist/commoncultist"]
+modulate = Color(1, 0.3, 0.3, 1)
+position = Vector2(-46, 7)
+sprite_frames = SubResource("SpriteFrames_5efoi")
+animation = &"left"
+flip_h = true
 
 [node name="Barrel" type="Sprite2D" parent="."]
 position = Vector2(154, 82)

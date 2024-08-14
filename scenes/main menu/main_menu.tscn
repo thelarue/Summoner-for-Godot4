@@ -1,54 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://dc8cig4ekyahy"]
+[gd_scene load_steps=3 format=3 uid="uid://dc8cig4ekyahy"]
 
 [ext_resource type="Script" path="res://scenes/main menu/main_menu.gd" id="1_ggwen"]
-[ext_resource type="Texture2D" uid="uid://ba7likpdfguit" path="res://assets/main menu/back.png" id="2_i2pxo"]
-[ext_resource type="Script" path="res://scenes/main menu/ParallaxBackground.gd" id="2_uiibo"]
-[ext_resource type="Texture2D" uid="uid://p35sswmlm31r" path="res://assets/main menu/middle.png" id="4_1np8v"]
-[ext_resource type="Texture2D" uid="uid://tdhmwx0skdm0" path="res://assets/main menu/front.png" id="5_smngj"]
+[ext_resource type="Texture2D" uid="uid://bw0loy150maeu" path="res://assets/title summoner.png" id="2_cncge"]
 
 [node name="main_menu" type="Node2D"]
 script = ExtResource("1_ggwen")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scale = Vector2(0.75, 0.75)
-transform = Transform2D(0.75, 0, 0, 0.75, 0, 0)
-script = ExtResource("2_uiibo")
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-982.667, -538.667)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(182.5, 103.75)
-texture = ExtResource("2_i2pxo")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-982.667, -538.667)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(182.5, 103.5)
-texture = ExtResource("4_1np8v")
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-982.667, -538.667)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(184.75, 103.25)
-texture = ExtResource("5_smngj")
+[node name="TitleSummoner" type="Sprite2D" parent="."]
+position = Vector2(241, 136)
+texture = ExtResource("2_cncge")
 
 [node name="menu_options" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -511.0
-offset_top = -574.0
-offset_right = -471.0
-offset_bottom = -534.0
+offset_left = -408.0
+offset_top = -595.0
+offset_right = -368.0
+offset_bottom = -555.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="menu_options"]
+[node name="HBoxContainer" type="VBoxContainer" parent="menu_options"]
 layout_mode = 0
-offset_left = 552.0
-offset_top = 665.0
-offset_right = 758.0
-offset_bottom = 705.0
+offset_left = 601.0
+offset_top = 661.0
+offset_right = 708.0
+offset_bottom = 717.0
 
 [node name="new game" type="Button" parent="menu_options/HBoxContainer"]
 layout_mode = 2
@@ -61,6 +36,7 @@ theme_override_font_sizes/font_size = 8
 text = "Load"
 
 [node name="options" type="Button" parent="menu_options/HBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Options"
