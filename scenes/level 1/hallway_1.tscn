@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cp232m8qgnd5x"]
+[gd_scene load_steps=18 format=3 uid="uid://cp232m8qgnd5x"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_1.gd" id="1_5hfeh"]
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_f5r4q"]
@@ -1493,6 +1493,13 @@ texture = ExtResource("2_iqjy2")
 4:35/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:35/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sikfb"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ihfmy"]
 texture = ExtResource("3_lksm3")
 6:1/0 = 0
@@ -2617,6 +2624,7 @@ texture = ExtResource("3_lksm3")
 1:31/0 = 0
 1:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:31/0/physics_layer_0/angular_velocity = 0.0
+1:31/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_sikfb")
 2:31/0 = 0
 2:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:31/0/physics_layer_0/angular_velocity = 0.0
@@ -7232,6 +7240,7 @@ texture = ExtResource("5_giu02")
 [sub_resource type="TileSet" id="TileSet_6lrkr"]
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 0
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_s35s5")
 sources/1 = SubResource("TileSetAtlasSource_cdd0j")
 sources/2 = SubResource("TileSetAtlasSource_ihfmy")
