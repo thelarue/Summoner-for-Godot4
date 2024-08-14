@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/inventory_slot.gd" id="1_e3hwk"]
 [ext_resource type="FontFile" uid="uid://dq2uewwmiw1sf" path="res://assets/AmiNo8bitFont.ttf" id="2_2sidq"]
-[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/[32]-Iconset-Starter_Pack_01.png" id="2_oawqm"]
+[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/item icons/red potion.png" id="2_oawqm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2nd7n"]
 

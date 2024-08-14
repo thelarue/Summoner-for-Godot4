@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://j1m8tcycfheg"]
 
 [ext_resource type="Script" path="res://scripts/Puzzles/blood_door_puzzle.gd" id="1_dvd0r"]
-[ext_resource type="Texture2D" uid="uid://cxqesqjdi51ko" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="2_knmy6"]
+[ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="2_knmy6"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="3_p0q5m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_387vo"]

@@ -2,22 +2,22 @@
 
 [ext_resource type="Script" path="res://scripts/Scenes/starting_room.gd" id="1_omxgt"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_nl5yg"]
-[ext_resource type="Texture2D" uid="uid://bgdj5cdkhs7lp" path="res://assets/tilesets and props/dungeon/bloody tiles/pile_of_bodies_a.png" id="2_u3c1x"]
+[ext_resource type="Texture2D" uid="uid://djiejj5kxx7hi" path="res://assets/tilesets and props/dungeon/bloody tiles/pile_of_bodies_a.png" id="2_u3c1x"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="3_jfwwr"]
 [ext_resource type="PackedScene" uid="uid://b4wt2g8rql0il" path="res://scenes/level 1/bronze_key_door.tscn" id="4_0n3nh"]
-[ext_resource type="Texture2D" uid="uid://bskf3lhw7lseu" path="res://assets/characters/common_cultist.png" id="7_pqbjn"]
+[ext_resource type="Texture2D" uid="uid://ccp53885lhsmf" path="res://assets/item icons/dagger.png" id="7_1qthy"]
+[ext_resource type="Texture2D" uid="uid://d0rys6gafmmoi" path="res://assets/characters/common_cultist.png" id="7_pqbjn"]
 [ext_resource type="PackedScene" uid="uid://j1m8tcycfheg" path="res://scenes/level 1/blood_door_puzzle.tscn" id="7_tvqre"]
 [ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="8_4m1ma"]
-[ext_resource type="Texture2D" uid="uid://c2lvawsajnx1q" path="res://assets/tilesets and props/props/barrel.png" id="8_aaa5a"]
+[ext_resource type="Texture2D" uid="uid://d2o2a4vq671vx" path="res://assets/tilesets and props/props/barrel.png" id="8_aaa5a"]
+[ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/item icons/monster horn.png" id="8_yuqgd"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="9_0qvy3"]
-[ext_resource type="Texture2D" uid="uid://qsvxyhf7culp" path="res://assets/dagger.png" id="9_5w0sq"]
-[ext_resource type="Texture2D" uid="uid://dv2htmf488eev" path="res://assets/[32]-Iconset-Starter_Pack_172.png" id="10_sldby"]
-[ext_resource type="Texture2D" uid="uid://c3binqa1uv5fq" path="res://assets/[32]-Iconset-Starter_Pack_07.png" id="11_pru3o"]
+[ext_resource type="Texture2D" uid="uid://c3binqa1uv5fq" path="res://assets/item icons/blue potion.png" id="9_54r6d"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_hy8m1"]
 [ext_resource type="PackedScene" uid="uid://ce8i52e3rtcqu" path="res://scenes/spirit.tscn" id="12_ln80g"]
-[ext_resource type="PackedScene" path="res://scenes/utils/barrel.tscn" id="15_4sm0u"]
-[ext_resource type="PackedScene" path="res://scenes/grass_area.tscn" id="17_eq0vf"]
-[ext_resource type="PackedScene" path="res://interactions/LoreObject.tscn" id="17_xafvy"]
+[ext_resource type="PackedScene" uid="uid://usxchysdcnrl" path="res://scenes/utils/barrel.tscn" id="15_4sm0u"]
+[ext_resource type="PackedScene" uid="uid://c3yjunysryes1" path="res://scenes/grass_area.tscn" id="17_eq0vf"]
+[ext_resource type="PackedScene" uid="uid://cjaqorbbqo3br" path="res://interactions/LoreObject.tscn" id="17_xafvy"]
 [ext_resource type="AudioStream" uid="uid://dcrx6iqk0o183" path="res://assets/music and sound/ruGame ambient spooky piano loop take 1.mp3" id="19_ejwrl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vyhm"]
@@ -124,7 +124,7 @@ item_id = "0000"
 item_type = "Utils"
 item_method = "ritual_knife"
 item_name = "Ritual Knife"
-item_texture = ExtResource("9_5w0sq")
+item_texture = ExtResource("7_1qthy")
 item_effect = "Might hurt"
 effect_value = 1
 consumable = false
@@ -135,7 +135,7 @@ item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
 item_name = "Sleeping Rabbit"
-item_texture = ExtResource("10_sldby")
+item_texture = ExtResource("8_yuqgd")
 item_effect = "A horn"
 
 [node name="Crate3" parent="Items" instance=ExtResource("12_hy8m1")]
@@ -144,7 +144,7 @@ item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
 item_name = "Rainbow Quartz"
-item_texture = ExtResource("10_sldby")
+item_texture = ExtResource("8_yuqgd")
 item_effect = "A horn"
 
 [node name="Crate4" parent="Items" instance=ExtResource("12_hy8m1")]
@@ -153,7 +153,7 @@ item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
 item_name = "Eyeball"
-item_texture = ExtResource("10_sldby")
+item_texture = ExtResource("8_yuqgd")
 item_effect = "A horn"
 
 [node name="Crate6" parent="Items" instance=ExtResource("12_hy8m1")]
@@ -162,7 +162,7 @@ item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
 item_name = "Eyeball"
-item_texture = ExtResource("10_sldby")
+item_texture = ExtResource("8_yuqgd")
 item_effect = "A horn"
 
 [node name="Crate9" parent="Items" instance=ExtResource("12_hy8m1")]
@@ -171,7 +171,7 @@ item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
 item_name = "Eyeball"
-item_texture = ExtResource("10_sldby")
+item_texture = ExtResource("8_yuqgd")
 item_effect = "A horn"
 
 [node name="Crate10" parent="Items" instance=ExtResource("12_hy8m1")]
@@ -180,7 +180,7 @@ item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
 item_name = "Snake Tangle"
-item_texture = ExtResource("10_sldby")
+item_texture = ExtResource("8_yuqgd")
 item_effect = "A horn"
 
 [node name="Crate11" parent="Items" instance=ExtResource("12_hy8m1")]
@@ -189,7 +189,7 @@ item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
 item_name = "Mandrake Root"
-item_texture = ExtResource("10_sldby")
+item_texture = ExtResource("8_yuqgd")
 item_effect = "A horn"
 
 [node name="Crate7" parent="Items" instance=ExtResource("12_hy8m1")]
@@ -198,7 +198,7 @@ item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
 item_name = "Alchemic Fire"
-item_texture = ExtResource("10_sldby")
+item_texture = ExtResource("8_yuqgd")
 item_effect = "A horn"
 
 [node name="Crate8" parent="Items" instance=ExtResource("12_hy8m1")]
@@ -207,7 +207,7 @@ item_id = "0002"
 item_type = "Ingredient"
 item_method = "use_ingredient"
 item_name = "Beast Fur"
-item_texture = ExtResource("10_sldby")
+item_texture = ExtResource("8_yuqgd")
 item_effect = "A horn"
 
 [node name="Crate5" parent="Items" instance=ExtResource("12_hy8m1")]
@@ -216,7 +216,7 @@ item_id = "0006"
 item_type = "Potion"
 item_method = "mana_potion"
 item_name = "Mana Potion"
-item_texture = ExtResource("11_pru3o")
+item_texture = ExtResource("9_54r6d")
 item_effect = "+ 1 Mana"
 effect_value = 1
 

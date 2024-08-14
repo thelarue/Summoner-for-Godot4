@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ct2ynfxi4ullm"]
 
 [ext_resource type="Script" path="res://scripts/Inventory/Crate.gd" id="1_tdb15"]
-[ext_resource type="Texture2D" uid="uid://cuo42ed86os84" path="res://assets/[32]-Iconset-Starter_Pack_217.png" id="2_pyfx1"]
+[ext_resource type="Texture2D" uid="uid://cuo42ed86os84" path="res://assets/item icons/[32]-Iconset-Starter_Pack_217.png" id="2_pyfx1"]
 [ext_resource type="Script" path="res://scripts/Utils/Actionable.gd" id="3_lwo3u"]
 [ext_resource type="AudioStream" uid="uid://biyl284rl1w3f" path="res://assets/music and sound/pianoJingleTake05.mp3" id="5_ilrab"]
 

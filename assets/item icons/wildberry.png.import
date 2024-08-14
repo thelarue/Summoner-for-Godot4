@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy06sp2b8dfbb"
-path="res://.godot/imported/[32]-Iconset-Starter_Pack_01.png-97c0d05ff234fa5d3834496fad197c8b.ctex"
+uid="uid://ckcjla04xcno8"
+path="res://.godot/imported/wildberry.png-466dd073ab5de026d29551e9d7fa5d5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/[32]-Iconset-Starter_Pack_01.png"
-dest_files=["res://.godot/imported/[32]-Iconset-Starter_Pack_01.png-97c0d05ff234fa5d3834496fad197c8b.ctex"]
+source_file="res://assets/item icons/wildberry.png"
+dest_files=["res://.godot/imported/wildberry.png-466dd073ab5de026d29551e9d7fa5d5e.ctex"]
 
 [params]
 

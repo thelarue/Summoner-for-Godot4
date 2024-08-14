@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxa7knatocoeo"]
+[gd_scene load_steps=14 format=3 uid="uid://dxa7knatocoeo"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_6u2fk"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_8esey"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="4_tf8bu"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="5_0juyw"]
 [ext_resource type="Texture2D" uid="uid://cp46y6034andw" path="res://assets/tilesets and props/chicken_coop.png" id="6_sha8e"]
+[ext_resource type="Texture2D" uid="uid://bfhkearogo26n" path="res://assets/tilesets and props/rabbit_hutch.png" id="7_8d3bk"]
 [ext_resource type="PackedScene" uid="uid://4x5kofqnyuns" path="res://scenes/level 1/coffer.tscn" id="7_vx5xe"]
-[ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="8_h0m8u"]
+[ext_resource type="Texture2D" uid="uid://bj75arbvrvhj" path="res://assets/tilesets and props/props/coffer.png" id="8_h0m8u"]
+[ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="10_64ls6"]
+[ext_resource type="Texture2D" uid="uid://d1t3cilvb8xdn" path="res://assets/item icons/sleeping_rabbit.png" id="11_x0hxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7edgb"]
 size = Vector2(65, 42.5)
@@ -61,15 +64,24 @@ shape = SubResource("RectangleShape2D_7edgb")
 position = Vector2(917, 136)
 scale = Vector2(2, 2)
 
+[node name="RabbitHutch" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(1.5, 4.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_8d3bk")
+hframes = 3
+frame = 1
+
 [node name="ChickenCoop" type="Sprite2D" parent="StaticBody2D2"]
-texture = ExtResource("6_sha8e")
+position = Vector2(-8, -3)
+texture = ExtResource("7_8d3bk")
+hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-1.5, 1.25)
 shape = SubResource("RectangleShape2D_7edgb")
 
 [node name="Coffer" parent="." instance=ExtResource("7_vx5xe")]
-position = Vector2(800, 117)
+position = Vector2(808, 142)
 scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_fxctx")
 item_id = "0034"
@@ -77,5 +89,18 @@ item_method = "blue_gem"
 item_name = "Sapphire ring"
 item_effect = "Can I keep it?"
 consumable = false
+
+[node name="Items2" type="Node" parent="."]
+
+[node name="Crate" parent="Items2" instance=ExtResource("10_64ls6")]
+visible = false
+position = Vector2(910, 145)
+scale = Vector2(3.02738, 1.40758)
+item_id = "0150"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Sleeping Rabbit"
+item_texture = ExtResource("11_x0hxy")
+item_effect = "Snoozing"
 
 [editable path="Doors/DoorToHallway3"]

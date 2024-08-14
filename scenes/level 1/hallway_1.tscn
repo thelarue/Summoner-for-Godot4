@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cp232m8qgnd5x"]
+[gd_scene load_steps=17 format=3 uid="uid://cp232m8qgnd5x"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_1.gd" id="1_5hfeh"]
 [ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_f5r4q"]
@@ -7273,11 +7273,7 @@ destination_level_tag = "hallway_2"
 destination_door_tag = "from_hallway_1"
 
 [node name="player" parent="." instance=ExtResource("7_2im51")]
-
 position = Vector2(2, -6)
 
 [node name="MutatedDog" parent="." instance=ExtResource("9_n5mp4")]
 position = Vector2(516, -255)
-
-[editable path="Doors/Door_N"]
-[editable path="Doors/Door_S"]

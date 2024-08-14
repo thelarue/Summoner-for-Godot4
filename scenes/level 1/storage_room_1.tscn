@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c1s848jkccmdj"]
+[gd_scene load_steps=24 format=3 uid="uid://c1s848jkccmdj"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/storage_room_1.gd" id="1_ifn3c"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_qou0w"]
@@ -6,11 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://4x5kofqnyuns" path="res://scenes/level 1/coffer.tscn" id="6_2pdm3"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="6_pganh"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="6_tfogr"]
-[ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="6_y83i7"]
+[ext_resource type="Texture2D" uid="uid://bj75arbvrvhj" path="res://assets/tilesets and props/props/coffer.png" id="6_y83i7"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="7_0534a"]
 [ext_resource type="Texture2D" uid="uid://cvcanevhfmxmj" path="res://assets/tilesets and props/The dungeon/boxes/box_02.png" id="9_6enbp"]
 [ext_resource type="Texture2D" uid="uid://dl13rjgxmugbq" path="res://assets/tilesets and props/The dungeon/boxes/box_03.png" id="10_1d3r7"]
 [ext_resource type="Texture2D" uid="uid://kle38chpb4vr" path="res://assets/tilesets and props/The dungeon/barrels/Barrels_02.png" id="10_fb0gw"]
+[ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_ni148"]
+[ext_resource type="Texture2D" uid="uid://tmkedfug1dv1" path="res://assets/item icons/red herb.png" id="13_47u65"]
+[ext_resource type="Texture2D" uid="uid://b8ecpulhiekm5" path="res://assets/item icons/white_phosphorus.png" id="14_sx622"]
+[ext_resource type="Texture2D" uid="uid://dw3c4q6upk3c1" path="res://assets/item icons/black herb.png" id="15_lv4cx"]
+[ext_resource type="Texture2D" uid="uid://ha2u3bv4c6n6" path="res://assets/item icons/blue herb.png" id="16_xtwdg"]
+[ext_resource type="Texture2D" uid="uid://ckcjla04xcno8" path="res://assets/item icons/wildberry.png" id="17_e8pyv"]
+[ext_resource type="Texture2D" uid="uid://bkuf7wxb5crph" path="res://assets/item icons/monster horn.png" id="18_mjobs"]
+[ext_resource type="Texture2D" uid="uid://cjr25nsykmsvh" path="res://assets/item icons/rainbow_quartz.png" id="19_sig3k"]
+[ext_resource type="Texture2D" uid="uid://4fe2jjcpkgvx" path="res://assets/item icons/mandrake root.png" id="20_gmfts"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcdwg"]
 texture = ExtResource("3_al2wc")
@@ -615,5 +624,106 @@ texture = ExtResource("10_fb0gw")
 position = Vector2(809, -276)
 scale = Vector2(2, 2)
 texture = ExtResource("10_1d3r7")
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Crate" parent="Items" instance=ExtResource("12_ni148")]
+visible = false
+position = Vector2(543, -131)
+scale = Vector2(2.12824, 2.06679)
+item_id = "0045"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Red Herb"
+item_texture = ExtResource("13_47u65")
+item_effect = "Words!"
+
+[node name="Crate2" parent="Items" instance=ExtResource("12_ni148")]
+visible = false
+position = Vector2(738, -321)
+scale = Vector2(2.1473, 1.98874)
+item_id = "0046"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Bottle of White Liquid"
+item_texture = ExtResource("14_sx622")
+item_effect = "Words!"
+
+[node name="Crate3" parent="Items" instance=ExtResource("12_ni148")]
+visible = false
+position = Vector2(538, -251)
+scale = Vector2(1.72965, 1.89987)
+item_id = "0047"
+item_type = "Black Herb"
+item_method = "Ingredient"
+item_name = "use_ingredient"
+item_texture = ExtResource("15_lv4cx")
+item_effect = "Words!"
+
+[node name="Crate4" parent="Items" instance=ExtResource("12_ni148")]
+visible = false
+position = Vector2(819, 210)
+scale = Vector2(1.75346, 1.76582)
+item_id = "0048"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Blue Herb"
+item_texture = ExtResource("16_xtwdg")
+item_effect = "Words!"
+
+[node name="Crate5" parent="Items" instance=ExtResource("12_ni148")]
+visible = false
+position = Vector2(712, 343)
+scale = Vector2(2.03875, 1.95682)
+item_id = "0049"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Wildberry"
+item_texture = ExtResource("17_e8pyv")
+item_effect = "Words!"
+
+[node name="Crate6" parent="Items" instance=ExtResource("12_ni148")]
+visible = false
+position = Vector2(830, -96)
+scale = Vector2(1.81104, 2.05165)
+item_id = "0050"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Monster Horn"
+item_texture = ExtResource("18_mjobs")
+item_effect = "Words!"
+
+[node name="Crate7" parent="Items" instance=ExtResource("12_ni148")]
+visible = false
+position = Vector2(463, -64)
+scale = Vector2(1.64462, 1.71729)
+item_id = "0051"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Monster Horn"
+item_texture = ExtResource("18_mjobs")
+item_effect = "Words!"
+
+[node name="Crate8" parent="Items" instance=ExtResource("12_ni148")]
+visible = false
+position = Vector2(705, -80)
+scale = Vector2(1.56839, 1.56034)
+item_id = "0051"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Rainbow Quartz"
+item_texture = ExtResource("19_sig3k")
+item_effect = "Shiny!"
+
+[node name="Crate9" parent="Items" instance=ExtResource("12_ni148")]
+visible = false
+position = Vector2(801, 29)
+scale = Vector2(2.37906, 2.22447)
+item_id = "0052"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Mandrake Root"
+item_texture = ExtResource("20_gmfts")
+item_effect = "Bitter."
 
 [editable path="Doors/Door_E"]

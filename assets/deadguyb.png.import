@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuo42ed86os84"
-path="res://.godot/imported/[32]-Iconset-Starter_Pack_217.png-49600f4423fee07eea2816cba58193c5.ctex"
+uid="uid://haxb5pap0tw7"
+path="res://.godot/imported/deadguyb.png-d108bda74a9c587c7c5a6798fd2c9a24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/[32]-Iconset-Starter_Pack_217.png"
-dest_files=["res://.godot/imported/[32]-Iconset-Starter_Pack_217.png-49600f4423fee07eea2816cba58193c5.ctex"]
+source_file="res://assets/deadguyb.png"
+dest_files=["res://.godot/imported/deadguyb.png-d108bda74a9c587c7c5a6798fd2c9a24.ctex"]
 
 [params]
 

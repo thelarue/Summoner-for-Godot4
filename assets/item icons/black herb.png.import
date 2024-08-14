@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1puyhk74h6v1"
-path="res://.godot/imported/[32]-Iconset-Starter_Pack_171.png-79d70b735e9c815a81c311b1c8a9d15a.ctex"
+uid="uid://dw3c4q6upk3c1"
+path="res://.godot/imported/black herb.png-0f8e25dfd6abe95ead3d5ca5e22c5bca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/[32]-Iconset-Starter_Pack_171.png"
-dest_files=["res://.godot/imported/[32]-Iconset-Starter_Pack_171.png-79d70b735e9c815a81c311b1c8a9d15a.ctex"]
+source_file="res://assets/item icons/black herb.png"
+dest_files=["res://.godot/imported/black herb.png-0f8e25dfd6abe95ead3d5ca5e22c5bca.ctex"]
 
 [params]
 

@@ -1,15 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccg207vsooy1q"]
+[gd_scene load_steps=18 format=3 uid="uid://ccg207vsooy1q"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_jacqo"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_avaxs"]
 [ext_resource type="PackedScene" uid="uid://b4wt2g8rql0il" path="res://scenes/level 1/bronze_key_door.tscn" id="5_aaith"]
-[ext_resource type="PackedScene" path="res://scenes/level 1/silver_key_door.tscn" id="5_msvc2"]
+[ext_resource type="PackedScene" uid="uid://ku8kt6ewh6wx" path="res://scenes/level 1/silver_key_door.tscn" id="5_msvc2"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="5_tuokk"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="6_fk82s"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="6_mjunp"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="6_qfr1k"]
-[ext_resource type="Texture2D" uid="uid://d1puyhk74h6v1" path="res://assets/[32]-Iconset-Starter_Pack_171.png" id="7_b6iu1"]
 [ext_resource type="PackedScene" uid="uid://cuvuj3nf5kxfb" path="res://scenes/Elements/common_cultist.tscn" id="7_e5k0p"]
+[ext_resource type="Texture2D" uid="uid://d1puyhk74h6v1" path="res://assets/item icons/[32]-Iconset-Starter_Pack_171.png" id="8_4ubxj"]
+[ext_resource type="Texture2D" uid="uid://c8087gmhmpx1l" path="res://assets/item icons/beast fur.png" id="9_ypve0"]
+[ext_resource type="PackedScene" uid="uid://4x5kofqnyuns" path="res://scenes/level 1/coffer.tscn" id="11_7urlu"]
+[ext_resource type="Texture2D" uid="uid://dwgqviomlvnot" path="res://assets/deadguya.png" id="12_b26mc"]
+[ext_resource type="Texture2D" uid="uid://tmkedfug1dv1" path="res://assets/item icons/red herb.png" id="12_dkukg"]
+[ext_resource type="Texture2D" uid="uid://b8ecpulhiekm5" path="res://assets/item icons/white_phosphorus.png" id="13_skioa"]
+[ext_resource type="Texture2D" uid="uid://haxb5pap0tw7" path="res://assets/deadguyb.png" id="15_ptaa0"]
+[ext_resource type="Texture2D" uid="uid://c2x7cfuai711r" path="res://assets/dead_people.png" id="16_d8h52"]
 
 [node name="hallway 2" type="Node2D"]
 script = ExtResource("1_jacqo")
@@ -85,19 +92,57 @@ position = Vector2(0, 0)
 
 [node name="Items" type="Node" parent="."]
 
+[node name="Coffer" parent="Items" instance=ExtResource("11_7urlu")]
+position = Vector2(518, 53)
+texture = ExtResource("12_b26mc")
+item_id = "1111"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Beast Fur"
+item_texture = ExtResource("9_ypve0")
+item_effect = "Fuzzy"
+
 [node name="Crate" parent="Items" instance=ExtResource("6_mjunp")]
 position = Vector2(352, 357)
 item_id = "0001"
 item_type = "Util"
 item_method = "severed_hand"
 item_name = "Severed Hand"
-item_texture = ExtResource("7_b6iu1")
+item_texture = ExtResource("8_4ubxj")
 item_effect = "A hand"
+
+[node name="Crate2" parent="Items" instance=ExtResource("6_mjunp")]
+visible = false
+position = Vector2(516, 70)
+item_id = "0040"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Red Herb"
+item_texture = ExtResource("12_dkukg")
+item_effect = "Words"
+
+[node name="Crate3" parent="Items" instance=ExtResource("6_mjunp")]
+visible = false
+position = Vector2(968, 171)
+item_id = "0041"
+item_type = "Ingredient"
+item_method = "use_ingredient"
+item_name = "Bottle of White Liquid"
+item_texture = ExtResource("13_skioa")
+item_effect = "words"
 
 [node name="player" parent="." instance=ExtResource("6_fk82s")]
 
 [node name="CommonCultist" parent="." instance=ExtResource("7_e5k0p")]
 position = Vector2(1013, 161)
+
+[node name="Deadguyb" type="Sprite2D" parent="."]
+position = Vector2(87, 358)
+texture = ExtResource("15_ptaa0")
+
+[node name="DeadPeople" type="Sprite2D" parent="."]
+position = Vector2(973, 171)
+texture = ExtResource("16_d8h52")
 
 [editable path="Doors/SilverKeyDoorPuzzle"]
 [editable path="Doors/BronzeKeyDoorPuzzle"]

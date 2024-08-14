@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://pwgqjdxytkjj"]
+[gd_scene load_steps=20 format=3 uid="uid://pwgqjdxytkjj"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/hallway_2.gd" id="1_qehrs"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_8ocsk"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="4_pbvv7"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="5_cjnrk"]
 [ext_resource type="PackedScene" uid="uid://4x5kofqnyuns" path="res://scenes/level 1/coffer.tscn" id="6_quivt"]
-[ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="6_y5r22"]
+[ext_resource type="Texture2D" uid="uid://bj75arbvrvhj" path="res://assets/tilesets and props/props/coffer.png" id="6_y5r22"]
 [ext_resource type="Texture2D" uid="uid://bjvuc2gpqr3lt" path="res://assets/tilesets and props/The dungeon/bones/Bone_03.png" id="8_hu6xr"]
+[ext_resource type="Texture2D" uid="uid://dwhqwifj75o2b" path="res://assets/item icons/ruby collar pin.png" id="9_05m1j"]
 [ext_resource type="Texture2D" uid="uid://6bx8i4c0e38g" path="res://assets/tilesets and props/The dungeon/bones/Bone_04.png" id="9_riiln"]
 [ext_resource type="Texture2D" uid="uid://dvl7k7v8h4o2s" path="res://assets/tilesets and props/The dungeon/bones/Bone_02.png" id="10_87hqg"]
 [ext_resource type="Texture2D" uid="uid://dt2hnovlmy181" path="res://assets/tilesets and props/The dungeon/bones/Bone_01.png" id="11_2270e"]
@@ -368,6 +369,7 @@ texture = SubResource("AtlasTexture_a0af6")
 item_id = "0033"
 item_method = "red_gem"
 item_name = "Ruby Collar Pin"
+item_texture = ExtResource("9_05m1j")
 item_effect = "Very shiny."
 consumable = false
 

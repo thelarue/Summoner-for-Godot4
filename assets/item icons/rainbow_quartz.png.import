@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3binqa1uv5fq"
-path="res://.godot/imported/[32]-Iconset-Starter_Pack_07.png-c97f63f5d6b5b0e8992e174e5620b2e8.ctex"
+uid="uid://cjr25nsykmsvh"
+path="res://.godot/imported/rainbow_quartz.png-c6d74fa101917afcec66e1063bf6e92c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/[32]-Iconset-Starter_Pack_07.png"
-dest_files=["res://.godot/imported/[32]-Iconset-Starter_Pack_07.png-c97f63f5d6b5b0e8992e174e5620b2e8.ctex"]
+source_file="res://assets/item icons/rainbow_quartz.png"
+dest_files=["res://.godot/imported/rainbow_quartz.png-c6d74fa101917afcec66e1063bf6e92c.ctex"]
 
 [params]
 

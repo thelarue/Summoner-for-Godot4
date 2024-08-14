@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cla2eukdm3fdn" path="res://scenes/Elements/spikes.tscn" id="22_i8j28"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="24_7o4xp"]
 [ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="24_hyapk"]
-[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/[32]-Iconset-Starter_Pack_01.png" id="25_w6kcu"]
+[ext_resource type="Texture2D" uid="uid://cy06sp2b8dfbb" path="res://assets/item icons/red potion.png" id="25_w6kcu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_thq3x"]
 

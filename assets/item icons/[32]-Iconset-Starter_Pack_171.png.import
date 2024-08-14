@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbsb1j3dysnig"
-path="res://.godot/imported/32-Iconset-Starter_Pack_219.png-16e4ba7f03c06e506b57134e111836e6.ctex"
+uid="uid://d1puyhk74h6v1"
+path="res://.godot/imported/[32]-Iconset-Starter_Pack_171.png-394db4506d8994885a266a27584bff1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/32-Iconset-Starter_Pack_219.png"
-dest_files=["res://.godot/imported/32-Iconset-Starter_Pack_219.png-16e4ba7f03c06e506b57134e111836e6.ctex"]
+source_file="res://assets/item icons/[32]-Iconset-Starter_Pack_171.png"
+dest_files=["res://.godot/imported/[32]-Iconset-Starter_Pack_171.png-394db4506d8994885a266a27584bff1c.ctex"]
 
 [params]
 
