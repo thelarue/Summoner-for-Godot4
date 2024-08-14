@@ -6,6 +6,9 @@ func _ready():
 	if NavigationManager.spawn_door_tag:
 		_on_level_spawn(NavigationManager.spawn_door_tag)
 	
+	
+	AudioPlayer.play_music_level()
+	
 	setup_items()
 
 func setup_items():

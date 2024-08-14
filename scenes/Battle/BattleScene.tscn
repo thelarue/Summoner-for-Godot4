@@ -1,9 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://bktrnqn74ivy6"]
+[gd_scene load_steps=29 format=3 uid="uid://bktrnqn74ivy6"]
 
 [ext_resource type="Script" path="res://scenes/Battle/BattleScene.gd" id="1_13yon"]
 [ext_resource type="Texture2D" uid="uid://tyqqhxexgir5" path="res://assets/characters/cultist_battle.png" id="2_54gm7"]
 [ext_resource type="PackedScene" uid="uid://b4ujejr1mllwk" path="res://scenes/Battle/HealthBar.tscn" id="2_u3t3p"]
 [ext_resource type="Texture2D" uid="uid://cwuvc7ibh653i" path="res://assets/characters/little girl/little_girl_battle.png" id="3_piuoq"]
+[ext_resource type="AudioStream" uid="uid://bq6s588b0lv6e" path="res://assets/music and sound/55_Encounter_02.wav" id="4_y0oju"]
+[ext_resource type="AudioStream" uid="uid://cl5m0qw84y8fj" path="res://assets/music and sound/sound fx/22_Slash_04.wav" id="6_ysyvb"]
+[ext_resource type="AudioStream" uid="uid://dyor2yewihhsf" path="res://assets/music and sound/sound fx/69_Enemy_death_01.wav" id="7_ptdl1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ilcj6"]
 atlas = ExtResource("2_54gm7")
@@ -236,6 +239,10 @@ offset_bottom = 154.0
 text = "Some fight will happen soon!"
 horizontal_alignment = 1
 
+[node name="IntroEffect" type="AudioStreamPlayer" parent="CanvasLayer/FightIntro"]
+unique_name_in_owner = true
+stream = ExtResource("4_y0oju")
+
 [node name="FightControls" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
 layout_mode = 3
@@ -252,6 +259,10 @@ position = Vector2(1, 1)
 [node name="EnemyHealthBar" parent="CanvasLayer/FightControls" instance=ExtResource("2_u3t3p")]
 unique_name_in_owner = true
 position = Vector2(336, 0)
+
+[node name="AttackSound" type="AudioStreamPlayer" parent="CanvasLayer/FightControls"]
+unique_name_in_owner = true
+stream = ExtResource("6_ysyvb")
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/FightControls"]
 layout_mode = 2
@@ -336,6 +347,10 @@ unique_name_in_owner = true
 layout_mode = 2
 action_mode = 0
 text = "Back to game"
+
+[node name="VictorySound" type="AudioStreamPlayer" parent="CanvasLayer/VictoryPanel"]
+unique_name_in_owner = true
+stream = ExtResource("7_ptdl1")
 
 [connection signal="animation_finished" from="CanvasLayer/EnemyRect" to="." method="_on_enemy_rect_animation_finished"]
 [connection signal="animation_looped" from="CanvasLayer/EnemyRect" to="." method="_on_enemy_rect_animation_finished"]

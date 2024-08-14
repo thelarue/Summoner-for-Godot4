@@ -1,5 +1,5 @@
 Game Director:
-Ru (my itch)
+Ru
 
 Head/Lead Developer/Programmer:
 Stress
@@ -15,16 +15,25 @@ MG_Dev
 Programmers:
 MG_Dev
 Bazsi1224
+Ru
 
-Arists:
+Artists:
 Ru
 Cap'n Toad
 
 Narrative Designers:
-BKdyno
+Ru
 Mobile
+BKdyno
 
-Music & some sound effects provided by Robin Blend/Beeachu (need to get her preferred name)
+Composer and Discovery SoundFX:
+Beedachu
 
 Assets used:
-[list of them here w/ links to them] 
+Alb-pixel-store's DARK HUNER
+Ryan Kamos's World of Pixels Starter Iconset
+Faultbox's Pocket Witch
+Sscary's The Dungeon
+RafaelMatos' Epic RPG World Pack
+Leohpaz's RPG Essentials Free SFX Pack
+Szadi art's Rogue Fantasy

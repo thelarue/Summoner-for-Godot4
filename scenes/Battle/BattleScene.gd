@@ -5,6 +5,7 @@ var enemy
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().paused = true
+	%IntroEffect.play()
 	%FightControls.modulate = Color.TRANSPARENT
 	
 	%EnemyRect.sprite_frames = enemy.battle_sprite
@@ -46,6 +47,7 @@ func disable_player():
 
 func _on_button_1_pressed():
 	enemy.battle_stats.hp -= max( 0, 2 - enemy.battle_stats.def )
+	%AttackSound.play()
 	%PlayerRect.play("Attack")
 	disable_player()
 	%AttackLabel.text = "You poke the enemy"
@@ -54,6 +56,7 @@ func _on_button_1_pressed():
 
 func _on_button_2_pressed():
 	enemy.battle_stats.hp -= max( 0, 3 - enemy.battle_stats.def )
+	%AttackSound.play()
 	%PlayerRect.play("Use")
 	disable_player()
 	%AttackLabel.text = "You fry the enemy"
@@ -62,6 +65,7 @@ func _on_button_2_pressed():
 
 func _on_button_3_pressed():
 	enemy.battle_stats.hp -= max( 0, 8 - enemy.battle_stats.def )
+	%AttackSound.play()
 	disable_player()
 	%AttackLabel.text = "You do things to the enemy"
 	show_attack_panel()
@@ -70,6 +74,7 @@ func _on_button_3_pressed():
 func enemy_turn():
 	if enemy == null : return
 	%EnemyRect.play("Attack")
+	%AttackSound.play()
 	%AttackLabel.text = "Enemy %s you" % [ enemy.battle_stats.attack_text ]
 	show_attack_panel()
 
@@ -96,9 +101,10 @@ func _on_enemy_rect_animation_finished():
 		return
 	if %EnemyRect.animation == "Defeated" :
 		if enemy != null : enemy.queue_free() 
+		%VictorySound.play()
 		var tween : Tween = create_tween()
 		tween.tween_property( %FightControls, "modulate", Color.TRANSPARENT, 0.5 )
-		tween.tween_property( %VictoryPanel, "position", Vector2(180, 88), 2 )
+		tween.tween_property( %VictoryPanel, "position", Vector2(180, 88), 1 )
 		%BackToGameButton.grab_focus()
 	else:
 		%EnemyRect.play("Idle")
