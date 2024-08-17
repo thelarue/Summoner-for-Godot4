@@ -22,7 +22,6 @@ func _process(_delta):
 		if body.is_in_group("player"):
 			player_in_range = true
 	
-	%Puzzle.visible = player_in_range and not door.can_change_scene
 
 
 

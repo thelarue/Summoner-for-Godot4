@@ -1,17 +1,18 @@
-[gd_scene load_steps=32 format=3 uid="uid://dga7wbow6g13l"]
+[gd_scene load_steps=35 format=3 uid="uid://dga7wbow6g13l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_swdcq"]
 [ext_resource type="Shader" path="res://moody_shader.gdshader" id="2_etysu"]
-[ext_resource type="Texture2D" uid="uid://t0vovc75nl3b" path="res://assets/characters/little girl/little_girl.png" id="3_4g1a0"]
+[ext_resource type="Texture2D" uid="uid://codt0jaflak33" path="res://assets/characters/little girl/little_girl.png" id="3_4g1a0"]
 [ext_resource type="PackedScene" uid="uid://50rdw1dt63h6" path="res://scenes/Inventory/inventory_ui.tscn" id="4_gvsyx"]
-[ext_resource type="PackedScene" uid="uid://d0v5clmb0mcsj" path="res://scenes/utils/player_heart.tscn" id="4_ml7rw"]
-[ext_resource type="PackedScene" uid="uid://n3x7pf5rcnno" path="res://scenes/utils/player_mana.tscn" id="5_180e4"]
+[ext_resource type="PackedScene" path="res://scenes/utils/player_mana.tscn" id="5_180e4"]
 [ext_resource type="PackedScene" uid="uid://c6pbaaxq8k1jr" path="res://scenes/Inventory/alchemy_menu.tscn" id="5_jei75"]
-[ext_resource type="FontFile" uid="uid://dq2uewwmiw1sf" path="res://assets/AmiNo8bitFont.ttf" id="5_rfw7n"]
+[ext_resource type="FontFile" uid="uid://bvejq551x3nnp" path="res://assets/AmiNo8bitFont.ttf" id="5_rfw7n"]
+[ext_resource type="PackedScene" uid="uid://b4ujejr1mllwk" path="res://scenes/Battle/HealthBar.tscn" id="6_5i56i"]
 [ext_resource type="Shader" path="res://fog.gdshader" id="7_rifsk"]
 [ext_resource type="Texture2D" uid="uid://uexhjkiqeado" path="res://assets/Screenshot_20240102_174154-150x150.png" id="8_i6ca0"]
 [ext_resource type="PackedScene" uid="uid://c1ebrg8kocewe" path="res://scenes/Summons/summon_team.tscn" id="8_nq6vc"]
 [ext_resource type="PackedScene" uid="uid://fb656fvmu33t" path="res://scenes/Summons/summoning_circle_ui.tscn" id="8_r1ttc"]
+[ext_resource type="Texture2D" uid="uid://ck2eonr1vwdkg" path="res://assets/Textures/light_radial.png" id="13_fgmde"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8aur7"]
 atlas = ExtResource("3_4g1a0")
@@ -156,6 +157,13 @@ height = 42.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrvrn"]
 size = Vector2(20, 26)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2drd4"]
+light_mode = 2
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jjbkd"]
+closed = false
+polygon = PackedVector2Array(0, -10, 0, 28, 0, 0, -6, -1, 7, -1)
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 process_mode = 3
 z_index = 1
@@ -163,8 +171,10 @@ collision_mask = 6
 script = ExtResource("1_swdcq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 sprite_frames = SubResource("SpriteFrames_70ewb")
-animation = &"walk_down"
+animation = &"die"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 3)
@@ -173,7 +183,6 @@ process_callback = 0
 limit_smoothed = true
 
 [node name="FadeMask" type="ColorRect" parent="Camera2D"]
-process_mode = 3
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(2000, 2000)
 anchors_preset = 15
@@ -205,6 +214,7 @@ grow_vertical = 2
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/CanvasLayer/ParallaxBackground"]
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_dmurp")
 anchors_preset = 15
 anchor_right = 1.0
@@ -213,19 +223,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="PlayerHealth" type="Node2D" parent="Camera2D/CanvasLayer"]
-
-[node name="PlayerHeart" parent="Camera2D/CanvasLayer/PlayerHealth" instance=ExtResource("4_ml7rw")]
-position = Vector2(20, 20)
-animation = &"damage"
-
-[node name="PlayerHeart2" parent="Camera2D/CanvasLayer/PlayerHealth" instance=ExtResource("4_ml7rw")]
-position = Vector2(70, 20)
-animation = &"idle"
-
-[node name="PlayerHeart3" parent="Camera2D/CanvasLayer/PlayerHealth" instance=ExtResource("4_ml7rw")]
-position = Vector2(120, 20)
-animation = &"idle"
+[node name="HealthBar" parent="Camera2D/CanvasLayer" instance=ExtResource("6_5i56i")]
+unique_name_in_owner = true
 
 [node name="PlayerMana" parent="Camera2D/CanvasLayer" instance=ExtResource("5_180e4")]
 offset_top = 39.0
@@ -298,6 +297,52 @@ offset_left = 108.0
 offset_top = 161.0
 offset_right = 108.0
 offset_bottom = 161.0
+
+[node name="PlayerToughts" type="CanvasLayer" parent="."]
+
+[node name="PlayerToughtContainer" type="CenterContainer" parent="PlayerToughts"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -56.0
+offset_right = 90.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 30)
+
+[node name="PanelContainer" type="PanelContainer" parent="PlayerToughts/PlayerToughtContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerToughts/PlayerToughtContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="PlayerToughtLabel" type="Label" parent="PlayerToughts/PlayerToughtContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = " This is gona be useful."
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+material = SubResource("CanvasItemMaterial_2drd4")
+occluder = SubResource("OccluderPolygon2D_jjbkd")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 28)
+range_item_cull_mask = 3
+texture = ExtResource("13_fgmde")
+texture_scale = 0.75
 
 [connection signal="area_entered" from="Marker2D/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Marker2D/Area2D" to="." method="_on_area_2d_area_exited"]

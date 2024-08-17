@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://j1m8tcycfheg"]
+[gd_scene load_steps=6 format=3 uid="uid://df2h0rm7fxqyo"]
 
-[ext_resource type="Script" path="res://scripts/Puzzles/blood_door_puzzle.gd" id="1_dvd0r"]
-[ext_resource type="Texture2D" uid="uid://cxqesqjdi51ko" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="2_knmy6"]
-[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="3_p0q5m"]
+[ext_resource type="Script" path="res://scenes/level 1/ascension_door_puzzle.gd" id="1_dau6j"]
+[ext_resource type="Texture2D" uid="uid://cxqesqjdi51ko" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="2_e5gnm"]
+[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="3_crcbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_387vo"]
 size = Vector2(48, 32)
@@ -10,21 +10,22 @@ size = Vector2(48, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrtli"]
 size = Vector2(48, 30)
 
-[node name="BloodDoorPuzzle" type="Node2D"]
-script = ExtResource("1_dvd0r")
+[node name="AscensionDoorPuzzle" type="Node2D"]
+script = ExtResource("1_dau6j")
+proximity_tought = "Needs a password? Ummm... Please?"
 
 [node name="ClosedDoor" type="Sprite2D" parent="."]
-texture = ExtResource("2_knmy6")
+texture = ExtResource("2_e5gnm")
 region_enabled = true
 region_rect = Rect2(256, 224, 48, 32)
 
 [node name="OpenDoor" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_knmy6")
+texture = ExtResource("2_e5gnm")
 region_enabled = true
 region_rect = Rect2(256, 16, 48, 32)
 
-[node name="Door" parent="." instance=ExtResource("3_p0q5m")]
+[node name="Door" parent="." instance=ExtResource("3_crcbm")]
 position = Vector2(0, 12)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -42,4 +43,8 @@ collision_layer = 4
 position = Vector2(-0.5, -7)
 shape = SubResource("RectangleShape2D_rrtli")
 
+[node name="OpenTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="PlayerProximityArea" to="." method="_on_player_proximity_area_body_entered"]
+[connection signal="timeout" from="OpenTimer" to="." method="_on_open_timer_timeout"]

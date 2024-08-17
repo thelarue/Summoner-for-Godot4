@@ -17,13 +17,6 @@ var last_direction = Vector2.RIGHT
 @export var max_health = 6
 @export var max_mana = 3
 
-
-@onready var hearts = [
-	$Camera2D/CanvasLayer/PlayerHealth/PlayerHeart,
-	$Camera2D/CanvasLayer/PlayerHealth/PlayerHeart2,
-	$Camera2D/CanvasLayer/PlayerHealth/PlayerHeart3,
-]
-
 @onready var inventory_ui = $InventoryUI
 
 
@@ -37,25 +30,15 @@ func _ready():
 	InventoryManager.set_player_reference(self)
 	EffectManager.set_player_reference(self)
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
-	player_health_visual(Global.player_health)
 	Global.set_player_node(self)
 	if Global.player_save_position:
 		global_position = Global.player_save_position
 
 
-func player_health_visual(health: int):
-	var health_remaining = health
-	for i in range(hearts.size()):
-		if health_remaining >= 2: 
-			hearts[i].set_state(0, false) #Full heart
-			health_remaining -= 2
-		elif health_remaining == 1: 
-			hearts[i].set_state(1, false) #Half heart
-			health_remaining -= 1
-		else:
-			hearts[i].set_state(2, false) #Empty heart
+func _process(delta):
+	%HealthBar.health = Global.player_health
 
-	
+
 func _on_spawn(position : Vector2, direction : String):
 	global_position = position
 	anim.play("walk_" + direction)
@@ -137,7 +120,6 @@ func hit(dmg):
 		vulnerable = false
 		blinking = true
 		Global.player_health -= dmg
-		play_hit_animation(dmg)
 		$HitDelay.start()
 		$Blinking.start()
 		damaged.emit()
@@ -145,28 +127,6 @@ func hit(dmg):
 			die()
 
 
-func play_hit_animation(dmg):
-	var damage_to_apply = dmg
-	for i in range(hearts.size()):
-		var current_heart = hearts[hearts.size() - 1 - i]
-		match current_heart.get_state():
-			0:
-				if damage_to_apply >= 2:
-					current_heart.set_state(2, true)
-					damage_to_apply -= 2
-				elif damage_to_apply == 1:
-					current_heart.set_state(1, true)
-					damage_to_apply -= 1
-			1:
-				if damage_to_apply >= 1:
-					current_heart.set_state(2, true)
-					damage_to_apply -= 1
-			2:
-				pass
-		if damage_to_apply <= 0:
-			break
-	
-				
 func die():
 	queue_free()
 	get_tree().change_scene_to_file("res://scenes/main menu/main_menu.tscn")
@@ -186,7 +146,7 @@ func add_health(health_amount):
 	if Global.player_health > max_health:
 		Global.player_health = max_health
 	print(Global.player_health)
-	player_health_visual(Global.player_health)
+
 
 func add_mana(mana_amount : int):
 	Global.player_mana += mana_amount
@@ -215,3 +175,13 @@ func get_closest_grass_area():
 
 func set_can_move(b):
 	can_move = b
+
+
+func show_thought( thought : String ):
+	%PlayerToughtLabel.text = thought
+	%PlayerToughtLabel.visible_characters = 0
+	var tween : Tween = create_tween()
+	tween.tween_property( %PlayerToughtContainer, "modulate", Color.WHITE, 0.2 )
+	tween.tween_property( %PlayerToughtLabel, "visible_characters", 70, 1 )
+	tween.tween_property( %PlayerToughtLabel, "visible_characters", 70, 2 )
+	tween.tween_property( %PlayerToughtContainer, "modulate", Color.TRANSPARENT, 0.2 )

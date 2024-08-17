@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0v5clmb0mcsj"]
+[gd_scene load_steps=17 format=3 uid="uid://d0v5clmb0mcsj"]
 
 [ext_resource type="Texture2D" uid="uid://v4lcwydt653u" path="res://assets/characters/hearts.png" id="1_7q6bl"]
 [ext_resource type="Script" path="res://scripts/Utils/PlayerHeart.gd" id="2_tlx84"]
@@ -22,6 +22,10 @@ region = Rect2(128, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_i45q3"]
 atlas = ExtResource("1_7q6bl")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqjuj"]
+atlas = ExtResource("1_7q6bl")
+region = Rect2(0, 3, 33, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7sqjr"]
 atlas = ExtResource("1_7q6bl")
@@ -52,6 +56,7 @@ atlas = ExtResource("1_7q6bl")
 region = Rect2(608, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eror7"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -68,15 +73,18 @@ animations = [{
 }],
 "loop": false,
 "name": &"damage",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i45q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqjuj")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -105,11 +113,11 @@ animations = [{
 }],
 "loop": false,
 "name": &"lose_heart",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [node name="PlayerHeart" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_eror7")
-animation = &"lose_heart"
+animation = &"damage"
 autoplay = "idle"
 script = ExtResource("2_tlx84")

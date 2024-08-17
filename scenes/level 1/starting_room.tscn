@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" path="res://scripts/Scenes/starting_room.gd" id="1_omxgt"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_nl5yg"]
-[ext_resource type="Texture2D" uid="uid://djiejj5kxx7hi" path="res://assets/tilesets and props/dungeon/bloody tiles/pile_of_bodies_a.png" id="2_u3c1x"]
+[ext_resource type="Texture2D" uid="uid://bgdj5cdkhs7lp" path="res://assets/tilesets and props/dungeon/bloody tiles/pile_of_bodies_a.png" id="2_u3c1x"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="3_jfwwr"]
 [ext_resource type="PackedScene" uid="uid://b4wt2g8rql0il" path="res://scenes/level 1/bronze_key_door.tscn" id="4_0n3nh"]
 [ext_resource type="Texture2D" uid="uid://ccp53885lhsmf" path="res://assets/item icons/dagger.png" id="7_4isce"]
-[ext_resource type="Texture2D" uid="uid://d0rys6gafmmoi" path="res://assets/characters/common_cultist.png" id="7_pqbjn"]
+[ext_resource type="Texture2D" uid="uid://bskf3lhw7lseu" path="res://assets/characters/common_cultist.png" id="7_pqbjn"]
 [ext_resource type="PackedScene" uid="uid://j1m8tcycfheg" path="res://scenes/level 1/blood_door_puzzle.tscn" id="7_tvqre"]
 [ext_resource type="PackedScene" uid="uid://sm68adercw2r" path="res://scenes/Summons/summoning_circle.tscn" id="8_4m1ma"]
-[ext_resource type="Texture2D" uid="uid://d2o2a4vq671vx" path="res://assets/tilesets and props/props/barrel.png" id="8_aaa5a"]
+[ext_resource type="Texture2D" uid="uid://c2lvawsajnx1q" path="res://assets/tilesets and props/props/barrel.png" id="8_aaa5a"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="9_0qvy3"]
 [ext_resource type="PackedScene" uid="uid://ct2ynfxi4ullm" path="res://scenes/Inventory/crate.tscn" id="12_hy8m1"]
 [ext_resource type="PackedScene" uid="uid://usxchysdcnrl" path="res://scenes/utils/barrel.tscn" id="15_4sm0u"]
-[ext_resource type="PackedScene" uid="uid://cjaqorbbqo3br" path="res://interactions/LoreObject.tscn" id="17_xafvy"]
+[ext_resource type="PackedScene" path="res://interactions/LoreObject.tscn" id="17_xafvy"]
 [ext_resource type="AudioStream" uid="uid://dcrx6iqk0o183" path="res://assets/music and sound/ruGame ambient spooky piano loop take 1.mp3" id="19_ejwrl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vyhm"]
@@ -105,7 +105,6 @@ text = "Requires a bronze key."
 
 [node name="BloodDoorPuzzle" parent="Doors" instance=ExtResource("7_tvqre")]
 position = Vector2(314, 41)
-scale = Vector2(2, 2)
 
 [node name="Door" parent="Doors/BloodDoorPuzzle" index="2"]
 position = Vector2(0.5, 11)

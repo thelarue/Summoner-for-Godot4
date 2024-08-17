@@ -16,12 +16,10 @@ func _on_area_2d_body_exited(body):
 		player.get_node("InventoryUI/SummoningCircleUI").visible = false
 		player.set_can_open_inventory(true)
 
+
 func _on_actionable_actioned():
 	if player != null:
 		player.get_node("InventoryUI").visible = true
 		player.get_node("InventoryUI/AlchemyMenu").visible = false
 		player.get_node("InventoryUI/SummoningCircleUI").visible = true
 		player.set_can_open_inventory(false)
-
-
-		

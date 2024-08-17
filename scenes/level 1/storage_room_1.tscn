@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://4x5kofqnyuns" path="res://scenes/level 1/coffer.tscn" id="6_2pdm3"]
 [ext_resource type="PackedScene" uid="uid://c1wvck77p2qhf" path="res://scenes/utils/GatewayDropPoint.tscn" id="6_pganh"]
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="6_tfogr"]
-[ext_resource type="Texture2D" uid="uid://bj75arbvrvhj" path="res://assets/tilesets and props/props/coffer.png" id="6_y83i7"]
+[ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="6_y83i7"]
 [ext_resource type="PackedScene" uid="uid://dga7wbow6g13l" path="res://player.tscn" id="7_0534a"]
 [ext_resource type="Texture2D" uid="uid://cvcanevhfmxmj" path="res://assets/tilesets and props/The dungeon/boxes/box_02.png" id="9_6enbp"]
 [ext_resource type="Texture2D" uid="uid://dl13rjgxmugbq" path="res://assets/tilesets and props/The dungeon/boxes/box_03.png" id="10_1d3r7"]

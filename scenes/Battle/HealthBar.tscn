@@ -1,10 +1,125 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4ujejr1mllwk"]
+[gd_scene load_steps=18 format=3 uid="uid://b4ujejr1mllwk"]
 
 [ext_resource type="Script" path="res://scenes/Battle/HealthBar.gd" id="1_7x6ob"]
 [ext_resource type="PackedScene" uid="uid://d0v5clmb0mcsj" path="res://scenes/utils/player_heart.tscn" id="2_rww0a"]
+[ext_resource type="Texture2D" uid="uid://v4lcwydt653u" path="res://assets/characters/hearts.png" id="3_astlw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1ym3"]
+atlas = ExtResource("3_astlw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4wcc"]
+atlas = ExtResource("3_astlw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3f77"]
+atlas = ExtResource("3_astlw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avijr"]
+atlas = ExtResource("3_astlw")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i45q3"]
+atlas = ExtResource("3_astlw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqjuj"]
+atlas = ExtResource("3_astlw")
+region = Rect2(0, 3, 33, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sqjr"]
+atlas = ExtResource("3_astlw")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fppak"]
+atlas = ExtResource("3_astlw")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eypv7"]
+atlas = ExtResource("3_astlw")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s36cg"]
+atlas = ExtResource("3_astlw")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwg0l"]
+atlas = ExtResource("3_astlw")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpvf8"]
+atlas = ExtResource("3_astlw")
+region = Rect2(576, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwohl"]
+atlas = ExtResource("3_astlw")
+region = Rect2(608, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rvkd"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1ym3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4wcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3f77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avijr")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i45q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqjuj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sqjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fppak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eypv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s36cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwg0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpvf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwohl")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"lose_heart",
+"speed": 1.0
+}]
 
 [node name="HealthBar" type="Node2D"]
 script = ExtResource("1_7x6ob")
 
 [node name="PlayerHeart" parent="." instance=ExtResource("2_rww0a")]
 position = Vector2(17, 17)
+sprite_frames = SubResource("SpriteFrames_5rvkd")

@@ -1,18 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://4x5kofqnyuns"]
+[gd_scene load_steps=7 format=3 uid="uid://4x5kofqnyuns"]
 
 [ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="1_77yey"]
 [ext_resource type="Script" path="res://scenes/level 1/Coffer.gd" id="2_kljvl"]
 [ext_resource type="Texture2D" uid="uid://dn4qn4iivrkkh" path="res://assets/tilesets and props/collectables/key.png" id="3_i82go"]
 [ext_resource type="AudioStream" uid="uid://mr824pt07gw8" path="res://assets/music and sound/pianoJingleTake05.mp3" id="4_xto3g"]
-[ext_resource type="Script" path="res://scripts/Utils/Actionable.gd" id="5_vcmro"]
+[ext_resource type="PackedScene" uid="uid://y6ihnhljgq20" path="res://scenes/utils/actionable.tscn" id="5_fdojj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6k6cb"]
 resource_local_to_scene = true
 atlas = ExtResource("1_77yey")
 region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ya5ym"]
-radius = 11.0
 
 [node name="Coffer" type="Sprite2D"]
 texture = SubResource("AtlasTexture_6k6cb")
@@ -29,14 +26,10 @@ wait_time = 3.0
 one_shot = true
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("4_xto3g")
 
-[node name="Actionable" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 0
-script = ExtResource("5_vcmro")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-shape = SubResource("CircleShape2D_ya5ym")
+[node name="Actionable" parent="." instance=ExtResource("5_fdojj")]
+unique_name_in_owner = true
 
 [connection signal="actioned" from="Actionable" to="." method="_on_actionable_actioned"]

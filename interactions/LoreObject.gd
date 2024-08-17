@@ -9,9 +9,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	%LorePanel.visible = %PlayerProximity.has_overlapping_bodies()
-	
-	if %PlayerProximity.has_overlapping_bodies():
-		%Sprite.texture.region.position.x = %Sprite.texture.region.size.x
-	else :
+	if not %Actionable.has_overlapping_bodies():
+		%LorePanel.visible = false
 		%Sprite.texture.region.position.x = 0
+
+
+func _on_actionable_actioned():
+	if %LorePanel.visible :
+		%LorePanel.visible = false
+		%Sprite.texture.region.position.x = 0
+	else:
+		%LorePanel.visible = true
+		%Sprite.texture.region.position.x = %Sprite.texture.region.size.x

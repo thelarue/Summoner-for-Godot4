@@ -65,6 +65,7 @@ func set_item_data(data):
 func _on_actionable_actioned():
 	if not opened: 
 		pickup_item()
+	%Actionable.monitoring = false
 
 func set_opened(b):
 	opened = b

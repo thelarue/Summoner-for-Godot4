@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://c827dogewsj3v"]
+
+[ext_resource type="Script" path="res://scenes/Props/Torch.gd" id="1_xj1t2"]
+[ext_resource type="Texture2D" uid="uid://bj625vof3gu3r" path="res://assets/tilesets and props/The dungeon/sarcophagus, lamps & tombs - NEW/chandeliers/wall_fire.png" id="2_apc1f"]
+[ext_resource type="Texture2D" uid="uid://ck2eonr1vwdkg" path="res://assets/Textures/light_radial.png" id="3_o2ary"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7srl"]
+atlas = ExtResource("2_apc1f")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_313rr"]
+atlas = ExtResource("2_apc1f")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vhga"]
+atlas = ExtResource("2_apc1f")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utibg"]
+atlas = ExtResource("2_apc1f")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ql5d"]
+atlas = ExtResource("2_apc1f")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bnt7"]
+atlas = ExtResource("2_apc1f")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gtf8d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7srl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_313rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vhga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utibg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ql5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bnt7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Torch" type="Node2D"]
+script = ExtResource("1_xj1t2")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gtf8d")
+autoplay = "default"
+frame_progress = 0.436074
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.972549, 0.443137, 0, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.47451)
+texture = ExtResource("3_o2ary")
+texture_scale = 1.5
+height = 60.0
+
+[connection signal="frame_changed" from="Sprite2D" to="." method="_on_sprite_2d_frame_changed"]
