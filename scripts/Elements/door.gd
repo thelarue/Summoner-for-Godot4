@@ -2,13 +2,11 @@ extends Area2D
 
 class_name Door
 
-@export var destination_level_tag : String
-@export var destination_door_tag : String
 @onready var player = get_tree().get_first_node_in_group("player")
 
-var can_change_scene = true
+@export var can_change_scene = true
 
-func _process(delta):
+func _process(_delta):
 	var bodies = get_overlapping_bodies()
 	
 	for body in bodies:

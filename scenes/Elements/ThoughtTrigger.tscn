@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwxy7fh8gipcx"]
+
+[ext_resource type="Script" path="res://scripts/Elements/ThoughtTrigger.gd" id="1_2oylq"]
+
+[node name="ThoughtTrigger" type="Area2D"]
+script = ExtResource("1_2oylq")

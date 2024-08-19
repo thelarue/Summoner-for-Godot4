@@ -12,6 +12,7 @@ size = Vector2(48, 30)
 
 [node name="BloodDoorPuzzle" type="Node2D"]
 script = ExtResource("1_dvd0r")
+proximity_tought = "This door is way too bloody."
 
 [node name="ClosedDoor" type="Sprite2D" parent="."]
 texture = ExtResource("2_knmy6")

@@ -18,7 +18,7 @@ func _ready():
 	tween.finished.connect( player_turn )
 
 
-func _process(delta):
+func _process(_delta):
 	%PlayerHealthBar.health = Global.player_health
 
 	if enemy == null : return

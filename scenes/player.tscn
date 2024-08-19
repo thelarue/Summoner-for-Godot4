@@ -1,73 +1,70 @@
-[gd_scene load_steps=35 format=3 uid="uid://dga7wbow6g13l"]
+[gd_scene load_steps=30 format=3 uid="uid://dga7wbow6g13l"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_swdcq"]
-[ext_resource type="Shader" path="res://moody_shader.gdshader" id="2_etysu"]
-[ext_resource type="Texture2D" uid="uid://codt0jaflak33" path="res://assets/characters/little girl/little_girl.png" id="3_4g1a0"]
-[ext_resource type="PackedScene" uid="uid://50rdw1dt63h6" path="res://scenes/Inventory/inventory_ui.tscn" id="4_gvsyx"]
-[ext_resource type="PackedScene" path="res://scenes/utils/player_mana.tscn" id="5_180e4"]
-[ext_resource type="PackedScene" uid="uid://c6pbaaxq8k1jr" path="res://scenes/Inventory/alchemy_menu.tscn" id="5_jei75"]
-[ext_resource type="FontFile" uid="uid://bvejq551x3nnp" path="res://assets/AmiNo8bitFont.ttf" id="5_rfw7n"]
-[ext_resource type="PackedScene" uid="uid://b4ujejr1mllwk" path="res://scenes/Battle/HealthBar.tscn" id="6_5i56i"]
-[ext_resource type="Shader" path="res://fog.gdshader" id="7_rifsk"]
-[ext_resource type="Texture2D" uid="uid://uexhjkiqeado" path="res://assets/Screenshot_20240102_174154-150x150.png" id="8_i6ca0"]
-[ext_resource type="PackedScene" uid="uid://c1ebrg8kocewe" path="res://scenes/Summons/summon_team.tscn" id="8_nq6vc"]
-[ext_resource type="PackedScene" uid="uid://fb656fvmu33t" path="res://scenes/Summons/summoning_circle_ui.tscn" id="8_r1ttc"]
-[ext_resource type="Texture2D" uid="uid://ck2eonr1vwdkg" path="res://assets/Textures/light_radial.png" id="13_fgmde"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_si1ba"]
+[ext_resource type="Texture2D" uid="uid://codt0jaflak33" path="res://assets/characters/little girl/little_girl.png" id="2_iim8w"]
+[ext_resource type="PackedScene" uid="uid://b4ujejr1mllwk" path="res://scenes/Battle/HealthBar.tscn" id="3_a3jk3"]
+[ext_resource type="PackedScene" uid="uid://drleshth75j8h" path="res://scenes/utils/player_mana.tscn" id="4_mugsa"]
+[ext_resource type="FontFile" uid="uid://bvejq551x3nnp" path="res://assets/AmiNo8bitFont.ttf" id="5_cv0ug"]
+[ext_resource type="PackedScene" uid="uid://c6pbaaxq8k1jr" path="res://scenes/Inventory/alchemy_menu.tscn" id="6_ol5bh"]
+[ext_resource type="PackedScene" uid="uid://50rdw1dt63h6" path="res://scenes/Inventory/inventory_ui.tscn" id="7_by8ww"]
+[ext_resource type="PackedScene" uid="uid://c1ebrg8kocewe" path="res://scenes/Summons/summon_team.tscn" id="8_3drfb"]
+[ext_resource type="PackedScene" uid="uid://fb656fvmu33t" path="res://scenes/Summons/summoning_circle_ui.tscn" id="9_lspmx"]
+[ext_resource type="Texture2D" uid="uid://ck2eonr1vwdkg" path="res://assets/Textures/light_radial.png" id="10_feya0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8aur7"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(248, 124, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4n7d1"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(0, 186, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23if1"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(62, 186, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6sv0"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(124, 186, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vc1wd"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(62, 0, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_688a1"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(124, 0, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8md6x"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(186, 0, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5yil"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(248, 0, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0up1"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(0, 62, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q75ae"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(62, 62, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yv5qf"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(124, 62, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecebh"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(62, 124, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wprn5"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(124, 124, 62, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3hxn"]
-atlas = ExtResource("3_4g1a0")
+atlas = ExtResource("2_iim8w")
 region = Rect2(186, 124, 62, 62)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_70ewb"]
@@ -87,7 +84,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"die",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -104,7 +101,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -118,7 +115,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -132,24 +129,8 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 5.0
+"speed": 7.0
 }]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_20q3n"]
-shader = ExtResource("7_rifsk")
-shader_parameter/density = 1.0
-shader_parameter/speed = Vector2(0.35, 0.32)
-shader_parameter/noise_texture = ExtResource("8_i6ca0")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dmurp"]
-shader = ExtResource("2_etysu")
-shader_parameter/grain_amount = 0.05
-shader_parameter/grain_size = 1.0
-shader_parameter/inner_radius = 0.1
-shader_parameter/outer_radius = 1.0
-shader_parameter/vignette_strength = 2.0
-shader_parameter/dither_strength = 0.03
-shader_parameter/vignette_color = null
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0l5v"]
 height = 42.0
@@ -168,13 +149,15 @@ polygon = PackedVector2Array(0, -10, 0, 28, 0, 0, -6, -1, 7, -1)
 process_mode = 3
 z_index = 1
 collision_mask = 6
-script = ExtResource("1_swdcq")
+script = ExtResource("1_si1ba")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 light_mask = 2
 visibility_layer = 2
 sprite_frames = SubResource("SpriteFrames_70ewb")
 animation = &"die"
+frame_progress = 0.216375
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 3)
@@ -199,34 +182,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D/CanvasLayer"]
-layer = 1
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/ParallaxBackground"]
-material = SubResource("ShaderMaterial_20q3n")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/CanvasLayer/ParallaxBackground"]
-
-[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer"]
-visible = false
-material = SubResource("ShaderMaterial_dmurp")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="HealthBar" parent="Camera2D/CanvasLayer" instance=ExtResource("6_5i56i")]
+[node name="HealthBar" parent="Camera2D/CanvasLayer" instance=ExtResource("3_a3jk3")]
 unique_name_in_owner = true
 
-[node name="PlayerMana" parent="Camera2D/CanvasLayer" instance=ExtResource("5_180e4")]
+[node name="PlayerMana" parent="Camera2D/CanvasLayer" instance=ExtResource("4_mugsa")]
 offset_top = 39.0
 offset_right = -332.0
 offset_bottom = -227.0
@@ -239,7 +198,7 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("5_rfw7n")
+theme_override_fonts/font = ExtResource("5_cv0ug")
 theme_override_font_sizes/font_size = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -266,7 +225,7 @@ wait_time = 0.1
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="AlchemyMenu" parent="InventoryUI" instance=ExtResource("5_jei75")]
+[node name="AlchemyMenu" parent="InventoryUI" instance=ExtResource("6_ol5bh")]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_right = 0.0
@@ -277,7 +236,7 @@ offset_bottom = -70.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="InventoryUI" parent="InventoryUI" instance=ExtResource("4_gvsyx")]
+[node name="InventoryUI" parent="InventoryUI" instance=ExtResource("7_by8ww")]
 anchors_preset = 1
 anchor_top = 0.0
 anchor_bottom = 0.0
@@ -287,11 +246,11 @@ offset_right = -100.0
 offset_bottom = 200.0
 grow_vertical = 1
 
-[node name="SummonTeam" parent="InventoryUI" instance=ExtResource("8_nq6vc")]
+[node name="SummonTeam" parent="InventoryUI" instance=ExtResource("8_3drfb")]
 offset_left = 285.0
 offset_right = -195.0
 
-[node name="SummoningCircleUI" parent="InventoryUI" instance=ExtResource("8_r1ttc")]
+[node name="SummoningCircleUI" parent="InventoryUI" instance=ExtResource("9_lspmx")]
 visible = false
 offset_left = 108.0
 offset_top = 161.0
@@ -341,7 +300,7 @@ occluder = SubResource("OccluderPolygon2D_jjbkd")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, 28)
 range_item_cull_mask = 3
-texture = ExtResource("13_fgmde")
+texture = ExtResource("10_feya0")
 texture_scale = 0.75
 
 [connection signal="area_entered" from="Marker2D/Area2D" to="." method="_on_area_2d_area_entered"]

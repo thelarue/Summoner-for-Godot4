@@ -2,22 +2,7 @@ extends Node
 
 const LEVELS : Dictionary = {
 	"start"                : preload("res://scenes/starting_area/start.tscn"),
-	"second_area"          : preload("res://scenes/starting_area/second_area.tscn"),
-	"starting_room"        : preload("res://scenes/level 1/starting_room.tscn"),
-	"hallway_1"            : preload("res://scenes/level 1/hallway_1.tscn"),
-	"hallway_2"            : preload("res://scenes/level 1/hallway_2.tscn"),
-	"hallway_3"            : preload("res://scenes/level 1/hallway_3.tscn"),
-	"storage_room_1"       : preload("res://scenes/level 1/storage_room_1.tscn"),
-	"southern_hallway"     : preload("res://scenes/level 1/southern_hallway.tscn"),
-	"toilets"              : preload("res://scenes/level 1/toilets.tscn"),
-	"livestock_room"       : preload("res://scenes/level 1/livestock_room.tscn"),
-	"office"               : preload("res://scenes/level 1/office.tscn"),
-	"ascension_room"       : preload("res://scenes/level 1/ascension_room.tscn"),
-	"barracks"             : preload("res://scenes/level 1/barracks.tscn"),
-	"exit_room"            : preload("res://scenes/level 1/exit_room.tscn"),
-	"jails"                : preload("res://scenes/level 1/jails.tscn"),
-	"mess_hall"            : preload("res://scenes/level 1/mess_hall.tscn"),
-	"kitchen"              : preload("res://scenes/level 1/kitchen.tscn"),
+	"second_area"          : preload("res://scenes/starting_area/second_area.tscn")
 }
 
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://4x5kofqnyuns"]
 
 [ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="1_77yey"]
-[ext_resource type="Script" path="res://scenes/level 1/Coffer.gd" id="2_kljvl"]
+[ext_resource type="Script" path="res://scripts/Scenes/Coffer.gd" id="2_kljvl"]
 [ext_resource type="Texture2D" uid="uid://dn4qn4iivrkkh" path="res://assets/tilesets and props/collectables/key.png" id="3_i82go"]
 [ext_resource type="AudioStream" uid="uid://mr824pt07gw8" path="res://assets/music and sound/pianoJingleTake05.mp3" id="4_xto3g"]
 [ext_resource type="PackedScene" uid="uid://y6ihnhljgq20" path="res://scenes/utils/actionable.tscn" id="5_fdojj"]

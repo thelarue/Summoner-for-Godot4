@@ -9,11 +9,6 @@ func _ready():
 	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_toilets_actioned():
 	var fade_mask = get_viewport().get_camera_2d().find_child("FadeMask")
 	var tween  : Tween    = create_tween()

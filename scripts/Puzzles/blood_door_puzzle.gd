@@ -4,6 +4,8 @@ extends Node2D
 @onready var open_door = $OpenDoor
 @onready var closed_door = $ClosedDoor
 
+@export var proximity_tought : String = "Nice."
+
 var player_in_range : bool = false
 
 func _ready():
@@ -40,3 +42,9 @@ func item_used( item ):
 	if item["method"] != "ritual_knife"  : return
 	PuzzleCompletionList.puzzles["blood_door"] = true
 	set_can_pass()
+
+
+func _on_player_proximity_area_body_entered(body):
+	if door.can_change_scene : return
+	if body is Player:
+		body.show_thought( proximity_tought )

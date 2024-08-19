@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://etjlfiqbrw4a"]
+
+[ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="1_g0jfu"]
+[ext_resource type="Script" path="res://scripts/Elements/BlockedDoor.gd" id="1_nntdf"]
+
+[node name="BlockedDoor" type="Node2D"]
+script = ExtResource("1_nntdf")
+
+[node name="Door" parent="." instance=ExtResource("1_g0jfu")]
+can_change_scene = false
+
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
+
+[editable path="Door"]

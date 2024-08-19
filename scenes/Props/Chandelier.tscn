@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://546ff8ecej85"]
+
+[ext_resource type="Script" path="res://scenes/Props/Torch.gd" id="1_xaw2c"]
+[ext_resource type="Texture2D" uid="uid://dwa74l24r1w32" path="res://assets/tilesets and props/The dungeon/sarcophagus, lamps & tombs - NEW/chandeliers/chandelier_03.png" id="2_ni2y7"]
+[ext_resource type="Texture2D" uid="uid://ck2eonr1vwdkg" path="res://assets/Textures/light_radial.png" id="3_drmbf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgywu"]
+atlas = ExtResource("2_ni2y7")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ve5"]
+atlas = ExtResource("2_ni2y7")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48t6"]
+atlas = ExtResource("2_ni2y7")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ic6w"]
+atlas = ExtResource("2_ni2y7")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8pc8"]
+atlas = ExtResource("2_ni2y7")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpecs"]
+atlas = ExtResource("2_ni2y7")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuif6"]
+atlas = ExtResource("2_ni2y7")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udh1u"]
+atlas = ExtResource("2_ni2y7")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gtf8d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgywu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ve5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w48t6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ic6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8pc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpecs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuif6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udh1u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Chandelier" type="Node2D"]
+script = ExtResource("1_xaw2c")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gtf8d")
+autoplay = "default"
+frame_progress = 0.768853
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.972549, 0.443137, 0, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.47451)
+texture = ExtResource("3_drmbf")
+texture_scale = 1.5
+height = 60.0
+
+[connection signal="frame_changed" from="Sprite2D" to="." method="_on_sprite_2d_frame_changed"]

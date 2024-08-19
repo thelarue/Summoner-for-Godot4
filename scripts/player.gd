@@ -4,23 +4,25 @@ class_name Player
 signal damaged
 
 @export var speed = 100
-var current_speed = speed
 var sprint_speed = 150
-@onready var anim = $AnimatedSprite2D
+var acceleration = 40
+var sprint_zoom  = 1.3
+
 var vulnerable = true
 var blinking = false
 var can_move = true
 var can_open_inventory = true
 var last_direction = Vector2.RIGHT
-@onready var player_mana : ProgressBar = $Camera2D/CanvasLayer/PlayerMana
-
+var current_speed = speed
+var current_zoom = 1
 @export var max_health = 6
 @export var max_mana = 3
 
+
+@onready var player_mana : ProgressBar = $Camera2D/CanvasLayer/PlayerMana
+@onready var anim = $AnimatedSprite2D
 @onready var inventory_ui = $InventoryUI
 
-
-@onready var color_rect = $Camera2D/CanvasLayer/ColorRect
 
 var can_interact = false
 var nearest_interactable: Actionable = null
@@ -42,44 +44,44 @@ func _process(delta):
 func _on_spawn(position : Vector2, direction : String):
 	global_position = position
 	anim.play("walk_" + direction)
-	
+
+
 func player_movement():
 	var move = Input.get_vector("left", "right", "up", "down") as Vector2
 	if move != Vector2.ZERO:
 		last_direction = move.normalized()
 	if move.x < 0: 
-		anim.flip_h = true
-		anim.play("walk_right")
+		%Sprite.flip_h = true
+		%Sprite.play("walk_right")
 	elif move.x > 0: 
-		anim.flip_h = false
-		anim.play("walk_right")
+		%Sprite.flip_h = false
+		%Sprite.play("walk_right")
 	elif move.y < 0:
-		anim.play("walk_up")
+		%Sprite.play("walk_up")
 	elif move.y > 0:
-		anim.play("walk_down")
+		%Sprite.play("walk_down")
 	if move != Vector2.ZERO:
 		$Marker2D.rotation = move.angle()
 	velocity = move * current_speed
 
 func update_anim():
 	if velocity.length() == 0:
-		if anim.is_playing():
-			anim.stop()
+		if %Sprite.is_playing():
+			%Sprite.stop()
 	
 
-func _physics_process(delta):
+func _physics_process( delta ):
 	if Input.is_action_pressed("run"):
-		current_speed = sprint_speed
-		$Camera2D.zoom = Vector2(1.3, 1.3)
-		var material = color_rect.material as ShaderMaterial
-		material.set_shader_parameter("vignette_strength", 3.0)
-		$AnimatedSprite2D.speed_scale = 2
+		current_speed += delta * acceleration
+		current_zoom += delta * 2
 	else:
-		current_speed = speed
-		$Camera2D.zoom = Vector2(1, 1)
-		var material = color_rect.material as ShaderMaterial
-		material.set_shader_parameter("vignette_strength", 2.0)
-		$AnimatedSprite2D.speed_scale = 1
+		current_speed -= delta * acceleration
+		current_zoom -= delta * 2
+
+	current_speed = clamp( current_speed, speed, sprint_speed ) 
+	current_zoom  = clamp( current_zoom, 1, sprint_zoom )
+	%Sprite.speed_scale = current_speed / speed
+	$Camera2D.zoom = Vector2(current_zoom, current_zoom)
 	if can_move:
 		player_movement()
 		move_and_slide()
@@ -157,6 +159,7 @@ func add_mana(mana_amount : int):
 
 func apply_item_effect(item):
 	pass
+
 
 func set_can_open_inventory(b):
 	can_open_inventory = b

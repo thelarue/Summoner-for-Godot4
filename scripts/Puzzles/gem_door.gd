@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var door = $Door
 
+@export var proximity_tought : String = "Nice."
 var player_in_range : bool = false
 
 func _ready():
@@ -25,7 +26,6 @@ func _process(_delta):
 			player_in_range = true
 	
 	$Sprite.visible = not door.can_change_scene
-	%Puzzle.visible = player_in_range and not door.can_change_scene
 	%RedGemOverlay.visible = PuzzleCompletionList.puzzles["gem_door_red"] and not door.can_change_scene
 	%BlueGemOverlay.visible = PuzzleCompletionList.puzzles["gem_door_blue"] and not door.can_change_scene
 	%PurpleGemOverlay.visible = PuzzleCompletionList.puzzles["gem_door_purple"] and not door.can_change_scene

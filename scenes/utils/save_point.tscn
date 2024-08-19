@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://3bybbw7pbqh0"]
 
 [ext_resource type="Script" path="res://SavePoint.gd" id="1_wxnrr"]
-[ext_resource type="Texture2D" uid="uid://d2o2a4vq671vx" path="res://assets/tilesets and props/props/barrel.png" id="2_aaaox"]
-[ext_resource type="PackedScene" uid="uid://bdy3a13syefe2" path="res://assets/tilesets and props/forest/actionable.tscn" id="2_tx6gc"]
+[ext_resource type="Texture2D" uid="uid://c2lvawsajnx1q" path="res://assets/tilesets and props/props/barrel.png" id="2_aaaox"]
+[ext_resource type="PackedScene" uid="uid://y6ihnhljgq20" path="res://scenes/utils/actionable.tscn" id="2_tx6gc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qcu36"]
 
@@ -16,7 +16,7 @@ region_rect = Rect2(0, 0, 16, 24)
 
 [node name="Actionable" parent="." instance=ExtResource("2_tx6gc")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_qcu36")
 

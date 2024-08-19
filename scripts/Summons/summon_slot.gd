@@ -10,7 +10,7 @@ var current_summon : Summon = null
 @onready var summon_health = $DetailsPanel/ItemEffect
 @onready var selected_panel = $SelectedPanel
 
-func _process(delta):
+func _process(_delta):
 	var active_summon : Summon = SummonInventory.get_active_summon()
 	if active_summon != null and current_summon != null and active_summon.get_creature_name() == current_summon.get_creature_name():
 		selected_panel.visible = true

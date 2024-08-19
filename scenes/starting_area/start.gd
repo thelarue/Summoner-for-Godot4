@@ -32,7 +32,7 @@ func _on_level_spawn(destination_tag : String):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	_door_puzzle()
-	pass
+
 
 func _door_puzzle():
 	if switch != null:
