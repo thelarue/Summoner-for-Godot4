@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var proximity_tought : String = "Nice."
+
 @onready var door = $Door
 
 var player_in_range : bool = false
@@ -19,8 +21,6 @@ func _process(_delta):
 	for body in bodies:
 		if body.is_in_group("player"):
 			player_in_range = true
-	
-	%Puzzle.visible = player_in_range and not door.can_change_scene
 
 
 
@@ -39,3 +39,9 @@ func item_used( item ):
 	PuzzleCompletionList.puzzles["silver_door"] = true
 	InventoryManager.remove_item( item["name"] )
 	set_can_pass()
+
+
+func _on_player_proximity_area_body_entered(body):
+	if door.can_change_scene : return
+	if body is Player:
+		body.show_thought( proximity_tought )

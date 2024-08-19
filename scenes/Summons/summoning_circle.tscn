@@ -8,7 +8,7 @@
 script = ExtResource("1_e1c3y")
 
 [node name="CircleSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_q0irj")
 
 [node name="Actionable" parent="." instance=ExtResource("3_aqa5x")]
