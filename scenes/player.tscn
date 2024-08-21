@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ebrg8kocewe" path="res://scenes/Summons/summon_team.tscn" id="8_3drfb"]
 [ext_resource type="PackedScene" uid="uid://fb656fvmu33t" path="res://scenes/Summons/summoning_circle_ui.tscn" id="9_lspmx"]
 [ext_resource type="Texture2D" uid="uid://ck2eonr1vwdkg" path="res://assets/Textures/light_radial.png" id="10_feya0"]
+[ext_resource type="AudioStream" uid="uid://mr824pt07gw8" path="res://assets/music and sound/pianoJingleTake05.mp3" id="11_onl7c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8aur7"]
 atlas = ExtResource("2_iim8w")
@@ -135,9 +136,6 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0l5v"]
 height = 42.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrvrn"]
-size = Vector2(20, 26)
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2drd4"]
 light_mode = 2
 
@@ -158,6 +156,10 @@ visibility_layer = 2
 sprite_frames = SubResource("SpriteFrames_70ewb")
 animation = &"die"
 frame_progress = 0.216375
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_g0l5v")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 3)
@@ -180,18 +182,26 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+[node name="HitDelay" type="Timer" parent="."]
 
-[node name="HealthBar" parent="Camera2D/CanvasLayer" instance=ExtResource("3_a3jk3")]
+[node name="Blinking" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="PlayerHud" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
-[node name="PlayerMana" parent="Camera2D/CanvasLayer" instance=ExtResource("4_mugsa")]
+[node name="HealthBar" parent="PlayerHud" instance=ExtResource("3_a3jk3")]
+unique_name_in_owner = true
+
+[node name="PlayerMana" parent="PlayerHud" instance=ExtResource("4_mugsa")]
+unique_name_in_owner = true
 offset_top = 39.0
 offset_right = -332.0
 offset_bottom = -227.0
 
-[node name="ItemsLabel" type="Label" parent="Camera2D/CanvasLayer"]
-visible = false
+[node name="GameMessage" type="Label" parent="PlayerHud"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -200,27 +210,8 @@ offset_bottom = 23.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("5_cv0ug")
 theme_override_font_sizes/font_size = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_g0l5v")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, 29)
-rotation = 1.5708
-
-[node name="Area2D" type="Area2D" parent="Marker2D"]
-position = Vector2(10, -4.37114e-07)
-collision_layer = 0
-collision_mask = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/Area2D"]
-shape = SubResource("RectangleShape2D_lrvrn")
-
-[node name="HitDelay" type="Timer" parent="."]
-
-[node name="Blinking" type="Timer" parent="."]
-wait_time = 0.1
+text = "Shit just happening
+"
 
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 visible = false
@@ -303,7 +294,12 @@ range_item_cull_mask = 3
 texture = ExtResource("10_feya0")
 texture_scale = 0.75
 
-[connection signal="area_entered" from="Marker2D/Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Marker2D/Area2D" to="." method="_on_area_2d_area_exited"]
+[node name="PlayerSounds" type="Node" parent="."]
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="PlayerSounds"]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("11_onl7c")
+
 [connection signal="timeout" from="HitDelay" to="." method="_on_hit_delay_timeout"]
 [connection signal="timeout" from="Blinking" to="." method="_on_blinking_timeout"]

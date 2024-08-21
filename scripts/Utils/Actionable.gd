@@ -3,6 +3,7 @@ extends Area2D
 class_name Actionable
 
 signal actioned()
+signal actioned_by( interacting_object : Node2D )
 
 @export var action_text : String = "Use"
 
@@ -19,4 +20,18 @@ func _process(_delta):
 		%UseTip.visible = false
 		return
 	%UseTip.visible = has_overlapping_bodies()
-	
+
+
+func interact( interacting : Node2D ):
+	emit_signal("actioned" )
+	emit_signal("actioned_by", interacting)
+
+
+func _on_body_entered(body):
+	if "actual_actionable" in body:
+		body.actual_actionable = self
+
+
+func _on_body_exited(body):
+	if "actual_actionable" in body:
+		body.actual_actionable = null

@@ -14,10 +14,6 @@ extends Sprite2D
 
 var scene_path : String = "res://scenes/Inventory/inventory_item.tscn"
 
-@onready var pickup_sound = $PickupSound
-
-@onready var label_timer = $LabelTimer
-
 @onready var player_node = get_tree().get_first_node_in_group("player")
 var opened = false
 
@@ -35,17 +31,8 @@ func pickup_item():
 	}
 	if InventoryManager.player_node:
 		if InventoryManager.add_item(item):
-			if pickup_sound.playing == false:
-				pickup_sound.play()
 			if player_node:
-				var label = player_node.get_node("Camera2D/CanvasLayer/ItemsLabel")
-				if label.visible:
-					var text_value = label.text
-					label.text = "You got " + item["name"] + "\n" + text_value
-				else:
-					label.text = "You got " + item["name"]
-				label.visible = true 
-				label_timer.start()
+				player_node.add_item( item )
 			Global.add_picked_up_item(item_id)
 			opened = true
 		else:
@@ -69,9 +56,3 @@ func _on_actionable_actioned():
 
 func set_opened(b):
 	opened = b
-
-func _on_label_timer_timeout():
-	if player_node:
-		var label = player_node.get_node("Camera2D/CanvasLayer/ItemsLabel")
-		label.text = ""
-		label.visible = false

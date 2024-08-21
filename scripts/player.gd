@@ -19,13 +19,11 @@ var current_zoom = 1
 @export var max_mana = 3
 
 
-@onready var player_mana : ProgressBar = $Camera2D/CanvasLayer/PlayerMana
-@onready var anim = $AnimatedSprite2D
+@onready var anim = %Sprite
 @onready var inventory_ui = $InventoryUI
 
 
-var can_interact = false
-var nearest_interactable: Actionable = null
+var actual_actionable : Actionable = null
 var closest_grass_area : Node2D
 
 func _ready():
@@ -60,8 +58,6 @@ func player_movement():
 		%Sprite.play("walk_up")
 	elif move.y > 0:
 		%Sprite.play("walk_down")
-	if move != Vector2.ZERO:
-		$Marker2D.rotation = move.angle()
 	velocity = move * current_speed
 
 func update_anim():
@@ -89,12 +85,11 @@ func _physics_process( delta ):
 	pass
 
 func _input(event):
-	if event.is_action_pressed("interact") and can_interact:
+	if event.is_action_pressed("interact") and actual_actionable != null:
 		get_viewport().set_input_as_handled()
-		can_interact = false
-		nearest_interactable.emit_signal("actioned")
+		actual_actionable.interact( self )
 	if event.is_action_pressed("inventory") and can_open_inventory:
-		anim.stop()
+		%Sprite.stop()
 		get_tree().paused = !get_tree().paused
 		can_move = !can_move
 		inventory_ui.visible = !inventory_ui.visible
@@ -104,18 +99,8 @@ func _input(event):
 		var active_summon = SummonInventory.get_active_summon()
 		if active_summon:
 			active_summon.overworld_ability()
-			player_mana.value = Global.player_mana
+			%PlayerMana.value = Global.player_mana
 
-func _on_area_2d_area_entered(area):
-	if area is Actionable:
-		print(area)
-		can_interact = true
-		nearest_interactable = area
-		
-func _on_area_2d_area_exited(area):
-	if area is Actionable:
-		can_interact = false
-		nearest_interactable = null
 
 func hit(dmg):
 	if vulnerable:
@@ -154,11 +139,20 @@ func add_mana(mana_amount : int):
 	Global.player_mana += mana_amount
 	if Global.player_mana > max_mana:
 		Global.player_mana = max_mana
-	player_mana.value = Global.player_mana
+	%PlayerMana.value = Global.player_mana
 	
 
 func apply_item_effect(item):
 	pass
+
+
+func add_item( item ):
+	%GameMessage.text = "You got %s" % [ item["name"] ]
+	%PickupSound.play()
+	var tween : Tween = create_tween()
+	tween.tween_property( %GameMessage, "modulate", Color.WHITE_SMOKE, 0.3 )
+	tween.tween_property( %GameMessage, "modulate", Color.WHITE, 2 )
+	tween.tween_property( %GameMessage, "modulate", Color.TRANSPARENT, 0.3 )
 
 
 func set_can_open_inventory(b):

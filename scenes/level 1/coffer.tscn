@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://4x5kofqnyuns"]
+[gd_scene load_steps=6 format=3 uid="uid://4x5kofqnyuns"]
 
 [ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="1_77yey"]
 [ext_resource type="Script" path="res://scripts/Scenes/Coffer.gd" id="2_kljvl"]
 [ext_resource type="Texture2D" uid="uid://dn4qn4iivrkkh" path="res://assets/tilesets and props/collectables/key.png" id="3_i82go"]
-[ext_resource type="AudioStream" uid="uid://mr824pt07gw8" path="res://assets/music and sound/pianoJingleTake05.mp3" id="4_xto3g"]
 [ext_resource type="PackedScene" uid="uid://y6ihnhljgq20" path="res://scenes/utils/actionable.tscn" id="5_fdojj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6k6cb"]
@@ -20,14 +19,6 @@ item_method = "bronze_key"
 item_name = "Bronze Key"
 item_texture = ExtResource("3_i82go")
 item_effect = "Wonder what will open"
-
-[node name="LabelTimer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-
-[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-stream = ExtResource("4_xto3g")
 
 [node name="Actionable" parent="." instance=ExtResource("5_fdojj")]
 unique_name_in_owner = true

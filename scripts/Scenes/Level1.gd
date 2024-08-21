@@ -16,6 +16,7 @@ func _on_toilets_actioned():
 	#tween.set_trans( Tween.TRANS_EXPO )
 	tween.tween_property( fade_mask, "modulate", Color.WHITE, 0.5 )
 	tween.tween_property( fade_mask, "modulate", Color.WHITE, 0.2 )
+	tween.tween_property( %player.find_child("PlayerHud"), "modulate", Color.TRANSPARENT, 0.5 )
 	tween.finished.connect( toilet_scene_dark )
 
 

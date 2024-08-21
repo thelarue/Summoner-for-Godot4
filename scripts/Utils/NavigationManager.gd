@@ -11,7 +11,7 @@ signal on_trigger_player_spawn
 var spawn_door_tag 
 
 func go_to_level(level_tag, destination_tag):
-	if not LEVELS.keys().has( level_tag ): assert( "Unkown target level" )
+	assert( LEVELS.keys().has( level_tag ), "Unkown target level" )
 	
 	var scene_to_load = LEVELS[level_tag]
 	spawn_door_tag = destination_tag
