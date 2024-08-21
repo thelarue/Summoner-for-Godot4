@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://cuvuj3nf5kxfb"]
+[gd_scene load_steps=23 format=3 uid="uid://cuvuj3nf5kxfb"]
 
 [ext_resource type="Script" path="res://scripts/Elements/common_cultist.gd" id="1_amj4w"]
-[ext_resource type="Texture2D" uid="uid://d0rys6gafmmoi" path="res://assets/characters/common_cultist.png" id="1_ifgqv"]
+[ext_resource type="Texture2D" uid="uid://bskf3lhw7lseu" path="res://assets/characters/common_cultist.png" id="1_ifgqv"]
 [ext_resource type="Script" path="res://scenes/Battle/BattleStats.gd" id="2_2yqnt"]
 [ext_resource type="SpriteFrames" uid="uid://wkprm05jhuum" path="res://SpriteFrames/cultist.tres" id="3_av67k"]
+[ext_resource type="PackedScene" uid="uid://dvqvrt2v6788p" path="res://scenes/Elements/NPCThoughtDisplay.tscn" id="5_kcys6"]
 
 [sub_resource type="Resource" id="Resource_kcs12"]
 script = ExtResource("2_2yqnt")
@@ -126,7 +127,7 @@ size = Vector2(28, 54)
 radius = 34.1321
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0pxf"]
-radius = 215.058
+radius = 99.0051
 
 [node name="CommonCultist" type="CharacterBody2D"]
 collision_layer = 8
@@ -157,5 +158,9 @@ unique_name_in_owner = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
 shape = SubResource("CircleShape2D_l0pxf")
 debug_color = Color(0.997824, 0, 0.157157, 0.42)
+
+[node name="NpcThoughtDisplay" parent="." instance=ExtResource("5_kcys6")]
+unique_name_in_owner = true
+position = Vector2(0, -40)
 
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

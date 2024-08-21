@@ -81,3 +81,6 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity):
 
 func change_target(new_target):
 	target = new_target
+
+func show_thought( thought ):
+	%NpcThoughtDisplay.show_thought( thought )
