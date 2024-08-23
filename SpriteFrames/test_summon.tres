@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://c3ewp2f154k5b"]
+
+[ext_resource type="Texture2D" uid="uid://chodgiwu8fa73" path="res://assets/characters/perenbloom.png" id="1_kkr6b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqyp0"]
+atlas = ExtResource("1_kkr6b")
+region = Rect2(0, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqyp0")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kkr6b")
+}],
+"loop": false,
+"name": &"Damaged",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kkr6b")
+}],
+"loop": false,
+"name": &"Defeated",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kkr6b")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}]

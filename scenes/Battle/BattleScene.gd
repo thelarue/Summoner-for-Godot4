@@ -1,6 +1,20 @@
 extends Node2D
 
+const PLAYER_RECT_POSITION : Vector2 = Vector2(100, 184)
+const PLAYER_BATTLE_SPRITES : Array = [
+	preload("res://SpriteFrames/little_girl.tres"),
+	preload("res://SpriteFrames/test_summon.tres"),
+	preload("res://SpriteFrames/mutatedDog.tres")
+]
+
+const ACTION_TAGS : Array = [
+	[ "Poke", "Fry", "Do what has to do" ],
+	[ "Blush", "Grow beard", "dunno out of dummy text" ],
+	[ "no", "more", "dummy texts" ]
+]
+
 var enemy
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +26,7 @@ func _ready():
 
 	var tween = create_tween()
 	tween.tween_property( %EnemyRect,  "position", Vector2(332, 0), 1 )
-	tween.tween_property( %PlayerRect, "position", Vector2(100, 184), 1 )
+	tween.tween_property( %PlayerRect, "position", PLAYER_RECT_POSITION, 1 )
 	tween.tween_property( %FightIntro, "modulate", Color.TRANSPARENT, 0.5 )
 	tween.tween_property( %FightControls, "modulate", Color.WHITE, 0.5 )
 	tween.finished.connect( player_turn )
@@ -32,17 +46,16 @@ func _process(_delta):
 
 
 func player_turn():
+	disable_player()
 	var children = %AttackButtonContainer.get_children()
-	for child in children :
-		child.disabled = false
-	
 	children[0].grab_focus()
 
 
 func disable_player():
 	var children = %AttackButtonContainer.get_children()
 	for child in children :
-		child.disabled = true
+		if "disabled" in child:
+			child.disabled = true
 
 
 func _on_button_1_pressed():
@@ -115,3 +128,31 @@ func show_attack_panel():
 	tween.tween_property( %AttackPanel, "modulate", Color.WHITE, 0.5 )
 	tween.tween_property( %AttackPanel, "modulate", Color.WHITE_SMOKE, 2 )
 	tween.tween_property( %AttackPanel, "modulate", Color.TRANSPARENT, 0.5 )
+
+
+func _on_summon_change_button_pressed():
+	var tween = create_tween()
+	tween.tween_property( %PlayerRect, "position", Vector2( %PlayerRect.position.x, 400 ), 1 ) 
+	tween.finished.connect( _change_summon )
+
+
+func _change_summon():
+	var buttons = %PlayerBattleantButtonContainer.get_children()
+	var battleant_index : int = 0
+	var idx : int = 0
+	
+	for button in buttons:
+		if button.button_pressed :
+			battleant_index = idx
+		idx += 1
+		button.button_pressed = false
+	
+	buttons = %AttackButtonContainer.get_children()
+	idx = 0
+	for button in buttons:
+		button.text = ACTION_TAGS[battleant_index][idx]
+		idx += 1
+
+	%PlayerRect.sprite_frames = PLAYER_BATTLE_SPRITES[ battleant_index ]
+	var tween = create_tween()
+	tween.tween_property( %PlayerRect, "position", PLAYER_RECT_POSITION, 1 )
