@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bng4fw7qgudbo"]
+
+[ext_resource type="Texture2D" uid="uid://dm7b51cv3vrkq" path="res://assets/BattleUI/battle_border.png" id="1_8a0hm"]
+[ext_resource type="Texture2D" uid="uid://ctt4decssnqs7" path="res://assets/BattleUI/button.png" id="1_glmle"]
+[ext_resource type="Texture2D" uid="uid://bwky3bmh28cjf" path="res://assets/BattleUI/button_pressed.png" id="2_boseb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_66cl5"]
+texture = ExtResource("1_glmle")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xo8n5"]
+texture = ExtResource("2_boseb")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvc74"]
+texture = ExtResource("1_8a0hm")
+texture_margin_left = 260.0
+texture_margin_top = 215.0
+texture_margin_right = 176.0
+texture_margin_bottom = 8.0
+
+[resource]
+Button/colors/font_color = Color(0.85098, 0.85098, 0.85098, 1)
+Button/colors/font_disabled_color = Color(0.607843, 0.607843, 0.607843, 0.501961)
+Button/colors/font_hover_color = Color(0, 1, 0.686275, 1)
+Button/font_sizes/font_size = 10
+Button/styles/disabled = SubResource("StyleBoxTexture_66cl5")
+Button/styles/focus = SubResource("StyleBoxTexture_66cl5")
+Button/styles/hover = SubResource("StyleBoxTexture_66cl5")
+Button/styles/normal = SubResource("StyleBoxTexture_66cl5")
+Button/styles/pressed = SubResource("StyleBoxTexture_xo8n5")
+Panel/styles/panel = SubResource("StyleBoxTexture_dvc74")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cb03nmqfqbc10"]
+[gd_scene load_steps=31 format=3 uid="uid://cb03nmqfqbc10"]
 
 [ext_resource type="Script" path="res://scripts/Scenes/Level1.gd" id="1_tmtm1"]
 [ext_resource type="TileSet" uid="uid://cwawrx7nc1kem" path="res://resources/dungeon_tileset.tres" id="2_23rj3"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bcb28so55cwo2" path="res://interactions/door.tscn" id="6_dpj46"]
 [ext_resource type="PackedScene" uid="uid://4x5kofqnyuns" path="res://scenes/level 1/coffer.tscn" id="8_3la7a"]
 [ext_resource type="PackedScene" uid="uid://b4wt2g8rql0il" path="res://scenes/level 1/bronze_key_door.tscn" id="9_4pmcv"]
-[ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="9_506po"]
+[ext_resource type="Texture2D" uid="uid://bj75arbvrvhj" path="res://assets/tilesets and props/props/coffer.png" id="9_506po"]
 [ext_resource type="PackedScene" uid="uid://546ff8ecej85" path="res://scenes/Props/Chandelier.tscn" id="9_n3ehc"]
 [ext_resource type="Texture2D" uid="uid://ccp53885lhsmf" path="res://assets/item icons/dagger.png" id="10_d1irl"]
 [ext_resource type="PackedScene" uid="uid://df2h0rm7fxqyo" path="res://scenes/level 1/ascension_door_puzzle.tscn" id="11_xajnm"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b01f04b2cdfqd" path="res://assets/Textures/light_ray.png" id="17_6bgnt"]
 [ext_resource type="PackedScene" uid="uid://cuvuj3nf5kxfb" path="res://scenes/Enemies/common_cultist.tscn" id="19_qtols"]
 [ext_resource type="Script" path="res://scenes/level 1/ChantArea.gd" id="20_jxlyh"]
+[ext_resource type="PackedScene" uid="uid://clpl5t52084mq" path="res://scenes/Enemies/mutated_dog.tscn" id="25_j3wl0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkfmg"]
 resource_local_to_scene = true
@@ -340,6 +341,9 @@ texture = ExtResource("17_6bgnt")
 unique_name_in_owner = true
 position = Vector2(521.5, 722.5)
 scale = Vector2(0.5, 0.5)
+
+[node name="MutatedDog" parent="." instance=ExtResource("25_j3wl0")]
+position = Vector2(1101, 1409)
 
 [connection signal="body_entered" from="Map/SouthernHallway/DoorToCentralHallway" to="Map/CentralHallway/BlockedDoor" method="unlock_door"]
 [connection signal="actioned" from="Map/Toilets/Actionable" to="." method="_on_toilets_actioned"]

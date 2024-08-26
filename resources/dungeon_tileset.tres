@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=46 format=3 uid="uid://cwawrx7nc1kem"]
 
-[ext_resource type="Texture2D" uid="uid://02psrgr2p0qa" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_raeat"]
-[ext_resource type="Texture2D" uid="uid://bgdj5cdkhs7lp" path="res://assets/tilesets and props/dungeon/bloody tiles/pile_of_bodies_a.png" id="2_dgyl5"]
-[ext_resource type="Texture2D" uid="uid://bs8p16tyniyvs" path="res://assets/tilesets and props/dungeon/bloody tiles/dungeon_1_tileset_blood.png" id="3_iol6r"]
-[ext_resource type="Texture2D" uid="uid://c6vdbx45upuho" path="res://assets/tilesets and props/dungeon/burn_floor.png" id="4_nqenw"]
-[ext_resource type="Texture2D" uid="uid://cxqesqjdi51ko" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="5_l6q8j"]
+[ext_resource type="Texture2D" uid="uid://dibxt5yuh8u73" path="res://assets/tilesets and props/dungeon/bloody tiles/bloody_floors.png" id="1_raeat"]
+[ext_resource type="Texture2D" uid="uid://djiejj5kxx7hi" path="res://assets/tilesets and props/dungeon/bloody tiles/pile_of_bodies_a.png" id="2_dgyl5"]
+[ext_resource type="Texture2D" uid="uid://d3spw0ngi346b" path="res://assets/tilesets and props/dungeon/bloody tiles/dungeon_1_tileset_blood.png" id="3_iol6r"]
+[ext_resource type="Texture2D" uid="uid://d17ndncmxuroc" path="res://assets/tilesets and props/dungeon/burn_floor.png" id="4_nqenw"]
+[ext_resource type="Texture2D" uid="uid://dumt5g81678y4" path="res://assets/tilesets and props/dungeon/dungeon_1_tileset.png" id="5_l6q8j"]
 [ext_resource type="Texture2D" uid="uid://4xfrpusev5if" path="res://assets/tilesets and props/The dungeon/sarcophagus, lamps & tombs - NEW/Godot_Rocks_floor.png" id="6_esge7"]
 [ext_resource type="Texture2D" uid="uid://dch2oluukxlek" path="res://assets/tilesets and props/chasm_side.png" id="7_kn2so"]
 
