@@ -1,12 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://bktrnqn74ivy6"]
+[gd_scene load_steps=25 format=3 uid="uid://bktrnqn74ivy6"]
 
 [ext_resource type="Script" path="res://scenes/Battle/BattleScene.gd" id="1_13yon"]
+[ext_resource type="Theme" uid="uid://bng4fw7qgudbo" path="res://resources/battle_theme.tres" id="2_7oklo"]
 [ext_resource type="Texture2D" uid="uid://tyqqhxexgir5" path="res://assets/characters/cultist_battle.png" id="2_54gm7"]
 [ext_resource type="PackedScene" uid="uid://b4ujejr1mllwk" path="res://scenes/Battle/HealthBar.tscn" id="2_u3t3p"]
+[ext_resource type="Texture2D" uid="uid://c6342ms6275f3" path="res://assets/BattleUI/dungeon_battle_bg.png" id="3_cgtbq"]
 [ext_resource type="SpriteFrames" uid="uid://cq0e4hj3af4w3" path="res://SpriteFrames/little_girl.tres" id="3_ev255"]
 [ext_resource type="AudioStream" uid="uid://bq6s588b0lv6e" path="res://assets/music and sound/55_Encounter_02.wav" id="4_y0oju"]
 [ext_resource type="AudioStream" uid="uid://cl5m0qw84y8fj" path="res://assets/music and sound/sound fx/22_Slash_04.wav" id="6_ysyvb"]
 [ext_resource type="AudioStream" uid="uid://dyor2yewihhsf" path="res://assets/music and sound/sound fx/69_Enemy_death_01.wav" id="7_ptdl1"]
+[ext_resource type="Script" path="res://scenes/Battle/PlayerMenu.gd" id="9_qqbkh"]
+[ext_resource type="Texture2D" uid="uid://dkv7dkukhte8s" path="res://assets/BattleUI/Arrow.png" id="10_cwnij"]
+[ext_resource type="Texture2D" uid="uid://bojt88v5geor5" path="res://assets/BattleUI/Arrow_highlighted.png" id="11_y7l37"]
+[ext_resource type="Texture2D" uid="uid://djmnmkfhpo5u5" path="res://assets/BattleUI/Arrow_disabled.png" id="12_xa76t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ilcj6"]
 atlas = ExtResource("2_54gm7")
@@ -95,8 +101,12 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_m4dkc"]
-size = Vector2(32, 32)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dclt"]
+bg_color = Color(0, 0, 0, 0.552941)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="BattleScene" type="Node2D"]
 process_mode = 3
@@ -105,17 +115,22 @@ script = ExtResource("1_13yon")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
 
-[node name="Background" type="ColorRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("3_cgtbq")
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.152941, 0.152941, 0.152941, 1)
+theme = ExtResource("2_7oklo")
 
 [node name="EnemyRect" type="AnimatedSprite2D" parent="CanvasLayer"]
 unique_name_in_owner = true
-position = Vector2(-123, -1)
+position = Vector2(-123, 10)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x8p4w")
 animation = &"Idle"
@@ -124,7 +139,7 @@ offset = Vector2(25, 40)
 
 [node name="PlayerRect" type="AnimatedSprite2D" parent="CanvasLayer"]
 unique_name_in_owner = true
-position = Vector2(630, 183)
+position = Vector2(600, 175)
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("3_ev255")
 animation = &"Use"
@@ -160,14 +175,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_7oklo")
 
-[node name="PlayerHealthBar" parent="CanvasLayer/FightControls" instance=ExtResource("2_u3t3p")]
-unique_name_in_owner = true
-position = Vector2(1, 1)
+[node name="StatContainer" type="PanelContainer" parent="CanvasLayer/FightControls"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 16.0
+offset_right = 196.0
+offset_bottom = 71.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2dclt")
 
-[node name="EnemyHealthBar" parent="CanvasLayer/FightControls" instance=ExtResource("2_u3t3p")]
+[node name="PlayerHealthBar" parent="CanvasLayer/FightControls/StatContainer" instance=ExtResource("2_u3t3p")]
 unique_name_in_owner = true
-position = Vector2(336, 0)
 
 [node name="AttackSound" type="AudioStreamPlayer" parent="CanvasLayer/FightControls"]
 unique_name_in_owner = true
@@ -175,73 +194,70 @@ stream = ExtResource("6_ysyvb")
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/FightControls"]
 layout_mode = 2
-offset_left = 255.0
-offset_top = 139.0
-offset_right = 466.0
-offset_bottom = 251.0
+offset_left = 186.0
+offset_top = 200.0
+offset_right = 456.0
+offset_bottom = 246.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/FightControls/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="PlayerBattleantButtonContainer" type="HBoxContainer" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="PlayerMenu" type="GridContainer" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_horizontal = 3
+columns = 2
+script = ExtResource("9_qqbkh")
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/PlayerBattleantButtonContainer"]
-layout_mode = 2
-toggle_mode = true
-texture_normal = SubResource("PlaceholderTexture2D_m4dkc")
-stretch_mode = 3
-
-[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/PlayerBattleantButtonContainer"]
-modulate = Color(0.00392157, 1, 1, 1)
-layout_mode = 2
-toggle_mode = true
-texture_normal = SubResource("PlaceholderTexture2D_m4dkc")
-stretch_mode = 3
-
-[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/PlayerBattleantButtonContainer"]
-modulate = Color(1, 0, 0, 1)
-layout_mode = 2
-toggle_mode = true
-texture_normal = SubResource("PlaceholderTexture2D_m4dkc")
-stretch_mode = 3
-
-[node name="AttackButtonContainer" type="VBoxContainer" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MenuButton1" type="Button" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Actions"
 
-[node name="Button1" type="Button" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/AttackButtonContainer"]
+[node name="MenuButton2" type="Button" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu"]
+unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../Button3")
-focus_neighbor_bottom = NodePath("../Button2")
-theme_override_font_sizes/font_size = 8
-disabled = true
-text = "Poke"
+size_flags_horizontal = 3
+text = "Summons
+"
 
-[node name="Button3" type="Button" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/AttackButtonContainer"]
+[node name="MenuButton3" type="Button" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu"]
+unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../Button2")
-focus_neighbor_bottom = NodePath("../Button1")
-theme_override_font_sizes/font_size = 8
-disabled = true
-text = "Some other attack"
+size_flags_horizontal = 3
+text = "items"
 
-[node name="Button2" type="Button" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/AttackButtonContainer"]
+[node name="MenuButton4" type="Button" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu"]
+unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../Button1")
-focus_neighbor_bottom = NodePath("../Button3")
-theme_override_font_sizes/font_size = 8
-disabled = true
-text = "Fireball"
+size_flags_horizontal = 3
+text = "run"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="PageUpButton" type="TextureButton" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("10_cwnij")
+texture_hover = ExtResource("11_y7l37")
+texture_disabled = ExtResource("12_xa76t")
+
+[node name="PageDownButton" type="TextureButton" parent="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("10_cwnij")
+texture_hover = ExtResource("11_y7l37")
+texture_disabled = ExtResource("12_xa76t")
+flip_v = true
 
 [node name="AttackPanel" type="PanelContainer" parent="CanvasLayer/FightControls"]
 unique_name_in_owner = true
@@ -263,6 +279,7 @@ offset_left = 180.0
 offset_top = -190.0
 offset_right = 333.0
 offset_bottom = -92.0
+theme = ExtResource("2_7oklo")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VictoryPanel"]
 layout_mode = 2
@@ -293,10 +310,9 @@ stream = ExtResource("7_ptdl1")
 [connection signal="animation_looped" from="CanvasLayer/EnemyRect" to="." method="_on_enemy_rect_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/PlayerRect" to="." method="_on_player_rect_animation_finished"]
 [connection signal="animation_looped" from="CanvasLayer/PlayerRect" to="." method="_on_player_rect_animation_finished"]
-[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/PlayerBattleantButtonContainer/TextureButton" to="." method="_on_summon_change_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/PlayerBattleantButtonContainer/TextureButton2" to="." method="_on_summon_change_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/PlayerBattleantButtonContainer/TextureButton3" to="." method="_on_summon_change_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/AttackButtonContainer/Button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/AttackButtonContainer/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/VBoxContainer/AttackButtonContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu/MenuButton1" to="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu" method="_actions_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu/MenuButton2" to="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu" method="_summons_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu/MenuButton3" to="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu" method="_items_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/PageUpButton" to="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu" method="_on_page_up_button"]
+[connection signal="pressed" from="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/PageDownButton" to="CanvasLayer/FightControls/PanelContainer/MarginContainer/HBoxContainer/PlayerMenu" method="_on_page_down_button"]
 [connection signal="pressed" from="CanvasLayer/VictoryPanel/MarginContainer/VBoxContainer/BackToGameButton" to="." method="_on_back_to_game_button_pressed"]
