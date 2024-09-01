@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://b4wt2g8rql0il" path="res://scenes/level 1/bronze_key_door.tscn" id="9_4pmcv"]
 [ext_resource type="Texture2D" uid="uid://csrxqo5toitdo" path="res://assets/tilesets and props/props/coffer.png" id="9_506po"]
 [ext_resource type="PackedScene" uid="uid://546ff8ecej85" path="res://scenes/Props/Chandelier.tscn" id="9_n3ehc"]
-[ext_resource type="Texture2D" uid="uid://ccp53885lhsmf" path="res://assets/item icons/dagger.png" id="10_d1irl"]
 [ext_resource type="PackedScene" uid="uid://df2h0rm7fxqyo" path="res://scenes/level 1/ascension_door_puzzle.tscn" id="11_xajnm"]
 [ext_resource type="PackedScene" uid="uid://ku8kt6ewh6wx" path="res://scenes/level 1/silver_key_door.tscn" id="12_mw7s3"]
 [ext_resource type="Texture2D" uid="uid://ck2eonr1vwdkg" path="res://assets/Textures/light_radial.png" id="12_ro3h2"]
@@ -24,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b01f04b2cdfqd" path="res://assets/Textures/light_ray.png" id="17_6bgnt"]
 [ext_resource type="PackedScene" uid="uid://cuvuj3nf5kxfb" path="res://scenes/Enemies/common_cultist.tscn" id="19_qtols"]
 [ext_resource type="Script" path="res://scenes/level 1/ChantArea.gd" id="20_jxlyh"]
+[ext_resource type="PackedScene" uid="uid://oadu8kkjsdgd" path="res://scenes/Inventory/DroppedItem.tscn" id="24_52w7q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkfmg"]
 resource_local_to_scene = true
@@ -53,7 +53,6 @@ visible = false
 blend_mode = 1
 
 [node name="Map" type="TileMap" parent="."]
-scale = Vector2(2, 2)
 tile_set = ExtResource("2_23rj3")
 format = 2
 layer_0/name = "0"
@@ -86,13 +85,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Coffer" parent="Map/SummoningRoom" instance=ExtResource("8_3la7a")]
 position = Vector2(67, -114.5)
 texture = SubResource("AtlasTexture_dkfmg")
-item_id = "0001"
-item_method = "ritual_knife"
-item_name = "Ritual Knife"
-item_texture = ExtResource("10_d1irl")
-item_effect = "A knife"
-effect_value = 1
-consumable = false
+loot = ["ritual_knife"]
 
 [node name="BloodDoorPuzzle" parent="Map/SummoningRoom" instance=ExtResource("5_q80ug")]
 position = Vector2(-2, -144.5)
@@ -106,6 +99,16 @@ rotation = 1.57079
 
 [node name="DropPoint" parent="Map/SummoningRoom/BronzeKeyDoorPuzzle/Door" index="1"]
 position = Vector2(-77.4977, -388.5)
+
+[node name="DroppedItem" parent="Map/SummoningRoom" instance=ExtResource("24_52w7q")]
+position = Vector2(-68, -88)
+item_id = "white_phosphorus"
+qty = 5
+
+[node name="DroppedItem2" parent="Map/SummoningRoom" instance=ExtResource("24_52w7q")]
+position = Vector2(-68, -110)
+item_id = "red_herb"
+qty = 5
 
 [node name="ConnectingHallway1" type="Node2D" parent="Map"]
 position = Vector2(431, 217.5)

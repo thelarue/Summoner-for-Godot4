@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccp53885lhsmf"
-path="res://.godot/imported/dagger.png-aed5c258eab91524539579ca7548d2ae.ctex"
+uid="uid://j38p3j1p1esy"
+path="res://.godot/imported/red_herb.png-ec45c4f8e1462d0a40e93107d249f661.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/item icons/dagger.png"
-dest_files=["res://.godot/imported/dagger.png-aed5c258eab91524539579ca7548d2ae.ctex"]
+source_file="res://assets/item icons/red_herb.png"
+dest_files=["res://.godot/imported/red_herb.png-ec45c4f8e1462d0a40e93107d249f661.ctex"]
 
 [params]
 

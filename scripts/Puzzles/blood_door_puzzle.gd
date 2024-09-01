@@ -9,7 +9,7 @@ extends Node2D
 var player_in_range : bool = false
 
 func _ready():
-	InventoryManager.item_used.connect( item_used )
+	#InventoryManager.item_used.connect( item_used )
 	if PuzzleCompletionList.puzzles["blood_door"]:
 		set_can_pass()
 	else:
@@ -23,8 +23,6 @@ func _process(_delta):
 	for body in bodies:
 		if body.is_in_group("player"):
 			player_in_range = true
-	
-
 
 
 func is_player_in_range() -> bool:

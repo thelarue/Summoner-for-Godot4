@@ -5,7 +5,8 @@ extends Control
 func _ready():
 	SummonInventory.team_updated.connect(_on_team_updated)
 	_on_team_updated()
-	
+
+
 func _on_team_updated():
 	clear_grid_container()
 	for summon in SummonInventory.summons:
@@ -15,7 +16,8 @@ func _on_team_updated():
 			slot.set_summon(summon)
 		else:
 			slot.set_empty()
-			
+
+
 func clear_grid_container():
 	while grid_container.get_child_count() > 0:
 		var child = grid_container.get_child(0)

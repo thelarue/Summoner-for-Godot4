@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw3c4q6upk3c1"
-path="res://.godot/imported/black herb.png-0f8e25dfd6abe95ead3d5ca5e22c5bca.ctex"
+uid="uid://ckeiyasotiy18"
+path="res://.godot/imported/wild_berries.png-1558e88d6041e51bb70e6eca68569110.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/item icons/black herb.png"
-dest_files=["res://.godot/imported/black herb.png-0f8e25dfd6abe95ead3d5ca5e22c5bca.ctex"]
+source_file="res://assets/item icons/wild_berries.png"
+dest_files=["res://.godot/imported/wild_berries.png-1558e88d6041e51bb70e6eca68569110.ctex"]
 
 [params]
 

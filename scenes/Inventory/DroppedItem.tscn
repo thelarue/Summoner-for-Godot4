@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://oadu8kkjsdgd"]
+
+[ext_resource type="Script" path="res://scripts/Inventory/DroppedItem.gd" id="1_gksmo"]
+[ext_resource type="PackedScene" uid="uid://y6ihnhljgq20" path="res://scenes/utils/actionable.tscn" id="2_wy30p"]
+[ext_resource type="Texture2D" uid="uid://c3g88qusrda2w" path="res://assets/item icons/default.png" id="3_unkjd"]
+
+[node name="DroppedItem" type="Node2D"]
+script = ExtResource("1_gksmo")
+
+[node name="Actionable" parent="." instance=ExtResource("2_wy30p")]
+action_text = "pickup"
+
+[node name="Texture" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("3_unkjd")
+
+[connection signal="actioned_by" from="Actionable" to="." method="_on_actionable_actioned_by"]

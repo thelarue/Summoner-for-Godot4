@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckcjla04xcno8"
-path="res://.godot/imported/wildberry.png-466dd073ab5de026d29551e9d7fa5d5e.ctex"
+uid="uid://cuo42ed86os84"
+path="res://.godot/imported/gunpowder.png-d46394e31cd0a1016d1b3854447cc4d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/item icons/wildberry.png"
-dest_files=["res://.godot/imported/wildberry.png-466dd073ab5de026d29551e9d7fa5d5e.ctex"]
+source_file="res://assets/item icons/gunpowder.png"
+dest_files=["res://.godot/imported/gunpowder.png-d46394e31cd0a1016d1b3854447cc4d4.ctex"]
 
 [params]
 

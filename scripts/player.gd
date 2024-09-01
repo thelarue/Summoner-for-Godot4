@@ -27,9 +27,7 @@ var actual_actionable : Actionable = null
 var closest_grass_area : Node2D
 
 func _ready():
-	InventoryManager.set_player_reference(self)
 	EffectManager.set_player_reference(self)
-	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
 	Global.set_player_node(self)
 	if Global.player_save_position:
 		global_position = Global.player_save_position
@@ -124,9 +122,11 @@ func _on_hit_delay_timeout():
 	blinking = false
 	anim.visible = true
 
+
 func _on_blinking_timeout():
 	if blinking:
 		anim.visible = !anim.visible
+
 
 func add_health(health_amount):
 	Global.player_health += health_amount
@@ -140,23 +140,22 @@ func add_mana(mana_amount : int):
 	if Global.player_mana > max_mana:
 		Global.player_mana = max_mana
 	%PlayerMana.value = Global.player_mana
-	
-
-func apply_item_effect(item):
-	pass
 
 
-func add_item( item ):
-	%GameMessage.text = "You got %s" % [ item["name"] ]
+func add_item( item : String, qty : int = 1 ):
+	if not %Inventory.add_item( item, qty ) : return false
+	%GameMessage.text = "You got %s" % [ tr(item) ]
 	%PickupSound.play()
 	var tween : Tween = create_tween()
 	tween.tween_property( %GameMessage, "modulate", Color.WHITE_SMOKE, 0.3 )
 	tween.tween_property( %GameMessage, "modulate", Color.WHITE, 2 )
 	tween.tween_property( %GameMessage, "modulate", Color.TRANSPARENT, 0.3 )
+	return true
 
 
 func set_can_open_inventory(b):
 	can_open_inventory = b
+
 
 func get_direction() -> Vector2:
 	if velocity.length() > 0:
@@ -164,11 +163,14 @@ func get_direction() -> Vector2:
 	else:
 		return last_direction  
 
+
 func set_closest_grass_area(grass_area : Node2D):
 	closest_grass_area = grass_area
 
+
 func get_closest_grass_area():
 	return closest_grass_area
+
 
 func set_can_move(b):
 	can_move = b

@@ -7,7 +7,7 @@ extends Node2D
 var player_in_range : bool = false
 
 func _ready():
-	InventoryManager.item_used.connect( item_used )
+	#InventoryManager.item_used.connect( item_used )
 	if PuzzleCompletionList.puzzles["silver_door"]:
 		set_can_pass()
 	else:

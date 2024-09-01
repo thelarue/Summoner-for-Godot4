@@ -16,6 +16,7 @@ shape = SubResource("CircleShape2D_ya5ym")
 
 [node name="UseTip" type="PanelContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -21.0
 offset_top = -41.0
 offset_right = 20.0

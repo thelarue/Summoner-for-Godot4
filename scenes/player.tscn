@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dga7wbow6g13l"]
+[gd_scene load_steps=31 format=3 uid="uid://dga7wbow6g13l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_si1ba"]
 [ext_resource type="Texture2D" uid="uid://codt0jaflak33" path="res://assets/characters/little girl/little_girl.png" id="2_iim8w"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://fb656fvmu33t" path="res://scenes/Summons/summoning_circle_ui.tscn" id="9_lspmx"]
 [ext_resource type="Texture2D" uid="uid://ck2eonr1vwdkg" path="res://assets/Textures/light_radial.png" id="10_feya0"]
 [ext_resource type="AudioStream" uid="uid://mr824pt07gw8" path="res://assets/music and sound/pianoJingleTake05.mp3" id="11_onl7c"]
+[ext_resource type="Script" path="res://scripts/Inventory/Inventory.gd" id="12_5c53l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8aur7"]
 atlas = ExtResource("2_iim8w")
@@ -162,7 +163,7 @@ position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_g0l5v")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(-1, 3)
 zoom = Vector2(0.6, 0.6)
 process_callback = 0
 limit_smoothed = true
@@ -214,28 +215,23 @@ text = "Shit just happening
 "
 
 [node name="InventoryUI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="AlchemyMenu" parent="InventoryUI" instance=ExtResource("6_ol5bh")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_right = 0.0
-offset_left = 90.0
-offset_top = -70.0
-offset_right = 90.0
-offset_bottom = -70.0
-grow_horizontal = 1
-grow_vertical = 0
+offset_left = 5.0
+offset_top = 45.0
+offset_right = 197.0
+offset_bottom = 280.0
 
-[node name="InventoryUI" parent="InventoryUI" instance=ExtResource("7_by8ww")]
-anchors_preset = 1
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -100.0
-offset_top = 200.0
-offset_right = -100.0
-offset_bottom = 200.0
-grow_vertical = 1
+[node name="InventoryUI" parent="InventoryUI" node_paths=PackedStringArray("inventory") instance=ExtResource("7_by8ww")]
+anchors_preset = 3
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -184.0
+offset_top = -269.0
+offset_right = -6.0
+offset_bottom = -1.0
+grow_vertical = 0
+inventory = NodePath("../../Inventory")
 
 [node name="SummonTeam" parent="InventoryUI" instance=ExtResource("8_3drfb")]
 offset_left = 285.0
@@ -293,6 +289,10 @@ position = Vector2(0, 28)
 range_item_cull_mask = 3
 texture = ExtResource("10_feya0")
 texture_scale = 0.75
+
+[node name="Inventory" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("12_5c53l")
 
 [node name="PlayerSounds" type="Node" parent="."]
 

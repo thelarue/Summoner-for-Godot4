@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://50rdw1dt63h6"]
 
 [ext_resource type="Script" path="res://scripts/Inventory/inventory_ui.gd" id="1_qpy4t"]
-[ext_resource type="Texture2D" uid="uid://b8t5t8vvnsjm3" path="res://assets/inventory.png" id="2_x22cw"]
+[ext_resource type="Theme" uid="uid://bl2d37fpcrnsm" path="res://addons/dialogic/Editor/Theme/UITheme.tres" id="1_tfijw"]
 
 [node name="InventoryUI" type="Control"]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 3
 anchors_preset = 6
 anchor_left = 1.0
@@ -11,30 +12,78 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -480.0
-offset_top = -135.0
-offset_right = -480.0
-offset_bottom = -135.0
+offset_top = -342.0
+offset_right = -302.0
+offset_bottom = -74.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("1_tfijw")
 script = ExtResource("1_qpy4t")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_x22cw")
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_top = 172.0
+offset_right = 177.0
+offset_bottom = 265.0
 
-[node name="GridContainer" type="GridContainer" parent="Sprite2D"]
-anchors_preset = 8
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="SlotContainer" type="HFlowContainer" parent="PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -165.0
-offset_top = -90.5
-offset_right = -30.0
-offset_bottom = -25.5
+offset_left = -37.0
+offset_top = 165.0
+offset_right = 38.0
+offset_bottom = 185.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 5
-theme_override_constants/v_separation = 5
-columns = 4
+theme_type_variation = &"GamePanelTitle"
+text = "inventory"
+horizontal_alignment = 1
+
+[node name="Tooltip" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 10.0
+offset_right = 177.0
+offset_bottom = 163.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tooltip"]
+layout_mode = 2
+
+[node name="TooltipLabel" type="Label" parent="Tooltip/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+text = "very useful info about the item"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tooltip/VBoxContainer"]
+layout_mode = 2
+
+[node name="UseButton" type="Button" parent="Tooltip/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 8
+text = "use"
+
+[node name="DropButton" type="Button" parent="Tooltip/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 8
+text = "Drop
+"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Tooltip/VBoxContainer/HBoxContainer/UseButton" to="." method="_on_use_button_pressed"]
+[connection signal="pressed" from="Tooltip/VBoxContainer/HBoxContainer/DropButton" to="." method="_on_drop_button_pressed"]
